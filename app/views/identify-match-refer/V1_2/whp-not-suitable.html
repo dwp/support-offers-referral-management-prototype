@@ -1,4 +1,5 @@
 {% extends "layouts/idm-citizen.html" %}
+
 {% block pageTitle %}
 Not suitable – {{ serviceName }} – Support Offers prototype
 {% endblock %}
@@ -6,20 +7,32 @@ Not suitable – {{ serviceName }} – Support Offers prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">You cannot refer this person to WHP Disability Condition </h1>
-      <p class="govuk-body">They must meet all the eligibility and suitability criteria when you refer them.</p>
-      <p class="govuk-body">You may be able to:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-list">
-        <li>
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">You cannot refer this person to WHP Disability Condition </h1>
+
+        <p class="govuk-body">They must meet all the eligibility and suitability criteria when you refer them.</p>
+
+        <p class="govuk-body">You may be able to:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list">
+          <li>
             make a new WHP Disability Condition referral if their circumstances change          
           </li>
-        <li>
-          <a href="sam-doe-opportunity-matched-c" class="govuk-link">refer them to a different opportunity</a>
-        </li>
-      </ul>
-      <p>
-        <a href="JavaScript:window.close()" class="govuk-link">Close this referral</a>
-      </p>
+          <li>
+            <a href="sam-doe-opportunity-matched-c" class="govuk-link">refer them to a different opportunity</a>          
+          </li>
+        </ul>
+        <p>
+          <a href="JavaScript:window.close()" class="govuk-link">Close this referral</a>
+        </p>
+
+      </div>
     </div>
   </div>
+
+</div>
+
+</div>
+
 {% endblock %}

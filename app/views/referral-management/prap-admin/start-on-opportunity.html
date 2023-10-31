@@ -5,124 +5,127 @@ When did this citizen start the opportunity? – {{ serviceName }} – GOV.UK Pr
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form action="start-date-submitted" method="post" novalidate>
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="date-started-on-opportunity">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="start-date-submitted" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="date-started-on-opportunity">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
               When did the citizen start the opportunity? </h1>
-          </legend>
+            </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="when-started" name="when-started" type="radio"
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="when-started" name="when-started" type="radio"
                 value="the previous working day, 23 January 2023" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="when-started">
-                <text id="prev-date"></label>
-            </div>
+                <label class="govuk-label govuk-radios__label" for="when-started">
+                  <text id="prev-date"></label>
+                </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="when-started-2" name="when-started" type="radio"
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="when-started-2" name="when-started" type="radio"
                 value="today, 24 January 2023" data-aria-controls="conditional-contact-2">
-              <label class="govuk-label govuk-radios__label" for="when-started-2">
-                <text id="todays-date"></label>
+                  <label class="govuk-label govuk-radios__label" for="when-started-2">
+                    <text id="todays-date"></label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="when-started-3" name="when-started" type="radio"
+                value=" a custom date, 18 January 2023" data-aria-controls="conditional-contact-3">
+                    <label class="govuk-label govuk-radios__label" for="when-started-3">
+                Custom date
+              </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                    <div class="govuk-form-group">
+                      <div id="date-started-hint" class="govuk-hint">
+                  You can only enter a start date up to 30 days in the past
+                </div>
+                      <div class="govuk-date-input" id="date-started">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-started-day">
+                        Day
+                      </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-day"
+                        name="date-started-day" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-started-month">
+                        Month
+                      </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month"
+                        name="date-started-month" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="date-started-year">
+                        Year
+                      </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year"
+                        name="date-started-year" type="text" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
             </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="when-started-3" name="when-started" type="radio"
-                value=" a custom date, 18 January 2023" data-aria-controls="conditional-when-started-3">
-              <label class="govuk-label govuk-radios__label" for="when-started-3">
-                Custom date</label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-when-started-3">
-              <div id="date-started-hint" class="govuk-hint">
-                You can only enter a start date up to 30 days in the past
-              </div>
-              <div class="govuk-date-input" id="date-started">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-started-day">
-                      Day</label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-day"
-                      name="date-started-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-started-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-started-month"
-                      name="date-started-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-started-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-started-year"
-                      name="date-started-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </fieldset>
+            <script>
+              var today = new Date();
+              var options = {
+                year: 'numeric',
+                day: 'numeric',
+                month: 'long'
+              };
+              document
+                .getElementById("todays-date")
+                .innerHTML = "Today, " + today.toLocaleDateString('en-UK', options);
+            </script>
+
+            <script>
+              var today = new Date();
+              var prevWorkDay;
+              if (today.getDay() == 0) {
+                prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
+              } else if (today.getDay() == 1) {
+                prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
+              } else {
+                prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
+              }
+              var day = prevWorkDay.getDate();
+              var month = prevWorkDay.getMonth();
+              var year = prevWorkDay.getFullYear();
+              var monthNames = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+              ];
+              document
+                .getElementById("prev-date")
+                .innerHTML = "Previous working day,  " + day + " " + monthNames[month] + " " + year;
+            </script>
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ govukButton({
+    text: "Continue"
+     }) }}
+          </form>
+        </div>
       </div>
-
-
-      <script>
-        var today = new Date();
-        var options = {
-          year: 'numeric',
-          day: 'numeric',
-          month: 'long'
-        };
-        document
-          .getElementById("todays-date")
-          .innerHTML = "Today, " + today.toLocaleDateString('en-UK', options);
-      </script>
-
-      <script>
-        var today = new Date();
-        var prevWorkDay;
-        if (today.getDay() == 0) {
-          prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
-        } else if (today.getDay() == 1) {
-          prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
-        } else {
-          prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
-        }
-        var day = prevWorkDay.getDate();
-        var month = prevWorkDay.getMonth();
-        var year = prevWorkDay.getFullYear();
-        var monthNames = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December"
-        ];
-        document
-          .getElementById("prev-date")
-          .innerHTML = "Previous working day,  " + day + " " + monthNames[month] + " " + year;
-      </script>
-
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-      text: "Continue"
-      }) }}
-    </form>
-  </div>
-</div>
-{% endblock %}
+    {% endblock %}

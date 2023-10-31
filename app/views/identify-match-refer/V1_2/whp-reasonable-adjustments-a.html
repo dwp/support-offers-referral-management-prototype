@@ -1,5 +1,4 @@
 {% extends "layouts/idm-citizen.html" %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
 Employment and training restrictions – {{ serviceName }} – Support Offers prototype
@@ -8,12 +7,16 @@ Employment and training restrictions – {{ serviceName }} – Support Offers pr
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Will they need any extra support or reasonable adjustments to take part in this opportunity?</h1>
 
-      <form action="which-jcp" method="post" novalidate>
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {{ govukRadios({
-            classes:"govuk-radios",
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Will they need any extra support or reasonable adjustments to take part in this opportunity?</h1>
+       
+          
+        <form action="which-jcp" method="post" novalidate>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            classes:"govuk-radios--inline",
   name: "which-outcome",
   fieldset: {
   },
@@ -28,10 +31,21 @@ Employment and training restrictions – {{ serviceName }} – Support Offers pr
     }
   ]
 }) }}
-        {{ govukButton({
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
   text: "Continue"
   }) }}
-      </form>
+        </form>
+
+      </div>
+
     </div>
-  </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
 {% endblock %}

@@ -3,32 +3,32 @@
 
 {% extends "govuk/template.njk" %}
 
-{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
 {% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"              import govukButton %}
 {% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
 {% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
 {% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
-{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/details/macro.njk"             import govukDetails %}
 {% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
 {% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
 {% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/input/macro.njk"               import govukInput %}
 {% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/panel/macro.njk"               import govukPanel %}
 {% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/radios/macro.njk"              import govukRadios %}
+{% from "govuk/components/select/macro.njk"              import govukSelect %}
 {% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
 {% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{% from "govuk/components/tabs/macro.njk" import govukTabs %}
-{% from "govuk/components/tag/macro.njk" import govukTag %}
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/table/macro.njk"               import govukTable %}
+{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
+{% from "govuk/components/tag/macro.njk"                 import govukTag %}
+{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 {% from "internal-service-footer/macro.njk" import dwpFooter %}
 
@@ -53,31 +53,29 @@
   }) }}
 
   <section class="dwp-key-details-bar" aria-label="Key details">
-    <div class="govuk-width-container">
-      <div class="dwp-key-details-bar__key-details">
-        <dl class="dwp-key-details-bar__top-block">
-          <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="dwp-key-details-bar__name">Jane Doe</dd>
-          <dt class="govuk-visually-hidden">Nino:</dt>
-          <dd class="dwp-key-details-bar__nino">QQ 12 34 56 X</dd>
-          <dt class="govuk-visually-hidden">Claim status:</dt>
-          <dd class="govuk-table__cell dwp-key-details-bar__status">
-            <strong class="govuk-tag govuk-tag--green">
+  <div class="dwp-key-details-bar__key-details">
+  <dl class="dwp-key-details-bar__top-block">
+    <dt class="govuk-visually-hidden">Name:</dt>
+    <dd class="dwp-key-details-bar__name">Jane Doe</dd>
+    <dt class="govuk-visually-hidden">Nino:</dt>
+    <dd class="dwp-key-details-bar__nino">QQ 12 34 56 X</dd>
+    <dt class="govuk-visually-hidden">Claim status:</dt>
+    <dd class="govuk-table__cell dwp-key-details-bar__status">
+        <strong class="govuk-tag govuk-tag--green">
             New claim
         </strong>
-          </dd>
-        </dl>
-        <dl class="dwp-key-details-bar__bottom-block">
+    </dd>
+  </dl>
+  <dl class="dwp-key-details-bar__bottom-block">
 
-          <dt>DOB:</dt>
-          <dd>4 June 1972</dd>
-          <dt>Phone:</dt>
-          <dd>07777 900 900</dd>
-          <dt>Claim submitted (IDOC):</dt>
-          <dd>12 May 2022</dd>
-        </dl>
-      </div>
-    </div>
+    <dt>DOB:</dt>
+    <dd>4 June 1972</dd>
+    <dt>Phone:</dt>
+    <dd>07777 900 900</dd>
+    <dt>Claim submitted (IDOC):</dt>
+    <dd>12 May 2022</dd>
+  </dl>
+  </div>
   </section>
 
 {% endblock %}
@@ -93,7 +91,7 @@
 {% endblock %}
 
 {% block footer %}
-  {{ dwpFooter({
+{{ dwpFooter({
   meta: {
    visuallyHiddenTitle: "Footer links",
   items: [
@@ -108,4 +106,4 @@
         ]
   }
   }) }}
-{% endblock %}
+  {% endblock %}
