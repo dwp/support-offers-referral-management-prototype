@@ -1,0 +1,63 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Description of Restart Scheme – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Restart Scheme overview</h1>
+
+        <p class="govuk-body">
+          The Restart Scheme will give you extra support with finding jobs in your local area.</p>
+
+        <p class="govuk-body">You’ll get personalised support for up to 12 months that will focus on:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+          <li>
+    developing your skills to boost your employability  </li>
+          <li>
+    helping break down barriers to working
+  </li>
+        </ul>
+
+        <div class="govuk-warning-text govuk-!-margin-bottom-5 govuk-!-margin-top-5">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+  You do have to take part in this programme or your benefits could stop.
+  </strong>
+        </div>
+
+        {# <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="confirm-reading-of-description">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="confirm" name="confirm" type="checkbox" value="description" data-aria-controls="confirm-reading">
+                <label class="govuk-label govuk-checkboxes__label" for="confirm">
+          I confirm I have read this to the citizen now, or gone through it with them previously
+        </label>
+              </div>
+            </div>
+          </fieldset>
+        </div> #}
+
+        <form action="suitability" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

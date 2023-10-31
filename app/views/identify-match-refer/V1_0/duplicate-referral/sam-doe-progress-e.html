@@ -1,0 +1,87 @@
+{% extends "layouts/idm-citizen-active.html" %}
+
+{% block pageTitle %}
+Citizen's progress – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">
+          Sam Doe's referral progress
+        </h1>
+    
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Opportunity</th>
+          <th scope="col" class="govuk-table__header">Referral ID</th>
+          <th scope="col" class="govuk-table__header">Referred</th>
+          <th scope="col" class="govuk-table__header">Started</th>
+          <th scope="col" class="govuk-table__header">Completed</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Restart<br><span class="govuk-hint">Maximus</span></td>
+          <td class="govuk-table__cell">321743277</td>
+          <td class="govuk-table__cell">28 Jul 2023</td>
+          <td class="govuk-table__cell">1 Aug 2023</td>
+          <td class="govuk-table__cell"> </td>
+          <td class="govuk-table__cell"><strong class="govuk-tag">started</strong></td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">WHP Disability<br><span class="govuk-hint">Ingeus UK Ltd</span></td>
+          <td class="govuk-table__cell">122885</td>          
+          <td class="govuk-table__cell">15 Feb 2022</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">did not attend</strong></td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Daily Support<br><span class="govuk-hint">Jobcentre Plus</span></td>
+          <td class="govuk-table__cell">122898</td>                    
+          <td class="govuk-table__cell">19 Mar 2018</td>
+          <td class="govuk-table__cell">17 Mar 2018</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">not known</strong></td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Go for IT<br><span class="govuk-hint">Jobcentre Plus</span></td>
+          <td class="govuk-table__cell">122684</td>                    
+          <td class="govuk-table__cell">21 Jul 2017</td>
+          <td class="govuk-table__cell">21 Jul 2017</td>
+          <td class="govuk-table__cell">28 Jul 2017</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag">completed</strong></td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Working with Person<br><span class="govuk-hint">Ingeus</span></td>
+          <td class="govuk-table__cell">122645</td>                    
+          <td class="govuk-table__cell">1 Mar 2017</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">not known</strong></td>          
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">WP/JSA 25 Plus<br><span class="govuk-hint">G4S</span></td>
+          <td class="govuk-table__cell">108800</td>                   
+          <td class="govuk-table__cell">16 Aug 2011</td>
+          <td class="govuk-table__cell">26 Aug 2011</td>
+          <td class="govuk-table__cell">12 Aug 2013</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag">completed</strong></td>          
+        </tr>                        
+      </tbody>
+    </table>
+
+            
+      </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

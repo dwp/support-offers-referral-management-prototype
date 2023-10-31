@@ -1,0 +1,61 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% from "internal-service-header/macro.njk" import dwpHeader %}
+
+  {{ dwpHeader({
+  name: "Support offers ",
+  serviceHref: '/index.html',
+  serviceUrl: "/",
+  action: "Sign out",
+  actionHref: "/",
+container:true
+}) }}
+
+  <section class="dwp-key-details-bar" aria-label="Key details">
+    <div class="dwp-key-details-bar__key-details">
+      <dl class="dwp-key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dd class="dwp-key-details-bar__primary">Sam Doe</dd>
+        <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+        <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 C</dd>
+        <dt class="govuk-visually-hidden">Claim status:</dt>
+        <dd class="govuk-table__cell dwp-key-details-bar__status">
+          <strong class="govuk-tag govuk-tag--yellow">
+          acknowledged 21 july 2023
+        </strong>
+        </dd>
+      </dl>
+      <dl class="dwp-key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>4 June 1972</dd>
+
+      </dl>
+    </div>
+  </section>
+  <div class="govuk-width-container ">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+        <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{{ govukFooter({}) }}
+
+
+{% endblock %}

@@ -1,0 +1,326 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %} Identify, match and refer prototypes –
+{{serviceName}} – GOV.UK Prototype Kit {% endblock %}
+{# {% block header %}
+{% from
+"internal-service-header/macro.njk" import dwpHeader %}
+{{ dwpHeader({ name:
+"Support offers", container:true }) }}
+{% endblock %} #}
+{% block beforeContent %}
+
+<!-- Do we need a breadcrumb? -->
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/index">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Identify, match and refer prototypes</a>
+    </li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Header and Intro -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Prototype</span>
+    <h1 class="govuk-heading-xl">Identify, match and refer</h1>
+    <p class="govuk-body">
+      17th October 2023
+    </p>
+    <p class="govuk-!-margin-bottom-8">
+      This part of the project is going to be the initial MVP.
+    </p>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Agent facing – Referrer screens</h2>
+    <p><strong class="govuk-tag govuk-tag--green">Latest version</strong></p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+    text: "Start version 1.2",
+    href: "/identify-match-refer/V1_2/searchlight",
+    isStartButton: true
+    }) }}
+
+    <h3 class="govuk-heading-m">Supporting information</h3>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Sprint version</dt>
+        <dd class="govuk-summary-list__value">Beta Sprint 5</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Summary of changes</dt>
+        <dd class="govuk-summary-list__value">
+
+          <p class="govuk-body">The changes are documented on Confluence – link below </p>
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Mural</dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link"
+                href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1684962620843/e2601a29c2a0ac03b1c93d3a6a494c9b717bf3c9?wid=0-1697211509375">Screenshots
+                on Mural</a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Design documentation</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link"
+            href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/133415731717/Sprint+3+version+1.1+agent+facing+referral+journey">Documented
+            design decisions</a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Feature team</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview">Airedale</a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l">Duplicate referrals journey</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Sprint version</dt>
+        <dd class="govuk-summary-list__value">Sprint Beta 0</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Duplicate referrals</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link" href="/identify-match-refer/V1_0/duplicate-referral/searchlight-results">Link to
+            prototype</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Summary</dt>
+        <dd class="govuk-summary-list__value">
+          If a citizen has already been referred to a national contracted provision they are not eligible to be referred
+          to any other national contracted provision unless they either complete the programme or, the provider rejects
+          them or cancels the referral. The technical solution can identify the person and their referral history at the
+          starting point of the service and the UI prevents the work coach from trying to refer the citizen
+          unnecessarily.
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Mural</dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link"
+                href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1684962620843/e2601a29c2a0ac03b1c93d3a6a494c9b717bf3c9?wid=0-1692089102569">Screenshots
+                on Mural</a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Jira ticket</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link" href="https://dwpdigital.atlassian.net/browse/SUP-1540">SUP-1540</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Design documentation</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link"
+            href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/pages/132835115731/Interaction+design">Documented
+            design decisions</a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Feature team</dt>
+        <dd class="govuk-summary-list__value">
+          <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview">Airedale</a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <!-- Previous versions -->
+
+    <h2 class="govuk-heading-l">Previous versions</h2>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+      <!-- Version 1.1 -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Version 1.1 <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                not tested
+              </strong>
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1">
+
+          <h3 class="govuk-heading-m">Supporting information</h3>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Link to prototype</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link" href="/identify-match-refer/V1_1/searchlight">Version 1.1 prototype</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Link to user research</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link"
+                  href="https://dwpgovuk.sharepoint.com/:p:/r/sites/ext-working-age-teams/_layouts/15/Doc.aspx?sourcedoc=%7B689EF4E1-068E-496B-AAE6-B815D881B957%7D&file=UR%20WC%20playback%2020.09.23.pptx&wdOrigin=TEAMS-ELECTRON.p2p.bim&action=edit&mobileredirect=true&wdExp=TEAMS-CONTROL&wdhostclicktime=1695216987607&web=1">UR
+                  PPT playback and recommendations</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Sprint version</dt>
+              <dd class="govuk-summary-list__value">Sprints 3 and 4 (Private Beta)</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Summary</dt>
+              <dd class="govuk-summary-list__value">
+                This prototype has currently been developed to take account of Restart, Core WHP and now Pioneer WHP.
+                Pioneer will be part of our initial private Beta. We are still learning about this and will be iterating
+                the prototype in the upcoming sprints to reflect what we know. As a consequence of this, we havent
+                tested this version with any work coaches or Pioneer referral colleagues.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Mural</dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li>
+                    <a class="govuk-link"
+                      href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1684962620843/e2601a29c2a0ac03b1c93d3a6a494c9b717bf3c9?wid=0-1697211509375">Screenshots
+                      on Mural</a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Design documentation</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link"
+                  href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/133415731717/Sprint+3+version+1.1+agent+facing+referral+journey">Sprint
+                  3</a>
+                <a class="govuk-link"
+                  href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/133416419805/Sprint+4+version+1.2+agent+facing+referral+journey">
+                  Sprint
+                  4</a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Feature team</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview">Airedale</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Version 1.0 -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Version 1.0 <strong class="govuk-tag govuk-!-margin-left-1">
+                tested
+              </strong>
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1">
+
+          <h3 class="govuk-heading-m">Supporting information</h3>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Link to prototype</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link" href="/identify-match-refer/V1_0/searchlight">Version 1.0 prototype</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Link to user research</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link"
+                  href="https://dwpgovuk.sharepoint.com/:p:/r/sites/ext-working-age-teams/_layouts/15/Doc.aspx?sourcedoc=%7B689EF4E1-068E-496B-AAE6-B815D881B957%7D&file=UR%20WC%20playback%2020.09.23.pptx&wdOrigin=TEAMS-ELECTRON.p2p.bim&action=edit&mobileredirect=true&wdExp=TEAMS-CONTROL&wdhostclicktime=1695216987607&web=1">UR
+                  PPT playback and recommendations</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Sprint version</dt>
+              <dd class="govuk-summary-list__value">Sprint 1 Beta</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Summary</dt>
+              <dd class="govuk-summary-list__value">
+                This prototype has currently been developed for both Restart and for the Work and Health programme only
+                and for iteration 1 of the
+                project. It
+                is designed to be used by legacy work coaches who are used to working with LMS. At this
+                stage,
+                we are very restricted in what we can do due to technical constraints as we move away from legacy
+                systems.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Mural</dt>
+              <dd class="govuk-summary-list__value">
+                <ul class="govuk-list">
+                  <li>
+                    <a class="govuk-link"
+                      href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1684962620843/e2601a29c2a0ac03b1c93d3a6a494c9b717bf3c9?sender=ucb6f993c888457ef62fb0717">Screenshots
+                      on Mural</a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Design documentation</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link"
+                  href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/pages/132835115731/Interaction+design">This is
+                  still
+                  to do</a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Feature team</dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview">Airedale</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endblock %}
+</div>

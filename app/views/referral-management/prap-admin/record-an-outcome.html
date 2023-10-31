@@ -1,0 +1,40 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+  Which outcome has this participant met? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/record-an-outcome" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+  name: "which-outcome",
+  fieldset: {
+    legend: {
+      text: "Which outcome has this participant met?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "started-self-employment",
+      text: "Participant has started self-employment"
+    },
+    {
+      value: "6-months-self-employment",
+      text: "Participant has been self-employed for 6 months"
+    }
+  ]
+}) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Not eligible - do not meet requirements – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Sam Doe is is not eligible for the Restart Scheme.</h1>
+       
+        <p class="govuk-body govuk-!-margin-bottom-6">A citizen cannot go on Restart if they do not meet the requirements for it.</p>
+
+
+        
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Do not progress with the referral
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends "layouts/so-citizen.html" %}
+
+{% block pageTitle %}
+Check the details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check your answers before sending the details</h1>
+
+      <form action="/report-progress" method="post" novalidate>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+        {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Multiple self employments"
+      },
+      value: {
+        text: "No"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date started trading"
+          }
+        ]
+      }
+    },
+        {
+      key: {
+        text: "Started trading"
+      },
+      value: {
+        text: "10 January 2023"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date started trading"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Trading name"
+      },
+      value: {
+        text: "Kenneth's World of Balloon Magic"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "trading name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Business address"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Work telephone"
+      },
+      value: {
+        html: "07700 900457"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+        {
+      key: {
+        text: "Work email"
+      },
+      value: {
+        html: "parties@kens-balloon-world.co.uk"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Business hours"
+      },
+      value: {
+        html: "10-5 weekdays<br> Some evenings and weekends"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "hours"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Other information"
+      },
+      value: {
+        html: '<p class="govuk-body">Splendide est dicunt mauris ut his definiebas facilisis semper his eteu kasd aliquyam.</p><p class="govuk-body">Qui audire uonsetetur vel imperdiet duo penatibus consequat ipsum donec duo cetero vitae pretium eteu splendide tincidunt inimicus sea voluptua impedit takimata ne cetero in est definiebas in facilisis kasd usu.</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "any further information"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+        <h2 class="govuk-heading-m">Before you submit this outcome</h2>
+        <p class="govuk-body">If you created this outcome in error, you can <a class="govuk-link" href="referral-summary">delete it in the citizen’s progress page </a>.</p>
+        <p>After you have submitted it, you will not be able to do this and must instead contact DWP.</p>
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          {{ govukButton({
+        text: "Submit this outcome",
+        href: "self-employment-confirmation"
+        }) }}
+        </form>
+      </div>
+    </div>
+  {% endblock %}

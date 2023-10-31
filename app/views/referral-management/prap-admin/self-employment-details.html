@@ -1,0 +1,194 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+Details of the participant's self employment – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="check-your-answers" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="company-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">Details of the participant's self-employment</h1>
+            </legend>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+              Do you need to tell us about more than 1 self-employment of this participant?
+            </h3>
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                Yes
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No
+              </label>
+              </div>
+            </div>
+
+            <div class="govuk-!-padding-bottom-5">
+              <p class="govuk-body">If they have had more than 1 self-employment, tell us about the earliest on this page.
+              You will be able to tell us about any other ones later.
+            </p>
+            </div>
+
+            <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+            What date did they start trading?
+          </legend>
+            <div id="date-started-hint" class="govuk-hint">
+            For example, 27 3 2007
+          </div>
+            <div class="govuk-date-input" id="se-start">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="se-start-day">
+                  Day
+                </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="se-start-day"
+                  name="se-start-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="se-start-month">
+                  Month
+                </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="se-start-month"
+                  name="se-start-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="se-start-year">
+                  Year
+                </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="se-start-year"
+                  name="se-start-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="business-name">
+          What is the trading name of the business?
+        </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-name" name="business-name" type="text"
+          autocomplete="bus-name">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-weight-bold" for="business-type">
+          What type of business is it?
+        </label>
+          <div id="date-started-hint" class="govuk-hint">
+          For example, accountancy, gardening, art
+        </div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="business-type" name="business-type" type="text"
+          autocomplete="bus-type">
+        </div>
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          What is the address of the business?
+        </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+            Address line 1 <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+            Address line 2 (optional) <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text"
+            autocomplete="address-level2"></div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+            County
+          </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"
+            autocomplete="postal-code"></div>
+
+          <fieldset class="govuk-fieldset" aria-describedby="company-hint">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="telephone-number">
+              What telephone number are they using for work?
+            </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="telephone-number" name="telephone-number"
+              type="text" autocomplete="tel-local">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="email-address">
+              What email address are they using for work?
+            </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="email-address" name="email-address" type="text"
+              autocomplete="email"></div>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="business-hours">
+              What are their business hours or working pattern?
+            </label>
+              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="business-hours" name="business-hours"
+              rows="3"></textarea>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="other-information">
+              Can you provide any other information to assist DWP's validation?
+            </label>
+              <div id="date-started-hint" class="govuk-hint">
+              For example, any breaks in their self-employment, their unique reference number (URN) if they are
+              registered with HMRC
+            </div>
+              <textarea class="govuk-textarea govuk-!-width-two-thirds" id="other-information" name="other-information"
+              rows="7"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save progress
+  </button>
+          <a class="govuk-link" href="#">Delete draft</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

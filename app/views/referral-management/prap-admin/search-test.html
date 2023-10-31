@@ -1,0 +1,92 @@
+{% extends "layouts/so-main.html" %}
+
+{% block pageTitle %}
+Referral summary – {{ serviceName }} – GOV.UK Prototype Kit
+
+<!DOCTYPE html>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Summary of referrals
+        </h1>
+
+        <div class="govuk-!-padding-bottom-6"></div>
+
+        <form action="/referrals-pending-b" method="post" novalidate>
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Filters</h2>
+
+            <div id="filter-hint" class="govuk-hint moj-search__hint ">
+              Select one or more of the filters from the list and apply.
+            </div>
+            <fieldset class="govuk-fieldset">
+              <h3 class="govuk-heading-s">
+                Status
+              </h3>
+              </legend>
+
+              <!-------------------------- filters radios referral status-------------------------->
+
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status" name="status" type="radio" value="all-referrals">
+                  <label class="govuk-label govuk-radios__label" for="status">
+                    All referrals
+                  </label>
+                </div>
+
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="status-2" name="status" type="radio"
+                      value="active-referrals">
+                    <label class="govuk-label govuk-radios__label" for="status-2">
+                      Current participants
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="status-3" name="status" type="radio"
+                        value="pending-referrals">
+                      <label class="govuk-label govuk-radios__label" for="status-3">
+                        Pending referrals
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="status-4" name="status" type="radio"
+                          value="rejected-referrals">
+                        <label class="govuk-label govuk-radios__label" for="status-4">
+                          Rejected referrals
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="status-5" name="status" type="radio"
+                            value="completed-referrals">
+                          <label class="govuk-label govuk-radios__label" for="status-5">
+                            Completed referrals
+                          </label>
+                        </div>
+                      </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Apply filters
+          </button>
+          <p>
+            <a href="#">Clear filters</a>
+          </p>
+      </div>
+      </form>
+    </div>
+    {% endblock %}

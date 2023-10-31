@@ -1,0 +1,38 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+What is their mobile number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="sam-doe-mobile-updated" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="date-started-on-opportunity">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Sam Doe’s mobile telephone number </h1>
+              <div id="check-mobile-details" class="govuk-body govuk-!-padding-top-4">
+                  Their current mobile number is 	07700 800 457 </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="mobile-number">
+                What is their new mobile number? 
+              </label>
+                <input class="govuk-input govuk-input--width-20" id="tel-mobile" name="tel-mobile" type="text" autocomplete="mobile-number">
+              </legend>
+
+            </fieldset>
+          </div>
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+            <a class="govuk-link" href="/identify-match-refer/V1_0/sam-doe-referral">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  {% endblock %}

@@ -1,0 +1,134 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Eligibility – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Is Sam Doe eligible for the Restart Scheme?</h1>
+       
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eligibility-age">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Are they over 18? 
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-18" name="over-18" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="over-18">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="over-18-2" name="over-18" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="over-18-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eligibility-been-before">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Are they currently on the Restart Scheme, or have they been on it before?</h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="been-on-before" name="been-on-before" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="been-on-before">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="been-on-before-2" name="been-on-before" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="been-on-before-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="eligibility-been-before">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Are they currently on one of the other national programmes?</h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="on-another-programme" name="on-another-programme" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="on-another-programme">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="on-another-programme-2" name="on-another-programme" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="on-another-programme-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+</div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="eligibility-meet-all-other-requirements">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Do they still meet the other eligibility requirements for Restart? 
+      </h2>
+    </legend>
+    <p class="govuk-body"><a href="https://intranet.dwp.gov.uk/policy/spotlight-restart-scheme#Selecting%20claimants" class="govuk-link--no-visited-state" target="_blank">Guidance on the Requirements for Restart</a>.</p>
+
+
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eligibility-meet-all-other-requirements" name="eligibility-meet-all-other-requirements" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="eligibility-meet-all-other-requirements">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eligibility-meet-all-other-requirements-2" name="eligibility-meet-all-other-requirements" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="eligibility-meet-all-other-requirements-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+        <form action="suitability" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

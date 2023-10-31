@@ -1,0 +1,73 @@
+{% extends "layouts/so-citizen.html" %}
+
+{% block pageTitle %}
+Cancel this referral – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Cancel this referral</h1>
+      <p class="govuk-body">In order to cancel this referral, you will need to select the appropriate reason for the
+        citizen not being able to participate.</p>
+      <p class="govuk-body">The reason you must select will depend on which programme the citizen was referred to.</p>
+      <h3 class="govuk-heading-s">For Universal Credit referrals to Restart</h3>
+      <p class="govuk-body">You will need to read paragraphs 2.47 to 2.49 of the
+        <a href="https://www.gov.uk/government/publications/restart-provider-guidance/chapter-2-referral-process-and-initial-engagement#inappropriate-and-duplicate-referrals"
+          class="govuk-link">provider
+          guidance for Universal Credit Restart</a>.</p>
+      <h3 class="govuk-heading-s">For income-based Jobseeker's Allowance referrals to Restart</h3>
+      <p class="govuk-body">You will need to read paragraphs 2.46 to 2.48 of the <a
+          href="https://www.gov.uk/government/publications/restart-provider-guidance/chapter-2b-referral-process-and-initial-engagement-income-based-jobseekers-allowance-claimants-jsa-ib#inappropriate-and-duplicate-referrals"
+          class="govuk-link">provider
+          guidance for income-based Jobseeker's Allowance Restart</a>.</p>
+      <h3 class="govuk-heading-s">For Access to Work referrals</h3>
+      <p class="govuk-body">You will need to read paragraph 4.10 of the <a
+          href="https://www.gov.uk/government/publications/access-to-work-dwp-provider-guidance/chapter-4-referral-start-support-period-and-leaver-process#cancellation-of-an-atw-mental-health-support-service-referral"
+          class="govuk-link">provider guidance
+          for Access to Work</a>.</p>
+      <h3 class="govuk-heading-s">For Intensive Personalised Employment Support referrals</h3>
+      <p class="govuk-body">You will need to read paragraph 3.2 of the <a
+          href="https://www.gov.uk/government/publications/intensive-personalised-employment-support-provider-guidance/covid-19-chapter-3-referral-process-initial-engagement-and-starts#warm-handover-next-steps"
+          class="govuk-link">provider guidance
+          for Intensive Personalised Employment Support</a>.</p>
+      <h3 class="govuk-heading-s">For Work and Health referrals</h3>
+      <p class="govuk-body govuk-!-margin-bottom-7">You will need to read paragraphs 56 to 60 and 72 of the <a
+          href="https://www.gov.uk/government/publications/work-and-health-programme-including-jets-provider-guidance/chapter-3-acknowledging-referrals-initial-participant-engagement-and-registering-a-start#failure-to-attend-meeting"
+          class="govuk-link">provider guidance for the Work and Health Programme</a>.</p>
+
+      <p class="govuk-body">Select the reason that matches the guidance for your programme:</p>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+  name: "request-reject",
+  fieldset: {
+
+  },
+  items: [
+    {
+      value: "no-contact",
+      text: "No contact"
+    },
+    {
+      value: "did-not-attend",
+      text: "Did not attend"
+    },
+    {
+      value: "did-not-start",
+      text: "Did not start"
+    }
+  ]
+  }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+  text: "Continue",
+  href: "referral-rejected-generic-confirmation"
+  }) }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

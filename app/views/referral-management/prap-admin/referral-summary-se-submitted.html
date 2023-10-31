@@ -1,0 +1,63 @@
+{% extends "layouts/so-citizen.html" %}
+
+{% block pageTitle %}
+Referral summary – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+      Referral progress
+    </h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-7">Track the progress of this citizen in achieving opportunity outcomes.
+    </p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Opportunity outcomes</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table-test__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular">
+              <a href="#" aria-describedby="start-date">Start date</th>
+              <td class="govuk-table-test__cell">
+                <strong class="govuk-tag">completed</strong>
+              </td>
+            </tr>
+
+            <tr class="govuk-table-test__row">
+              <th scope="row" class="govuk-table__header govuk-!-font-weight-regular">
+                <a href="self-employment-details" aria-describedby="self-employment">Self-employment outcome</th>
+                <td class="govuk-table-test__cell">
+                  <strong class="govuk-tag">submitted</strong>
+                </td>
+              </tr>
+
+              <tr class="govuk-table-test__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular">
+Outcome two</th>
+                <td class="govuk-table-test__cell">
+                  <strong class="govuk-tag govuk-tag--grey">cannot start yet</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <style>
+            .govuk-table-test__cell {
+              float: right;
+              margin-top: 9px;
+            }
+
+            .govuk-table-test__row {
+              border-bottom-width: 1px;
+              border-bottom-style: solid;
+              border-bottom-color: #b1b4b6;
+            }
+          </style>
+
+        </div>
+      </div>
+
+    {% endblock %}

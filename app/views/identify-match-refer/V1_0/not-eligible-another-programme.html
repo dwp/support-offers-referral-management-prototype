@@ -1,0 +1,39 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Not eligible - another programme – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Sam Doe is is not eligible for the Restart Scheme.</h1>
+       
+        <p class="govuk-body">A citizen cannot go on Restart while on another national programme.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">Once that programme ends, they can then be referred to Restart, if they meet all the requirements at that later time.</p>
+
+
+        
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Do not progress with the referral
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

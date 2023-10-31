@@ -1,0 +1,50 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+  What query do you want to raise about this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+  name: "What-query",
+  fieldset: {
+    legend: {
+      text: "What query do you want to raise about this participant?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Your query will be sent to DWP for review."
+  },
+  
+  items: [
+    {
+      value: "started-in-error",
+      text: "Participation has been started in error for this citizen"
+    },
+    {
+      value: "not-engaging",
+      text: "The participant is not engaging"
+    },
+    {
+      value: "other",
+      text: "Other query"
+    }
+  ]
+  }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

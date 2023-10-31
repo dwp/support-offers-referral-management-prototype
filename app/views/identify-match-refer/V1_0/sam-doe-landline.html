@@ -1,0 +1,36 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+What is their landline number? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="sam-doe-landline-updated" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="date-started-on-opportunity">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Sam Doe’s landline telephone number </h1>
+            </legend>
+
+            <label class="govuk-label" for="landline">
+              What is their landline telephone number?   
+            </label>
+
+            <input class="govuk-input govuk-input--width-20" id="tel-landline" name="tel-landline" type="text" autocomplete="landline-number">
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+        </button>
+          <a class="govuk-link" href="/identify-match-refer/V1_0/sam-doe-referral">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

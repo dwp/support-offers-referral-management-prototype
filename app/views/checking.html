@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% from "internal-service-header/macro.njk" import dwpHeader %}
+
+  {{ dwpHeader({
+  name: "Support Offers",
+container:true
+}) }}
+
+  <div class="app-masthead-support-offers">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-2">
+          <h1 class="govuk-heading-xl app-masthead__title">The vision</h1>
+          <p class="govuk-body-l">Support Offers will connect people with knowledge, skills and opportunities that can
+          improve their quality of life and financial resilience, and help them into appropriate work wherever possible.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}{% endblock %}

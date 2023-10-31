@@ -1,0 +1,59 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Select an opportunity – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <form action="/choose-programme" method="post" novalidate>
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "select-programme",
+  fieldset: {
+    legend: {
+      text: "Select a programme to make a referral",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "restart",
+      text: "Restart",
+      hint: {
+        text: "Personalised support to help citizens return to work. A mandatory programme for citizens who have been unemployed for 9 months or longer."
+      }
+    },
+    {
+      value: "whp",
+      text: "Work and Health Programme",
+      hint: {
+        text: "Dedicated support for citizens who are committed to finding work and need extra support. A voluntary programme for disabled people and those from certain disadvantaged groups."
+      }
+    }
+  ]
+}) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+  text: "Continue"
+  }) }}
+        </form>
+
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,37 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+Outcome claim submitted – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Submitted 
+          </h1>
+        <div class="govuk-panel__body govuk-!-font-size-27">
+            You have notified DWP that Kenneth Graham started self-employment on <strong>24 January 2023</strong>.
+        </div>
+      </div>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        After the participant has been self-employed for 6 months, you will need to claim that outcome separately, and answer questions about their self-employment.
+      </p>
+
+      <h2 class="govuk-heading-m">If you submitted this outcome in error</h2>
+      <p class="govuk-body">
+You can still <a href="#">cancel this notification</a> if you need to. However, if you have:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a draft claim for this participant's 6 months self-employment outcome, you will need to delete that draft first</li>
+        <li>already submitted the outcome for 6 months self-employment, then you will need to contact DWP on <a href="#">email address</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layouts/so-main-search.html" %}
+
+{% block pageTitle %}
+Find someone – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="individual-referral" method="post" novalidate>
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="citizen">
+                Find someone
+              </label>
+            </h1>
+            <div id="search-hint" class="govuk-body ">
+              Search by referral ID, National Insurance number or citizen name
+            </div>
+            <div id="search-hint" class="govuk-hint ">
+              For example:<br>
+              Referral ID '70098681'<br>
+              National Insurance number 'WA 12 34 56 C'
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="citizen" name="citizen" type="text"
+              autocomplete="citizen">
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

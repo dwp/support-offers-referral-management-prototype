@@ -1,0 +1,245 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %} Referral management prototypes –
+{{serviceName}} – GOV.UK Prototype Kit {% endblock %}
+{# {% block header %}
+  {% from
+"internal-service-header/macro.njk" import dwpHeader %}
+  {{ dwpHeader({ 
+    name: "Support offers", 
+    container:true 
+    }) }}
+{% endblock %} #}
+{% block beforeContent %}
+
+  <!-- Do we need a breadcrumb? -->
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/index">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Referral management prototypes</a>
+      </li>
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <!-- Header and Intro -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Prototype</span>
+      <h1 class="govuk-heading-xl">Referral management</h1>
+      <p class="govuk-body">
+      24th March 2023
+    </p>
+      <p class="govuk-!-margin-bottom-8">
+      This provider part of the project is currently parked and not developed or tested.
+    </p>
+    </div>
+
+  </div>
+
+  <div class="app-width-container">
+    <class="govuk-main-wrapper govuk-main-wrapper--l">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#prap-admin-screens">
+                Provider PRaP admin
+              </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#dwp-screens"> Provider employment advisers </a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="prap-admin-screens">
+              <h2 class="govuk-heading-l">Provider – PRaP admin screens</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                Latest version
+              </strong>
+              </p>
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+                text: "Start version 1.3",
+                href: "/referral-management/prap-admin/dashboard",
+                isStartButton: true
+              }) }}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 16</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary of changes</dt>
+                  <dd class="govuk-summary-list__value">
+                  This prototype has been developed with the Restart Scheme in mind, with the intention that the final
+                  design will be dynamic.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1675089514631">Screenshots
+                        on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/pages/132835115731/Interaction+design">Documented
+                    design decisions</a>
+                  </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/overview?homepageId=132820697551">Nidderdale</a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h3 class="govuk-heading-m">Alternative screens</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Alternative tables views</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="/referral-management/prap-admin/referrals-pending-b">Radio button versions</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  We developed the intitial iteration of the table views from a Health based version. We have since
+                  developed an alternative view using radio selection to filter the information. The plan is to include
+                  this in future testing of the initial version.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Generic citizen reject route</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="/referral-management/prap-admin/individual-referral-generic">Citizen referral page –
+                    agnostic</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  The initial design was based on the understanding that we could build in dynamic rejection reasons
+                  specific to each programme. However, legacy tech dependencies mean that for our MVP we have had to
+                  build a generic citizen rejection route that works for all programmes.
+                </dd>
+                </div>
+              </dl>
+
+            </div>
+
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="dwp-screens">
+              <h2 class="govuk-heading-l">Provider – employment adviser screens</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                Latest version
+              </strong>
+              </p>
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+              text: "Start version 1.0",
+              href: "/referral-management/ea/referrals-ea-my-open-cases",
+              isStartButton: true
+            }) }}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 17</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  This is the initial prototype for employment advisers that work within national providers. It has
+                  not
+                  yet
+                  been tested with any users and is based on assumptions.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1676043441986">Screenshots
+                        on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/pages/132835115731/Interaction+design">Documented
+                    design decisions</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/overview?homepageId=132820697551">Nidderdale</a>
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Alternative screens</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Generic citizen reject route</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="/referral-management/prap-admin/individual-referral-generic">Citizen referral page –
+                    agnostic</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  The initial design was based on the understanding that we could build in dynamic rejection reasons
+                  specific to each programme. However, legacy tech dependencies mean that for our MVP we have had to
+                  build a generic citizen rejection route that works for all programmes.
+                </dd>
+                </div>
+              </dl>
+            </div>
+
+          </div>
+        </div>
+
+      {% endblock %}
+    </class>
+  </div>

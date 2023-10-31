@@ -1,0 +1,438 @@
+{% extends "layouts/so-main.html" %}
+
+{% block pageTitle %}
+Referral list
+{% endblock %}
+
+{% block beforeContent %}
+  <!DOCTYPE html>
+
+  <head>
+    <title>Example</title>
+    <link rel="stylesheet" href="assets/application.css">
+  </head>
+
+  <body>
+    <!-- Copy and paste component HTML-->
+    <button class="govuk-button">This is a button component</button>
+    <script src="assets/jquery.js"></script>
+    <script src="assets/application.js"></script>
+  </body>
+
+</html>
+
+<body>
+  <h1>Today's Date:</h1>
+  <p id="date"></p>
+  <script>
+    // Get current date and store in variable
+    var today = new Date();
+    // Get current year, month, and day
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var day = today.getDate();
+    // Update HTML element with current date
+    document
+      .getElementById("date")
+      .innerHTML = month + "/" + day + "/" + year;
+  </script>
+</body>
+
+</html>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+  <h1 class="govuk-heading-l">
+      Referrals to assign – this is a page for testing code only
+    </h1>
+
+  <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col" id="select-all">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="checkboxes-all">
+            <label class="govuk-label govuk-checkboxes__label moj-multi-select__toggle-label" for="checkboxes-all">
+              <span class="govuk-visually-hidden">Select all</span>
+            </label>
+          </div>
+        </th>
+        <th class="govuk-table__header" scope="col">Claimant name</th>
+        <th class="govuk-table__header" scope="col">NINO</th>
+        <th class="govuk-table__header" scope="col">Benefit</th>
+        <th class="govuk-table__header" scope="col">Referral date</th>
+        <th class="govuk-table__header" scope="col">SRTI</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row govuk-table__row--selected">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row-1">
+            <label class="govuk-label govuk-checkboxes__label" for="row-1">
+              <span class="govuk-visually-hidden">Select row 1</span>
+            </label>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="claimant-detail-srti" aria-describedby="claimant-detail-srti">John Doe</a>
+        </td>
+        <td class="govuk-table__cell">RN000123A</td>
+        <td class="govuk-table__cell">UC</td>
+        <td class="govuk-table__cell">1 Feb 2021</td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--red" id="Status 1">Yes</strong>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+            <input type="checkbox" class="govuk-checkboxes__input" id="row-2">
+            <label class="govuk-label govuk-checkboxes__label" for="row-2">
+              <span class="govuk-visually-hidden">Select row 2</span>
+            </label>
+          </div>
+        </td>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail-srti" aria-describedby="claimant-detail-srti">Janette Rafe</a>
+      </td>
+      <td class="govuk-table__cell">RN001123A</td>
+      <td class="govuk-table__cell">ESA</td>
+      <td class="govuk-table__cell">16 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--red" id="Status 1">Yes</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-3">
+          <label class="govuk-label govuk-checkboxes__label" for="row-3">
+            <span class="govuk-visually-hidden">Select row 3</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Noelle Carmel</a>
+      </td>
+      <td class="govuk-table__cell">RN000426D</td>
+      <td class="govuk-table__cell">PIP</td>
+      <td class="govuk-table__cell">10 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-4">
+          <label class="govuk-label govuk-checkboxes__label" for="row-4">
+            <span class="govuk-visually-hidden">Select row 4</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail-report">Sylevette Colwyn</a>
+      </td>
+      <td class="govuk-table__cell">RN000111N</td>
+      <td class="govuk-table__cell">PIP</td>
+      <td class="govuk-table__cell">10 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-5">
+          <label class="govuk-label govuk-checkboxes__label" for="row-5">
+            <span class="govuk-visually-hidden">Select row 5</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Susanna Shaye</a>
+      </td>
+      <td class="govuk-table__cell">RN001123B</td>
+      <td class="govuk-table__cell">UC</td>
+      <td class="govuk-table__cell">16 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-6">
+          <label class="govuk-label govuk-checkboxes__label" for="row-6">
+            <span class="govuk-visually-hidden">Select row 6</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Heather Sand</a>
+      </td>
+      <td class="govuk-table__cell">RN000111A</td>
+      <td class="govuk-table__cell">PIP</td>
+      <td class="govuk-table__cell">16 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-7">
+          <label class="govuk-label govuk-checkboxes__label" for="row-7">
+            <span class="govuk-visually-hidden">Select row 7</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Fran Simone</a>
+      </td>
+      <td class="govuk-table__cell">RN001000E</td>
+      <td class="govuk-table__cell">UC</td>
+      <td class="govuk-table__cell">10 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-8">
+          <label class="govuk-label govuk-checkboxes__label" for="row-8">
+            <span class="govuk-visually-hidden">Select row 8</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Danya Cecylia</a>
+      </td>
+      <td class="govuk-table__cell">RN000133A</td>
+      <td class="govuk-table__cell">ESA</td>
+      <td class="govuk-table__cell">1 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="row-9">
+          <label class="govuk-label govuk-checkboxes__label" for="row-9">
+            <span class="govuk-visually-hidden">Select row 9</span>
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="claimant-detail" aria-describedby="claimant-detail">Xia Jeana</a>
+      </td>
+      <td class="govuk-table__cell">RN000222A</td>
+      <td class="govuk-table__cell">UC</td>
+      <td class="govuk-table__cell">10 Feb 2021</td>
+      <td class="govuk-table__cell">
+        <strong class="govuk-tag govuk-tag--grey" id="Status 1">No</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+            How would you prefer to be contacted?
+          </h1>
+    </legend>
+    <div id="contact-hint" class="govuk-hint">
+          Select one option.
+        </div>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
+              data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+              Email
+            </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+                Email address
+              </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email"
+                type="email" spellcheck="false" autocomplete="email">
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone"
+              data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+              Phone
+            </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+                Phone number
+              </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone"
+                type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text"
+              data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+              Text message
+            </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+                Mobile phone number
+              </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel"
+                autocomplete="tel">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "When was your passport issued?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+<button class="govuk-button" data-module="govuk-button">
+      Assign referrals to list
+    </button>
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Elevation</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Continent</th>
+
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">First summit</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Aconcagua</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961">6,961 meters</td>
+
+      <td class="govuk-table__cell">South America</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">1897</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Denali</td>
+
+      <td class="govuk-table__cell" data-sort-value="6194">6,194 meters</td>
+
+      <td class="govuk-table__cell">North America</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1913">1913</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Elbrus</td>
+
+      <td class="govuk-table__cell" data-sort-value="5642">5,642 meters</td>
+
+      <td class="govuk-table__cell">Europe</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1874">1874</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Everest</td>
+
+      <td class="govuk-table__cell" data-sort-value="8850">8,850 meters</td>
+
+      <td class="govuk-table__cell">Asia</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">1953</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Kilimanjaro</td>
+
+      <td class="govuk-table__cell" data-sort-value="5895">5,895 meters</td>
+
+      <td class="govuk-table__cell">Africa</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1889">1889</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Puncak Jaya</td>
+
+      <td class="govuk-table__cell" data-sort-value="4884">4,884 meters</td>
+
+      <td class="govuk-table__cell">Australia</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1962">1962</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Vinson</td>
+
+      <td class="govuk-table__cell" data-sort-value="4897">4,897 meters</td>
+
+      <td class="govuk-table__cell">Antarctica</td>
+
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1966">1966</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Work and Health Programme Overview – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-width-container">
+      <h1 class="govuk-heading-l">Work and Health Programme overview</h1>
+      <p> The Work and Health Programme (WHP) will give you additional support with finding a job.</p>
+
+      <p>It will help you to learn new skills, build your confidence and increase your experience with the support of
+        local services. Your personal action plan will give you manageable steps to break down barriers to work and
+        achieve your goal.</p>
+
+      <p> You can get dedicated and flexible support for up to 15 months. If you find a job within that time, you will
+        also get 6 months in-work support.</p>
+
+      <p class="govuk-!-margin-bottom-7"> Taking part in the programme is voluntary, unless you have been unemployed for
+        24 months or more. </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading govuk-!-margin-bottom-2">
+              Select an WHP opportunity </h2>
+          </legend>
+          <div class="govuk-radios " data-module="govuk-radios">
+            <div class="govuk-radios__item ">
+              <input class="govuk-radios__input" id="whp-disability-condition" name="whp" type="radio"
+                value="description-whp-disability-condition" aria-describedby="whp-disability-condition-hint">
+              <label class="govuk-label govuk-radios__label" for="whp-disability-condition">
+                WHP Disability Condition
+              </label>
+              <div id="whp-disability-condition-hint" class="govuk-hint govuk-radios__hint">
+                Support for disabled citizens. </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whp-minister-disability-condition" name="whp" type="radio"
+                value="description-of-whp-minister-disability-condition"
+                aria-describedby="whp-minister-disability-condition-hint">
+              <label class="govuk-label govuk-radios__label" for="whp-minister-disability-condition">
+                WHP Minister Disability Condition
+              </label>
+              <div id="whp-minister-disability-condition-hint" class="govuk-hint govuk-radios__hint ">
+                A tailored approach for disabled citizens who are autistic. </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whp-early-entrant" name="whp" type="radio"
+                value="description-of-whp-early-entrant" aria-describedby="whp-early-entrant-hint">
+              <label class="govuk-label govuk-radios__label" for="whp-early-entrant">
+                WHP Early Entrant
+              </label>
+              <div id="whp-early-entrant-hint" class="govuk-hint govuk-radios__hint ">
+                Support for citizens from certain disadvantaged groups. </div>
+            </div>
+
+            <div class="govuk-radios__item govuk-!-margin-bottom-6">
+              <input class="govuk-radios__input" id="whp-minister-early-entrant" name="whp" type="radio"
+                value="description-of-whp-minister-early-entrant" aria-describedby="whp-minister-early-entrant-hint">
+              <label class="govuk-label govuk-radios__label" for="whp-minister-early-entrant">
+                WHP Minister Early Entrant
+              </label>
+              <div id="whp-minister-early-entrant-hint" class="govuk-hint govuk-radios__hint ">
+                A tailored approach for citizens from certain disadvantaged groups who are autistic. </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <form action="whp-suitability" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+{% endblock %}

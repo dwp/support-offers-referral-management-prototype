@@ -1,0 +1,188 @@
+{% extends "layouts/so-start.html" %}
+
+{% block pageTitle %}
+Summary of referrals – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Summary</h1>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <div class="container-full-width">
+        <div>
+          <p class="govuk-dashboard-summary__title1">New referrals</p>
+          <p class="govuk-dashboard-summary__amount2">360</p>
+        </div>
+        <div>
+          <div class="govuk-dashboard-summary__text2">
+            <p>You have <strong>360</strong> new referrals
+              ready
+              to download. Last download on <strong>23/01/2023 at 8:59</strong>.</p>
+          </div>
+        </div>
+        <div class="wrap-column3">
+          <dd class="key-details-bar__status">
+            {{ govukButton({
+                text: "Download all new referrals",
+                href: "download"
+              }) }}
+          </dd>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="box-half">
+          <div class="govuk-dashboard-summary2" data-module="govuk-dashboard-summary2">
+            <p class="govuk-dashboard-summary__title2">Pending referrals</p>
+            <p class="govuk-dashboard-summary__amount2">56</p>
+            <div class="govuk-dashboard-summary__links">
+              <a href="referrals-pending">Referrals to start or cancel</a>
+            </div>
+          </div>
+        </div>
+        <div class="box-half">
+          <div class="govuk-dashboard-summary2" data-module="govuk-dashboard-summary2">
+            <p class="govuk-dashboard-summary__title2">Cancelled referrals</p>
+            <p class="govuk-dashboard-summary__amount2">26</p>
+            <div class="govuk-dashboard-summary__links">
+              <a href="referrals-returned">Referrals you have returned to DWP</a>
+            </div>
+          </div>
+        </div>
+        <div class="box-half">
+          <div class="govuk-dashboard-summary2" data-module="govuk-dashboard-summary2">
+            <p class="govuk-dashboard-summary__title2">Current participants</p>
+            <p class="govuk-dashboard-summary__amount2">2,875</p>
+            <div class="govuk-dashboard-summary__links">
+              <a href="referrals-active">Referrals you have started</a>
+            </div>
+          </div>
+        </div>
+        <div class="box-half">
+          <div class="govuk-dashboard-summary2" data-module="govuk-dashboard-summary2">
+            <p class="govuk-dashboard-summary__title2">All referrals</p>
+            <p class="govuk-dashboard-summary__amount2">3,294</p>
+            <div class="govuk-dashboard-summary__links">
+              <a href="referrals-all">Every referral received to date</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 
+  leaving here for now as the page previously stopped reference the sass file
+
+    <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 100%;
+      /* stack divs vertically */
+    }
+    .container-full-width {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid #B1B4B6;
+      border-left: 5px solid #1D70B8;
+      padding-left: 30px;
+      margin-bottom: 30px;
+      padding-bottom: 11px;
+      align-items: center;
+      justify-content: center;
+    }
+    .container-full-width>div {
+      flex: 1;
+      float: left;
+      height: 100%;
+      width: 32%;
+    }
+    .box-half {
+      display: flex;
+      flex-wrap: wrap;
+      width: 48.4%;
+      border: 1px solid #B1B4B6;
+      border-left: 5px solid #1D70B8;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      box-sizing: border-box;
+      color: #0b0c0c;
+    }
+    .box-half {
+      width: 100%;
+    }
+    @media (min-width: 600px) {
+      .box-half {
+        width: 48.4%;
+      }
+    }
+    .wrap-column3 {
+      margin-top: 50px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      /* stack divs vertically */
+    }
+    @media (min-width: 600px) {
+      .flex-container {
+        flex-direction: row;
+        /* stack divs horizontally */
+      }
+    }
+    /* #text  */
+    .govuk-dashboard-summary__title1 {
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1px;
+      color: #505a5f;
+      margin-top: -6px;
+    }
+    .govuk-dashboard-summary__title2 {
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1px;
+      color: #505a5f;
+      margin-top: 45px;
+    }
+    .govuk-dashboard-summary__amount2 {
+      font-weight: 700;
+      font-size: 48px;
+      margin-top: -10px;
+      line-height: 48px;
+      margin-bottom: 5px;
+    }
+    .govuk-dashboard-summary__links {
+      font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+    .govuk-dashboard-summary2 {
+      color: #0b0c0c;
+      padding-left: 30px;
+    }
+    .govuk-dashboard-summary__text2 {
+      font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.25;
+      padding-top: 32px;
+    }
+  </style> -->
+  </div>
+</main>
+
+{% endblock %}

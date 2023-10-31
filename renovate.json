@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "gitlab>dwp/wauc-leeds/common/renovate-config//base"
+  ]
+}

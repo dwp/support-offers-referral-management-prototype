@@ -1,0 +1,38 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Not eligible - age  – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Sam Doe is not old enough to go on the Restart Scheme.</h1>
+       
+        <p class="govuk-body">A citizen has to be over 18 in England, or over 16 in Wales in order to be referred to Restart.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">Once they are old enough, you will be able to refer them. Until that time, you will need to look at other options for them.</p>
+
+        
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Do not progress with the referral
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

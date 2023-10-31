@@ -1,0 +1,34 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+Outcome claim submitted – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Outcome submitted 
+          </h1>
+        <div class="govuk-panel__body govuk-!-font-size-27">
+            You have sent your claim for payment to DWP with your answers on the participant's self-employment.
+        </div>
+      </div>
+      <p class="govuk-body">We will review your claim that this participant has completed this outcome by becoming self-employed.</p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        When our review is complete, we will contact you to tell you if it is accepted or if you need to re-submit your claim.
+      </p>
+
+      <h2 class="govuk-heading-m">Other information</h2>
+      <p class="govuk-body">
+You can <a href="individual-referral-active">check the progress of this outcome from the citizen details page</a>.
+If you submitted this outcome in error, you must instead contact DWP at <a href="#">email address</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

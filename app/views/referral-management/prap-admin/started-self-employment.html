@@ -1,0 +1,37 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+  Which outcome has this participant met? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+      {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "What date did the participant start being self-employed?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2020"
+  }
+}) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+  text: "Confirm",
+  href: "started-self-employment-confirmation"
+}) }}
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
+
+    </div>
+  {% endblock %}

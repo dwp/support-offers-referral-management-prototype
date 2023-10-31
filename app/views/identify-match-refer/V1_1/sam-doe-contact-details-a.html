@@ -1,0 +1,63 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Contact details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Is their telephone number correct?</h1>
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-7">     
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Telephone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              07700 900 457            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+        </dl>      
+          
+        <form action="/contact_1" method="post" novalidate>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            classes:"govuk-radios--inline",
+  name: "which-outcome",
+  fieldset: {
+  },
+  items: [
+    {
+      value: "sam-doe-contact-details-b",
+      text: "Yes"
+    },
+    {
+      value: "sam-doe-contact-details-update-a",
+      text: "No"
+    }
+  ]
+}) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+  text: "Continue"
+  }) }}
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "layouts/so-citizen-active.html" %}
+
+{% block pageTitle %}
+  Check your answers - Kickstart scheme application
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="company-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              Check your answers before sending the details
+          </legend>
+
+          <p class="govuk-body"></p>
+          <form action="self-employment-confirmation" method="post" novalidate>
+
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Multiple self employments
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                  Change<span class="govuk-visually-hidden">Organisation reference number</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Started trading
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['se-start-day'] }}
+                    {{ data['se-start-month'] }}
+                    {{ data['se-start-year'] }}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                  Change<span class="govuk-visually-hidden">Organisation reference number</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Trading name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['business-name'] }}</p>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                  Change<span class="govuk-visually-hidden">Organisation reference number</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Nature of business
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['business-type'] }}</p>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                  Change<span class="govuk-visually-hidden">Organisation reference number</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Business address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['address-line-1'] }}</p>
+                  <p>{{ data['address-line-2'] }}</p>
+                  <p>{{ data['address-town'] }}</p>
+                  <p>{{ data['address-county'] }}</p>
+                  <p>{{ data['address-postcode'] }}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                    Change<span class="govuk-visually-hidden">Organisation address</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                   Work telephone 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['telephone-number'] }}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                    Change<span class="govuk-visually-hidden">Contact details</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                   Work email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['email-address'] }}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                    Change<span class="govuk-visually-hidden">Contact details</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Business hours
+              </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['business-hours'] }}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="self-employment-details">
+                  Change<span class="govuk-visually-hidden">Organisation reference number</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+        Other information
+      </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['other-information'] }}</p>
+
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="/design-features/1152-employability/type-of-roles">
+          Change<span class="govuk-visually-hidden">Types of role</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h3 class="govuk-heading-m">Before you submit this outcome</h3>
+
+            <p class="govuk-body">If you created this outcome in error, you can <a class="govuk-link" href="self-employment-details">delete it on the previous page</a>.</p>
+            <p>After you have submitted it, you will not be able to do this and must instead contact DWP.</p>
+
+            <button class="govuk-button" data-module="govuk-button">
+            Submit this outcome
+          </button>
+          </form>
+
+        </div>
+      </div>
+
+    {% endblock %}

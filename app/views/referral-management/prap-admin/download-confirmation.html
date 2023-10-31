@@ -1,0 +1,49 @@
+{% extends "layouts/so-main.html" %}
+
+{% block pageTitle %}
+Download complete – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Download complete</h1>
+        <div class="govuk-panel__body govuk-!-font-size-27">
+        You have successfully downloaded 360 new referrals
+        </div>
+      </div>
+
+      <p>DWP has recorded that you have received these referrals. You do not need to send a separate acknowledgement.
+    </p>
+
+      <p>These will now appear in your list of <a href="referrals-pending">Pending referrals</a>.</p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+        Check your file has downloaded successfully before continuing.
+      </strong>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          What to do if your download has not been successful
+        </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>If you have experienced a problem downloading your referrals or the file is corrupt, you can <a
+            href="#">download your referrals again</a>.</p>
+          <p>If the problem persists, contact <a href="#">referralissues@dwp.gov.uk</a>
+          </p>
+        </div>
+      </details>
+
+      <p>Return to <a href="dashboard-after-download">Summary of referrals</a>.</p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Not eligible - been on before – {{ serviceName }} – Support Offers prototype
+ – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Sam Doe is is not eligible for the Restart Scheme.</h1>
+       
+        <p class="govuk-body">A citizen can only go on Restart once. They cannot start over if they exited the programme previously.</p>
+
+        <p class="govuk-body govuk-!-font-weight-bold">If the citizen stopped partway through, but the provider is still running that specific group of referrals</p>
+
+        <p class="govuk-body">They might be able to go back to their original place. This is something you will need to discuss with the provider as to whether it is possible.</p>
+
+
+
+        <p class="govuk-body govuk-!-margin-bottom-6">It will depend on how much the citizen still has left to complete and how much time is left for that group of referrals.</p>
+
+        
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Do not progress with the referral
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

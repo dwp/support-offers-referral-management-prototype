@@ -1,0 +1,49 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Select an opportunity – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Select an opportunity to make a referral</h1>
+
+        {# <p class="govuk-body">Your answer here will not make the referral, and you will have the chance to change the programme later if you select the wrong one.</p>
+        <p class="govuk-body">You should read the eligibility and suitability criteria for the programmes to work out which is most suitable for the citizen.</p> #}
+
+        <form action="/match-programme-answers" method="post" novalidate>
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            name: "which-programme",
+            fieldset: {
+              
+            },
+            items: [
+              {
+                value: "restart-scheme",
+                text: "Restart Scheme"
+              }
+              ]
+            }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+    text: "Continue"
+    }) }}
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

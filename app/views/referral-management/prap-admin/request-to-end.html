@@ -1,0 +1,62 @@
+{% extends "layouts/so-citizen.html" %}
+
+{% block pageTitle %}
+  Request to end a referral – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+  name: "What-update-do-you-want-to-make-to-the-citizens-referral?",
+  fieldset: {
+    legend: {
+      text: "Why are you requesting to end the referral?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "duplicate-referral",
+      text: "The referral is duplicated"
+    },
+    {
+      value: "not-eligible",
+      text: "The citizen is not eligible"
+    },
+    {
+      value: "started-in-error",
+      text: "The referral was started in error"
+    },
+    {
+      value: "not-engaging",
+      text: "The citizen is not engaging"
+    },
+    {
+      value: "started-work",
+      text: "The citizen has started work"
+    },
+    {
+      value: "citizen-transferred",
+      text: "The citizen has transferred to another opportunity"
+    },
+    {
+      value: "citizen-died",
+      text: "The citizen has died"
+    }
+  ]
+  }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layouts/idm-citizen.html" %}
+{% block pageTitle %}
+Employment and training restrictions – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Do they have any employment and training restrictions?</h1>
+        <p class="govuk-body">For example, MAPPA.</p>
+        <div id="changedName-hint" class="govuk-hint">You must check this in LMS</div>               
+        <form action="/restrictions_2" method="post" novalidate>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            classes:"govuk-radios",
+          name: "which-outcome",
+          fieldset: {
+          },
+          items: [
+          {
+            value: "not-suitable-restrictions",
+            text: "Yes"
+          },
+          {
+            value: "sam-doe-address",
+            text: "No"
+          }
+            ]
+          }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        </form>
+    </div>
+  </div>
+{% endblock %}

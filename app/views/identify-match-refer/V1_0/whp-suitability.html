@@ -1,0 +1,93 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Eligibility and suitability – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Review Sam Doe’s eligibility and suitability for the WHP Disability Condition opportunity</h1>
+
+        {# <h2 class="govuk-heading-m">Are they suitable for Restart?</h2>
+
+        <p class="govuk-body">A citizen has to be over 18 in England, or over 16 in Wales in order to be referred to Restart.</p> #}
+
+        <h3 class="govuk-heading-s">To be eligible the citizen must:</h3>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list">
+          <li>
+            be disabled, as defined by the Equality Act 2010
+          </li>
+          <li>
+            be over 18 years old in England, or 16 years old in Wales        
+          </li>
+          <li>
+            have the right to work in the UK
+          </li>
+          <li>
+            not be in any paid work, including zero hours contracts
+          </li>
+          <li>
+            not currently be on the WHP
+          </li>
+          <li>
+            not have been on the WHP before         
+          </li>
+          <li>
+            not be on another national programme          
+          </li>
+        </ul>
+
+        <h3 class="govuk-heading-s">To be suitable the citizen must:</h3>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list">
+          <li>
+            be committed to the goal of finding work in 12 months          
+          </li>
+          <li>
+            need additional support to find work          
+          </li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Is this citizen still eligible and suitable for the WHP Disability Condition opportunity?</h2>
+
+        <form action="/suitable-whp" method="post" novalidate>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            classes:"govuk-radios--inline",
+  name: "which-outcome",
+  fieldset: {
+  },
+  items: [
+    {
+      value: "reasonable-adjustments-whp",
+      text: "Yes"
+    },
+    {
+      value: "whp-not-suitable",
+      text: "No"
+    }
+  ]
+}) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+  text: "Continue"
+  }) }}
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

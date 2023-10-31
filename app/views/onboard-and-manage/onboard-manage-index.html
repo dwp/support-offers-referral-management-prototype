@@ -1,0 +1,452 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %} Onboard and manage prototypes –
+{{serviceName}} – GOV.UK Prototype Kit {% endblock %}
+{# {% block header %}
+  {% from
+"internal-service-header/macro.njk" import dwpHeader %}
+  {{ dwpHeader({ name:
+"Support offers", container:true }) }}
+{% endblock %} #}
+{% block beforeContent %}
+
+  <!-- Do we need a breadcrumb? -->
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/index">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Onboard and manage prototypes</a>
+      </li>
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <!-- Header and Intro -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Prototype</span>
+      <h1 class="govuk-heading-xl">Onboard and manage</h1>
+      <p class="govuk-body">
+      24th March 2023
+    </p>
+      <p class="govuk-!-margin-bottom-8">
+      The focus of this work stream is building programmes, as part of the PRaP replacement. it is currently parked and not being developed or tested.
+    </p>
+    </div>
+
+    <!-- Side navigation -->
+
+    <!-- <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">Useful links</h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#"> User research </a>
+          </li>
+          <li>
+            <a href="#"> User journeys </a>
+          </li>
+          <li>
+            <a href="#"> Personas </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div> -->
+  </div>
+
+  <div class="app-width-container">
+    <class="govuk-main-wrapper govuk-main-wrapper--l">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#programme-and-opportunity-creation">
+                Programme and opportunity creation
+              </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#contract-creation">Contract creation</a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="programme-and-opportunity-creation">
+              <h2 class="govuk-heading-l">Programme and opportunity creation</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                initial version
+              </strong>
+              </p>
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+                text: "Start version 0.1",
+                href: "https://projects.invisionapp.com/share/AE132L2F3M7K#/screens/470477322",
+                isStartButton: true
+              }) }}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 1</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary of changes</dt>
+                  <dd class="govuk-summary-list__value">
+                  This very early prototype was built in Sketch and is available in InVision. There are 2 versions: one with one question per page, and one with everything on one page. This does not use the GOV.UK design system correctly. 
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1675089514631">Screenshots on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    Some user research was completed with this prototype and the feedback has been used to develop <a class="govuk-link"
+                        href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/pages/132834361825/Prototypes">another Sketch version</a>. This is not on InVision due to licencing.
+                  </dd>
+                </div>
+                <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Sprint tickets</dt>
+                <dd class="govuk-summary-list__value">
+                  <ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="#">SUP-657</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">SUP-876</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">SUP-843</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">SUP-235</a>
+                    </li>
+                  </ul>
+                </dd>
+              </div> -->
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview?homepageId=132820206087">Airedale</a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h3 class="govuk-heading-m">Alternative version</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Evolved version</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/pages/132834361825/Prototypes">Second version</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                 This is a more recent version of the prototype, but it has not been tested with users. Follow the link to a Confluence page where you can download the Sketch file. There are links in the document so you can see how it works.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1668182833079">Screenshots on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+
+              <!-- <h2 class="govuk-heading-l govuk-!-margin-top-8">
+              Previous versions
+            </h2>
+            <p>
+              <strong class="govuk-tag govuk-tag--grey"> INACTIVE </strong>
+            </p> -->
+              <!-- 
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      Version 1.2
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-default-heading-1">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Prototype</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link govuk-body govuk-!-font-weight-bold" href="#">Review version 1.2</a>
+                      </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint version</dt>
+                      <dd class="govuk-summary-list__value">Sprint 17</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Summary of changes
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam, eaque ipsa quae ab illo inventore veritatis et
+                        quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim ipsam voluptatem quia voluptas sit aspernatur aut
+                        odit aut fugit, sed quia
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint tickets</dt>
+                      <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list">
+                          <li>
+                            <a class="govuk-link" href="#">SUP-648</a>
+                          </li>
+                          <li>
+                            <a class="govuk-link" href="#">SUP-823</a>
+                          </li>
+                        </ul>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Features team</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link"
+                          href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/132822007983/Feature+Teams">Vangelis</a>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                      Version 1.1
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-2" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-default-heading-2">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Prototype</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link govuk-body govuk-!-font-weight-bold" href="#">Review version 1.1</a>
+                      </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint version</dt>
+                      <dd class="govuk-summary-list__value">Sprint 15</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Summary of changes
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus urna purus, mattis sit amet ultrices pretium,
+                        venenatis et sem. Phasellus vitae velit luctus, blandit
+                        arcu ac, euismod augue.
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint tickets</dt>
+                      <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list">
+                          <li>
+                            <a class="govuk-link" href="#">SUP-256</a>
+                          </li>
+                          <li>
+                            <a class="govuk-link" href="#">SUP-786</a>
+                          </li>
+                          <li>
+                            <a class="govuk-link" href="#">SUP-106</a>
+                          </li>
+                          <li>
+                            <a class="govuk-link" href="#">SUP-976</a>
+                          </li>
+                        </ul>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Features team</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link"
+                          href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/132822007983/Feature+Teams">Vangelis</a>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                      Version 1.0
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+                  aria-labelledby="accordion-default-heading-3">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Prototype</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link govuk-body govuk-!-font-weight-bold" href="#">Review version 1.0</a>
+                      </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint version</dt>
+                      <dd class="govuk-summary-list__value">Sprint 14</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Summary of changes
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Neque porro quisquam est, qui dolorem ipsum quia dolor
+                        sit amet, consectetur, adipisci velit, sed quia non
+                        numquam eius modi tempora incidunt ut labore et dolore
+                        magnam aliquam quaerat voluptatem.
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Sprint tickets</dt>
+                      <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list">
+                          <li>
+                            <a class="govuk-link" href="#">SUP-987</a>
+                          </li>
+                          <li>
+                            <a class="govuk-link" href="#">SUP-643</a>
+                          </li>
+                        </ul>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">Features team</dt>
+                      <dd class="govuk-summary-list__value">
+                        <a class="govuk-link"
+                          href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/132822007983/Feature+Teams">Vangelis</a>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div> -->
+            </div>
+
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contract-creation">
+              <h2 class="govuk-heading-l">Contract creation</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                initial version
+              </strong>
+              </p>
+
+              {# {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+              text: "Start version 0.1",
+              href: "/referral-management/ea/referrals-ea-my-open-cases",
+              isStartButton: true
+            }) }} #}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 1 (??)</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  This early <a class="govuk-link"
+                        href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/pages/132834361825/Prototypes">Sketch prototype</a> focuses on contract creation. This does not use the GOV.UK design system correctly. 
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1669022593584">Screenshots on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                  None as far as I am aware
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview?homepageId=132820206087">Nidderdale</a>
+                  </dd>
+                </div>
+              </dl>
+              <h3 class="govuk-heading-m">Further work</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1663321985645/50ea730cceab1719fc646842175f74162a9616db?wid=0-1669209667190">Exploratory design work on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  In addition to the Sketch prototype, some initial journey designs have been developed and are documented in the link above. The purpose of this exploratory design work was to bring consistency in the design language between the revised programme and opportunity prototype and the content creation prototype. This work has not progressed any further.
+                </dd>
+                </div>
+              </dl>
+            </div>
+
+          </div>
+        </div>
+
+      {% endblock %}
+    </class>
+  </div>

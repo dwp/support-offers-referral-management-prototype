@@ -1,0 +1,134 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Referral rejected – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <div class="govuk-notification-banner" role="region"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            Sam Doe has been accepted to Restart
+            
+          </p>
+        </div>
+      </div>
+
+
+
+        <h1 class="govuk-heading-l">Citizen details</h1>
+       
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sam Doe
+            </dd>
+          
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4 June 1972
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              QQ 12 34 56 C
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              72 Guild Street<br>London<br>SE23 6FH
+            </dd>
+          
+          </div>
+          
+        </dl>
+        <h1 class="govuk-heading-l">Contact details</h1>
+        <div id="check-details" class="govuk-body govuk-!-margin-bottom-4">
+          You must check with the citizen that these details are correct and enter an email address and at least one mobile or landline telephone number.
+        </div>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobile
+            </dt>
+            <dd class="govuk-summary-list__value">
+              07700 900457
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/identify-match-refer/v1_0/sam-doe-mobile">
+                Change<span class="govuk-visually-hidden"> mobile number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Landline
+            </dt>
+            <dd class="govuk-summary-list__value">
+              020 7946 0000 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/identify-match-refer/v1_0/sam-doe-landline">
+            Change<span class="govuk-visually-hidden"> landline number</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              sam.doe@example.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/identify-match-refer/v1_0/sam-doe-email">
+                Change<span class="govuk-visually-hidden"> email address</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        
+      </div>
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

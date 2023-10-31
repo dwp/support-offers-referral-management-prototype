@@ -1,0 +1,32 @@
+{% extends "layouts/so-main.html" %}
+
+{% block pageTitle %}
+Your referrals are downloading – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Your referrals are downloading</h1>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="aligncenter">
+        <img src="/public/images/rotating-bars-anim.svg" alt="downloading icon">
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .aligncenter {
+      padding: 80px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = 'download-confirmation';
+    }, 3500);
+  </script>
+
+{% endblock %}

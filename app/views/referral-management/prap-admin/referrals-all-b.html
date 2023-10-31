@@ -1,0 +1,658 @@
+{% extends "layouts/so-main.html" %}
+
+{% block pageTitle %} All referrals –
+{{ serviceName }}: Support Offers Provider – Service centre
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+
+        <!--------------------------side filtering-------------------------->
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-heading-m" for="search">
+          Find someone
+        </label>
+          <div class="moj-search">
+            <form action="individual-referral" method="post">
+              <div class="govuk-form-group">
+                <div id="search-hint" class="govuk-hint moj-search__hint ">
+
+                Search by referral ID, NINO or citizen name
+              </div>
+                <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+                aria-describedby="search-hint">
+              </div>
+              <button class="govuk-button moj-search__button " data-module="govuk-button">
+                <svg class="gem-c-search__icon" width="16" height="16" viewBox="0 0 26 26" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="white" stroke-width="3"></circle>
+                  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="white" stroke-width="3"></line>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="govuk-!-padding-bottom-6"></div>
+
+          <form action="/referrals-pending-b" method="post" novalidate>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Filters</h2>
+
+              <div id="filter-hint" class="govuk-hint moj-search__hint ">
+              Select one or more of the filters from the list and apply.
+            </div>
+              <fieldset class="govuk-fieldset">
+                <h3 class="govuk-heading-s">
+                Status
+              </h3>
+              </legend>
+
+              <!-------------------------- filters radios referral status-------------------------->
+
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status" name="status" type="radio" value="all-referrals">
+                  <label class="govuk-label govuk-radios__label" for="status">
+                    All referrals
+                  </label>
+                </div>
+
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="status-2" name="status" type="radio"
+                      value="active-referrals">
+                    <label class="govuk-label govuk-radios__label" for="status-2">
+                      Current participants
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="status-3" name="status" type="radio"
+                        value="pending-referrals">
+                      <label class="govuk-label govuk-radios__label" for="status-3">
+                        Pending referrals
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="status-4" name="status" type="radio"
+                          value="rejected-referrals">
+                        <label class="govuk-label govuk-radios__label" for="status-4">
+                          Rejected referrals
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="status-5" name="status" type="radio"
+                            value="completed-referrals">
+                          <label class="govuk-label govuk-radios__label" for="status-5">
+                            Completed referrals
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <!-------------------------- filters radios referral date -------------------------->
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-heading-s">
+                Referral date
+              </legend>
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="dates" name="dates" type="radio" value="all-dates">
+                          <label class="govuk-label govuk-radios__label" for="date">
+                    All dates</label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="dates-2" name="dates" type="radio" value="previous-24-hours">
+                          <label class="govuk-label govuk-radios__label" for="dates-2">
+                    Previous 24 hours
+                  </label>
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="dates-3" name="dates" type="radio" value="last-15-days">
+                            <label class="govuk-label govuk-radios__label" for="dates-3">
+                      Last 15 days
+                    </label>
+                          </div>
+
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="dates-4" name="dates" type="radio" value="last-30-days">
+                              <label class="govuk-label govuk-radios__label" for="dates-4">
+                        Last 30 days
+                      </label>
+                            </div>
+                          </div>
+                        </fieldset>
+
+                        <div class="govuk-!-padding-bottom-4"></div>
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <span class="govuk-label
+                        ">
+                Custom date
+              </span>
+                        </legend>
+                        <div id="passport-issued-hint" class="govuk-hint">
+              For example, 27/3/2007
+            </div>
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="width-10">
+                From
+              </label>
+                          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="width-10">
+                To
+              </label>
+                          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+                        </div>
+                      </div>
+
+                      <!-------------------------- End of radios referral date -------------------------->
+
+                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Apply filters
+          </button>
+                      <p>
+                        <a href="#">Clear filters</a>
+                      </p>
+                    </form>
+                  </div>
+
+                  <!--------------------------end of side filtering-------------------------->
+
+                  <!-------------------------------header-------------------------------->
+
+                  <div class="govuk-grid-column-three-quarters">
+                    <h1 class="govuk-heading-l">
+          All referrals<br>
+                      <span class="govuk-caption-l">Every referral received to date</span>
+                    </h1>
+                  </div>
+
+                  <!--------------------------table-------------------------->
+
+                  <div class="govuk-grid-column-three-quarters">
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th class="govuk-table__header" scope="col">Referral ID</th>
+                          <th class="govuk-table__header" scope="col">Citizen details</th>
+                          <th class="govuk-table__header" scope="col">Contract details</th>
+                          <th class="govuk-table__header" scope="col">Opportunity details</th>
+                          <th class="govuk-table__header" scope="col">Referral date</th>
+                          <th class="govuk-table__header" scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="individual-referral">700986681</a>
+                          </td>
+                          <td class="govuk-table__cell">Kenneth Graham <span class="govuk-hint">AE779196D</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986680</a>
+                          </td>
+                          <td class="govuk-table__cell">Trevor Wainwright <span class="govuk-hint">WA894578C</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986679</a>
+                          </td>
+                          <td class="govuk-table__cell">Jane Eyre <span class="govuk-hint">WD458945C</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</spanp>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Rejected</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986678</a>
+                          </td>
+                          <td class="govuk-table__cell">David Note <span class="govuk-hint">RN000123A</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Pending</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986677</a>
+                          </td>
+                          <td class="govuk-table__cell">Billy Ocean <span class="govuk-hint">RN000771T</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986676</a>
+                          </td>
+                          <td class="govuk-table__cell">Frank Sidebottom <span class="govuk-hint">AE779196D</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <a href="#">700986675</a>
+                          </td>
+                          <td class="govuk-table__cell">Mike Industrial <span class="govuk-hint">WD093789T</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">South London <span class="govuk-hint">CPA5B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986674</a>
+                          </td>
+                          <td class="govuk-table__cell">Maggie Technical <span class="govuk-hint">RS240756T</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986673</a>
+                          </td>
+                          <td class="govuk-table__cell">Mary Shelley <span class="govuk-hint">RN000222W</span>
+                          </td>
+                          <td class="govuk-table__cell"> Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986672</a>
+                          </td>
+                          <td class="govuk-table__cell">Jim Totempole <span class="govuk-hint">RC560243W</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Completed</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986671</a>
+                          </td>
+                          <td class="govuk-table__cell">Bill Withers <span class="govuk-hint">RN097649W</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Pending</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986670</a>
+                          </td>
+                          <td class="govuk-table__cell">Bart Blokk <span class="govuk-hint">DD985420C</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Rejected</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986669</a>
+                          </td>
+                          <td class="govuk-table__cell">Aretha Franklin <span class="govuk-hint">HW341895V</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986668</a>
+                          </td>
+                          <td class="govuk-table__cell">Miguel Indurain <span class="govuk-hint">MW095734D</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986667</a>
+                          </td>
+                          <td class="govuk-table__cell">Sharon Curtains <span class="govuk-hint">MJ842167F</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+
+                          <td class="govuk-table__cell">
+                            <a href="#">700986666</a>
+                          </td>
+                          <td class="govuk-table__cell">Tina Sofa <span class="govuk-hint">TE912178A</span>
+                          </td>
+                          <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                          </td>
+                          <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                          </td>
+                          <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                          <td class="govuk-table__cell">Current</td>
+                        </tr>
+                        <tr class="govuk-table__row"></td>
+                        <td class="govuk-table__cell">
+                          <a href="#">700986665</a>
+                        </td>
+                        <td class="govuk-table__cell">Billy Tragedy <span class="govuk-hint">LK059483E</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Completed</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">
+                          <a href="#">700986664</a>
+                        </td>
+                        <td class="govuk-table__cell">Ron Savil <span class="govuk-hint">PQ293749J</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Pending</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">
+                          <a href="#">700986663</a>
+                        </td>
+                        <td class="govuk-table__cell">Dorothy Atlantic <span class="govuk-hint">GN102938Y</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Current</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">
+                          <a href="#">700986662</a>
+                        </td>
+                        <td class="govuk-table__cell">James Passover <span class="govuk-hint">KJ981276F</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Current</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">
+                          <a href="#">700986661</a>
+                        </td>
+                        <td class="govuk-table__cell">Terrence Derby <span class="govuk-hint">DF876345D</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Current</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+
+                        <td class="govuk-table__cell">
+                          <a href="#">700986660</a>
+                        </td>
+                        <td class="govuk-table__cell">Norman Wise <span class="govuk-hint">OR711853C</span>
+                        </td>
+                        <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                        </td>
+                        <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                        </td>
+                        <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                        <td class="govuk-table__cell">Current</td>
+                      </tr>
+                      <tr class="govuk-table__row"></td>
+                      <td class="govuk-table__cell">
+                        <a href="#">700986659</a>
+                      </td>
+                      <td class="govuk-table__cell">Bob Collier <span class="govuk-hint">ZR089486A</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        <a href="#">700986658</a>
+                      </td>
+                      <td class="govuk-table__cell">Timmey Toyou <span class="govuk-hint">JG047583A</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+
+                        <a href="#">700986657</a>
+                      </td>
+                      <td class="govuk-table__cell">Al Bethere <span class="govuk-hint">TL417363B</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+
+                        <a href="#">700986656</a>
+                      </td>
+                      <td class="govuk-table__cell">Jimmy Showboat <span class="govuk-hint">PC791234C</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell">
+                        <a href="#">700986655</a>
+                      </td>
+                      <td class="govuk-table__cell">Gilberto Rose <span class="govuk-hint">PC791234C</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell">
+                        <a href="#">700986655</a>
+                      </td>
+                      <td class="govuk-table__cell">Gilberto Rose <span class="govuk-hint">PC791234C</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell">
+                        <a href="#">700986655</a>
+                      </td>
+                      <td class="govuk-table__cell">Gilberto Rose <span class="govuk-hint">PC791234C</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell">
+                        <a href="#">700986655</a>
+                      </td>
+                      <td class="govuk-table__cell">Gilberto Rose <span class="govuk-hint">PC791234C</span>
+                      </td>
+                      <td class="govuk-table__cell">Restart <span class="govuk-hint">2016600</span>
+                      </td>
+                      <td class="govuk-table__cell">Greater Manchester <span class="govuk-hint">CPA3B</span>
+                      </td>
+                      <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
+                      <td class="govuk-table__cell">Current</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <nav class="govuk-pagination" role="navigation" aria-label="results">
+                  <ul class="govuk-pagination__list">
+
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+                      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                1
+              </a>
+                    </li>
+                    <li class="govuk-pagination__item">
+                      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                2
+              </a>
+                    </li>
+                    <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+                    <li class="govuk-pagination__item">
+                      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 6">
+                109
+              </a>
+                    </li>
+
+                    <li class="govuk-pagination__item">
+                      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
+                110
+              </a>
+                    </li>
+                  </ul>
+                  <div class="govuk-pagination__next">
+                    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                      <span class="govuk-pagination__link-title">Next</span>
+                      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path
+                  d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+
+            {% endblock %}

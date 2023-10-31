@@ -1,0 +1,50 @@
+{% extends "layouts/so-citizen-2.html" %}
+
+{% block pageTitle %}
+  Why this citizen is not eligible – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({          
+  name: "request-reject",
+  fieldset: {
+    legend: {
+      text: "Tell us why this citizen is not eligible",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "The citizen is:"
+  },
+  items: [
+    {
+      value: "employed",
+      text: "employed"
+    },
+    {
+      value: "self-employed",
+      text: "self-employed"
+    },
+    {
+      value: "different-opportunity",
+      text: "a participant on a different national DWP opportunity"
+    }
+  ]
+  }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+  text: "Continue",
+  href: "ea-referral-rejected-confirmation"
+  }) }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

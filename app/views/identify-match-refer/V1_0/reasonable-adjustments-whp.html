@@ -1,0 +1,51 @@
+{% extends "layouts/idm-citizen.html" %}
+
+{% block pageTitle %}
+Employment and training restrictions – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-width-container">
+
+        <h1 class="govuk-heading-l">Will Sam Doe require extra support or reasonable adjustments to participate in this programme?</h1>
+       
+          
+        <form action="/identify-match-refer/V1_0/whp-check-answers" method="post" novalidate>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            classes:"govuk-radios--inline",
+  name: "which-outcome",
+  fieldset: {
+  },
+  items: [
+    {
+      value: "not-suitable-restrictions",
+      text: "Yes"
+    },
+    {
+      value: "sam-doe-address",
+      text: "No"
+    }
+  ]
+}) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+  text: "Continue"
+  }) }}
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
