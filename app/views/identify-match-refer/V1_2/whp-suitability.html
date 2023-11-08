@@ -1,4 +1,5 @@
 {% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
 WHP Disability Condition overview – {{ serviceName }} – Support Offers prototype
@@ -9,12 +10,12 @@ WHP Disability Condition overview – {{ serviceName }} – Support Offers proto
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-width-container">
         <h1 class="govuk-heading-l">WHP Disability Condition</h1>
-      <h2 class="govuk-heading-m">Overview</h2>
-      <p class="govuk-body">The Work and Health Programme (WHP) provides dedicated and flexible support for up to 15 months. It focuses on:</p>
+        <h2 class="govuk-heading-m">Overview</h2>
+        <p class="govuk-body">The Work and Health Programme (WHP) provides dedicated and flexible support for up to 15 months. It focuses on:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list">
           <li>
             breaking down barriers to working
-          </li>          
+          </li>
           <li>
             learning new skills
           </li>
@@ -25,19 +26,19 @@ WHP Disability Condition overview – {{ serviceName }} – Support Offers proto
             increasing work experience
           </li>
         </ul>
-      <p class="govuk-body">6 months of in-work support is also available.</p>
+        <p class="govuk-body">6 months of in-work support is also available.</p>
 
-      <p class="govuk-body">It is voluntary to take part in the opportunity, unless the person has been unemployed for 24 months or more.</p>
+        <p class="govuk-body">It is voluntary to take part in the opportunity, unless the person has been unemployed for 24 months or more.</p>
 
-      <h2 class="govuk-heading-m">Eligibility</h2>   
-      <h3 class="govuk-heading-s">To be eligible they must be claiming Job Seekers Allowance (JSA).</h3>
+        <h2 class="govuk-heading-m">Eligibility</h2>
+        <h3 class="govuk-heading-s">To be eligible they must be claiming Job Seekers Allowance (JSA).</h3>
 
         <p class="govuk-body">They must also:</p>
         <ul class="govuk-list govuk-list--bullet govuk-list">
           <li>
             be disabled, as defined by the Equality Act 2010
           </li>
-       
+
           <li>
             be over 18 years old in England, or 16 years old in Wales        
           </li>
@@ -58,7 +59,7 @@ WHP Disability Condition overview – {{ serviceName }} – Support Offers proto
           </li>
         </ul>
 
-      <h2 class="govuk-heading-m">Suitability</h2>   
+        <h2 class="govuk-heading-m">Suitability</h2>
 
         <p class="govuk-body">To be suitable they must:</p>
 
@@ -92,7 +93,6 @@ WHP Disability Condition overview – {{ serviceName }} – Support Offers proto
   ]
 }) }}
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
           {{ govukButton({
   text: "Continue"
   }) }}

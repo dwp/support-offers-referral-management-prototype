@@ -1,4 +1,6 @@
 {% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
 WHP Minister overview – {{ serviceName }} – Support Offers prototype
@@ -7,75 +9,74 @@ WHP Minister overview – {{ serviceName }} – Support Offers prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">WHP Minister</h1>
+      <h1 class="govuk-heading-l">WHP Minister</h1>
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">The Work and Health Programme (WHP) provides dedicated and flexible support for up to 15 months. It focuses on:</p>
 
-        <ul class="govuk-list govuk-list--bullet govuk-list">
-          <li>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
             breaking down barriers to working
-          </li>          
-          <li>
+          </li>
+        <li>
             learning new skills
           </li>
-          <li>
+        <li>
             building confidence        
           </li>
-          <li>
+        <li>
             increasing work experience
           </li>
-        </ul>
+      </ul>
       <p class="govuk-body">6 months of in-work support is also available.</p>
 
       <p class="govuk-body">It is voluntary to take part in the opportunity, unless the person has been unemployed for 24 months or more.</p>
       <h2 class="govuk-heading-m">Eligibility</h2>
-        <h3 class="govuk-heading-s">To be eligible they must be claiming Job Seekers Allowance (JSA).</h3>
-        <p class="govuk-body">They must also:</p>
+      <h3 class="govuk-heading-s">To be eligible they must be claiming Job Seekers Allowance (JSA).</h3>
+      <p class="govuk-body">They must also:</p>
 
-        <ul class="govuk-list govuk-list--bullet govuk-list">
-          <li>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
             be disabled, as defined by the Equality Act 2010
           </li>
-          <li>
+        <li>
             be autistic
-          </li>                  
-          <li>
+          </li>
+        <li>
             be over 18 years old in England, or 16 years old in Wales        
           </li>
-          <li>
+        <li>
             have the right to work in the UK
           </li>
-          <li>
+        <li>
             not be in any paid work, including zero hours contracts
           </li>
-          <li>
+        <li>
             not currently be on the WHP
           </li>
-          <li>
+        <li>
             not have been on the WHP before         
           </li>
-          <li>
+        <li>
             not be on another national opportunity          
           </li>
-        </ul>
+      </ul>
       <h2 class="govuk-heading-m">Suitability</h2>
 
-        <p class="govuk-body">To be suitable they must:</p>
+      <p class="govuk-body">To be suitable they must:</p>
 
-        <ul class="govuk-list govuk-list--bullet govuk-list">
-          <li>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
             have committed to the goal of finding work in 12 months          
           </li>
-          <li>
+        <li>
             need extra support to find work          
           </li>
-        </ul>
+      </ul>
 
-        <h2 class="govuk-heading-m">Are they eligible and suitable for the Pioneer - WHP Early Entrant opportunity?</h2>
+      <h2 class="govuk-heading-m">Are they eligible and suitable for the Pioneer - WHP Early Entrant opportunity?</h2>
 
-        <form action="/suitable-whp_2_2" method="post" novalidate>
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-          {{ govukRadios({
+      <form action="/suitable-whp_2_2" method="post" novalidate>
+        {{ govukRadios({
             classes:"govuk-radios--inline",
   name: "which-outcome",
   fieldset: {
@@ -92,11 +93,10 @@ WHP Minister overview – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
+        {{ govukButton({
   text: "Continue"
   }) }}
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 {% endblock %}

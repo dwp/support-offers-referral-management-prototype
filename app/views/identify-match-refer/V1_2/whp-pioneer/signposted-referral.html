@@ -1,17 +1,16 @@
 {% extends "layouts/idm-citizen.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Signposted referral – {{ serviceName }} – Support Offers prototype
+Is this a signposted referral? – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-{{ govukRadios({
-  name: "whereDoYouLive",
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukRadios({
+  name: "SignpostedReferral",
   fieldset: {
     legend: {
       text: "Is this a signposted referral?",
@@ -21,7 +20,7 @@ Signposted referral – {{ serviceName }} – Support Offers prototype
   },
   items: [
     {
-      value: "signposting",
+      value: "signposted",
       text: "Yes"
     },
     {
@@ -36,7 +35,6 @@ Signposted referral – {{ serviceName }} – Support Offers prototype
       preventDoubleClick: true,
       href: "which-jcp"
       }) }}
+    </div>
   </div>
-</div>
-
 {% endblock %}
