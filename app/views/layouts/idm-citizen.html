@@ -1,4 +1,6 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
 
 {% block pageTitle %}
 Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
@@ -9,8 +11,6 @@ Support offers referral management – {{ serviceName }} – GOV.UK Prototype Ki
 {% endblock %}
 
 {% block header %}
-  {% from "internal-service-header/macro.njk" import dwpHeader %}
-
   {{ dwpHeader({
   name: "Support offers ",
   serviceHref: '/index.html',
@@ -21,23 +21,25 @@ container:true
 }) }}
 
   <section class="dwp-key-details-bar" aria-label="Key details">
-    <div class="dwp-key-details-bar__key-details">
-      <dl class="dwp-key-details-bar__top-block">
-        <dt class="govuk-visually-hidden">Name:</dt>
-        <dd class="dwp-key-details-bar__primary">Sam Doe</dd>
-        <dt class="govuk-visually-hidden">National Insurance Number:</dt>
-        <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 C</dd>
-        <dt class="govuk-visually-hidden">Claim status:</dt>
-        {# <dd class="govuk-table__cell dwp-key-details-bar__status">
+    <div class="govuk-width-container">
+      <div class="dwp-key-details-bar__key-details">
+        <dl class="dwp-key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-key-details-bar__primary">Jane Doe</dd>
+          <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+          <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd>
+          <dt class="govuk-visually-hidden">Claim status:</dt>
+          {# <dd class="govuk-table__cell dwp-key-details-bar__status">
           <strong class="govuk-tag govuk-tag--yellow">
           aactive
         </strong>
         </dd> #}
-      </dl>
-      <dl class="dwp-key-details-bar__bottom-block">
-        <dt>Date of birth:</dt>
-        <dd>4 June 1972</dd>
-      </dl>
+        </dl>
+        <dl class="dwp-key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>4 June 1972</dd>
+        </dl>
+      </div>
     </div>
   </section>
   <div class="govuk-width-container ">
@@ -59,12 +61,27 @@ container:true
   {{ super()}}
   {% include "includes/scripts.html" %}
 {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 
 {% block footer %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
-{{ govukFooter({}) }}
-
-
+  {{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+  href: "",
+  text: "Privacy (opens in new window)"
+},
+{
+  href: "",
+  text: "Accessibility"
+},
+{
+  href: "/manage-prototype/clear-data",
+  text: "Clear data"
+}
+]
+}
+}) }}
 {% endblock %}

@@ -1,18 +1,17 @@
 {% extends "layouts/idm-citizen.html" %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-Contact details – {{ serviceName }} – Support Offers prototype
+Is this email address correct? – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Is their email address correct?</h1>
       <p class="govuk-body-l">sam.doe@example.com</p>
-
 
       {% set phoneHtml %}
       {{ govukInput({
@@ -26,7 +25,6 @@ Contact details – {{ serviceName }} – Support Offers prototype
       }
       }) }}
       {% endset -%}
-
 
       {{ govukRadios({
       name: "contact",
@@ -44,25 +42,21 @@ Contact details – {{ serviceName }} – Support Offers prototype
       conditional: {
       html: phoneHtml
       }
+      },
+      {
+      value: "not-known",
+      text: "Don't know"
       }
       ]
       }) }}
 
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">What to do if you are unsure</span>
-    </summary>
-    <div class="govuk-details__text">
-      <p>This is the email address held in CIS and may not be up to date. When you update this address it will update CIS so only update it if you are not 100% certain it is theirs.</p>
-      <p>If you are unsure then <class="govuk-body"><a href="whp-reasonable-adjustments-a" class="govuk-link">continue without providing an email address</a></p>
-    </div>
-  </details>
+      <p class="govuk-body">If you have provided a new email address, this person’s CIS record will be updated.</p>
 
       {{ govukButton({
       text: "Continue",
       preventDoubleClick: true,
-      href: "whp-reasonable-adjustments-a"
+      href: "reasonable-adjustments-a"
       }) }}
+    </div>
   </div>
-</div>
 {% endblock %}

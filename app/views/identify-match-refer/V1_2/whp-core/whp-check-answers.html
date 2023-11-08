@@ -1,12 +1,11 @@
 {% extends "layouts/idm-citizen.html" %}
-
 {% block pageTitle %}
-Check your answers – {{ serviceName }} – Support Offers prototype
+Check the referral details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check the referral details</h1>
       <h2 class="govuk-heading-m">Personal details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -15,7 +14,7 @@ Check your answers – {{ serviceName }} – Support Offers prototype
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Sam Doe
+            Jane Doe
           </dd>
         </div>
 
@@ -32,15 +31,16 @@ Check your answers – {{ serviceName }} – Support Offers prototype
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            QQ 12 34 56 C
+            QQ 12 34 56 X
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            72 Guild Street<br>London<br>SE23 6FH
+            26 Greengate Lane<br>Kendal<br>LA9 5LL
           </dd>
         </div>
       </dl>
@@ -48,10 +48,10 @@ Check your answers – {{ serviceName }} – Support Offers prototype
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Preferred phone number
+            Phone number
           </dt>
           <dd class="govuk-summary-list__value">
-              07841 338745
+              07777 900 900{{ data['tel-mobile'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="sam-doe-contact-details-update-a">
@@ -61,26 +61,28 @@ Check your answers – {{ serviceName }} – Support Offers prototype
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Additional phone number
+            Email address
           </dt>
           <dd class="govuk-summary-list__value">
-              01456 123987
+              jane.doe@example.com{{ data['email-address'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="sam-doe-contact-details-update-b">
-              Change<span class="govuk-visually-hidden">secondary number</span>
+              Change<span class="govuk-visually-hidden"> email address</span>
             </a>
           </dd>
         </div>
       </dl>
+
       <h2 class="govuk-heading-m">Opportunity details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Opportunity name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p> Pioneer Disability Condition </p>
+            <p> WHP Disability Condition </p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -102,8 +104,10 @@ Check your answers – {{ serviceName }} – Support Offers prototype
           </dd>
         </div>
       </dl>
+
       <h2 class="govuk-heading-m">Other information</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Employment and training restrictions
@@ -131,44 +135,13 @@ Check your answers – {{ serviceName }} – Support Offers prototype
           </dd>
         </div>
       </dl>
-      <h2 class="govuk-heading-m">Referral details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Signposting organisation
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Yes</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">Other information</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Referring jobcentre
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Leeds Park Place Jobcentre </p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">Other information</span>
-            </a>
-          </dd>
-        </div>
-      </dl>      
 
-      <form action="pioneer-referral-sent" method="post" novalidate>
+      <form action="whp-referral-sent" method="post" novalidate>
         <input type="hidden" name="answers-checked" value="true">
         <button class="govuk-button" data-module="govuk-button">
           Confirm and make referral
         </button>
       </form>
+    </div>
   </div>
-</div>
-
-
 {% endblock %}

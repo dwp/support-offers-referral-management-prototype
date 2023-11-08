@@ -1,11 +1,11 @@
 {% extends "layouts/idm-citizen.html" %}
 {% block pageTitle %}
-Eligibility and suitability – {{ serviceName }} – Support Offers prototype
+Restart – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Restart</h1>
       <h2 class="govuk-heading-m">Overview</h2>
       <p class="govuk-body">
@@ -83,10 +83,10 @@ Eligibility and suitability – {{ serviceName }} – Support Offers prototype
         </li>
       </ul>
 
-       <h3 class="govuk-heading-s govuk-!-margin-bottom-7">To take part in this opportunity, they must meet all the eligibility and suitability criteria.</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-7">To take part in this opportunity, they must meet all the eligibility and suitability criteria.</h3>
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
   text: "Start referral",
   href: "employment-and-training-restrictions-a"
   }) }}

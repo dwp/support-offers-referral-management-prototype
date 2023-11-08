@@ -2,31 +2,28 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-
 {% block pageTitle %}
-Select a job centre – {{ serviceName }} – Support Offers prototype
+Which jobcentre are you referring them from? – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-        Which jobcentre are you referring them from?
-      </h1>
 
-<!-- Includes -->
+      <!-- Includes -->
 
-{%- set office %}
-<label class="govuk-label" for="office-autocomplete">Enter name of jobcentre</label>
-<div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+      {%- set office %}
+      <label class="govuk-label" for="office-autocomplete">Enter name of jobcentre</label>
+      <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
 
-{% endset -%}
-          {{ govukRadios({
+      {% endset -%}
+      {{ govukRadios({
             name: "location",
             fieldset: {
               legend: {
+                text: "Which jobcentre are you referring them from?",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
+                classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
@@ -44,16 +41,12 @@ Select a job centre – {{ serviceName }} – Support Offers prototype
             ]
           }) }}
 
-        {{ govukButton({
+      {{ govukButton({
           text: "Continue",
           href: "pioneer-check-answers"
-        }) }} 
-      </div>
-      </div>
-
+        }) }}
     </div>
-</div>
-
+  </div>
 {% endblock %}
 
 {% block bodyEnd %}

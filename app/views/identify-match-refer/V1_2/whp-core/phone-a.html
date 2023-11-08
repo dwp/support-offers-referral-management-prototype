@@ -4,14 +4,13 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Contact details – {{ serviceName }} – Support Offers prototype
+Is this phone number correct? – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Is this phone number correct?</h1>
-      <p class="govuk-body">This is the phone number held in CIS and may be out of date.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Is their phone number correct?</h1>
       <p class="govuk-body-l">07700 900 457</p>
 
       {% set phoneHtml %}
@@ -43,17 +42,21 @@ Contact details – {{ serviceName }} – Support Offers prototype
       conditional: {
       html: phoneHtml
       }
+      },
+      {
+      value: "not-known",
+      text: "Don't know"
       }
       ]
-      }) }}     
+      }) }}
+
+      <p class="govuk-body">If you have provided a new phone number, this person’s CIS record will be updated.</p>
 
       {{ govukButton({
       text: "Continue",
       preventDoubleClick: true,
       href: "email-a"
       }) }}
+    </div>
   </div>
-</div>
 {% endblock %}
-
-
