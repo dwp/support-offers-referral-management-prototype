@@ -1,7 +1,7 @@
 {% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
 Is this phone number correct? – {{ serviceName }} – Support Offers prototype
@@ -11,6 +11,7 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Is their phone number correct?</h1>
+      <p class="govuk-hint">If you provide a new phone number, this person’s CIS record will be updated.</p>
       <p class="govuk-body-l">07700 900 457</p>
 
       {% set phoneHtml %}
@@ -33,7 +34,7 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
       },
       items: [
       {
-      value: "yes",
+      value: "sam-doe-contact-details-b",
       text: "Yes"
       },
       {
@@ -42,14 +43,9 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
       conditional: {
       html: phoneHtml
       }
-      }, 
-      {
-      value: "not-known",
-      text: "Don't know"
       }
       ]
       }) }}
-      <p class="govuk-body">If you have provided a new phone number, this person’s CIS record will be updated.</p>
 
       {{ govukButton({
       text: "Continue",
