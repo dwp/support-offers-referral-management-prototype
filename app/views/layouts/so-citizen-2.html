@@ -1,4 +1,5 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
 
 {% block pageTitle %}
 Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
@@ -69,7 +70,6 @@ container:true
 {% endblock %}
 
 {% block footer %}
-  {% from "internal-service-footer/macro.njk" import dwpFooter %}
 
   {{ dwpFooter({
 

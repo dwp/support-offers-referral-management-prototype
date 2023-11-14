@@ -1,7 +1,5 @@
 {% extends "layouts/idm-citizen.html" %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% block pageTitle %}
 Check LMS for employment and training restrictions – {{ serviceName }} – Support Offers prototype
 {% endblock %}
@@ -9,36 +7,32 @@ Check LMS for employment and training restrictions – {{ serviceName }} – Sup
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Check LMS for employment and training restrictions</h1>
-      <p class="govuk-body">You must check this person's record in LMS. If restrictions are in place, there will be a note in the address field.</p>
 
-      <form action="/restrictions_2-pioneer" method="post" novalidate>
-        {{ govukRadios({
-            classes:"govuk-radios",
-            name: "restrictions",
-              fieldset: {
-                legend: {
-                  text: "Do they have employment and training restrictions?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              items: [
-            {
-              value: "not-suitable-restrictions",
-              text: "Yes"
-            },
-            {
-              value: "suitable",
-              text: "No"
-            }
-            ]
-           }) }}
-
-        {{ govukButton({
-              text: "Continue"
-            }) }}
-      </form>
-    </div>
+      {{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Have you checked LMS for employment and training restrictions?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "If there are restrictions in place for this person, you must speak to the single point of contact (SPOC) for your jobcentre before continuing with this referral."
+  },
+  items: [
+    {
+      value: "checked",
+      text: "I have checked this person’s record in LMS."
+    }
+  ]
+}) }}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+           text: "Continue",
+           href: "address-pioneer"
+          }) }}
+    </form>
   </div>
+</div>
 {% endblock %}
