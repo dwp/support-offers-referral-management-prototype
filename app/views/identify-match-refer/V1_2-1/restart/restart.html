@@ -1,0 +1,95 @@
+{% extends "layouts/idm-citizen.html" %}
+{% block pageTitle %}
+Restart – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Restart</h1>
+      <h2 class="govuk-heading-m">Overview</h2>
+      <p class="govuk-body">
+        Restart provides personalised support for up to 12 months to help people get back into work. It focuses on:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          developing skills to boost employability </li>
+        <li>
+          helping break down barriers to working
+        </li>
+      </ul>
+
+      <div class="govuk-warning-text govuk-!-margin-bottom-5 govuk-!-margin-top-5">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Anyone who is eligible must take part in this opportunity or their benefits could be affected.
+        </strong>
+      </div>
+      <h2 class="govuk-heading-m">Eligibility</h2>
+      <h3 class="govuk-heading-s">To be eligible they must have been claiming Job Seekers Allowance (JSA) for 9 months or longer</h3>
+
+      <p class="govuk-body">They must also:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
+          be over 18 years old in England or over 16 years old in Wales
+        </li>
+        <li>
+          have been claiming Job Seekers Allowance (JSA) for 9 months or longer
+        </li>
+        <li>
+          have no sustained PAYE earnings
+        </li>
+        <li>
+          have the right to work in the UK
+        </li>
+        <li>
+          not currently be on Restart
+        </li>
+        <li>
+          not have been on Restart before
+        </li>
+        <li>
+          not currently be on another national opportunity
+        </li>
+        <li>
+          not be gainfully self-employed
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Suitability</h2>
+
+      <p class="govuk-body">To be suitable they must:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
+          not be waiting for a self-employed Gateway Intervention or a Gainfully Self-employed (GSE) decision
+        </li>
+        <li>
+          not have started a job
+        </li>
+        <li>
+          not be waiting to hear the outcome of a job interview or application
+        </li>
+        <li>
+          not be currently participating in a Sector-based Work Academy Programme (SWAP)
+        </li>
+        <li>
+          not be waiting to hear the outcome of a SWAP job application or guaranteed job interview
+        </li>
+        <li>
+          not have an open-ended sanction currently in place
+        </li>
+        <li>
+          not have significant barriers to engaging with work related activity of this intensity
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-7">To take part in this opportunity, they must meet all the eligibility and suitability criteria.</h3>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+  text: "Start referral",
+  href: "employment-and-training-restrictions-a"
+  }) }}
+    </div>
+  </div>
+{% endblock %}
