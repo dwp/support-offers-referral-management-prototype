@@ -1,0 +1,57 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Is this phone number correct? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Is their phone number correct?</h1>
+      <p class="govuk-hint">If you provide a new phone number, this person’s CIS record will be updated.</p>
+      <p class="govuk-body-l">07700 900 457</p>
+
+      {% set phoneHtml %}
+      {{ govukInput({
+      id: "contact-by-phone",
+      name: "contactByPhone",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-!-width-one-half",
+      label: {
+      text: "Enter the correct phone number"
+      }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+      name: "contact",
+      fieldset: {
+      isPageHeading: true
+      },
+      items: [
+      {
+      value: "sam-doe-contact-details-b",
+      text: "Yes"
+      },
+      {
+      value: "phone",
+      text: "No",
+      conditional: {
+      html: phoneHtml
+      }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "email-a"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

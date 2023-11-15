@@ -26,6 +26,10 @@ Will they need extra support? – {{ serviceName }} – Support Offers prototype
     {
       value: "no-adjustments",
       text: "No"
+    },
+    {
+      value: "not-known",
+      text: "Don't know"
     }
   ]
 }) }}
@@ -33,7 +37,7 @@ Will they need extra support? – {{ serviceName }} – Support Offers prototype
       {{ govukButton({
       text: "Continue",
       preventDoubleClick: true,
-      href: "check-answers"
+      href: "whp-check-answers"
       }) }}
     </div>
   </div>
