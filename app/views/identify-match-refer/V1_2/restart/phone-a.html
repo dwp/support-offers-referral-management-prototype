@@ -11,7 +11,6 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Is their phone number correct?</h1>
-      <p class="govuk-hint">If you provide a new phone number, this person’s CIS record will be updated.</p>
       <p class="govuk-body-l">07700 900 457</p>
 
       {% set phoneHtml %}
@@ -46,6 +45,7 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
       }
       ]
       }) }}
+      <p class="govuk-body">If you have provided a new phone number, this person’s CIS record will be updated.</p>
 
       {{ govukButton({
       text: "Continue",
