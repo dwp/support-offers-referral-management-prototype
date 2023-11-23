@@ -1,0 +1,113 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+There are 9 opportunities available – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select an opportunity",
+      href: "#SelectProgramme"
+    }
+  ]
+}) }}
+      <form action="/choose-programme_2a" method="post" novalidate>
+
+        {{ govukRadios({
+  name: "SelectProgramme",
+  fieldset: {
+    legend: {
+      text: "There are 9 opportunites available",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select an opportunity for an overview and full eligibility and suitability criteria"
+  },
+errorMessage: {
+    text: "Select an opportunity"
+  },  
+  items: [
+    {
+      value: "restart",
+      text: "Restart",
+      hint: {
+        text: "Mandatory for Job Seekers Allowance (JSA) claimants who have been unemployed for 9 months or longer."
+      }
+    },
+    {
+      value: "pioneer-dc",
+      text: "Pioneer - WHP Disability Condition",
+      hint: {
+        text: "Voluntary for people who are not claiming JSA and have a physical or mental impairment."
+      }
+    },
+    {
+      value: "pioneer-ee",
+      text: "Pioneer - WHP Early Entrant",
+      hint: {
+        text: "Voluntary for people who are not claiming JSA and are from certain disadvantaged groups."
+      }
+    },
+    {
+      value: "pioneer-m",
+      text: "Pioneer - WHP Minister",
+      hint: {
+        text: "A tailored approach for autistic people. Voluntary for people who are not claiming JSA and have a physical or mental impairment."
+      }
+    },
+    {
+      value: "pioneer-mee",
+      text: "Pioneer - WHP Minister Early Entrant",
+      hint: {
+        text: "A tailored approach for autistic people. Voluntary for people who are not claiming JSA and are from certain disadvantaged groups."
+      }
+    },
+    {
+      value: "whp-dc",
+      text: "WHP Disability Condition",
+      hint: {
+        text: "Voluntary for JSA claimants who have a physical or mental impairment."
+      }
+    },
+    {
+      value: "whp-ee",
+      text: "WHP Early Entrant",
+      hint: {
+        text: "Voluntary for JSA claimants from certain disadvantaged groups."
+      }
+    },
+    {
+      value: "whp-m",
+      text: "WHP Minister",
+      hint: {
+        text: "A tailored approach for autistic people. Voluntary for JSA claimants who have a physical or mental impairment."
+      }
+    },
+    {
+      value: "whp-mee",
+      text: "WHP Minister Early Entrant",
+      hint: {
+        text: "A tailored approach for autistic people. Voluntary for JSA claimants from certain disadvantaged groups."
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

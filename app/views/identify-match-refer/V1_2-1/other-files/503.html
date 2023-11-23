@@ -1,22 +1,18 @@
 {% extends "layouts/internal-blank.html" %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Sorry, the service is unavailable – {{ serviceName }} – Support Offers prototype
+Sorry the service is unavailable – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
-      <p class="govuk-body">Try again later or enter this code if you report an incident on DWP Place.<br>
-        <strong>Error code - 123456789</strong>
+      <h1 class="govuk-heading-l">Sorry the service is unavailable</h1>
+      <p class="govuk-body">You will be able to use this service from [time day month year].
       </p>
-      <p class="govuk-body">To report an incident
-          <a class="govuk-link" href="https://dwp.service-now.com/itsupport" target="_blank">contact DWP Place</a> online or phone <strong>0800 464 3549</strong>.
+      <p class="govuk-body">You can
+          <a class="govuk-link" href="#" target="_blank">make the referral in LMS<a>.</a>
         </p>
+      </div>
     </div>
-  </div>
-{% endblock %}
+  {% endblock %}
