@@ -9,7 +9,8 @@ Will they need extra support? – {{ serviceName }} – Support Offers prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
+      <form action="/adjustments" method="post">
+        {{ govukRadios({
   name: "ExtraSupport",
   fieldset: {
     legend: {
@@ -20,25 +21,25 @@ Will they need extra support? – {{ serviceName }} – Support Offers prototype
   },
   items: [
     {
-      value: "yes-adjustments",
+      value: "yes",
       text: "Yes"
     },
     {
-      value: "no-adjustments",
+      value: "yes",
       text: "No"
     },
     {
-      value: "not-known",
+      value: "yes",
       text: "Don't know"
     }
   ]
 }) }}
 
-      {{ govukButton({
+        {{ govukButton({
       text: "Continue",
-      preventDoubleClick: true,
-      href: "signposted-referral"
+      preventDoubleClick: true
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

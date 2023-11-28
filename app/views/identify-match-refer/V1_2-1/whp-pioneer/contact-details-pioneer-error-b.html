@@ -29,11 +29,7 @@ Enter their contact details – {{ serviceName }} – Support Offers prototype
           <h1 class="govuk-heading-l">Enter their contact details</h1>
 
           {{ govukInput({
-        label: {
-          text: "What is the name of the event?",
           classes: "govuk-input--width-20",
-          isPageHeading: true
-        },
         id: "PreferredNumber",
         name: "Preferred",
         label: {
@@ -43,7 +39,7 @@ Enter their contact details – {{ serviceName }} – Support Offers prototype
           text: "Use a mobile number where their preference is not known"
         },
         errorMessage: {
-          text: "Enter a phone number"
+          text: "Enter a phone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192"
         }
       }) }}
 
