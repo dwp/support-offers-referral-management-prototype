@@ -64,17 +64,19 @@ container:true
 <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 
 {% block footer %}
-
   {{ dwpFooter({
 meta: {
-visuallyHiddenTitle: "Meta links",
+visuallyHiddenTitle: "Support links",
 items: [
 {
-  href: "",
-  text: "Privacy (opens in new window)"
+  href: "https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary",
+  text: "Privacy (opens in new window)",
+  attributes: {
+  target: "_blank"
+      }
 },
 {
-  href: "",
+  href: "#",
   text: "Accessibility"
 },
 {

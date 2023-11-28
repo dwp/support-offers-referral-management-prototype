@@ -7,9 +7,9 @@ Check LMS for employment and training restrictions – {{ serviceName }} – Sup
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {{ govukCheckboxes({
-  name: "waste",
+      <form action="/checklms" method="post">
+        {{ govukCheckboxes({
+  name: "checkLMS",
   fieldset: {
     legend: {
       text: "Have you checked LMS for employment and training restrictions?",
@@ -27,12 +27,12 @@ Check LMS for employment and training restrictions – {{ serviceName }} – Sup
     }
   ]
 }) }}
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
            text: "Continue",
            href: "address-pioneer"
           }) }}
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 {% endblock %}

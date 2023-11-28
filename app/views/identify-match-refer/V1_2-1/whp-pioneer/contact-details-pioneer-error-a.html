@@ -15,21 +15,17 @@ Enter their contact details – {{ serviceName }} – Support Offers prototype
   titleText: "There is a problem",
   errorList: [
     {
-      text: "Enter a phone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+      text: "Enter a phone number",
       href: "#PreferredNumber"
     }
   ]
 }) }}
       <div class="govuk-form-group govuk-form-group--error">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="contact-setails-error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="contact-details-error">
           <h1 class="govuk-heading-l">Enter their contact details</h1>
 
           {{ govukInput({
-        label: {
-          text: "What is the name of the event?",
           classes: "govuk-input--width-20",
-          isPageHeading: true
-        },
         id: "PreferredNumber",
         name: "Preferred",
         label: {

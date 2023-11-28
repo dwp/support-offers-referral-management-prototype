@@ -48,9 +48,11 @@ router.post('/choose-programme_2b', function (req, res) {
   } else if (answer === 'whp-m') {
     // Send user to whp m page
     res.redirect('identify-match-refer/V1_2-1/whp-core/whp-m')
-  } else {
+  } else if (answer === 'whp-mee') {
     // Send user to whp mee page
     res.redirect('identify-match-refer/V1_2-1/whp-core/whp-mee')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/available-opportunities-error')
   }
 });
 
@@ -90,7 +92,7 @@ router.post('/address_2-1-whp', function (req, res) {
 /////////////////  WHP-PIONEER ///////////////
 // run this code when a form is submitted to 'address-pioneer' page
 
-router.post('/address_2b-pioneer', function (req, res) {
+router.post('/address-pioneer-error', function (req, res) {
   var answer = req.session.data['correct-address']
   console.log(answer, 'submitted-answer')
 
@@ -99,9 +101,57 @@ router.post('/address_2b-pioneer', function (req, res) {
   } else if (answer === 'incorrect') {
     res.redirect('identify-match-refer/V1_2/not-suitable-address')
   } else {
-    res.redirect('/identify-match-refer/V1_2-1/other-files/address-pioneer-error')
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/address-pioneer-error')
   }
 });
+
+
+/////////////////  PIONEER REASONABLE ADJUSTMENTS ///////////////
+// run this code when a form is submitted to 'reasonable adjustments' page
+
+router.post('/adjustments', function (req, res) {
+  var answer = req.session.data['ExtraSupport']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/signposted-referral')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-reasonable-adjustments-error')
+  }
+});
+
+
+/////////////////  PIONEER SIGNPOSTED REFERRAL ///////////////
+// run this code when a form is submitted to 'is this signposted' page
+
+router.post('/signposted', function (req, res) {
+  var answer = req.session.data['SignpostedReferral']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'sign') {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/which-jcp')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/signposted-referral-error')
+  }
+});
+
+
+/////////////////  PIONEER EMPLOYMENT AND TRAINING RESTRICTIONS ///////////////
+// run this code when a form is submitted to 'Have you checked LMS' page
+// This one is not working when it is a checkbox. Works fine if I change it to radios //
+
+// router.post('/checklms', function (req, res) {
+//   var answer = req.session.data['checkLMS']
+//   console.log(answer, 'submitted-answer')
+
+//   if (answer === 'checked') {
+//     res.redirect('identify-match-refer/V1_2-1/whp-pioneer/address-pioneer')
+//   } else {
+//     res.redirect('identify-match-refer/V1_2-1/whp-pioneer/employment-and-training-restrictions-error')
+//   }
+// });
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +195,7 @@ router.post('/choose-programme_duplicate_journey', function (req, res) {
   }
 });
 
-/////////////////  WHP-PIONEER – DUPICATE REFERRALS ///////////////
+/////////////////  WHP-PIONEER – DUPLICATE REFERRALS ///////////////
 // run this code when a form is submitted to 'address-pioneer' page
 
 router.post('/address_pioneer_duplicate_referral', function (req, res) {
