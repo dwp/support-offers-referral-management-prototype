@@ -27,35 +27,36 @@ Is this email address correct? – {{ serviceName }} – Support Offers prototyp
       }) }}
       {% endset -%}
 
-      {{ govukRadios({
-      name: "contact",
+      <form action="/core-email" method="post">
+        {{ govukRadios({
+      name: "contactEmail",
       fieldset: {
       isPageHeading: true
       },
       items: [
       {
-      value: "sam-doe-contact-details-b",
+      value: "yes",
       text: "Yes"
       },
       {
-      value: "phone",
+      value: "yes",
       text: "No",
       conditional: {
       html: phoneHtml
       }
       },
       {
-      value: "not-known",
+      value: "yes",
       text: "Don't know"
       }
       ]
       }) }}
 
-      {{ govukButton({
+        {{ govukButton({
       text: "Continue",
-      preventDoubleClick: true,
-      href: "reasonable-adjustments-a"
+      preventDoubleClick: true
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

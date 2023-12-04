@@ -27,18 +27,19 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
       }) }}
       {% endset -%}
 
-      {{ govukRadios({
-      name: "contact",
+      <form action="/core-phone" method="post">
+        {{ govukRadios({
+      name: "contactPhone",
       fieldset: {
       isPageHeading: true
       },
       items: [
       {
-      value: "sam-doe-contact-details-b",
+      value: "yes",
       text: "Yes"
       },
       {
-      value: "phone",
+      value: "yes",
       text: "No",
       conditional: {
       html: phoneHtml
@@ -47,11 +48,11 @@ Is this phone number correct? – {{ serviceName }} – Support Offers prototype
       ]
       }) }}
 
-      {{ govukButton({
+        {{ govukButton({
       text: "Continue",
-      preventDoubleClick: true,
-      href: "email-a"
+      preventDoubleClick: true
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
