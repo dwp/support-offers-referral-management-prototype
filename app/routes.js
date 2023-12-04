@@ -89,6 +89,34 @@ router.post('/address_2-1-whp', function (req, res) {
   }
 });
 
+/////////////////  WHP-CORE PHONE ///////////////
+// run this code when a form is submitted to 'is the phone number correct' page
+
+router.post('/core-phone', function (req, res) {
+  var answer = req.session.data['contactPhone']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/email-a')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/phone-a-error-a')
+  }
+});
+
+/////////////////  WHP-CORE EMAIL ///////////////
+// run this code when a form is submitted to 'is the email address correct' page
+
+router.post('/core-email', function (req, res) {
+  var answer = req.session.data['contactEmail']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/reasonable-adjustments-a')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/email-a-error-a')
+  }
+});
+
 /////////////////  WHP-PIONEER ///////////////
 // run this code when a form is submitted to 'address-pioneer' page
 
@@ -134,23 +162,6 @@ router.post('/signposted', function (req, res) {
     res.redirect('identify-match-refer/V1_2-1/whp-pioneer/signposted-referral-error')
   }
 });
-
-
-/////////////////  PIONEER EMPLOYMENT AND TRAINING RESTRICTIONS ///////////////
-// run this code when a form is submitted to 'Have you checked LMS' page
-// This one is not working when it is a checkbox. Works fine if I change it to radios //
-
-// router.post('/checklms', function (req, res) {
-//   var answer = req.session.data['checkLMS']
-//   console.log(answer, 'submitted-answer')
-
-//   if (answer === 'checked') {
-//     res.redirect('identify-match-refer/V1_2-1/whp-pioneer/address-pioneer')
-//   } else {
-//     res.redirect('identify-match-refer/V1_2-1/whp-pioneer/employment-and-training-restrictions-error')
-//   }
-// });
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
