@@ -1,0 +1,42 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+Is this a signposted referral? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/signposted" method="post" novalidate>
+        {{ govukRadios({
+  name: "SignpostedReferral",
+  fieldset: {
+    legend: {
+      text: "Is this a signposted referral?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "sign",
+      text: "Yes"
+    },
+    {
+      value: "sign",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "pioneer-check-answers"      
+      }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
