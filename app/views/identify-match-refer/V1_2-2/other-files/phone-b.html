@@ -1,0 +1,33 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Contact details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+{{ govukInput({
+  label: {
+    text: "Enter a phone number",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width10"
+}) }}
+
+      {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "email-a"
+      }) }}
+  </div>
+</div>
+{% endblock %}
+
+

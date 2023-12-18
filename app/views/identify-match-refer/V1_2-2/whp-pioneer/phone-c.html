@@ -1,0 +1,65 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Which phone number(s) do you want to send to the provider? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set phoneHtml %}
+      {{ govukInput({
+  id: "contact-by-text",
+  name: "contactByText",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter phone number"
+  }
+}) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "What is their phone number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select up to 2 numbers to send to the provider."
+  },
+  items: [
+    {
+      value: "mobile",
+      text: "07700 900 457"
+    },
+    {
+      value: "phone",
+      text: "01756 987542"
+    },
+    {
+      value: "alternative",
+      text: "Other phone number",
+      conditional: {
+        html: phoneHtml
+      }
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "email-c"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
