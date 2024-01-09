@@ -1,0 +1,63 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Is this email address correct? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Is their email address correct?</h1>
+      {# <p class="govuk-hint">This will only be sent to the provider. CIS will not be updated if you enter a new email address.</p> #}
+      <p class="govuk-body-l">sam.doe@example.com</p>
+
+      {% set emailHtml %}
+      {{ govukInput({
+      id: "contact-by-email",
+      name: "contactByEmail",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-!-width-one-half",
+      label: {
+      text: "Enter the correct email address"
+      }
+      }) }}
+      {% endset -%}
+
+      <form action="/core-email-2-3" method="post">
+        {{ govukRadios({
+      name: "contactEmail",
+      fieldset: {
+      isPageHeading: true
+      },
+      items: [
+      {
+      value: "yes",
+      text: "Yes"
+      },
+      {
+      value: "yes",
+      text: "No",
+      conditional: {
+      html: emailHtml
+      }
+      },
+      {
+      value: "yes",
+      text: "Don't know"
+      }
+      ]
+      }) }}
+
+        {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true
+      }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

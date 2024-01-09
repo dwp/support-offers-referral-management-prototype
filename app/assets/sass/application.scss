@@ -10,7 +10,7 @@
 $govuk-font-family: Helvetica, Arial, sans-serif;
 
 
-@import "node_modules/@ministryofjustice/frontend/moj/all";
+// @import "node_modules/@ministryofjustice/frontend/moj/all";
 
 @import "referral-management-styles/test";
 
@@ -136,9 +136,11 @@ $govuk-font-family: Helvetica, Arial, sans-serif;
 //   padding-top: 32px;
 // }
 
-// /* test area */
 
-
+// incompatibility between @dwp/dwp-frontend@2.4.0 and govuk-frontend@5.0.0
+// .govuk-header__link--service-name {
+//     @extend .govuk-header__service-name;
+// }
 
 // Key details bar
 .dwp-key-details-bar {

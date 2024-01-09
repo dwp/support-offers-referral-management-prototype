@@ -1,0 +1,61 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Is their address correct? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select yes if their address is correct",
+      href: "#CorrectAddress"
+    }
+  ]
+}) }}
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="address-page-error">
+          <h1 class="govuk-heading-l">Is their address correct?</h1>
+          {# <p id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select yes if their address is correct
+              </p> #}
+          <div id="changedName-hint" class="govuk-hint">The provider will use this information if they need to contact the person by post.</div>
+          <p class="govuk-body-l">72 Guild Street<br>London<br>SE23 6FH</p>
+
+          <form action="/address_2b-pioneer" method="post" novalidate>
+            {{ govukRadios({
+            classes:"govuk-radios",
+            name: "CorrectAddress",
+            fieldset: {
+            },
+            errorMessage: {
+            text: "Select yes if their address is correct"
+            },
+            items: [
+            {
+              value: "correct",
+              text: "Yes"
+            },
+            {
+              value: "incorrect",
+              text: "No"
+            }
+            ]
+          }) }}
+          </fieldset>
+        </div>
+        {{ govukButton({
+            text: "Continue",
+            preventDoubleClick: true            
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
