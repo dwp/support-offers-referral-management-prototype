@@ -11,6 +11,113 @@ const router = govukPrototypeKit.requests.setupRouter()
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// V1_2-3 Identify, match and refer ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////  WHP-PIONEER ///////////////
+// run this code when a form is submitted to 'address-pioneer' page
+
+router.post('/address-pioneer-error-2-3', function (req, res) {
+  var answer = req.session.data['correct-address']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'correct') {
+    res.redirect('identify-match-refer/V1_2-3/which-jcp')
+  } else if (answer === 'incorrect') {
+    res.redirect('identify-match-refer/V1_2/not-suitable-address')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/address-pioneer-error')
+  }
+});
+
+/////////////////  AVAILABLE OPPORTUNITIES ///////////////
+// run this code when a form is submitted to 'available-opportunities' page
+
+router.post('/choose-programme_2d', function (req, res) {
+  var answer = req.session.data['select-programme']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'restart') {
+    // Send user to restart-suitability page
+    res.redirect('identify-match-refer/V1_2-1/restart/restart')
+  } else if (answer === 'pioneer-dc') {
+    // Send user to pioneer dc page
+    res.redirect('identify-match-refer/V1_2-3/whp-pioneer/pioneer-dc')
+  } else if (answer === 'pioneer-ee') {
+    // Send user to pioneer ee page
+    res.redirect('identify-match-refer/V1_2-3/whp-pioneer/pioneer-ee')
+  } else if (answer === 'pioneer-m') {
+    // Send user to pioneer m page
+    res.redirect('identify-match-refer/V1_2-3/whp-pioneer/pioneer-m')
+  } else if (answer === 'pioneer-mee') {
+    // Send user to pioneer mee page
+    res.redirect('identify-match-refer/V1_2-3/whp-pioneer/pioneer-mee')
+  } else if (answer === 'whp-dc') {
+    // Send user to whp dc page
+    res.redirect('identify-match-refer/V1_2-3/whp-core/whp-dc')
+  } else if (answer === 'whp-ee') {
+    // Send user to whp ee page
+    res.redirect('identify-match-refer/V1_2-3/whp-core/whp-ee')
+  } else if (answer === 'whp-m') {
+    // Send user to whp m page
+    res.redirect('identify-match-refer/V1_2-3/whp-core/whp-m')
+  } else if (answer === 'whp-mee') {
+    // Send user to whp mee page
+    res.redirect('identify-match-refer/V1_2-3/whp-core/whp-mee')
+  } else {
+    res.redirect('identify-match-refer/V1_2-2/available-opportunities-error')
+  }
+});
+
+/////////////////  PIONEER REASONABLE ADJUSTMENTS ///////////////
+// run this code when a form is submitted to 'reasonable adjustments' page
+
+router.post('/adjustments-2-3', function (req, res) {
+  var answer = req.session.data['ExtraSupport']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-3/whp-pioneer/pioneer-check-answers')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-reasonable-adjustments-error')
+  }
+});
+
+/////////////////  WHP-CORE PHONE ///////////////
+// run this code when a form is submitted to 'is the phone number correct' page
+
+router.post('/core-phone-2-3', function (req, res) {
+  var answer = req.session.data['contactPhone']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-3/whp-core/email-a')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/phone-a-error-a')
+  }
+});
+
+/////////////////  WHP-CORE EMAIL ///////////////
+// run this code when a form is submitted to 'is the email address correct' page
+
+router.post('/core-email-2-3', function (req, res) {
+  var answer = req.session.data['contactEmail']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-3/whp-core/reasonable-adjustments-a')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-core/email-a-error-a')
+  }
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// V1_2-2 Identify, match and refer ////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,27 +139,27 @@ router.post('/choose-programme_2c', function (req, res) {
     res.redirect('identify-match-refer/V1_2-2/whp-pioneer/pioneer-dc')
   } else if (answer === 'pioneer-ee') {
     // Send user to pioneer ee page
-    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-ee')
+    res.redirect('identify-match-refer/V1_2-2/whp-pioneer/pioneer-ee')
   } else if (answer === 'pioneer-m') {
     // Send user to pioneer m page
-    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-m')
+    res.redirect('identify-match-refer/V1_2-2/whp-pioneer/pioneer-m')
   } else if (answer === 'pioneer-mee') {
     // Send user to pioneer mee page
-    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-mee')
+    res.redirect('identify-match-refer/V1_2-2/whp-pioneer/pioneer-mee')
   } else if (answer === 'whp-dc') {
     // Send user to whp dc page
     res.redirect('identify-match-refer/V1_2-2/whp-core/whp-dc')
   } else if (answer === 'whp-ee') {
     // Send user to whp ee page
-    res.redirect('identify-match-refer/V1_2-1/whp-core/whp-ee')
+    res.redirect('identify-match-refer/V1_2-2/whp-core/whp-ee')
   } else if (answer === 'whp-m') {
     // Send user to whp m page
-    res.redirect('identify-match-refer/V1_2-1/whp-core/whp-m')
+    res.redirect('identify-match-refer/V1_2-2/whp-core/whp-m')
   } else if (answer === 'whp-mee') {
     // Send user to whp mee page
-    res.redirect('identify-match-refer/V1_2-1/whp-core/whp-mee')
+    res.redirect('identify-match-refer/V1_2-2/whp-core/whp-mee')
   } else {
-    res.redirect('identify-match-refer/V1_2-1/available-opportunities-error')
+    res.redirect('identify-match-refer/V1_2-2/available-opportunities-error')
   }
 });
 
@@ -244,7 +351,7 @@ router.post('/core-email', function (req, res) {
 /////////////////  WHP-PIONEER ///////////////
 // run this code when a form is submitted to 'address-pioneer' page
 
-router.post('/address-pioneer-error', function (req, res) {
+router.post('/address-pioneer-error-2-1', function (req, res) {
   var answer = req.session.data['correct-address']
   console.log(answer, 'submitted-answer')
 
@@ -261,7 +368,7 @@ router.post('/address-pioneer-error', function (req, res) {
 /////////////////  PIONEER REASONABLE ADJUSTMENTS ///////////////
 // run this code when a form is submitted to 'reasonable adjustments' page
 
-router.post('/adjustments', function (req, res) {
+router.post('/adjustments-2-1', function (req, res) {
   var answer = req.session.data['ExtraSupport']
   console.log(answer, 'submitted-answer')
 

@@ -1,0 +1,59 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Contact details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">We do not have an email in CIS for this person</h1>
+      <p class="govuk-body">Do you want to enter an email address for this person?</p>
+
+      {% set phoneHtml %}
+      {{ govukInput({
+      id: "contact-by-phone",
+      name: "contactByPhone",
+      type: "tel",
+      autocomplete: "tel",
+      classes: "govuk-!-width-one-half",
+      label: {
+      text: "Enter an email address"
+      }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+      name: "contact",
+      fieldset: {
+      isPageHeading: true
+      },
+      items: [
+      {
+      value: "sam-doe-contact-details-b",
+      text: "Yes",
+      conditional: {
+      html: phoneHtml
+      }
+      },
+      {
+      value: "phone",
+      text: "No, continue without providing an email address"
+      }
+      ]
+      }) }}     
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "whp-reasonable-adjustments-a"
+      }) }}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
