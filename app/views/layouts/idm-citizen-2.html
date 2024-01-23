@@ -1,16 +1,19 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
 {% from "internal-service-header/macro.njk" import dwpHeader %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
 
 {% block pageTitle %}
 Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
 {% endblock %}
 
 {% block header %}
   {{ dwpHeader({
   name: "Support offers ",
   serviceHref: '/index.html',
-  serviceUrl: "/",
   action: "Sign out",
   actionHref: "/",
 container:true
@@ -21,15 +24,15 @@ container:true
       <div class="dwp-key-details-bar__key-details">
         <dl class="dwp-key-details-bar__top-block">
           <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="dwp-key-details-bar__primary">Sam Doe</dd>
+          <dd class="dwp-key-details-bar__primary">Jane Doe</dd>
           <dt class="govuk-visually-hidden">National Insurance Number:</dt>
-          <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 C</dd>
+          <dd class="dwp-key-details-bar__secondary">QQ 12 34 56 X</dd>
           <dt class="govuk-visually-hidden">Claim status:</dt>
-          <dd class="govuk-table__cell dwp-key-details-bar__status">
-            <strong class="govuk-tag govuk-tag--yellow">
-          acknowledged 21 july 2023
+          {# <dd class="govuk-table__cell dwp-key-details-bar__status">
+          <strong class="govuk-tag govuk-tag--yellow">
+          aactive
         </strong>
-          </dd>
+        </dd> #}
         </dl>
         <dl class="dwp-key-details-bar__bottom-block">
           <dt>Date of birth:</dt>
@@ -42,19 +45,39 @@ container:true
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-        Alpha
+        Beta
       </strong>
         <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
       </span>
       </p>
     </div>
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
   </div>
 {% endblock %}
 
+{% block bodyEnd %}
+  {{ super()}}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+
 {% block footer %}
-
-  {{ govukFooter({}) }}
-
+  {{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Support links",
+items: [
+{
+  href: "https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary",
+  text: "Privacy (opens in new window)",
+  attributes: {
+  target: "_blank"
+      }
+},
+{
+  href: "/manage-prototype/clear-data",
+  text: "Clear data"
+}
+]
+}
+}) }}
 {% endblock %}
