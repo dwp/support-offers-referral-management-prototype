@@ -11,6 +11,15 @@ Which early access groups are they in? – {{ serviceName }} – Support Offers 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select at least one early access group",
+      href: "#SelectProgramme"
+    }
+  ]
+}) }}
       {{ govukCheckboxes({
   name: "access",
   fieldset: {
@@ -22,6 +31,9 @@ Which early access groups are they in? – {{ serviceName }} – Support Offers 
   },
   hint: {
     text: "Select all that apply."
+  },
+errorMessage: {
+    text: "Select at least one early access group"
   },
   items: [
     {
