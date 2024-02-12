@@ -12,6 +12,71 @@ const router = govukPrototypeKit.requests.setupRouter()
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// V1_2-4 Identify, match and refer ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+///
+
+/////////////////  WHP-PIONEER ///////////////
+// run this code when a form is submitted to 'address-pioneer' page
+
+router.post('/address-pioneer-error-2-4', function (req, res) {
+  var answer = req.session.data['correct-address']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'correct') {
+    res.redirect('identify-match-refer/V1_2-4/which-jcp')
+  } else if (answer === 'incorrect') {
+    res.redirect('identify-match-refer/V1_2-3/not-suitable-address')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/address-pioneer-error')
+  }
+});
+
+/////////////////  AVAILABLE OPPORTUNITIES ///////////////
+// run this code when a form is submitted to 'available-opportunities' page
+
+router.post('/choose-programme_2e', function (req, res) {
+  var answer = req.session.data['select-programme']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'restart') {
+    // Send user to restart-suitability page
+    res.redirect('identify-match-refer/V1_2-1/restart/restart')
+  } else if (answer === 'pioneer-dc') {
+    // Send user to pioneer dc page
+    res.redirect('identify-match-refer/V1_2-4/whp-pioneer/pioneer-dc')
+  } else if (answer === 'pioneer-ee') {
+    // Send user to pioneer ee page
+    res.redirect('identify-match-refer/V1_2-4/whp-pioneer/pioneer-ee')
+  } else if (answer === 'pioneer-m') {
+    // Send user to pioneer m page
+    res.redirect('identify-match-refer/V1_2-4/whp-pioneer/pioneer-m')
+  } else if (answer === 'pioneer-mee') {
+    // Send user to pioneer mee page
+    res.redirect('identify-match-refer/V1_2-4/whp-pioneer/pioneer-mee')
+  } else if (answer === 'whp-dc') {
+    // Send user to whp dc page
+    res.redirect('identify-match-refer/V1_2-4/whp-core/whp-dc')
+  } else if (answer === 'whp-ee') {
+    // Send user to whp ee page
+    res.redirect('identify-match-refer/V1_2-4/whp-core/whp-ee')
+  } else if (answer === 'whp-m') {
+    // Send user to whp m page
+    res.redirect('identify-match-refer/V1_2-4/whp-core/whp-m')
+  } else if (answer === 'whp-mee') {
+    // Send user to whp mee page
+    res.redirect('identify-match-refer/V1_2-4/whp-core/whp-mee')
+  } else {
+    res.redirect('identify-match-refer/V1_2-2/available-opportunities-error')
+  }
+});
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// V1_2-3 Identify, match and refer ////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
