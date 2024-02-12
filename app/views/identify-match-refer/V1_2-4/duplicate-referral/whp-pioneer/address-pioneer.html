@@ -1,0 +1,41 @@
+{% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Is their address correct? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Is their address correct?</h1>
+      <div id="changedName-hint" class="govuk-hint">The provider will use this information if they need to contact the person by post.</div>
+      <p class="govuk-body-l">72 Guild Street<br>London<br>SE23 6FH</p>
+
+      <form action="/address_pioneer_duplicate_referral" method="post" novalidate>
+        {{ govukRadios({
+            classes:"govuk-radios",
+            name: "correct-address",
+            fieldset: {
+            },
+            items: [
+            {
+              value: "correct",
+              text: "Yes"
+            },
+            {
+              value: "incorrect",
+              text: "No"
+            }
+            ]
+          }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            href: "which-jcp"
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

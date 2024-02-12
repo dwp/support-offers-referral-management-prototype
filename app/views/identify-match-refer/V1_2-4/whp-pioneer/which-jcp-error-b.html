@@ -1,4 +1,7 @@
 {% extends "layouts/idm-citizen.html" %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -9,16 +12,29 @@ Which jobcentre are you referring them from? – {{ serviceName }} – Support O
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Jobcentre cannot be blank",
+      href: "#SelectJobcentre"
+    }
+  ]
+}) }}
       <!-- Includes -->
 
       {%- set office %}
       <label class="govuk-label" for="office-autocomplete">Enter name of jobcentre</label>
-      <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+      <div class="govuk-form-group govuk-form-group--error">
+        <p id="contact-by-email-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Jobcentre cannot be blank
+          </p>
+        <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+      </div>
 
       {% endset -%}
       {{ govukRadios({
-            name: "location",
+            name: "SelectJobcentre",
             fieldset: {
               legend: {
                 text: "Which jobcentre are you referring them from?",
@@ -34,6 +50,7 @@ Which jobcentre are you referring them from? – {{ serviceName }} – Support O
               {
                 value: "",
                 text: "Other",
+                checked: true,
                 conditional: {
                     html: office
                   }
