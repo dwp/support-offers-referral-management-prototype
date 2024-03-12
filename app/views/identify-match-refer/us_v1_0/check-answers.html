@@ -1,4 +1,5 @@
-{% extends "layouts/idm-citizen.html" %}
+{% extends "layouts/idm-citizen-us.html" %}
+
 {% block pageTitle %}
 Check the referral details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
@@ -11,10 +12,10 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Referring jobcentre
+            Local authority
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Leeds Park Place Jobcentre </p>
+            <p>West Yorkshire Combined Authority</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -27,20 +28,7 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Opportunity name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p> WHP Disability Condition </p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> Opportunity name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Signposted referral
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Yes</p>
+            <p> Universal Support - in work (IPS)</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
@@ -50,39 +38,46 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
         </div>
       </dl>
       <h2 class="govuk-heading-m">Personal details</h2>
+
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Name
           </dt>
           <dd class="govuk-summary-list__value">
-            Jane Doe
+            <p>Bruce Wayne</p>
           </dd>
+          <dd class="govuk-summary-list__actions"></dd>
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value">
-            4 June 1972
+            <p>12 June 1978</p>
           </dd>
+          <dd class="govuk-summary-list__actions"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            QQ 12 34 56 X
+            <p>DD 12 34 56 C</p>
           </dd>
+          <dd class="govuk-summary-list__actions"></dd>
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
-            26 Greengate Lane<br>Kendal<br>LA9 5LL
+            <p>12 Dominion Avenue<br>Wakefield<br>WF12 3LS</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">address</span>
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -90,11 +85,11 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Phone number
           </dt>
           <dd class="govuk-summary-list__value">
-              07777 900 900{{ data['tel-mobile'] }}
+            <p> 07897 524698</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="sam-doe-contact-details-update-a">
-              Change<span class="govuk-visually-hidden"> mobile number</span>
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">phone number</span>
             </a>
           </dd>
         </div>
@@ -103,35 +98,34 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Email address
           </dt>
           <dd class="govuk-summary-list__value">
-              jane.doe@example.com{{ data['email-address'] }}
+            <p>bruce.wayne78@example.com</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="sam-doe-contact-details-update-b">
-              Change<span class="govuk-visually-hidden"> email address</span>
+            <a class="govuk-link" href="/identify-match-refer/V1_1/sam-doe-mobile">
+              Change<span class="govuk-visually-hidden">email address</span>
             </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Extra support or reasonable adjustments required
+            Barriers to work
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>No </p>
+            <p>mild to moderate mental health condition, a former member of the HM Armed Forces, carer</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">Other information</span>
+            <a class="govuk-link" href="/identify-match-refer/V1_1/sam-doe-mobile">
+              Change<span class="govuk-visually-hidden">eligibiity and suitability</span>
             </a>
           </dd>
         </div>
       </dl>
 
-      <form action="whp-referral-sent" method="post" novalidate>
-        <input type="hidden" name="answers-checked" value="true">
-        <button class="govuk-button" data-module="govuk-button">
-          Confirm and make referral
-        </button>
-      </form>
+      {{ govukButton({
+      text: "Confirm and make referral",
+      preventDoubleClick: true,
+      href: "referral-confirmation"
+      }) }}
     </div>
   </div>
 {% endblock %}

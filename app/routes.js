@@ -8,6 +8,38 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// US_V1_0 Identify, match and refer ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////  AVAILABLE OPPORTUNITIES ///////////////
+// run this code when a form is submitted to 'available-opportunities' page
+
+router.post('/choose-programme_us-1', function (req, res) {
+  var answer = req.session.data['select-programme']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'us-1') {
+    // Send user to pioneer dc page
+    res.redirect('identify-match-refer/us_v1_0/us-option-1')
+  } else if (answer === 'us-2') {
+    // Send user to pioneer ee page
+    res.redirect('identify-match-refer/us_v1_0/us-option-2')
+  } else if (answer === 'us-3') {
+    // Send user to pioneer m page
+    res.redirect('identify-match-refer/us_v1_0/us-option-3')
+  } else if (answer === 'us-4') {
+    // Send user to pioneer mee page
+    res.redirect('identify-match-refer/us_v1_0/us-option-4')
+  } else {
+    res.redirect('identify-match-refer/us_v1_0/available-opportunities-error')
+  }
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,6 +105,21 @@ router.post('/choose-programme_2e', function (req, res) {
     res.redirect('identify-match-refer/V1_2-2/available-opportunities-error')
   }
 });
+
+/////////////////  PIONEER REASONABLE ADJUSTMENTS ///////////////
+// run this code when a form is submitted to 'reasonable adjustments' page
+
+router.post('/adjustments-2-4', function (req, res) {
+  var answer = req.session.data['ExtraSupport']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'yes') {
+    res.redirect('identify-match-refer/V1_2-4/whp-pioneer/pioneer-check-answers')
+  } else {
+    res.redirect('identify-match-refer/V1_2-1/whp-pioneer/pioneer-reasonable-adjustments-error')
+  }
+});
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////

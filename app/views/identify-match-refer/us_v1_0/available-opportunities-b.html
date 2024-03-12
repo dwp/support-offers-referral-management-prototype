@@ -1,0 +1,62 @@
+{% extends "layouts/idm-citizen-us.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+There are 4 opportunities available – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-2">
+        There are 4 opportunities available
+      </h1>
+          </legend>
+
+          <h3 class="govuk-heading-m">Universal Support - Individual Placement and Support (IPS)</h3>
+          <div id="signIn-hint" class="govuk-hint">
+      Integrated with health and support services to help people find work.
+
+    </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+          Universal Support (IPS) - in work
+        </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn-2">
+          Universal Support (IPS) - out of work
+        </label>
+            </div>
+            <h3 class="govuk-heading-m govuk-!-margin-top-6">Universal Support - Supported Employment Quality Framework (SEQF)</h3>
+            <div id="signIn-hint" class="govuk-hint">
+      Focused on vocational profiling and job matching to help people find work.
+    </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+          Universal Support (SEQF) - in work
+        </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+              <label class="govuk-label govuk-radios__label" for="signIn">
+          Universal Support (SEQF) - out of work
+        </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {{ govukButton({
+  text: "Continue"
+  }) }}
+    </div>
+  </div>
+{% endblock %}
