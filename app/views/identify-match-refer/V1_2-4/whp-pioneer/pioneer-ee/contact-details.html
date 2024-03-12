@@ -1,6 +1,7 @@
 {% extends "layouts/idm-citizen.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% block pageTitle %}
 Enter their contact details – {{ serviceName }} – Support Offers prototype
@@ -9,8 +10,15 @@ Enter their contact details – {{ serviceName }} – Support Offers prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Enter their contact details</h1>
       {# <p class="govuk-hint">These details will only be sent to the provider. CIS will not be updated.</p> #}
+
+      {% call govukFieldset({
+  legend: {
+    text: "Enter their contact details",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
 
       {{ govukInput({
   classes: "govuk-input--width-20",
@@ -42,6 +50,7 @@ Enter their contact details – {{ serviceName }} – Support Offers prototype
             text: "Email address (optional)"
           }
 }) }}
+      {% endcall %}
 
       {{ govukButton({
       text: "Continue",

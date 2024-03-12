@@ -1,5 +1,4 @@
 {% extends "layouts/idm-citizen.html" %}
-
 {% block pageTitle %}
 Check the referral details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
@@ -8,7 +7,7 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Check the referral details</h1>
-      <h2 class="govuk-heading-m">Referral details</h2>
+      <h2 class="govuk-heading-m">Opportunity details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -25,6 +24,19 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Opportunity name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Pioneer Disability Condition</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> Opportunity name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Signposted referral
           </dt>
           <dd class="govuk-summary-list__value">
@@ -32,7 +44,7 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">Other information</span>
+              Change<span class="govuk-visually-hidden"> Opportunity name</span>
             </a>
           </dd>
         </div>
@@ -64,6 +76,7 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             QQ 12 34 56 X
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Address
@@ -72,15 +85,12 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             26 Greengate Lane<br>Kendal<br>LA9 5LL
           </dd>
         </div>
-      </dl>
-      <h2 class="govuk-heading-m">Contact details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Preferred phone number
+            Phone number
           </dt>
           <dd class="govuk-summary-list__value">
-              07777 900 900
+              07777 900 900{{ data['tel-mobile'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="sam-doe-contact-details-update-a">
@@ -90,59 +100,14 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Additional phone number
+            Email address
           </dt>
           <dd class="govuk-summary-list__value">
-              01539 123987
+              jane.doe@example.com{{ data['email-address'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="sam-doe-contact-details-update-b">
-              Change<span class="govuk-visually-hidden">secondary number</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-      <h2 class="govuk-heading-m">Opportunity details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Opportunity name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p> Pioneer Disability Condition </p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> Opportunity name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Eligibility and suitability confirmed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Yes</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/identify-match-refer/V1_1/sam-doe-mobile">
-              Change<span class="govuk-visually-hidden">eligibiity and suitability</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
-      <h2 class="govuk-heading-m">Other information</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Employment and training restrictions
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>No </p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden">Other information</span>
+              Change<span class="govuk-visually-hidden"> email address</span>
             </a>
           </dd>
         </div>
