@@ -1,0 +1,1399 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+{% block pageTitle %}
+Provision summary – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Summary</span>
+      <h1 class="govuk-heading-l">Provision build summary</h1>
+
+      {{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Provision details',
+    href: 'programme-full-summary-1'
+  }, {
+    text: 'Outcome details',
+    href: 'programme-full-summary-2'
+  }, {
+    text: 'Opportunity details',
+    href: 'programme-full-summary-3',
+    active: true
+  }]
+}) }}
+
+      <h2 class="govuk-heading-m">Opportunity and outcome details</h2>
+      <h2 class="govuk-heading-m">1. WHP Disability Condition</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">2. WHP Early Entrant</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">3. WHP Minister</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">4. WHP Minister Early Entrant</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">5. Pioneer - WHP Disability Condition</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">6. Pioneer - WHP Early Entrant</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">7. Pioneer - WHP Minister</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">8. Pioneer - WHP Minister Early Entrant</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: {
+        text: "20 January 2026"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: "1 February 2028"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        html: "365"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        html: "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        html: "180"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+      <p class="govuk-body">Once you are satisfied that all the information you have entered is correct you can send for approval.</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+  text: "Send for approval"
+  }) }}
+        {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

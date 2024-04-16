@@ -1,0 +1,39 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block pageTitle %}
+Provision information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+  titleText: "Provision name completed successfully",
+  html: "Add all of the provision details</strong>"
+}) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        Now add all of the provision details. Once you have completed this, you can add outcomes to the provision.
+      </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+  text: "Save and continue",
+  href: "programme-information-3"
+  }) }}
+        {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

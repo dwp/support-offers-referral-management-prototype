@@ -1,0 +1,77 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %}
+Contract information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create contract details</span>
+      <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
+
+      <form action="contract-information-5" method="post" novalidate>
+        {{ govukInput({
+  label: {
+    text: "What is the payment accelerator name?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-20",
+  id: "width-20",
+  name: "width5"
+}) }}
+
+        {{ govukDateInput({
+  id: "first-date",
+  namePrefix: "first-date",
+  fieldset: {
+    legend: {
+      text: "What is the start date of the accelerator?",
+    classes: "govuk-fieldset__legend--s"
+    }
+  }
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Percentage of outcome starts",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-2",
+  suffix: {
+    text: "%"
+  },
+  id: "width-5",
+  name: "width5"
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Percentage paid at low rate",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-2",
+  suffix: {
+    text: "%"
+  },
+  id: "width-3",
+  name: "width5"
+}) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

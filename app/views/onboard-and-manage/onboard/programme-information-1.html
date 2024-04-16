@@ -1,0 +1,76 @@
+{% extends "layouts/onboard-2.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Provision information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create provision details</span>
+      <h1 class="govuk-heading-l">Create a new provision</h1>
+
+      <form action="programme-information-2" method="post" novalidate>
+
+        {{ govukInput({
+  label: {
+    text: "Full provision name",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-30",
+  id: "provisionName",
+  name: "provisionName"
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Short reference",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-10",
+  id: "shortName",
+  name: "shortName"
+}) }}
+
+        {{ govukDateInput({
+  id: "startDate",
+  namePrefix: "startDate",
+  fieldset: {
+    legend: {
+      text: "What is the formal start date of the provision?",
+      isPageHeading: true,
+    classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+Opportunity information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create provision details</span>
+      <h1 class="govuk-heading-l">Check opportunity and outcome details for {{ data['opportunityName'] }}</h1>
+      <h2 class="govuk-heading-m">Opportunity details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: { 
+        text: data['referralStart-day'] + " " + data['referralStart-month'] + " " +  data ['referralStart-year'] or "1 November 2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: data['referralEnd-day'] + " " + data['referralEnd-month'] + " " +  data ['referralEnd-year'] or "1 November 2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a citizen can spend on an opportunity"
+      },
+      value: {
+        text: data['workingDays'] or "364"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Is an extension available?"
+      },
+      value: {
+        text: data['extension'] or "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "How many additional working days is the extension?"
+      },
+      value: {
+        text: data['addWorkingDays'] or "133"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <h2 class="govuk-heading-m">Outcome details</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      {{ govukRadios({
+  classes: "govuk-radios",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Do you want to create another opportunity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+  text: "Save and continue"
+  }) }}
+        {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
