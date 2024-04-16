@@ -1,0 +1,58 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{% block pageTitle %}
+Opportunity information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create opportunity details</span>
+      <h1 class="govuk-heading-l">Select all outcomes that apply to {{ data['opportunityName'] }}</h1>
+
+      <form action="opportunity-information-3" method="post" novalidate>
+
+        {{ govukCheckboxes({
+  name: "waste",
+  items: [
+    {
+      value: "start",
+      text: "Start"
+    },
+    {
+      value: "threshold1",
+      text: "Earnings Threshold 1"
+    },
+    {
+      value: "threshold2",
+      text: "Earnings Threshold 2"
+    },
+    {
+      value: "threshold3",
+      text: "Earnings Threshold 3"
+    },
+    {
+      value: "end",
+      text: "End"
+    }
+  ]
+}) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

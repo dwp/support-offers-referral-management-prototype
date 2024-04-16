@@ -1,0 +1,184 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Provision information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create provision details</span>
+      <h1 class="govuk-heading-l">Provision information</h1>
+
+      <form action="programme-information-4" method="post" novalidate>
+
+        {{ govukCheckboxes({
+  name: "provisionType",
+  fieldset: {
+    legend: {
+      text: "What kind of provision is this?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      id: "mandatory",
+      value: "Mandatory",
+      text: "Mandatory"
+    },
+    {
+      id: "voluntary",
+      value: "Voluntary",
+      text: "Voluntary"
+    }
+  ]
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "How many days does a citizen have, after being referred, to start an opportunity under this provision?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-2",
+  id: "days-1",
+  name: "days1"
+}) }}
+
+        {% set daysHtml %}
+        {{ govukInput({
+  id: "number-of-days",
+  name: "numberOfDays",
+  type: "days",
+  autocomplete: "days",
+  spellcheck: false,
+  classes: "govuk-input--width-2",
+  id: "numberOfDays",
+  name: "numberOfDays",
+  label: {
+    text: "How many days will this check run for?",
+    classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "checkEarnings",
+  fieldset: {
+    legend: {
+      text: "Does this provision need to check citizens’ earnings or employment?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: daysHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukRadios({
+  name: "leavesEarly",
+  fieldset: {
+    legend: {
+      text: "If a citizen leaves an opportunity under this provision before completing it, do you want the check to be cancelled?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukRadios({
+  name: "outcomeFees",
+  fieldset: {
+    legend: {
+      text: "Are outcome fees and service fees for contracts under this provision to be paid by SOP?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {% set timesHtml %}
+        {{ govukInput({
+  id: "number-of-times",
+  name: "numberOfTimes",
+  type: "times",
+  autocomplete: "times",
+  spellcheck: false,
+  classes: "govuk-input--width-2",
+  id: "numberOfTimes",
+  name: "numberOfTimes",
+  label: {
+    text: "What is the maximum number of times a provider can attempt this?",
+    classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "times",
+  fieldset: {
+    legend: {
+      text: "Do you want to limit the number of times a provider can try to manually claim an outcome has been achieved?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: timesHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

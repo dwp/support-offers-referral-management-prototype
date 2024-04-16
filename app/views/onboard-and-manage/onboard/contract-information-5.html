@@ -1,0 +1,85 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %}
+Contract information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create contract details</span>
+      <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
+
+      <form action="contract-information-6" method="post" novalidate>
+
+        {{ govukDateInput({
+  id: "first-date",
+  namePrefix: "first-date",
+  fieldset: {
+    legend: {
+      text: "What is the due date of the first service fee?",
+    classes: "govuk-fieldset__legend--s"
+    }
+  }
+}) }}
+
+        {{ govukRadios({
+  name: "mandatory",
+  fieldset: {
+    legend: {
+      text: "What is the agreed payment schedule for service fees?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "monthly",
+      text: "Monthly"
+    },
+    {
+      value: "3months",
+      text: "Every 3 months"
+    },
+    {
+      value: "6months",
+      text: "Every 6 months"
+    },
+    {
+      value: "annual",
+      text: "Annualy"
+    }    
+  ]
+}) }}
+
+        {{ govukInput({
+  id: "currency",
+  name: "currency",
+  label: {
+    text: "What is the agreed monthly service fee?",
+    classes: "govuk-fieldset__legend--s",
+    isPageHeading: false
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-10",
+  spellcheck: false
+}) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

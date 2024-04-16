@@ -1,0 +1,131 @@
+{% extends "layouts/onboard-2.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+{% block pageTitle %}
+Provision build progress – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Provision build progress</h1>
+
+      <form action="programme-information-1" method="post" novalidate>
+        <h2 class="govuk-heading-m">1. Provision</h2>
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Create provision name"
+      },
+      href: "programme-information-1",
+      status: {
+        text: "Not started yet"
+      }
+    },
+    {
+      title: {
+        text: "Create programme information"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">2. Outcomes</h2>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Create outcome name"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Create outcome information"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">3. Opportunities</h2>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Create opportunity name"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Create opportunity information"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">4. Check information</h2>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Check all information"
+      },
+      status: {
+        tag: {
+          text: "Cannot start yet",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
