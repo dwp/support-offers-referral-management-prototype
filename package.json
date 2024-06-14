@@ -6,6 +6,7 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
+    "20": "^3.1.9",
     "@dwp/dwp-frontend": "2.5.0",
     "@govuk-prototype-kit/step-by-step": "2.2.2",
     "@ministryofjustice/frontend": "2.0.0",
