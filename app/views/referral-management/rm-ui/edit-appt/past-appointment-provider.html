@@ -1,0 +1,101 @@
+{% extends "layout-esa.html" %}
+{% from "timeline/macro.njk" import dwpTimeline %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+Past appointment details - Managing Working Age Claimants
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Includes -->
+{%- set interpreter %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter language required"
+  }
+}) }}
+{% endset -%}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l"><span class="govuk-caption-l">Past appointment details</span>10 June 2024 - 2:00pm to 2:20pm <br><strong class="govuk-tag govuk-tag--green">Attended</strong></h1>
+
+      <h3 class="govuk-heading-m">Appointment notes</h3>
+
+      <p>Claimant was made aware of the courses on offer at Reed via Universal Support programme</p>
+
+      <p>Has signed up for 2 1-day courses, Self-confidence and Interview Preparation</p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-top-4">Appointment details</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"> </th>
+            <th scope="col" class="govuk-table__header"> </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-width-one-third">Provider</th>
+            <td class="govuk-table__cell">Reed</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Location</th>
+            <td class="govuk-table__cell">Reed Head Office<br>Kentmere House<br>1 Blackhall Road<br>Newcastle<br>NE1 4BS</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Appointment type</th>
+            <td class="govuk-table__cell">Universal Support</td>
+          </tr>
+        </tbody>
+      </table>
+
+        <p><strong>Do they need an interpreter?</strong><br>
+        No</p>
+
+        <p><strong>Other information</strong><br>
+        -</p>
+
+    </div>
+
+    <!-- <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m" style="border-top: #1d70b8 solid 4px; padding-top: 4px;">Actions</h3>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="pinned-hint">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="pinned" name="pinned" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="pinned">
+                Pin this note
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: 'claimant-view#history'
+      }) }}
+
+    </div> -->
+
+</div>
+
+{% endblock %}
