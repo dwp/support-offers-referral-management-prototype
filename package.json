@@ -5,6 +5,10 @@
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
+
+  "engines": {
+    "node": "20.x"
+  }
   "dependencies": {
     "20": "^3.1.9",
     "@dwp/dwp-frontend": "2.5.0",
