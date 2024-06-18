@@ -35,75 +35,74 @@ Add note - Managing Working Age Claimants
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Add a note</h1>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend ">
-            <h1 class="govuk-fieldset__heading">
-              Note type
-            </h1>
-          </legend>
-          <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="notetype" name="notetype" type="radio" value="Claimant">
-              <label class="govuk-label govuk-radios__label" for="notetype">
-                Claimant
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="notetype-2" name="notetype" type="radio" value="Colleague">
-              <label class="govuk-label govuk-radios__label" for="notetype-2">
-                Colleague
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <div id="claimant-note">
+      <form class="form" action="history-banner-provider" method="post">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="event-name">
-            Title
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
-        </div>
-
-        <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="1000">
-          <div class="govuk-form-group">
-            <h1 class="govuk-label-wrapper">
-              <label class="govuk-label" for="note-details">
-                Note details
-              </label>
-            </h1>
-            <textarea class="govuk-textarea govuk-js-character-count" id="note-details" name="note-details" rows="5" aria-describedby="note-details-info"></textarea>
-          </div>
-          <div id="note-details-info" class="govuk-hint govuk-character-count__message">
-            You can enter up to 1000 words
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="channel-2" name="channel" type="checkbox" value="fta">
-              <label class="govuk-label govuk-checkboxes__label" for="channel-2">
-                Notify all relevant parties by email (michelle@reed.co.uk, dan.brown@dwp.gov.uk)
-              </label>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend ">
+              <h1 class="govuk-fieldset__heading">
+                Note type
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notetype" name="notetype" type="radio" value="Claimant">
+                <label class="govuk-label govuk-radios__label" for="notetype">
+                  Claimant
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="notetype-2" name="notetype" type="radio" value="Colleague">
+                <label class="govuk-label govuk-radios__label" for="notetype-2">
+                  Colleague
+                </label>
+              </div>
             </div>
-        </fieldset>
-      </div>
+          </fieldset>
+        </div>
 
+        <div id="claimant-note">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Title
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
+          </div>
 
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="1000">
+            <div class="govuk-form-group">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label" for="note-details">
+                  Note details
+                </label>
+              </h1>
+              <textarea class="govuk-textarea govuk-js-character-count" id="note-details" name="note-details" rows="5" aria-describedby="note-details-info"></textarea>
+            </div>
+            <div id="note-details-info" class="govuk-hint govuk-character-count__message">
+              You can enter up to 1000 words
+            </div>
+          </div>
+        </div>
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="channel-2" name="channel" type="checkbox" value="fta">
+                <label class="govuk-label govuk-checkboxes__label" for="channel-2">
+                  Notify all relevant parties by email (michelle@reed.co.uk, dan.brown@dwp.gov.uk)
+                </label>
+              </div>
+          </fieldset>
+        </div>
 
-            {{ govukButton({
-            text: "Continue",
-            href: "history-banner-provider",
-            preventDoubleClick: true
-            }) }}
+        {{ govukButton({
+          text: "Continue",
+          preventDoubleClick: true
+        }) }}
+
+      </form>
 
     </div>
+
 
 </div>
 
