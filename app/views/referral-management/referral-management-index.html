@@ -60,7 +60,7 @@
                 <a class="govuk-tabs__tab" href="#dwp-screens"> Provider employment advisers </a>
               </li>
               <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="#dwp-screens"> Work coaches </a>
+                <a class="govuk-tabs__tab" href="#jc-screens"> Work coaches </a>
               </li>
             </ul>
             <div class="govuk-tabs__panel" id="prap-admin-screens">
@@ -236,6 +236,64 @@
                   specific to each programme. However, legacy tech dependencies mean that for our MVP we have had to
                   build a generic citizen rejection route that works for all programmes.
                 </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="jc-screens">
+              <h2 class="govuk-heading-l">DWP – work coach screens</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                Latest version
+              </strong>
+              </p>
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+              text: "Start version 1.0",
+              href: "/referral-management/rm-ui/searchlight",
+              isStartButton: true
+            }) }}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 22</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  This is the initial prototype for work coaches working in Jobcentres to see updates from the provider.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1718098116776">Screenshots
+                        on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="#">Documented
+                    design decisions</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/overview?homepageId=132820697551">Nidderdale</a>
+                  </dd>
                 </div>
               </dl>
             </div>
