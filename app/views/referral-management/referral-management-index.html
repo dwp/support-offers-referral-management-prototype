@@ -48,22 +48,8 @@
     <class="govuk-main-wrapper govuk-main-wrapper--l">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
-          <div class="govuk-tabs" data-module="govuk-tabs">
-            <h2 class="govuk-tabs__title">Contents</h2>
-            <ul class="govuk-tabs__list">
-              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                <a class="govuk-tabs__tab" href="#prap-admin-screens">
-                Provider PRaP admin
-              </a>
-              </li>
-              <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="#dwp-screens"> Provider employment advisers </a>
-              </li>
-              <li class="govuk-tabs__list-item">
-                <a class="govuk-tabs__tab" href="#jc-screens"> Work coaches </a>
-              </li>
-            </ul>
-            <div class="govuk-tabs__panel" id="prap-admin-screens">
+
+            {% set prapAdminScreens %}
               <h2 class="govuk-heading-l">Provider – PRaP admin screens</h2>
               <p>
                 <strong class="govuk-tag govuk-tag--green">
@@ -157,10 +143,9 @@
                 </dd>
                 </div>
               </dl>
+            {% endset -%}
 
-            </div>
-
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="dwp-screens">
+            {% set dwpScreens %}
               <h2 class="govuk-heading-l">Provider – employment adviser screens</h2>
               <p>
                 <strong class="govuk-tag govuk-tag--green">
@@ -238,9 +223,10 @@
                 </dd>
                 </div>
               </dl>
-            </div>
 
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="jc-screens">
+            {% endset -%}
+
+            {% set jcScreens %}
               <h2 class="govuk-heading-l">DWP – work coach screens</h2>
               <p>
                 <strong class="govuk-tag govuk-tag--green">
@@ -254,7 +240,7 @@
               text: "Start version 1.0",
               href: "/referral-management/rm-ui/searchlight",
               isStartButton: true
-            }) }}
+              }) }}
 
               <h3 class="govuk-heading-m">Supporting information</h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
@@ -292,13 +278,37 @@
                   <dt class="govuk-summary-list__key">Feature team</dt>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link"
-                    href="https://dwpdigital.atlassian.net/wiki/spaces/SORM/overview?homepageId=132820697551">Nidderdale</a>
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Nidderdale</a>
                   </dd>
                 </div>
               </dl>
-            </div>
+            {% endset -%}
 
-          </div>
+            {{ govukTabs({
+              items: [
+                {
+                  label: "Provider PRaP admin",
+                  id: "prap-admin-screens",
+                  panel: {
+                    html: prapAdminScreens
+                  }
+                },
+                {
+                  label: "Provider employment advisers",
+                  id: "dwp-screens",
+                  panel: {
+                    html: dwpScreens
+                  }
+                },
+                {
+                  label: "Work coaches",
+                  id: "jc-screens",
+                  panel: {
+                    html: jcScreens
+                  }
+                }
+              ]
+            }) }}
         </div>
 
       {% endblock %}
