@@ -11,18 +11,49 @@ Contract variation information – {{ serviceName }} – Support Offers prototyp
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-variation-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Variations",
+              href: "contract-variation-1",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Var one",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
       <span class="govuk-caption-xl">Create variation details</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
       <form action="contract-variation-4" method="post" novalidate>
         {{ govukCheckboxes({
-  name: "waste",
+  name: "selectOutcomes",
   fieldset: {
     legend: {
-      text: "Select the outcomes from <WHP Disability Condition> that apply to this variation",
+      text: "Which outcomes from <WHP Disability Condition> apply to this variation?",
       classes: "govuk-fieldset__legend--s"
     }
+  },
+  hint: {
+    text: "Select all that apply"
   },
   items: [
     {

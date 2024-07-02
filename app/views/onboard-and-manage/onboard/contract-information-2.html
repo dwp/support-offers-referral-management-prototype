@@ -10,7 +10,23 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-information-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
       <span class="govuk-caption-xl">Create contract details</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
@@ -18,12 +34,12 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
         {{ govukInput({
   label: {
-    text: "Select the provider who will deliver this contract",
+    text: "Which provider will deliver this contract",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
-  id: "width-20",
-  name: "width20"
+  id: "provider",
+  name: "provider"
 }) }}
 
         {{ govukInput({
@@ -32,21 +48,21 @@ Contract information – {{ serviceName }} – Support Offers prototype
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
-  id: "width-20",
-  name: "width5"
+  id: "cost-centre",
+  name: "costCentre"
 }) }}
 
         {{ govukInput({
   label: {
-    text: "What is the percentage of outcomes that will be put on hold if claimed manually?",
+    text: "What percentage of outcomes will be put on hold if claimed manually?",
     classes: "govuk-fieldset__legend--s"
   },
   suffix: {
     text: "%"
   },
   classes: "govuk-input--width-2",
-  id: "width-5",
-  name: "width5"
+  id: "percent-outcomes",
+  name: "percentOutcomes"
 }) }}
 
         <div class="govuk-button-group">

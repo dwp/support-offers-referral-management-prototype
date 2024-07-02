@@ -4,6 +4,7 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
 {% block pageTitle %}
 Provision summary – {{ serviceName }} – Support Offers prototype
@@ -11,7 +12,7 @@ Provision summary – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
       <span class="govuk-caption-xl">Summary</span>
       <h1 class="govuk-heading-l">Provision build summary</h1>
 
@@ -173,17 +174,19 @@ Provision summary – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
-      <p class="govuk-body">Once you are satisfied that all the information you have entered is correct you can send for approval.</p>
+      {{ govukCheckboxes({
+  items: [
+    {
+      value: "approveProvision",
+      text: "Check the box once you are satisfied that all the information you have entered is correct."
+    }
+  ]
+}) }}
 
-      <div class="govuk-button-group">
-        {{ govukButton({
-  text: "Send for approval"
+      {{ govukButton({
+  text: "Approve and check outcomes",
+  href: "programme-full-summary-2"
   }) }}
-        {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-      </div>
     </form>
   </div>
 </div>
