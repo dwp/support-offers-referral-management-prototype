@@ -26,15 +26,15 @@ Contract information – {{ serviceName }} – Support Offers prototype
     })
 }}
     </div>
-    <div class="govuk-grid-column-three-quarters">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
       <form action="contract-information-3" method="post" novalidate>
 
         {{ govukInput({
   label: {
-    text: "Which provider will deliver this contract",
+    text: "Which provider will deliver this contract?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
@@ -54,7 +54,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
         {{ govukInput({
   label: {
-    text: "What percentage of outcomes will be put on hold if claimed manually?",
+    text: "If outcomes are claimed manually, what percentage of the payment will be put on hold?",
     classes: "govuk-fieldset__legend--s"
   },
   suffix: {

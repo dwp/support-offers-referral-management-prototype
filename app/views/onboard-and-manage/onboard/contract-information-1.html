@@ -28,14 +28,14 @@ Contract information – {{ serviceName }} – Support Offers prototype
     </div>
 
     <div class="govuk-grid-column-three-quarters">
-      <span class="govuk-caption-xl">Create contract details</span>
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">Contract information</h1>
 
       <form action="contract-information-2" method="post" novalidate>
 
         {{ govukInput({
   label: {
-    text: "CPA short name",
+    text: "What is the CPA short name?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-5",
@@ -45,7 +45,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
         {{ govukInput({
   label: {
-    text: "What is the name of the CPA?",
+    text: "What is the CPA full name?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
@@ -58,7 +58,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
   namePrefix: "contractStartDate",
   fieldset: {
     legend: {
-      text: "What is the first date of the contract?",
+      text: "What is the start date of the contract?",
       isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
@@ -84,7 +84,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
   namePrefix: "contractEndDate",
   fieldset: {
     legend: {
-      text: "What is the last date of the contract?",
+      text: "What is the end date of the contract?",
       isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
