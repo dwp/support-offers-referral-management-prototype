@@ -10,63 +10,104 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-information-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">Contract information</h1>
 
       <form action="contract-information-2" method="post" novalidate>
 
         {{ govukInput({
   label: {
-    text: "CPA short name",
+    text: "What is the CPA short name?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-5",
-  id: "width-5",
-  name: "width5"
+  id: "short-name",
+  name: "shortName"
 }) }}
 
         {{ govukInput({
   label: {
-    text: "What is the name of the CPA?",
+    text: "What is the CPA full name?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
-  id: "width-20",
-  name: "width5"
+  id: "cpa-name",
+  name: "cpaName"
 }) }}
 
         {{ govukDateInput({
-  id: "first-date",
-  namePrefix: "first-date",
+  id: "contractStartDate",
+  namePrefix: "contractStartDate",
   fieldset: {
     legend: {
-      text: "What is the first date of the contract?",
+      text: "What is the start date of the contract?",
+      isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
 }) }}
 
         {{ govukDateInput({
-  id: "last-date",
-  namePrefix: "last-date",
+  id: "contractEndDate",
+  namePrefix: "contractEndDate",
   fieldset: {
     legend: {
-      text: "What is the last date of the contract?",
+      text: "What is the end date of the contract?",
+      isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
 }) }}
-
-        <div class="govuk-button-group">
-          {{ govukButton({
+        {{ govukButton({
   text: "Save and continue"
   }) }}
-          {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-        </div>
+
       </form>
     </div>
   </div>

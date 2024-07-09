@@ -4,20 +4,49 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Outcome information – {{ serviceName }} – Support Offers prototype
+Outcome details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create outcome details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "outcome-information",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Outcomes",
+              href: "outcome-information",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Not given",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
       <h1 class="govuk-heading-l">Outcome details for {{ data['outcomeName'] }}</h1>
 
       <form action="outcome-information-3" method="post" novalidate>
 
         {{ govukInput({
   label: {
-    text: "What is the minimum number of working days before an outcome can be claimed?",
+    text: "What is the minimum number of working days before this outcome can be claimed?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-2",
@@ -60,7 +89,7 @@ Outcome information – {{ serviceName }} – Support Offers prototype
   id: "claimAfterTimes",
   name: "claimAfterTimes",
   label: {
-    text: "For how many more working days after this can a provider still claim an outcome?",
+    text: "For how many working days after ending can a provider claim an outcome?",
     classes: "govuk-fieldset__legend--s"
   }
 }) }}
@@ -70,7 +99,7 @@ Outcome information – {{ serviceName }} – Support Offers prototype
   name: "outcomeClaim",
   fieldset: {
     legend: {
-      text: "Can an outcome be claimed after a citizen's allotted time and extension have elapsed?",
+      text: "Can this outcome be claimed after a participant's time on the provision has ended?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -100,7 +129,7 @@ Outcome information – {{ serviceName }} – Support Offers prototype
   id: "numberOfDays",
   name: "numberOfDays",
   label: {
-    text: "How many working days will this check run for?",
+    text: "For how many working days do you want to check for this evidence?",
     classes: "govuk-fieldset__legend--s"
   }
 }) }}
@@ -110,7 +139,7 @@ Outcome information – {{ serviceName }} – Support Offers prototype
   name: "outcomeEvidence",
   fieldset: {
     legend: {
-      text: "Does the provider have to include any evidence when they claim this outcome has been achieved for a citizen?",
+      text: "Does the provider have to include evidence when they claim this outcome?",
       classes: "govuk-fieldset__legend--s"
     }
   },

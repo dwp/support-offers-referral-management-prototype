@@ -10,14 +10,30 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-information-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
       <form action="contract-information-4" method="post" novalidate>
 
         {{ govukRadios({
-  name: "mandatory",
+  name: "tracking",
   fieldset: {
     legend: {
       text: "Does cohort tracking apply to this contract?",
@@ -26,11 +42,11 @@ Contract information – {{ serviceName }} – Support Offers prototype
   },
   items: [
     {
-      value: "yes",
+      value: "tracking-yes",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "tracking-no",
       text: "No"
     }
   ]

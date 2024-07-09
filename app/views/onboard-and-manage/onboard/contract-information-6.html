@@ -10,8 +10,8 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
       <h2 class="govuk-heading-m">Contract details</h2>
 
@@ -20,10 +20,10 @@ Contract information – {{ serviceName }} – Support Offers prototype
   rows: [
     {
       key: {
-        text: "Which CPA?"
+        text: "CPA"
       },
       value: {
-        text: "CPA 1"
+        text: data['shortName'] or "CPA1"
       },
       actions: {
         items: [
@@ -37,10 +37,10 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Name of CPA?"
+        text: "CPA name"
       },
       value: {
-        text: "Central England"
+        text: data['cpaName'] or "North South England"
       },
       actions: {
         items: [
@@ -88,10 +88,10 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Name of provider"
+        text: "Provider"
       },
       value: {
-        html: "Shaw Trust Baby"
+        text: data['provider'] or "Company XX"
       },
       actions: {
         items: [
@@ -105,10 +105,10 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Name of cost centre"
+        text: "Cost centre name"
       },
       value: {
-        html: "Thwack"
+        text: data['costCentre'] or "Cost Centre AA"
       },
       actions: {
         items: [
@@ -125,7 +125,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
         text: "Percentage of outcomes put on hold if claimed manually?"
       },
       value: {
-        html: "47"
+        text: data['percentOutcomes'] + "%" or "47%"
       },
       actions: {
         items: [
@@ -139,7 +139,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Does cohort tracking apply to this contract?"
+        text: "Cohort tracking on this contract?"
       },
       value: {
         html: "How should I know?!"
@@ -159,7 +159,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
         text: "Payment accelerator name"
       },
       value: {
-        html: "Booster"
+        text: data['accelName'] or "Geoffrey"
       },
       actions: {
         items: [
@@ -173,7 +173,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Start date of the accelrator"
+        text: "Payment accelerator start date"
       },
       value: {
         html: "Date 3"
@@ -193,7 +193,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
         text: "Percentage of outcome starts"
       },
       value: {
-        html: "34"
+        text: data['percentStarts'] + "%" or "47%"
       },
       actions: {
         items: [
@@ -210,41 +210,7 @@ Contract information – {{ serviceName }} – Support Offers prototype
         text: "Percentage paid at low rate"
       },
       value: {
-        html: "23"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "First due date of the service fee"
-      },
-      value: {
-        html: "Date 4"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Agreed monthly fee"
-      },
-      value: {
-        html: "£3.59"
+        text: data['percentLowRate'] + "%" or "47%"
       },
       actions: {
         items: [
@@ -259,6 +225,47 @@ Contract information – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
+      <h2 class="govuk-heading-m">Payment schedule</h2>
+
+      {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date service fee due"
+      },
+      value: {
+        html: "Date 4"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Agreed service fee"
+      },
+      value: {
+        text: "£" + data['serviceFee'] or "£2.50"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+      ]
+}) }}
       {{ govukRadios({
   classes: "govuk-radios",
   name: "changedName",
@@ -276,20 +283,14 @@ Contract information – {{ serviceName }} – Support Offers prototype
     },
     {
       value: "no",
-      text: "No"
+      text: "No, return to task list"
     }
   ]
 }) }}
-      <div class="govuk-button-group">
-        {{ govukButton({
+      {{ govukButton({
   text: "Save and continue",
-  href: "contract-variation-1"
+  href: "contract-build-tasks-1"
   }) }}
-        {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-      </div>
     </form>
   </div>
 </div>

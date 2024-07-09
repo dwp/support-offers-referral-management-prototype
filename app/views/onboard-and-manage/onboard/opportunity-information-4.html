@@ -1,0 +1,348 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+Opportunity details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "opportunity-information",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Outcomes",
+              href: "outcome-information",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Not given",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            },
+            {
+              text: "Opportunities",
+              href: "opportunity-information",
+              id: "d-item-4",
+              subItems: [
+                {
+                    text: data['opportunityName'] or "Test Name",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Check the details for {{ data['opportunityName'] }}</h1>
+      <form action="provision-build-tasks-4" method="post" novalidate>
+
+        <h2 class="govuk-heading-m">Opportunity details</h2>
+
+        {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "First date referrals accepted"
+      },
+      value: { 
+        text: data['referralStart-day'] + " " + data['referralStart-month'] + " " +  data ['referralStart-year'] or "1 November 2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Last date referrals accepted"
+      },
+      value: {
+        text: data['referralEnd-day'] + " " + data['referralEnd-month'] + " " +  data ['referralEnd-year'] or "1 November 2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Working days a participant can spend on this opportunity"
+      },
+      value: {
+        text: data['workingDays'] or "364"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Extension available?"
+      },
+      value: {
+        text: data['extension'] or "Yes"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Number of working days for the extension?"
+      },
+      value: {
+        text: data['addWorkingDays'] or "133"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Outcomes</h2>
+
+        {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 2"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Opportunity description</h2>
+        {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Overview"
+      },
+      value: {
+        html: "<p>The Pioneer Work and Health Programme (WHP) helps people who face a range of complex barriers to finding work.</p> <p>WHP advisers will support participants for up to 15 months by:</p>
+<p><li>understanding their goals, strengths and experience</li>
+<li>helping them to find and start work as soon as possible
+providing ongoing in-work support</li></p>
+<p>The opportunity is voluntary.</p>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Eligibility"
+      },
+      value: {
+        html: "<p>To be eligible they must not be claiming Jobseeker's Allowance (JSA).</p>
+<p>They may be claiming:</p>
+
+<li>Employment and Support Allowance (ESA)</li>
+<li>Employment and Support Allowance Contributory (ESAC)</li>
+<li>Incapacity Benefit (IB)</li>
+<li>Income Support (IS)</li>
+<li>Passport Incapacity Benefit (PIB)</li>
+<li>Severe Disablement Allowance (SDA)</li>
+<li>Training Allowance (TA)</li>
+<li>no 'out of work' benefits</li>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Suitability"
+      },
+      value: {
+        html: "<p>To be suitable they must:</p>
+
+<li>have committed to the goal of finding work in 12 months</li>
+<li>need extra support to find work</li>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Other information"
+      },
+      value: {
+        text: "To take part in this opportunity, they must meet all the eligibility and suitability criteria."
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }    
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Do you want to create another opportunity?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No, return to task list"
+    }
+  ]
+}) }}
+        {{ govukButton({
+  text: "Save and continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

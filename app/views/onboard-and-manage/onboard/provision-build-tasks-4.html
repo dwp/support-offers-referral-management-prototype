@@ -1,0 +1,160 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+{% block pageTitle %}
+Create a new provision – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Task list</h1>
+
+      <form action="programme-information-1" method="post" novalidate>
+        <h2 class="govuk-heading-m">1. Provision</h2>
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Provision name and start date"
+      },
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }      
+      }
+    },
+    {
+      title: {
+        text: "Provision details"
+      },
+      href: "programme-information-3",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">2. Outcomes</h2>
+        <h3 class="govuk-heading-s">Outcome 1</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-4",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Not given"
+      },
+      href: "outcome-information",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "outcome-information-1",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Add another outcome",
+  classes: "govuk-button--secondary",
+  href: "#"
+  }) }}
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">3. Opportunities</h2>
+        <h3 class="govuk-heading-s">Opportunity 1</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-4",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Opportunity name"
+      },
+      href: "opportunity-information",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }      }
+    },
+    {
+      title: {
+        text: "Opportunity details"
+      },
+      href: "opportunity-information-1",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Opportunity description"
+      },
+      href: "opportunity-information-3",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Add another opportunity",
+  classes: "govuk-button--secondary",
+  href: "#"
+  }) }}
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">4. Check information</h2>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-9",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Check all information"
+      },
+      href: "programme-full-summary-1",
+      status: {
+          text: "Not started"
+      }
+    }
+  ]
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

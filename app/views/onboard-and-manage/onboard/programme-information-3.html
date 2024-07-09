@@ -4,14 +4,32 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Provision information – {{ serviceName }} – Support Offers prototype
+Provision details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create provision details</span>
-      <h1 class="govuk-heading-l">Provision information</h1>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "programme-information-3",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-3",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Provision details</h1>
 
       <form action="programme-information-4" method="post" novalidate>
 
@@ -19,7 +37,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   name: "provisionType",
   fieldset: {
     legend: {
-      text: "What kind of provision is this?",
+      text: "What type of provision is this?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -42,7 +60,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
 
         {{ govukInput({
   label: {
-    text: "How many days does a citizen have, after being referred, to start an opportunity under this provision?",
+    text: "After being referred, how many days does a citizen have to start an opportunity?",
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-2",
@@ -71,7 +89,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   name: "checkEarnings",
   fieldset: {
     legend: {
-      text: "Does this provision need to check citizens’ earnings or employment?",
+      text: "Do participants' earnings or employment need to be checked?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -94,7 +112,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   name: "leavesEarly",
   fieldset: {
     legend: {
-      text: "If a citizen leaves an opportunity under this provision before completing it, do you want the check to be cancelled?",
+      text: "Should this check be cancelled if the participant does not complete the opportunity?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -114,7 +132,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   name: "outcomeFees",
   fieldset: {
     legend: {
-      text: "Are outcome fees and service fees for contracts under this provision to be paid by SOP?",
+      text: "Are outcome fees and service fees to be paid by SOP?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -141,7 +159,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   id: "numberOfTimes",
   name: "numberOfTimes",
   label: {
-    text: "What is the maximum number of times a provider can attempt this?",
+    text: "What is the maximum number of attempts a provider can make?",
     classes: "govuk-fieldset__legend--s"
   }
 }) }}
@@ -151,7 +169,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
   name: "times",
   fieldset: {
     legend: {
-      text: "Do you want to limit the number of times a provider can try to manually claim an outcome has been achieved?",
+      text: "Is there a limit on how many times a provider can try to manually claim an outcome?",
       classes: "govuk-fieldset__legend--s"
     }
   },
@@ -169,15 +187,9 @@ Provision information – {{ serviceName }} – Support Offers prototype
     }
   ]
 }) }}
-        <div class="govuk-button-group">
-          {{ govukButton({
+        {{ govukButton({
   text: "Save and continue"
   }) }}
-          {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-        </div>
       </form>
     </div>
   </div>

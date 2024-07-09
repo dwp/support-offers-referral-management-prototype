@@ -3,20 +3,49 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
-{% block pageTitle %}
-Outcome information – {{ serviceName }} – Support Offers prototype
+{% block pageTitle %} 
+Outcome details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create outcome details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "outcome-information",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Outcomes",
+              href: "outcome-information",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Not given",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
       <h1 class="govuk-heading-l">Outcome details for {{ data['outcomeName'] }}</h1>
 
-      <form action="outcome-information-2" method="post" novalidate>
+      <form action="outcome-information-1a" method="post" novalidate>
 
         {{ govukRadios({
-  name: "outcomePayment",
+  name: "offBenefitCheck",
   fieldset: {
     legend: {
       text: "Will there be a payment for this outcome?",
@@ -35,115 +64,9 @@ Outcome information – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
-        {{ govukRadios({
-  name: "offBenefitCheck",
-  fieldset: {
-    legend: {
-      text: "Does the citizen have to be off benefits before the outcome fee can be paid to the provider?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        {{ govukRadios({
-  name: "flexDays",
-  fieldset: {
-    legend: {
-      text: "Do you want to add flex days to the off-benefit-check period?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        {{ govukRadios({
-  name: "validation1",
-  fieldset: {
-    legend: {
-      text: "Will the outcome payment be put on hold until validation has occurred, where an outcome is claimed manually by the provider?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        {{ govukRadios({
-  name: "validation2",
-  fieldset: {
-    legend: {
-      text: "Will the outcome payment be put on hold until validation has occurred, where data affecting payment calculations has changed?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        {{ govukRadios({
-  name: "validation3",
-  fieldset: {
-    legend: {
-      text: "Will the outcome payment be put on hold until validation has occurred, where the outcome relates to self-employed earnings?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "Yes",
-      text: "Yes"
-    },
-    {
-      value: "No",
-      text: "No"
-    }
-  ]
-}) }}
-
-        <div class="govuk-button-group">
-          {{ govukButton({
+        {{ govukButton({
   text: "Save and continue"
   }) }}
-          {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-        </div>
       </form>
     </div>
   </div>

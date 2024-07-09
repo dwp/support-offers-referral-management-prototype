@@ -17,8 +17,29 @@ const router = govukPrototypeKit.requests.setupRouter()
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////  AVAILABLE OPPORTUNITIES V1.1 ///////////////
+/////////////////  AVAILABLE OPPORTUNITIES V1.1 & 1.2 ///////////////
 // run this code when a form is submitted to 'available-opportunities' page
+
+router.post('/choose-programme_us-1-2', function (req, res) {
+  var answer = req.session.data['select-programme']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'us-1') {
+    // Send user to pioneer dc page
+    res.redirect('identify-match-refer/us_v1_2/us-option-1')
+  } else if (answer === 'us-2') {
+    // Send user to pioneer ee page
+    res.redirect('identify-match-refer/us_v1_2/us-option-2')
+  } else if (answer === 'us-3') {
+    // Send user to pioneer m page
+    res.redirect('identify-match-refer/us_v1_2/us-option-3')
+  } else if (answer === 'us-4') {
+    // Send user to pioneer mee page
+    res.redirect('identify-match-refer/us_v1_2/us-option-4')
+  } else {
+    res.redirect('identify-match-refer/us_v1_0/available-opportunities-error')
+  }
+});
 
 router.post('/choose-programme_us-1-1', function (req, res) {
   var answer = req.session.data['select-programme']
