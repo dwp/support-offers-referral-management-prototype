@@ -10,25 +10,56 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-information-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
       <form action="contract-information-6" method="post" novalidate>
 
         {{ govukDateInput({
-  id: "first-date",
-  namePrefix: "first-date",
+  id: "serviceFeeDate",
+  namePrefix: "serviceFeeDate",
   fieldset: {
     legend: {
-      text: "What is the due date of the first service fee?",
+      text: "When is the first service fee due?",
+      isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
 }) }}
 
         {{ govukRadios({
-  name: "mandatory",
+  name: "paymentSchedule",
   fieldset: {
     legend: {
       text: "What is the agreed payment schedule for service fees?",
@@ -56,10 +87,10 @@ Contract information – {{ serviceName }} – Support Offers prototype
 }) }}
 
         {{ govukInput({
-  id: "currency",
-  name: "currency",
+  id: "service-fee",
+  name: "serviceFee",
   label: {
-    text: "What is the agreed monthly service fee?",
+    text: "What is the agreed service fee?",
     classes: "govuk-fieldset__legend--s",
     isPageHeading: false
   },

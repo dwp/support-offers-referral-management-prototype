@@ -10,8 +10,24 @@ Contract information – {{ serviceName }} – Support Offers prototype
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create contract details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-information-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
       <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
 
       <form action="contract-information-5" method="post" novalidate>
@@ -21,19 +37,34 @@ Contract information – {{ serviceName }} – Support Offers prototype
     classes: "govuk-fieldset__legend--s"
   },
   classes: "govuk-input--width-20",
-  id: "width-20",
-  name: "width5"
+  id: "accel-name",
+  name: "accelName"
 }) }}
 
         {{ govukDateInput({
-  id: "first-date",
-  namePrefix: "first-date",
+  id: "acceleratorStartDate",
+  namePrefix: "acceleratorStartDate",
   fieldset: {
     legend: {
       text: "What is the start date of the accelerator?",
+      isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
-  }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
 }) }}
 
         {{ govukInput({
@@ -45,8 +76,8 @@ Contract information – {{ serviceName }} – Support Offers prototype
   suffix: {
     text: "%"
   },
-  id: "width-5",
-  name: "width5"
+  id: "percent-starts",
+  name: "percentStarts"
 }) }}
 
         {{ govukInput({
@@ -58,8 +89,8 @@ Contract information – {{ serviceName }} – Support Offers prototype
   suffix: {
     text: "%"
   },
-  id: "width-3",
-  name: "width5"
+  id: "percent-lowrate",
+  name: "percentLowRate"
 }) }}
 
         <div class="govuk-button-group">

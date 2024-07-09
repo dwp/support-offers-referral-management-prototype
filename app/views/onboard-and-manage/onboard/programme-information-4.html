@@ -5,20 +5,37 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% block pageTitle %}
-Provision information – {{ serviceName }} – Support Offers prototype
+Provision details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create provision details</span>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "programme-information-3",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-3",
+              id: "d-item-1"
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
       <h1 class="govuk-heading-l">Check provision details</h1>
       {{ govukSummaryList({
-      classes: "govuk-!-margin-bottom-9",
+      classes: "govuk-!-margin-bottom-7",
   rows: [
     {
       key: {
-        text: "What kind of provision is this?"
+        text: "Provision type"
       },
       value: {
         text: data['provisionType'] or "Not given"
@@ -35,7 +52,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Days to start an opportunity under this provision?"
+        text: "Days to start an opportunity"
       },
       value: {
         text: data['days1'] or "Days not given"
@@ -52,7 +69,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Check citizens’ earnings or employment?"
+        text: "Earnings or employment check"
       },
       value: {
         text: data['checkEarnings'] or "Not given"
@@ -69,7 +86,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "How many days will this check run for?"
+        text: "Number of days to check for employment or earnings"
       },
       value: {
         text: data['numberOfDays'] or "Not applicable"
@@ -86,7 +103,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "If a citizen leaves early, do you want the check to be cancelled?"
+        text: "Cancel check if participant leaves early"
       },
       value: {
         text: data['leavesEarly'] or "Not given"
@@ -103,7 +120,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Are fees for this provision to be paid by SOP?"
+        text: "Pay fees by SOP"
       },
       value: {
         text: data['outcomeFees'] or "Not given"
@@ -120,7 +137,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "Limit the number of times a manual outcome can be claimed?"
+        text: "Limit the number of manual outcome claims"
       },
       value: {
         text: data['times'] or "Not given"
@@ -137,7 +154,7 @@ Provision information – {{ serviceName }} – Support Offers prototype
     },
     {
       key: {
-        text: "What is the maximum number of times a provider can attempt this?"
+        text: "Maximum number of manual outcome claims"
       },
       value: {
         text: data['numberOfTimes'] or "Not applicable"
@@ -155,16 +172,10 @@ Provision information – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
-      <div class="govuk-button-group">
-        {{ govukButton({
-  text: "Save and create an outcome",
-  href: "outcome-information"
+      {{ govukButton({
+  text: "Return to task list",
+  href: "provision-build-tasks-2"
   }) }}
-        {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-      </div>
     </form>
   </div>
 </div>

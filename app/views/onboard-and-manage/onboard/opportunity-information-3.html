@@ -1,219 +1,113 @@
 {% extends "layouts/onboard-1.html" %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
 {% block pageTitle %}
-Opportunity information – {{ serviceName }} – Support Offers prototype
+Opportunity details – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-xl">Create provision details</span>
-      <h1 class="govuk-heading-l">Check opportunity and outcome details for {{ data['opportunityName'] }}</h1>
-      <h2 class="govuk-heading-m">Opportunity details</h2>
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
-      {{ govukSummaryList({
-      classes: "govuk-!-margin-bottom-9",
-  rows: [
-    {
-      key: {
-        text: "First date referrals accepted"
-      },
-      value: { 
-        text: data['referralStart-day'] + " " + data['referralStart-month'] + " " +  data ['referralStart-year'] or "1 November 2024"
-      },
-      actions: {
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "opportunity-information",
         items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
+            {
+              text: "Provision",
+              href: "programme-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Outcomes",
+              href: "outcome-information",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Not given",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            },
+            {
+              text: "Opportunities",
+              href: "opportunity-information",
+              id: "d-item-4",
+              subItems: [
+                {
+                    text: data['opportunityName'] or "Test Name",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
         ]
-      }
-    },
-    {
-      key: {
-        text: "Last date referrals accepted"
-      },
-      value: {
-        text: data['referralEnd-day'] + " " + data['referralEnd-month'] + " " +  data ['referralEnd-year'] or "1 November 2024"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Working days a citizen can spend on an opportunity"
-      },
-      value: {
-        text: data['workingDays'] or "364"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Is an extension available?"
-      },
-      value: {
-        text: data['extension'] or "Yes"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "How many additional working days is the extension?"
-      },
-      value: {
-        text: data['addWorkingDays'] or "133"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    }
-  ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Create opportunity description for {{ data['opportunityName'] }}</h1>
+
+      <form action="opportunity-information-4" method="post" novalidate>
+
+        {{ govukTextarea({
+  name: "overview",
+  id: "overview",
+  rows: "8",
+  label: {
+    text: "Overview",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  }
 }) }}
 
-      <h2 class="govuk-heading-m">Outcome details</h2>
-
-      {{ govukSummaryList({
-      classes: "govuk-!-margin-bottom-9",
-  rows: [
-    {
-      key: {
-        text: "Start"
-      },
-      value: {
-        text: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Earnings Threshold 1"
-      },
-      value: {
-        text: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Earnings Threshold 2"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "End"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    }
-  ]
+        {{ govukTextarea({
+  name: "eligibility",
+  id: "eligibility",
+  rows: "18",
+  label: {
+    text: "Eligibility",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  }
 }) }}
 
-      {{ govukRadios({
-  classes: "govuk-radios",
-  name: "changedName",
-  fieldset: {
-    legend: {
-      text: "Do you want to create another opportunity?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
+        {{ govukTextarea({
+  name: "suitability",
+  id: "suitability",
+  rows: "8",
+  label: {
+    text: "Suitability",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  }
 }) }}
-      <div class="govuk-button-group">
+
+        {{ govukTextarea({
+  name: "otherInfo",
+  id: "other-info",
+  rows: "4",
+  label: {
+    text: "Other information",
+    classes: "govuk-label--m",
+    isPageHeading: true
+  }
+}) }}
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">Preview this page</a>. Opens in a new tab.
+</p>
         {{ govukButton({
   text: "Save and continue"
   }) }}
-        {{ govukButton({
-    text: "Save progress",
-    classes: "govuk-button--secondary"
-  }) }}
-      </div>
-    </form>
-  </div>
-</div>
 
+      </form>
+    </div>
+  </div>
 {% endblock %}
