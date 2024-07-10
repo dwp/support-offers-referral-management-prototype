@@ -5,8 +5,6 @@
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
-
-  
   "dependencies": {
     "20": "^3.1.9",
     "@dwp/dwp-frontend": "2.5.0",
@@ -17,6 +15,7 @@
     "govuk-prototype-kit": "13.16.2",
     "jquery": "^3.6.4",
     "nunjucks": "^3.2.3",
+    "radio-button-redirect": "^1.2.0",
     "v18": "^1.0.2",
     "v20": "^0.1.0"
   }
