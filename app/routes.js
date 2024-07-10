@@ -5,6 +5,8 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
 
 // Add your routes here
 
@@ -1274,5 +1276,4 @@ router.post('/address_2-pioneer', function (req, res) {
     res.redirect('identify-match-refer/V1_2/not-suitable-address')
   }
 });
-
 
