@@ -7,29 +7,40 @@ What general update do you want to make for this participant? – {{ serviceName
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="report-progress" method="post" novalidate>
+      <form action="general-follow-up" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set failReasonHtml %}
+
+            {{ govukTextarea({
+              name: "failReason",
+              id: "fail-reason",
+              label: {
+                text: "What reason did the citizen give for failing to attend the appointment?"
+              }
+            }) }}
+          {% endset -%}
+
         {{ govukRadios({
         name: "what-update",
         fieldset: {
           legend: {
-           text: "What general update do you want to make for this participant?",
+           text: "Was there contact with the citizen about the missed appointment?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
          }
         },
         items: [
         {
-            value: "attended-appointment~general-attended",
-             text: "Citizen attended appointment"
+            value: "yes",
+             text: "Yes",
+             conditional: {
+              html: failReasonHtml
+            }
           },
           {
-            value: "failed-to-attend-appointment~general-failed-to-attend",
-          text: "Citizen failed to attend appointment"
-          },
-          {
-            value: "#",
-            text: "Completed course"
+            value: "no",
+          text: "No"
           }
         ]
         }) }}
