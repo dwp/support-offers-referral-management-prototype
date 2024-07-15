@@ -1,4 +1,4 @@
-{% extends "layouts/so-citizen-active.html-rm" %}
+{% extends "layouts/so-citizen-active-rm.html" %}
 
 {% block pageTitle %}
 What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
@@ -84,9 +84,9 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Now add this update to the citizen's case notes</h2>
+    <h2 class="govuk-heading-m">This update is about to be added to the participant's case notes</h2>
 
-    <p class="govuk-body">By submitting this update you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <p class="govuk-body">Please make sure the details you are providing are correct.</p>
 
     <form action="general-confirm-update" method="post" novalidate>
 
