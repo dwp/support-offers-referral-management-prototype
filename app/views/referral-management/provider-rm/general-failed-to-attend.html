@@ -1,4 +1,4 @@
-{% extends "layouts/so-citizen-active.html" %}
+{% extends "layouts/so-citizen-active-rm.html" %}
 
 {% block pageTitle %}
 What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
@@ -43,7 +43,7 @@ What general update do you want to make for this participant? – {{ serviceName
           },
           {
             value: "custom-date",
-            text: "Custom date",
+            text: "Other date",
             conditional: {
               html: customDateHtml
             }

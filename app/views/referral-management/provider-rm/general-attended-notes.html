@@ -10,18 +10,42 @@ What general update do you want to make for this participant? – {{ serviceName
       <form action="general-follow-up" method="post" novalidate>
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-          {{ govukTextarea({
-            name: "moreDetail",
-            id: "more-detail",
-            label: {
-              text: "Can you provide more detail?",
-              classes: "govuk-label--l",
-              isPageHeading: true
+          {% set appointmentDetailHtml %}
+            {{ govukTextarea({
+              name: "moreDetail",
+              id: "more-detail",
+              label: {
+                text: "Can you provide more detail?"
+              },
+              hint: {
+                text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+              }
+            }) }}
+          {% endset %}
+
+          {{ govukRadios({
+            name: "what-update",
+            fieldset: {
+              legend: {
+               text: "Would you like to provider further detail on the appointment?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+             }
             },
-            hint: {
-              text: "Do not include personal or financial information, like your National Insurance number or credit card details."
-            }
-          }) }}
+            items: [
+            {
+                value: "yes",
+                 text: "Yes",
+                 conditional: {
+                  html: appointmentDetailHtml
+                 }
+              },
+              {
+                value: "no",
+              text: "No"
+              }
+            ]
+            }) }}
 
         {{ govukButton({
         text: "Continue"
