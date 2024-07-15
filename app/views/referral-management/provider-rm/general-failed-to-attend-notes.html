@@ -1,4 +1,4 @@
-{% extends "layouts/so-citizen-active.html" %}
+{% extends "layouts/so-citizen-active-rm.html" %}
 
 {% block pageTitle %}
 What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
@@ -10,40 +10,55 @@ What general update do you want to make for this participant? – {{ serviceName
       <form action="general-follow-up" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {% set failReasonHtml %}
-
-            {{ govukTextarea({
-              name: "failReason",
-              id: "fail-reason",
+        {% set failReasonOtherHtml %}
+            {{ govukInput({
               label: {
-                text: "What reason did the citizen give for failing to attend the appointment?"
-              }
+                text: "Please specify"
+              },
+              classes: "govuk-input--width-20",
+              id: "width-20",
+              name: "width20"
             }) }}
-          {% endset -%}
+            
+        {% endset -%}
 
-        {{ govukRadios({
-        name: "what-update",
-        fieldset: {
-          legend: {
-           text: "Was there contact with the citizen about the missed appointment?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-         }
-        },
-        items: [
-        {
-            value: "yes",
-             text: "Yes",
-             conditional: {
-              html: failReasonHtml
-            }
-          },
-          {
-            value: "no",
-          text: "No"
-          }
-        ]
-        }) }}
+          {{ govukRadios({
+            name: "failReason",
+            fieldset: {
+              legend: {
+               text: "What reason did they give for failing to attend?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+             }
+            },
+            items: [
+            
+              {
+                value: "medical",
+              text: "Illness or medical condition"
+              },
+              {
+                value: "care-responsibilites",
+              text: "Care responsibilities"
+              },
+              {
+                value: "travel",
+              text: "Difficulty travelling to the appointment"
+              },
+              {
+                value: "no-reason",
+              text: "No reason given"
+              }
+              ,
+              {
+                value: "other",
+                text: "Other",
+                conditional: {
+                  html: failReasonOtherHtml
+                }
+              }
+            ]
+            }) }}
 
         {{ govukButton({
         text: "Continue"
