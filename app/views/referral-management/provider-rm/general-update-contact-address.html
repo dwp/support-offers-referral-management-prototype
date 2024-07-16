@@ -7,20 +7,26 @@ What general update do you want to make for this participant? – {{ serviceName
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">This is the participant's current address</h1>
+      
+      {{ govukInsetText({
+        html: "1 Washington Street<br>Worcester<br>WR1 1NL"
+        }) }}
+
       <form action="general-update-contact-confirmation" method="post" novalidate>
+        
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
         name: "what-update",
         fieldset: {
           legend: {
-           text: "Is the above address correct for this citizen?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+           text: "Is the above address correct?",
+            classes: "govuk-fieldset__legend--m"
          }
         },
         items: [
         {
-            value: "yes~general-update-contact-address-confirm",
+            value: "yes~general-update-contact-confirmation",
              text: "Yes"
           },
           {
