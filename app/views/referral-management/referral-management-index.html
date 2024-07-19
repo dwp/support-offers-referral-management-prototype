@@ -238,7 +238,65 @@
 
               {{ govukButton({
               text: "Start version 1.0",
-              href: "/referral-management/rm-ui/searchlight",
+              href: "/referral-management/rm-ui/v1/searchlight",
+              isStartButton: true
+              }) }}
+
+              <h3 class="govuk-heading-m">Supporting information</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 22</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  This is the initial prototype for work coaches working in Jobcentres to see updates from the provider.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1718098116776">Screenshots
+                        on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="#">Documented
+                    design decisions</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Nidderdale</a>
+                  </dd>
+                </div>
+              </dl>
+            {% endset -%}
+
+            {% set advisorScreens %}
+              <h2 class="govuk-heading-l">Provider - employment advsior screens</h2>
+              <p>
+                <strong class="govuk-tag govuk-tag--green">
+                Latest version
+              </strong>
+              </p>
+
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              {{ govukButton({
+              text: "Start version 1.0",
+              href: "/referral-management/provider-rm/dashboard",
               isStartButton: true
               }) }}
 
@@ -305,6 +363,13 @@
                   id: "jc-screens",
                   panel: {
                     html: jcScreens
+                  }
+                },
+                {
+                  label: "Provider - Employment Advisors",
+                  id: "advisor-screens",
+                  panel: {
+                    html: advisorScreens
                   }
                 }
               ]
