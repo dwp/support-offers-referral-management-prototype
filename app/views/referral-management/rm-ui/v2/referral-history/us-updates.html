@@ -1,0 +1,54 @@
+{% extends "layouts/idm-citizen-us-2.html" %}
+
+{% block pageTitle %}
+Referral history – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Referral history - Universal Support
+        </h1>
+        {{ govukTable({
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Date",
+              classes: "govuk-!-width-one-quarter"
+            },
+            {
+              text: "Action"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "10th June 2024"
+              },
+              {
+                text: "Citizen has accepted a job offer"
+              }
+            ],
+            [
+              {
+                text: "Next 33 weeks"
+              },
+              {
+                text: "£109.80 per week"
+              }
+            ],
+            [
+              {
+                text: "2nd April 2024"
+              },
+              {
+                text: "Citizen has started Work and Health Programme"
+              }
+            ]
+          ]
+        }) }}
+  </div>
+</div>
+{% endblock %}

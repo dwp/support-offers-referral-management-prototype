@@ -1,0 +1,82 @@
+{% extends "layout-rm.html" %}
+{% from "timeline/macro.njk" import dwpTimeline %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+View note - Managing Working Age Claimants
+{% endblock %}
+
+{% block beforeContent %}
+
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Includes -->
+{%- set interpreter %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter language required"
+  }
+}) }}
+{% endset -%}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Colleague note</span>
+      <h2 class="govuk-heading-l">25 April 2024 - 11:00am</h2>
+
+        <!-- <h3 class="govuk-heading-m">ID check <strong class="govuk-tag govuk-tag--green" style="margin-left: 140px;">completed</strong></h3> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m">Title</h3>
+
+        <p>Work and Health activity</p>
+
+        <h3 class="govuk-heading-s">Note detail</h3>
+
+        <p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>
+
+
+    </div>
+
+
+
+    <!-- <div class="govuk-grid-column-one-third">
+      <h3 class="govuk-heading-m" style="border-top: #1d70b8 solid 4px; padding-top: 4px;">Actions</h3>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="pinned-hint">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="pinned" name="pinned" type="checkbox" value="pinned">
+              <label class="govuk-label govuk-checkboxes__label" for="pinned">
+                Pin this note
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: 'claimant-view#history'
+      }) }}
+
+    </div> -->
+
+</div>
+
+{% endblock %}
