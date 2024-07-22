@@ -1,0 +1,339 @@
+{% extends "layouts/layout-searchlight-rm.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Searchlight
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l" id="personal-details">Personal details</h2>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-9 searchlight-card">
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head"></thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">Current name</td>
+              <td class="govuk-table__cell">
+                <strong>MR ALEX HORNCASTLE</strong>
+                <div class="govuk-hint">
+                Name type 1  ·  since 12 Nov 2024
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Date of birth</td>
+              <td class="govuk-table__cell">
+                <strong>4 June 1972</strong>
+                <div class="govuk-hint">
+                Verified to level 2
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">National Insurance number</td>
+              <td class="govuk-table__cell">
+                <strong>QQ 12 34 56 X</strong>
+                <div class="govuk-hint">
+                Verified
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Sex</td>
+              <td class="govuk-table__cell">
+                <strong>Male</strong>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nationality</td>
+              <td class="govuk-table__cell">
+                <strong>British</strong>
+                <div class="govuk-hint">
+                Source - DWP
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Immigration status</td>
+              <td class="govuk-table__cell">
+                <strong>British citizen</strong>
+                <div class="govuk-hint">
+                Source - DWP
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">View history</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Get Home Office data
+      </button>
+      </div>
+
+      <h2 class="govuk-heading-l" id="address">Address details</h2>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-9 searchlight-card">
+        <table class="govuk-table">
+          <thead class="govuk-table__head"></thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">Correspondence address</td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Add a correspondence address</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Residential address</td>
+              <td class="govuk-table__cell">
+                <strong>26 Greengate Ln<br>Kendal<br>LA9 5LL</strong>
+                <div class="govuk-hint">
+                Live
+              </div>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Show previous addresses
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+          Address history
+        </div>
+        </details>
+      </div>
+
+      <h2 class="govuk-heading-l" id="contact">Contact</h2>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-9 searchlight-card">
+        <table class="govuk-table govuk-!-margin-bottom-0">
+          <thead class="govuk-table__head"></thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">Telephone number</td>
+              <td class="govuk-table__cell">
+                <strong>07777 900 900</strong>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">Email address</td>
+              <td class="govuk-table__cell">
+                <strong>alex.horncastle@example.com</strong>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">Change</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="govuk-heading-l" id="interests">Interests</h2>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-9 searchlight-card">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Start date</th>
+              <th scope="col" class="govuk-table__header">Interest</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">5 September 2022</td>
+              <td class="govuk-table__cell">
+                <strong>
+                  <span class="govuk-tag govuk-!-margin-right-2">system</span>New Style Jobseeker's Allowance</strong>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">View interest</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">10 January 2021</td>
+              <td class="govuk-table__cell">
+                <strong>
+                  <span class="govuk-tag govuk-!-margin-right-2">system</span>Personal Independence Payment</strong>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">View interest</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+            Show previous interests
+          </span>
+          </summary>
+          <div class="govuk-details__text">Interests history</div>
+        </details>
+      </div>
+
+      <h2 class="govuk-heading-l" id="benefits">Benefits</h2>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-9 searchlight-card">
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third"><strong>Support Offers</strong></td>
+            <td class="govuk-table__cell">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-2" id="benefits">Appointments</h4>
+              <ul class="govuk-list">
+                <li>
+                  <a href="diary2" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">View my diary</a>
+                </li>
+                <li>
+                  <a href="edit-appt/type" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">Book an appointment</a>
+                </li>
+                <li>
+                  <a href="edit-appt/amend-2" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">Manage claimant's appointment</a>
+                </li>
+              </ul>
+            </td>
+
+            <td class="govuk-table__cell">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-2" id="benefits">Notes</h4>
+              <ul class="govuk-list">
+                <li>
+                  <a href="edit-appt/history-new" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">View history and notes</a>
+                </li>
+                <li>
+                  <a href="edit-appt/add-note-new" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">Add a note</a>
+                </li>
+              </ul>
+            </td>
+
+            <td class="govuk-table__cell">
+              <h4 class="govuk-heading-s govuk-!-margin-bottom-2" id="benefits">Referrals</h4>
+                <ul class="govuk-list">
+
+                  <li>
+                    <a href="which-jcp" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">Make a referral</a>
+                  </li>
+
+                  <li>
+                    <a href="referral-history/referral-history" class="govuk-!-font-size-16 govuk-link--no-visited-state" target="_blank">View referral history</a>
+                  </li>
+                </ul>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Benefit start date</th>
+              <th scope="col" class="govuk-table__header">Benefit </th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-!-width-one-third">5 September 2022</td>
+              <td class="govuk-table__cell">
+                <strong>New Style Jobseeker's Allowance</strong>
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-hint">Award start</th>
+                      <th scope="col" class="govuk-table__header govuk-hint">Award end</th>
+                      <th scope="col" class="govuk-table__header govuk-hint">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">5 Sep 2022</td>
+                      <td class="govuk-table__cell">5 Mar 2023</td>
+                      <td class="govuk-table__cell">£77.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">View benefit details</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">10 January 2021</td>
+              <td class="govuk-table__cell">
+                <strong>Personal Independence Payment</strong>
+                <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-hint">Award start</th>
+                      <th scope="col" class="govuk-table__header govuk-hint">Award end</th>
+                      <th scope="col" class="govuk-table__header govuk-hint">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">10 Jan 2021</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">£92.40</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="govuk-table__cell" style="text-align: right;">
+                <a href="#" class="govuk-!-font-size-16 govuk-link--no-visited-state">View benefit details</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Show previous benefits
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Interests history
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

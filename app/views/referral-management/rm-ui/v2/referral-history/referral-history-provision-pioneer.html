@@ -1,0 +1,131 @@
+{% extends "layouts/idm-citizen-us-2.html" %}
+
+{% block pageTitle %}
+Referral history – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+    {% set provisionHistoryHtml %}
+
+      {% from "timeline/macro.njk" import dwpTimeline %}
+
+        {{
+            dwpTimeline({ 
+                title: "Appointments",
+                events: [
+                {
+                    name: "Fred Sweed",
+                    state: "Completed course",
+                    date: "15 Aug 2024"
+                },
+                {
+                    name: "Fred Sweed",
+                    state: "Started on Provision",
+                    date: "10 Aug 2021"
+                }
+                ]
+            })
+        }}
+
+        {% endset -%}
+
+      {% set provisionNotesHtml %}
+      <h1 class="govuk-heading-l">
+          Referral history
+        </h1>
+
+        {{ govukButton({
+          text: "Add an update",
+          href: 'add-new-update'
+        }) }}
+      
+          <table class="govuk-table govuk-!-font-size-19">
+            <caption class="govuk-table__caption govuk-table__caption--m">Notes since last Jobcentre appointment</caption>
+      
+      
+      
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="white-space: nowrap;">Date & time</th>
+                <th scope="col" class="govuk-table__header">Details</th>
+                <th scope="col" class="govuk-table__header">Agent</th>
+                <th scope="col" class="govuk-table__header">Follow up requested</th>
+                <th scope="col" class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__header"><span style="white-space: nowrap;">30 May 2024</span><br> 11:00am</td>
+                <td class="govuk-table__cell"><a href="view-note-provider-3" class="govuk-link--no-visited-state">Did not attend appointment</a></td>
+                <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+                <td class="govuk-table__cell">Yes</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">View</a></td>
+              </tr>
+              <!--  -->
+              <tr class="govuk-table__row">
+                <td class="govuk-table__header"><span style="white-space: nowrap;">28 May 2024</span><br> 2:00pm</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">Work search review</a></td>
+                <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+                <td class="govuk-table__cell">No</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <table class="govuk-table govuk-!-font-size-19">
+            <caption class="govuk-table__caption govuk-table__caption--m">Notes history</caption>
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="white-space: nowrap;">Date & time</th>
+                <th scope="col" class="govuk-table__header">Type</th>
+                <th scope="col" class="govuk-table__header">Note</th>
+                <th scope="col" class="govuk-table__header">Agent</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__header"><span style="white-space: nowrap;">30 May 2024</span><br> 11:00am</td>
+                <td class="govuk-table__cell"><a href="view-note-provider-3" class="govuk-link--no-visited-state">Did not attend appointment</a></td>
+                <td class="govuk-table__cell"><p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">Participant did not attend appointment at Reed. Could not be contacted</p></td>
+                <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              </tr>
+              <!--  -->
+              <tr class="govuk-table__row">
+                <td class="govuk-table__header"><span style="white-space: nowrap;">28 May 2024</span><br> 2:00pm</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">Work search review</a></td>
+                <td class="govuk-table__cell"><p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">Claimant provided job applications via email and interview confirmations for 2 roles. Has said they will provide an update...</p></td>
+                <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              </tr>
+            </tbody>
+          </table>
+
+          {% endset -%}
+
+
+          {{ govukTabs({
+            items: [
+              
+              {
+                label: "Provision history",
+                id: "provision-history",
+                panel: {
+                  html: provisionHistoryHtml
+                }
+              },
+              {
+                label: "Provision notes",
+                id: "provision-notes",
+                panel: {
+                  html: provisionNotesHtml
+                }
+              }
+            ]
+          }) }}
+  </div>
+</div>
+{% endblock %}
