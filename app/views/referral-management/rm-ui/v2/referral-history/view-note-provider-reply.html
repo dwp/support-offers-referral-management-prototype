@@ -49,9 +49,10 @@ View note - Managing Working Age Claimants
 
         <p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>
     
-        {{ govukButton({
-          text: "Reply to provider",
-          href: 'reply-provider'
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+        {{ govukInsetText({
+          html: "<h2>Reply from work coach</h2><p>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</p>"
         }) }}
     </div>
 
@@ -67,7 +68,7 @@ View note - Managing Working Age Claimants
                 items: [
                     {
                       text: "Reply",
-                      href: "add-reply",
+                      href: "reply-update-provider",
                       id: "reply-update",
                       class: "govuk-!-font-size-19"
                     },

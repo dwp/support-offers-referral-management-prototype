@@ -1,0 +1,60 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="general-failed-to-attend-notes" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set customDateHtml %}
+          {{ govukDateInput({
+              id: "custom-date",
+              namePrefix: "custom-date",
+              fieldset: {
+
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+          {% endset -%}
+
+        {{ govukRadios({
+        name: "what-update",
+        fieldset: {
+          legend: {
+           text: "When was the appointment that the participant failed to attend?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+          {
+            value: "today",
+          text: "Today"
+          },
+          {
+            value: "yesterday",
+             text: "Yesterday"
+          },
+          {
+            value: "custom-date",
+            text: "Previous date",
+            conditional: {
+              html: customDateHtml
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
