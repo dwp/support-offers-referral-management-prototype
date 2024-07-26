@@ -1,0 +1,65 @@
+{% extends "layout-rm.html" %}
+{% from "timeline/macro.njk" import dwpTimeline %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block pageTitle %}
+Add note - Managing Working Age Claimants
+{% endblock %}
+
+{% block beforeContent %}
+
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Includes -->
+{%- set interpreter %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter language required"
+  }
+}) }}
+{% endset -%}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add a reply</h1>
+      <form class="form" action="view-note-provider-reply" method="post">
+        <div class="govuk-form-group">
+         
+
+        <div id="claimant-note">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="1000">
+            <div class="govuk-form-group">
+              <textarea class="govuk-textarea govuk-js-character-count" id="note-details" name="note-details" rows="5" aria-describedby="note-details-info"></textarea>
+            </div>
+            <div id="note-details-info" class="govuk-hint govuk-character-count__message">
+              You can enter up to 1000 words
+            </div>
+          </div>
+        </div>
+
+        {{ govukButton({
+          text: "Submit",
+          preventDoubleClick: true
+        }) }}
+
+      </form>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
