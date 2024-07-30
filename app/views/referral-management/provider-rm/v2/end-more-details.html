@@ -12,7 +12,7 @@ What general update do you want to make for this participant? – {{ serviceName
 
           {% set appointmentDetailHtml %}
             {{ govukTextarea({
-              name: "moreDetail",
+              name: "endNotes",
               id: "more-detail",
               label: {
                 text: "Can you provide more detail?"
@@ -24,7 +24,7 @@ What general update do you want to make for this participant? – {{ serviceName
           {% endset %}
 
           {{ govukRadios({
-            name: "what-update",
+            name: "end-details",
             fieldset: {
               legend: {
                text: "Would you like to provide further detail?",
@@ -34,14 +34,14 @@ What general update do you want to make for this participant? – {{ serviceName
             },
             items: [
             {
-                value: "yes",
+                value: "Yes",
                  text: "Yes",
                  conditional: {
                   html: appointmentDetailHtml
                  }
               },
               {
-                value: "no",
+                value: "No",
               text: "No"
               }
             ]

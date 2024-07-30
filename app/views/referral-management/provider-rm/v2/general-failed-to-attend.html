@@ -24,7 +24,7 @@ What general update do you want to make for this participant? – {{ serviceName
           {% endset -%}
 
         {{ govukRadios({
-        name: "what-update",
+        name: "when-appointment",
         fieldset: {
           legend: {
            text: "When was the appointment that the participant failed to attend?",
@@ -34,15 +34,15 @@ What general update do you want to make for this participant? – {{ serviceName
         },
         items: [
           {
-            value: "today",
+            value: "Today",
           text: "Today"
           },
           {
-            value: "yesterday",
+            value: "Yesterday",
              text: "Yesterday"
           },
           {
-            value: "custom-date",
+            value: "Previous date",
             text: "Previous date",
             conditional: {
               html: customDateHtml
