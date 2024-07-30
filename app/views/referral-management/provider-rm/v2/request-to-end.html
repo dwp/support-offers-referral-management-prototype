@@ -10,7 +10,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
       <form action="general-update" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-        name: "what-update",
+        name: "end-reason",
         fieldset: {
           legend: {
            text: "For what reason would you like to request to end the provision?",
@@ -20,19 +20,19 @@ What update do you want to make for this participant? – {{ serviceName }} – 
         },
         items: [
         {
-            value: "heath-condition~end-more-details",
+            value: "Participant has a health condition~end-more-details",
              text: "Participant has a health condition and is unable to continue"
           },
           {
-            value: "participant-request~participant-request-to-end",
+            value: "Partipcant has requested to end~more-details",
              text: "Partipcant has requested to end the provision"
           },
           {
-            value: "moved-cpa~end-more-details",
+            value: "Partipant has moved~end-more-details",
           text: "Partipant has moved outside of an eligible area"
           },
           {
-            value: "end-request~end-more-details",
+            value: "other~end-more-details",
             text: "Other"
           }
         ]
