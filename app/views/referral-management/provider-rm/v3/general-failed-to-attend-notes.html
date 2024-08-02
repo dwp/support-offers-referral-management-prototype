@@ -1,0 +1,69 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="general-check-answers-update" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set failReasonOtherHtml %}
+            {{ govukInput({
+              label: {
+                text: "Please specify"
+              },
+              classes: "govuk-input--width-20",
+              id: "width-20",
+              name: "width20"
+            }) }}
+            
+        {% endset -%}
+
+          {{ govukRadios({
+            name: "failReason",
+            fieldset: {
+              legend: {
+               text: "Did the participant give a reason for failing to attend?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+             }
+            },
+            items: [
+            
+              {
+                value: "Medical",
+              text: "Illness or medical condition"
+              },
+              {
+                value: "Care responsibilites",
+              text: "Care responsibilities"
+              },
+              {
+                value: "travel",
+              text: "Difficulty travelling to the appointment"
+              },
+              {
+                value: "No reason",
+              text: "No reason given"
+              }
+              ,
+              {
+                value: "Other",
+                text: "Other",
+                conditional: {
+                  html: failReasonOtherHtml
+                }
+              }
+            ]
+            }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
