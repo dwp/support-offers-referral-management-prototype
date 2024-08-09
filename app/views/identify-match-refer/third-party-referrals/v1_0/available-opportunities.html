@@ -1,0 +1,63 @@
+{% extends "layouts/third-party-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+There are 4 opportunities available – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="opportunity" method="post" novalidate>
+        {{ govukRadios({
+  name: "selectProgramme",
+  fieldset: {
+    legend: {
+      text: "There are 4 opportunities available",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select an opportunity for an overview and full eligibility criteria."
+  },
+  items: [
+    {
+      value: "Universal Support - in work - (IPS)~us-option-1",
+      text: "Universal Support - in work - Individual Placement and Support (IPS)",
+      name: "usOption1",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "Universal Support - out of work - (IPS)~us-option-3",
+      text: "Universal Support - out of work - Individual Placement and Support (IPS)",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "Universal Support - in work - (SEQF)~us-option-2",
+      text: "Universal Support - in work - Supported Employment Quality Framework (SEQF)",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "Universal Support - out of work - (SEQF)~us-option-4",
+      text: "Universal Support - out of work - Supported Employment Quality Framework (SEQF)",
+      hint: {
+        html: ""
+      }
+    }
+  ]
+}) }}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

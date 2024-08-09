@@ -1,0 +1,57 @@
+{% extends "layouts/third-party-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Check their contact details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% call govukFieldset({
+  legend: {
+    text: "Check their contact details",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+      <p class="govuk-hint">These are the details we have on record.</p>
+      <div class="govuk-body-l">
+        <strong>Phone number:</strong> 07854 123456<br>
+        <strong>Email address:</strong> d.blanchford@examplemail.com</div>
+
+      <h2 class="govuk-label govuk-label--m  govuk-!-margin-top-7">Are these details correct?</h2>
+
+      <form action="opportunities" method="post">
+        {{ govukRadios({
+            classes:"govuk-radios",
+            name: "correct-address",
+            fieldset: {
+            },
+            items: [
+            {
+              value: "correct~available-opportunities",
+              text: "Yes"
+            },
+            {
+              value: "incorrect~enter-contacts-manually",
+              text: "No"
+            }
+            ]
+          }) }}
+
+        {{ govukButton({
+            value: "none",
+            text: "Continue",
+            preventDoubleClick: true
+          }) }}
+        {% endcall %}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
