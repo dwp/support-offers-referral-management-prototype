@@ -32,10 +32,10 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "Reason"
+            text: "Last appointment"
           },
           value: {
-            text: data['end-reason']
+            text: data['disengagement-date']
           },
           actions: {
             items: [
@@ -49,27 +49,10 @@ What general update do you want to make for this participant? – {{ serviceName
         },
         {
           key: {
-            text: "Would you like to provide more detail?"
+            text: "Reason"
           },
           value: {
-            text: data['end-details']
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "home address"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Notes"
-          },
-          value: {
-            text: data['endNotes']
+            text: data['disengagement-reason']
           },
           actions: {
             items: [
@@ -84,11 +67,11 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Submitting this request will not automatically end this provision. Your request will be reviewed by DWP.</h2>
+    <h2 class="govuk-heading-m">These updates are not reviewed regularly. You will not receive a direct response from DWP</h2>
 
     <p class="govuk-body">Please make sure the details you are providing are correct.</p>
 
-    <form action="end-confirm-update" method="post" novalidate>
+    <form action="disengagement-confirm-update" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
