@@ -1,0 +1,51 @@
+{% extends "layouts/third-party-3.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %}
+What is their date of birth? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="enter-address-manually" method="post" novalidate>
+
+        {{ govukDateInput({
+  id: "dob",
+  namePrefix: "dob",
+  fieldset: {
+    legend: {
+      text: "What is their date of birth?",
+      isPageHeading: true,
+    classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ],
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
