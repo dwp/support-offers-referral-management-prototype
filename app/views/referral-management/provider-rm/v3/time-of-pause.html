@@ -10,7 +10,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
       <form action="general-update" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-        name: "what-update",
+        name: "pause-length",
         fieldset: {
           legend: {
            text: "For how long would you like to to pause the provision?",
@@ -20,23 +20,23 @@ What update do you want to make for this participant? – {{ serviceName }} – 
         },
         items: [
         {
-            value: "heath-condition~end-more-details",
+            value: "1 month~pause-more-details",
              text: "1 month"
           },
           {
-            value: "participant-request~end-more-details",
+            value: "2 months-request~pause-more-details",
              text: "2 months"
           },
           {
-            value: "end-request~end-more-details",
+            value: "3 months~pause-more-details",
             text: "3 months"
           },
           {
-            value: "end-request~end-more-details",
+            value: "6 months~pause-more-details",
             text: "6 months"
           },
           {
-            value: "end-request~end-more-details",
+            value: "custom length~pause-more-details",
             text: "Custom length"
           }
         ]
