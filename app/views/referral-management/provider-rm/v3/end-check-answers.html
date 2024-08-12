@@ -13,9 +13,26 @@ What general update do you want to make for this participant? – {{ serviceName
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
       rows: [
+      {
+        key: {
+          text: "Request type"
+        },
+        value: {
+          text: data['what-update']
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "previous application number"
+            }
+          ]
+        }
+      },
         {
           key: {
-            text: "Reason for provision change"
+            text: "Reason"
           },
           value: {
             text: data['end-reason']
@@ -67,16 +84,16 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">This update is about to be added to the participant's case notes</h2>
+    <h2 class="govuk-heading-m">Sending this request will not automatically end this provision. Your request will be reviewed by DWP.</h2>
 
     <p class="govuk-body">Please make sure the details you are providing are correct.</p>
 
-    <form action="general-confirm-update" method="post" novalidate>
+    <form action="end-confirm-update" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Accept and send"
+        text: "Submit request"
       }) }}
 
     </form>
