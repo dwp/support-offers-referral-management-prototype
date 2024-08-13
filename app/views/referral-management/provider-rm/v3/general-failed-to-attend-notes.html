@@ -11,7 +11,7 @@ What general update do you want to make for this participant? – {{ serviceName
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {% set failReasonOtherHtml %}
-            {{ govukInput({
+        {{ govukInput({
               label: {
                 text: "Please specify"
               },
@@ -19,14 +19,14 @@ What general update do you want to make for this participant? – {{ serviceName
               id: "width-20",
               name: "width20"
             }) }}
-            
+
         {% endset -%}
 
-          {{ govukRadios({
+        {{ govukRadios({
             name: "failReason",
             fieldset: {
               legend: {
-               text: "Did they give a reason for failing to attend??",
+               text: "Did they give a reason for failing to attend?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
              }
