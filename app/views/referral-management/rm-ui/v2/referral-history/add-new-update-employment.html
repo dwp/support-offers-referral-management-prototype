@@ -7,7 +7,7 @@ What general update do you want to make for this participant? – {{ serviceName
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="#" method="post" novalidate>
+      <form action="report-progress" method="post" novalidate>
 
         {% set updateOtherHtml %}
             {{ govukInput({
@@ -23,30 +23,26 @@ What general update do you want to make for this participant? – {{ serviceName
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
-        name: "what-update",
+        name: "employment-type",
         fieldset: {
           legend: {
-           text: "Submit an update",
+           text: "What type of employment??",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
          }
         },
         items: [
         {
-            value: "Change of contact details-appointment~add-new-update-contact",
-             text: "Update contact details"
+            value: "Employed full time~add-new-update-employment-support",
+             text: "Full time employment"
           },
           {
-            value: "Found employment~add-new-update-employment",
-            text: "They have started employment"
+            value: "Self employed~add-new-update-employment-support",
+            text: "Part time employment"
           },
           {
-            value: "End requested~add-new-update-end",
-            text: "They have requested to end the provision"
-          },
-          {
-            value: "Pause requested~add-new-update-pause",
-            text: "They have requested to pause the provision"
+            value: "Self employed~add-new-update-employment-support",
+            text: "Self-employment"
           },
           {
             value: "other",

@@ -52,8 +52,15 @@ View note - Managing Working Age Claimants
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
         {{ govukInsetText({
-          html: "<h2>Reply from work coach</h2><p>It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.</p>"
+
+          html: "<h3>Reply from Greg Davis on 20th August 2024 - 11:28am</h3>"+"<p>"+data['note-details']+"</p>"
         }) }}
+
+        {{ govukButton({
+          text: "Reply to Fred Sweed",
+          href: "add-reply"
+        }) }}
+
     </div>
 
     <div class="govuk-grid-column-one-third">
@@ -70,12 +77,6 @@ View note - Managing Working Age Claimants
                       text: "Reply",
                       href: "reply-update-provider",
                       id: "reply-update",
-                      class: "govuk-!-font-size-19"
-                    },
-                    {
-                      text: "Mark as seen",
-                      href: "mark-seen",
-                      id: "mark-seen",
                       class: "govuk-!-font-size-19"
                     }
                 ]

@@ -34,7 +34,23 @@ Add note - Managing Working Age Claimants
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Add a reply</h1>
+      
+      <span class="govuk-caption-l">Provider note</span>
+      <h2 class="govuk-heading-l">25 April 2024 - 11:00am</h2>
+
+        <!-- <h3 class="govuk-heading-m">ID check <strong class="govuk-tag govuk-tag--green" style="margin-left: 140px;">completed</strong></h3> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m">Title</h3>
+
+        <p>Work and Health activity</p>
+
+        <h3 class="govuk-heading-s">Note detail</h3>
+
+        <p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>
+
+      <h2 class="govuk-heading-l">Add a reply</h2>
       <form class="form" action="view-note-provider-reply" method="post">
         <div class="govuk-form-group">
          
@@ -50,10 +66,15 @@ Add note - Managing Working Age Claimants
           </div>
         </div>
 
-        {{ govukButton({
-          text: "Submit",
-          preventDoubleClick: true
-        }) }}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Submit"
+            }) }}
+
+            <a class="govuk-link" href="view-note-provider">Cancel</a>
+          </div>
 
       </form>
 
