@@ -1,0 +1,47 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="report-progress" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+        name: "what-update",
+        fieldset: {
+          legend: {
+           text: "Which contact details are you updating??",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+        {
+            value: "phone~add-new-update-contact-phone",
+             text: "Phone number"
+          },
+          {
+            value: "email~add-new-update-contact-email",
+          text: "Email address"
+          },
+          {
+            value: "address~add-new-update-contact-address",
+            text: "Address"
+          },
+          {
+            value: "name~add-new-update-contact-name",
+            text: "Name(s)"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

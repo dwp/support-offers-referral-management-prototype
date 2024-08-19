@@ -34,6 +34,19 @@ View note - Managing Working Age Claimants
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <h3 class="govuk-notification-banner__heading">
+          You have marked this message as read
+        </h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: "success"
+      }) }}
+
       <span class="govuk-caption-l">Provider note</span>
       <h2 class="govuk-heading-l">25 April 2024 - 11:00am</h2>
 
@@ -43,22 +56,12 @@ View note - Managing Working Age Claimants
 
         <h3 class="govuk-heading-m">Title</h3>
 
-        <p>Did not attend appointment</p>
+        <p>Work and Health activity</p>
 
         <h3 class="govuk-heading-s">Note detail</h3>
 
         <p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>
-
-        <p>Let the provider know that their message has been received, <a href="view-note-provider-seen">mark as read</a></p>
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-          text: "Reply to Fred Sweed",
-          href: "add-reply"
-        }) }}
+  
     </div>
 
     <div class="govuk-grid-column-one-third">
@@ -78,8 +81,8 @@ View note - Managing Working Age Claimants
                       class: "govuk-!-font-size-19"
                     },
                     {
-                      text: "Mark as acknowledged",
-                      href: "view-note-provider-seen",
+                      text: "Mark as seen",
+                      href: "mark-seen",
                       id: "mark-seen",
                       class: "govuk-!-font-size-19"
                     }
