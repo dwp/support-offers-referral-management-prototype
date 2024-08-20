@@ -11,7 +11,7 @@ What general update do you want to make for this participant? – {{ serviceName
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {% set customDateHtml %}
-          {{ govukDateInput({
+        {{ govukDateInput({
               id: "custom-date",
               namePrefix: "custom-date",
               fieldset: {
@@ -21,13 +21,13 @@ What general update do you want to make for this participant? – {{ serviceName
                 text: "For example, 27 3 2007"
               }
             }) }}
-          {% endset -%}
+        {% endset -%}
 
         {{ govukRadios({
         name: "when-appointment",
         fieldset: {
           legend: {
-           text: "When did they fail to attend the appointment or course??",
+           text: "When did they fail to attend the appointment or course?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
          }
