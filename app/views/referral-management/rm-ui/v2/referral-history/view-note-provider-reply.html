@@ -12,7 +12,7 @@ View note - Managing Working Age Claimants
 
     {{ govukBackLink({
         text: "Back",
-        href: "javascript:history.back()"
+        href: "referal-history-provision-pioneer-1page"
       }) }}
 {% endblock %}
 
@@ -41,14 +41,16 @@ View note - Managing Working Age Claimants
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <h3 class="govuk-heading-m">Title</h3>
+        <h3 class="govuk-heading-s">Title</h3>
 
         <p>Work and Health activity</p>
 
         <h3 class="govuk-heading-s">Note detail</h3>
 
-        <p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>
+        <p>No reason given</p>
     
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        
         {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
         {{ govukInsetText({
@@ -61,28 +63,6 @@ View note - Managing Working Age Claimants
           href: "add-reply"
         }) }}
 
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items govuk-!-font-size-19" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          What you can do next
-        </h2>
-        {% from "side-navigation/macro.njk" import dwpSideNavigation %}
-          {{ 
-            dwpSideNavigation({
-                pageId: "side-navigation-1",
-                items: [
-                    {
-                      text: "Reply",
-                      href: "reply-update-provider",
-                      id: "reply-update",
-                      class: "govuk-!-font-size-19"
-                    }
-                ]
-            })
-        }}
-      </aside>
     </div>
 
     <!-- <div class="govuk-grid-column-one-third">
