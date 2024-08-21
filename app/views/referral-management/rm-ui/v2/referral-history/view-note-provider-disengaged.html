@@ -12,7 +12,7 @@ View note - Managing Working Age Claimants
 
     {{ govukBackLink({
         text: "Back",
-        href: "javascript:history.back()"
+        href: "referral-history-provision-pioneer-1page"
       }) }}
 {% endblock %}
 
@@ -56,16 +56,24 @@ View note - Managing Working Age Claimants
         <!--<p>Participant did not attend appointment at Reed due to illness. Rebooked for the 2nd May. Participant informed of new appointment via text and has confirmed rebooked appointment</p>-->
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        <p>Let the provider know that their message has been received, <a href="view-note-provider-seen">mark as read</a></p>
+        <p>If you do not need to reply. Let the provider know that their message has been received by marking as read</p>
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        {{ govukButton({
-          text: "Reply to Fred Sweed",
-          href: "add-reply"
-        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Reply to Fred Sweed",
+            href: "#"
+          }) }}
+
+          {{ govukButton({
+            text: "Mark as read",
+            classes: "govuk-button--secondary",
+            href: "#"
+          }) }}
+        </div>
     </div>
 
     <!-- <div class="govuk-grid-column-one-third">
