@@ -1,0 +1,47 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="general-update" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+        name: "what-update",
+        fieldset: {
+          legend: {
+           text: "For what reason would you like to request to end the provision?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+        {
+            value: "heath-condition~end-more-details",
+             text: "Participant has found work and would like to end support"
+          },
+          {
+            value: "participant-request~participant-request-to-end",
+             text: "Partipcant would no longer like to receive support"
+          },
+          {
+            value: "moved-cpa~end-more-details",
+          text: "Partipant has moved and would like to start the provision from the new area"
+          },
+          {
+            value: "end-request~end-more-details",
+            text: "Other"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

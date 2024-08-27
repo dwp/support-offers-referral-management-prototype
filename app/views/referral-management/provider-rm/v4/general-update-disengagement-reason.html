@@ -1,0 +1,47 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="disengagement-check-answers" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+        name: "disengagement-reason",
+        fieldset: {
+          legend: {
+           text: "Why have they disengaged?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+        {
+            value: "Unable to attend",
+             text: "Unable to attend appointments"
+          },
+          {
+            value: "Doesn't see value",
+             text: "Doesn't see value in the help they are provided"
+          },
+          {
+            value: "No reason given",
+             text: "No reason given"
+          },
+          {
+            value: "claim",
+          text: "Other"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
