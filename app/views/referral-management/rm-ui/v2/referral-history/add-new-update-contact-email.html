@@ -13,7 +13,7 @@ What general update do you want to make for this participant? – {{ serviceName
         html: "ahorncastle@tmmail.co.uk"
         }) }}
 
-      <form action="general-update-contact-confirmation" method="post" novalidate>
+      <form action="add-new-update-contact-confirmation" method="post" novalidate>
         
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
@@ -26,11 +26,11 @@ What general update do you want to make for this participant? – {{ serviceName
         },
         items: [
         {
-            value: "yes~general-update-contact-confirmation",
+            value: "yes~add-new-update-contact-confirmation",
              text: "Yes"
           },
           {
-            value: "no~general-update-contact-confirmation",
+            value: "no~add-new-update-contact-confirmation",
           text: "No"
           }
         ]
