@@ -1,0 +1,67 @@
+{% extends "imr-layouts/us-new-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% block pageTitle %}
+Enter their contact details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="with-hint">
+      What is their phone number?
+    </label>
+      </h1>
+      <div id="with-hint-hint" class="govuk-hint">
+   The details we have on record may not be up to date.
+  </div>
+
+      {% set numberHtml %}
+      {{ govukInput({
+  id: "contact-by-text",
+  name: "contactByText",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter their phone number"
+  }
+}) }}
+      {% endset -%}
+
+      {{ govukRadios({
+            classes:"govuk-radios",
+            name: "correct-address",
+            fieldset: {
+            },        
+  items: [
+    {
+      value: "phone1",
+      text: "07789 569874"
+    },
+    {
+      value: "phone2",
+      text: "01583 123456"
+    },    
+    {
+      value: "text",
+      text: "Use a different number",
+      conditional: {
+        html: numberHtml
+      }
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+  text: "Continue",
+      preventDoubleClick: true,
+      href: "contact-journey-c-4"
+}) }}
+    </div>
+  </div>
+{% endblock %}
