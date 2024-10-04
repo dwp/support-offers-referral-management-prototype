@@ -1,0 +1,151 @@
+{% extends "imr-layouts/us-new-1.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Which is their US delivery area? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="event-name">
+      Which is their delivery area?
+    </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+    Enter delivery area
+  </div>
+        <label class="govuk-label" id="event-name" name="office-autocomplete" type="text" aria-describedby="event-name-hint"></label>
+        <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+
+        <!-- Includes -->
+
+        {# {%- set office %}
+        <label class="govuk-label" for="office-autocomplete">Enter name of jobcentre</label>
+        <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+
+        {% endset -%}
+        {{ govukRadios({
+            name: "location",
+            fieldset: {
+              legend: {
+                text: "Which jobcentre are you referring them from?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "",
+                text: "Leeds Park Place Jobcentre (your current location)"
+              },
+              {
+                value: "",
+                text: "Other",
+                conditional: {
+                    html: office
+                  }
+              }
+            ]
+          }) }} #}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "available-opportunities"
+        }) }}
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block bodyEnd %}
+    {{ super() }}
+    <script type="text/javascript">
+      const type = ['France', 'Germany', 'United Kingdom']
+
+      var element = document.querySelector('#type-autocomplete-container')
+      var id = 'type-autocomplete'
+      accessibleAutocomplete({
+        element: element,
+        id: id,
+        source: type,
+        showAllValues: true,
+        dropdownArrow: () => ''
+      })
+    </script>
+
+    <script type="text/javascript">
+      const office = [
+        'Berkshire',
+        'Buckinghamshire',
+        'Cambridgeshire and Peterborough Combined Authority',
+        'Central London Forward',
+        'Cheshire & Warrington',
+        'Cornwall & Isles of Scilly',
+        'Cumbria',
+        'Devon, Plymouth, Torbay',
+        'Dorset + Bournemouth, Christchurch Poole (BCP) ',
+        'East Midlands ',
+        'East Sussex and Brighton',
+        'Gloucestershire',
+        'Greater Essex',
+        'Greater Lancashire',
+        'Greater Lincolnshire',
+        'Greater Manchester Combined Authority',
+        'Hampshire',
+        'Herefordshire, Shropshire, and Telford & Wrekin',
+        'Hertfordshire',
+        'Hull and East Riding of Yorkshire',
+        'Kent & Medway',
+        'Leicester, Leicestershire, and Rutland',
+        'Liverpool City Region',
+        'Local London',
+        'Mid Wales',
+        'Norfolk County Council',
+        'North East Combined Authority',
+        'North Wales',
+        'Oxfordshire',
+        'Solent',
+        'Somerset',
+        'South East Midlands ',
+        'South East Wales',
+        'South London Partnership',
+        'South West Wales',
+        'South Yorkshire/Sheffield City Region',
+        'Staffordshire and Stoke-on-Trent',
+        'Suffolk County Council',
+        'Surrey',
+        'Swindon and Wiltshire',
+        'Tees Valley Combined Authority',
+        'Warwickshire',
+        'West London Alliance',
+        'West Midlands Combined Authority',
+        'West of England (including North Somerset)',
+        'West Sussex',
+        'West Yorkshire Combined Authority',
+        'Worcestershire',
+        'York and North Yorkshire'
+      ]
+
+      var element = document.querySelector('#office-autocomplete-container')
+      var id = 'office-autocomplete'
+      accessibleAutocomplete({
+        element: element,
+        id: id,
+        source: office,
+        showAllValues: true,
+        dropdownArrow: () => ''
+      })
+
+      document
+        .getElementById("office-autocomplete")
+        .onclick = function () {
+          document
+            .getElementById("channel")
+            .style
+            .display = "block";
+        }
+    </script>
+  {% endblock %}

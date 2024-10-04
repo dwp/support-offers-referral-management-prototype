@@ -1,0 +1,55 @@
+{% extends "imr-layouts/us-new-1.html" %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Enter person details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="with-hint">
+      Can you provide their phone number, email address or both?
+    </label>
+      </h1>
+      <div id="with-hint-hint" class="govuk-hint">
+   You must provide their contact details to send this referral.
+  </div>
+      <form action="third-contact-details" method="post" novalidate>
+
+        {{ govukRadios({
+            classes:"govuk-radios",
+            name: "correct-address",
+            fieldset: {
+            },
+            items: [
+            {
+              value: "correct~contact-journey-c-3",
+              text: "Phone number"
+            },
+            {
+              value: "incorrect~contact-journey-c-4",
+              text: "Email address"
+            }, 
+                {
+      divider: "or"
+    },
+            {
+              value: "both~contact-journey-c-3",
+              text: "Both"
+            }
+            ]
+          }) }}
+
+        {{ govukButton({
+            value: "none",
+            text: "Continue",
+            preventDoubleClick: true
+          }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
