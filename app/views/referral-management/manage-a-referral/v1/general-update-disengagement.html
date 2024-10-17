@@ -1,0 +1,34 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="general-update-disengagement-reason" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukDateInput({
+              id: "disengagement-date",
+              namePrefix: "disengagement-date",
+              fieldset: {
+                legend: {
+                  text: "When was the last appointment that they attended?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2024"
+              }
+            }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "layout-rm.html" %}
+
+{% block pageTitle %}
+Pioneer WHP – Disability Condition – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <h1 class="govuk-heading-l">
+      Pioneer WHP – Disability Condition
+    </h1>
+
+      
+    <div class="govuk-grid-column-three-quarters">
+      {{ govukButton({
+        text: "Add an update",
+        href: 'add-new-update'
+      }) }}
+      <table class="govuk-table govuk-!-font-size-19">      
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" style="white-space: nowrap;">Date and time</th>
+              <th scope="col" class="govuk-table__header">Title</th>
+              <th scope="col" class="govuk-table__header">Agent</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <!--  -->
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">30 July 2024</span><br> 2:00pm</td>
+              <td class="govuk-table__cell"><a href="view-note-provider-disengaged" class="govuk-link--no-visited-state">Has disengaged</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">{{govukTag({
+                text: "Important",
+                classes: "govuk-tag--red"
+              })}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">17 July 2024</span><br> 11:00am</td>
+              <td class="govuk-table__cell"><a href="view-note-provider" class="govuk-link--no-visited-state">Did not attend appointment</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">
+                {{govukTag({
+                  text: "New",
+                  classes: "govuk-tag--blue"
+                })}}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">10 July 2024</span><br> 11:00am</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">Did not attend appointment</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">
+                {{govukTag({
+                  text: "New reply",
+                  classes: "govuk-tag--yellow"
+                })}}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">27 May 2024</span><br> 11:00am</td>
+              <td class="govuk-table__cell"><a href="view-note-provider-contact" class="govuk-link--no-visited-state">Change of contact address</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">
+                {{govukTag({
+                text: "New",
+                classes: "govuk-tag--blue"
+              })}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">28 April 2024</span><br> 11:00am</td>
+              <td class="govuk-table__cell"><a href="view-note-provider-contact" class="govuk-link--no-visited-state">Course completed</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">
+                {{govukTag({
+                text: "Replied",
+                classes: "govuk-tag--green"
+              })}}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header"><span style="white-space: nowrap;">15 April 2024</span><br> 10:00am</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">Started on provision</a></td>
+              <td class="govuk-table__cell"><strong>Fred Sweed</strong><br>Reed</td>
+              <td class="govuk-table__cell">{{govukTag({
+                text: "Read",
+                classes: "govuk-tag--green"
+              })}}</td>
+            </tr>
+          </tbody>
+        </table>
+       
+          
+          
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Key dates
+      </h2>
+    {% from "timeline/macro.njk" import dwpTimeline %}
+
+    {{
+        dwpTimeline({ 
+            events: [
+              {
+                state: "Disengaged",
+                date: "30 July 2024"
+            },
+            {
+                state: "Started on Provision",
+                date: "15 Apr 2024"
+            }
+            ]
+        })
+    }}
+    </aside>
+
+  </div>
+</div>
+{% endblock %}
