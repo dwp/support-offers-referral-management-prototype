@@ -1,0 +1,44 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Update submitted",
+        html: "Your update has been added to the case notes for <br><strong>Alex Horncastle</strong>"
+      }) }}
+
+      <!--<p class="govuk-body">We have sent you a confirmation email.</p>-->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        If your update requires action from DWP, you will receive a response once it has been resolved.
+      </p>
+
+      <p class="govuk-body">
+        They may contact you either to confirm your update, or to ask for more information.
+      </p>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">View your note</a> in the participant's history and notes section.
+      </p>
+
+      <p class="govuk-body">
+        You can <a href="report-progress" class="govuk-link">add another update</a> for this participant.
+      </p>
+
+      <p class="govuk-body">
+        Or to view another participant <a href="dashboard" class="govuk-link">return to the dashboard</a>
+      </p>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+    </div>
+  </div>
+{% endblock %}

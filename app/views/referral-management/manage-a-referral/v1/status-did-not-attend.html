@@ -1,0 +1,39 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="general-update" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+        name: "end-reason",
+        fieldset: {
+          legend: {
+           text: "Is this the first time they have missed the initial appointment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+        {
+            value: "Participant has a health condition~status-try-again",
+             text: "Yes"
+          },
+          {
+            value: "Partipcant has requested to end~status-referral-rejected-confirmation",
+             text: "No"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
