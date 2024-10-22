@@ -129,31 +129,33 @@
             <!--------------------------end of side filtering-------------------------->
 
             <!-------------------------------header-------------------------------->
-            {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
-
-            {{ 
-              dwpHorizontalNavigation({
-                    selectedItem: "#s-item-1",
-                    items: [
-                        {
-                          text: "All referrals",
-                          href: "#referral-all",
-                          id: "s-item-1"
-                        },
-                        {
-                          text: "Pending referrals",
-                          href: "#referrals-pending",
-                          id: "s-item-2"
-                        },
-                        {
-                          text: "Started referrals",
-                          href: "#s-item-3",
-                          id: "s-item-3"
-                        }
-                    ]
-                })
-            }}
+            
             <div class="govuk-grid-column-three-quarters">
+              {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+
+              {{ 
+                dwpHorizontalNavigation({
+                      selectedItem: "#referrals-pending",
+                      containerClasses: "govuk-!-padding-bottom-5",
+                      items: [
+                          {
+                            text: "All referrals",
+                            href: "#referral-all",
+                            id: "s-item-1"
+                          },
+                          {
+                            text: "Pending referrals",
+                            href: "#referrals-pending",
+                            id: "s-item-2"
+                          },
+                          {
+                            text: "Started referrals",
+                            href: "#s-item-3",
+                            id: "s-item-3"
+                          }
+                      ]
+                  })
+              }}
               <h1 class="govuk-heading-l">
           Pending referrals<br>
                 <span class="govuk-caption-l">Referrals to start or cancel</span>
@@ -166,7 +168,6 @@
             <!--------------------------table-------------------------->
             
             <div class="govuk-grid-column-three-quarters">
-              {% set pendingReferralsHtml %}
               <table class="govuk-table" data-module="moj-sortable-table" data-multi-select-checkbox="#select-all">
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
@@ -188,25 +189,6 @@
               </thead>
               <tbody class="govuk-table__body">
 
-                <tr class="govuk-table__row govuk-table__row--selected">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="kenneth-graham">
-                      <label class="govuk-label govuk-checkboxes__label" for="kenneth-graham">
-                        <span class="govuk-visually-hidden">Select Kenneth Graham</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986681">
-                    <a href="individual-referral-new">700986681</a>
-                  </td>
-                  <td class="govuk-table__cell">Alex Horncastle <span class="govuk-hint">AE779196D</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
-                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
-<td class="govuk-table__cell">Pending</td>
-                </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
@@ -280,7 +262,7 @@
                   
                   <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
                    <td class="govuk-table__cell" data-sort-value="30">30 days</td>
-<td class="govuk-table__cell">Pending</td>
+<td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -337,7 +319,7 @@
                   
                   <td class="govuk-table__cell">20/09/2022<br>11:15:06</td>
                    <td class="govuk-table__cell" data-sort-value="30">30 days</td>
-<td class="govuk-table__cell">Pending</td>
+<td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -424,7 +406,7 @@
                     </div>
                   </td>
                   <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="individual-referral">700986661</a>
+                    <a href="individual-referral-new">700986661</a>
                   </td>
                   <td class="govuk-table__cell">Alex Horncastle <span class="govuk-hint">HW341895V</span>
                   </td>
@@ -816,27 +798,6 @@
                 </a>
               </div>
             </nav>
-
-            {% endset -%}
-
-          {{ govukTabs({
-            items: [
-              {
-                label: "All referrals",
-                id: "past-day",
-                panel: {
-                  html: allReferralsHtml
-                }
-              },
-              {
-                label: "Pending referrals",
-                id: "past-week",
-                panel: {
-                  html: pendingReferralsHtml
-                }
-              }
-            ]
-          }) }}
           </div>
           
 
