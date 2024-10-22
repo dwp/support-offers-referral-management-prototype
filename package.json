@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "20": "^3.1.9",
-    "@dwp/dwp-frontend": "2.8.0",
+    "@dwp/dwp-frontend": "3.1.0",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@ministryofjustice/frontend": "2.2.0",
     "accessible-autocomplete": "^2.0.4",
