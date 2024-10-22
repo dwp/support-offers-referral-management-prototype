@@ -129,30 +129,7 @@
             <!--------------------------end of side filtering-------------------------->
 
             <!-------------------------------header-------------------------------->
-            {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
 
-            {{ 
-              dwpHorizontalNavigation({
-                    selectedItem: "#s-item-1",
-                    items: [
-                        {
-                          text: "Item 1",
-                          href: "#s-item-1",
-                          id: "s-item-1"
-                        },
-                        {
-                          text: "Item 2",
-                          href: "#s-item-2",
-                          id: "s-item-2"
-                        },
-                        {
-                          text: "Item 3",
-                          href: "#s-item-3",
-                          id: "s-item-3"
-                        }
-                    ]
-                })
-            }}
             <div class="govuk-grid-column-three-quarters">
               <h1 class="govuk-heading-l">
           Pending referrals<br>
