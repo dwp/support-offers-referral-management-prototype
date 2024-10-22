@@ -1,0 +1,61 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="start-or-cancel-check-answers-start" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set customDateHtml %}
+        {{ govukDateInput({
+              id: "custom-date",
+              namePrefix: "custom-date",
+              fieldset: {
+
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+        name: "when-initial-meeting",
+        fieldset: {
+          legend: {
+           text: "When did they attend the initial meeting?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+          {
+            value: "Today",
+          text: "Today"
+          },
+          {
+            value: "Previous working day",
+             text: "Previous working day",
+             id: "prev-date"
+          },
+          {
+            value: "Previous date",
+            text: "Previous date",
+            conditional: {
+              html: customDateHtml
+            }
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

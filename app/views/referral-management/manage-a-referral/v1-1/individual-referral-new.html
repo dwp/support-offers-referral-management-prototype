@@ -1,0 +1,102 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+  Citizen details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      {{ govukTable({
+        caption: "Referral details",
+        captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
+        rows: [
+          [
+            {
+              text: "Date of referral",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "20 September 2022 11:15:06"
+            }
+          ],
+          [
+            {
+              text: "Referral ID",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "70098681"
+            }
+          ],
+          [
+            {
+              text: "Provision",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Restart"
+            }
+          ],
+
+          [
+            {
+              text: "Referral status",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "New"
+            }
+          ],
+          [
+            {
+              text: "Opportunity ID",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "CPA3B"
+            }
+          ],
+          [
+            {
+              text: "Provision status",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Mandatory"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukTable({
+        caption: "Referral tasks",
+        captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
+        head: [
+          {
+            text: "Status"
+          }
+          ,
+          {
+            text: "Action"
+          }
+        ],
+
+        rows: [
+          [
+            {
+              html: '<strong class="govuk-tag govuk-tag--red">Due in 28 days</strong>'
+            }
+            ,
+            {
+              html: '<a href="start-or-cancel">Start or cancel referral</a>'
+            }
+          ]
+        ]
+      }) }}
+
+    </div>
+    
+  </div>
+{% endblock %}
