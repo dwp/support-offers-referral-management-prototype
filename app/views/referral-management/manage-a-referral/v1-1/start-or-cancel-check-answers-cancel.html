@@ -8,7 +8,7 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check your answers before submitting your update</h1>
+    <h1 class="govuk-heading-l">Check cancellation reason</h1>
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -19,15 +19,6 @@ What general update do you want to make for this participant? – {{ serviceName
         },
         value: {
           text: "Restart"
-        },
-        actions: {
-          items: [
-            {
-              href: "#",
-              text: "Change",
-              visuallyHiddenText: "previous application number"
-            }
-          ]
         }
       },
         {
@@ -36,15 +27,6 @@ What general update do you want to make for this participant? – {{ serviceName
           },
           value: {
             text: "CPA12"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "previous application number"
-              }
-            ]
           }
         },
         {
@@ -67,9 +49,9 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <h2 class="govuk-heading-m">Submitting this request will cancel this referral</h2>
+    <!--<h2 class="govuk-heading-m">Submitting this request will cancel this referral</h2>
 
-    <p class="govuk-body">Please make sure the details you are providing are correct.</p>
+    <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
 
     <form action="start-or-cancel-confirm-cancel" method="post" novalidate>
 
