@@ -1,5 +1,5 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
-{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+{% from "quick-reference/macro.njk" import dwpQuickReference %}
 
 {% block pageTitle %}
 Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
@@ -20,18 +20,18 @@ container:true
   <nav class="dwp-header-navigation" aria-label="Primary">
     <ul>
       <li>
-        <a href="/referral-management/prap-admin/dashboard" class="current" aria-current="page">Referrals </a>
-      </li>
-      <li>
-        <a href="/referral-management/prap-admin/search-for-someone">Find someone</a>
+        <a href="/referral-management/manage-a-referral/v1-1/dashboard" class="current" aria-current="page">Referrals </a>
       </li>
     </ul>
   </nav>
 
-  <div class="govuk-width-container govuk-!-padding-top-5">
+  <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          {% from "quick-reference/macro.njk" import dwpQuickReference %}
+
+          <div class="govuk-width-container ">
+            <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
 
           {{
               dwpQuickReference({
@@ -44,12 +44,6 @@ container:true
                       text: 'National Insurance number:',
                       textDisplay: true,
                       value: 'HW 34 18 95 V'
-                  },
-                  status: {
-                      text: 'Claim status:',
-                      value: 'Active',
-                      textDisplay: true,
-                      classes: 'govuk-tag--green'
                   }
               })
           }}
@@ -57,9 +51,7 @@ container:true
     </div>
 </div>
 
-  <div class="govuk-width-container ">
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
-  </div>
+ 
 {% endblock %}
 
 {% block footer %}

@@ -1,6 +1,6 @@
 {% extends "layouts/so-main-rm.html" %}
 
-{% block pageTitle %} Pending referrals –
+{% block pageTitle %} New referrals –
 {{ serviceName }}: Support Offers Provider – Service centre
 {% endblock %}
 
@@ -40,7 +40,7 @@
           <form action="opportunity-status" method="post" novalidate>
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Filters</h2>
-
+              
               <fieldset class="govuk-fieldset">
                 <h3 class="govuk-heading-s">
                 Status
@@ -132,12 +132,12 @@
 
               {{ 
                 dwpHorizontalNavigation({
-                      selectedItem: "referrals-pending",
+                      selectedItem: "referrals-new",
                       containerClasses: "govuk-!-padding-bottom-5",
                       items: [
                           {
                             text: "All referrals",
-                            href: "referral-all",
+                            href: "referrals-all",
                             id: "s-item-1"
                           },
                           {
@@ -157,7 +157,7 @@
                           },
                           {
                             text: "Ended",
-                            href: "referrals-ended",
+                            href: "referrals-active",
                             id: "s-item-3"
                           }
                           
@@ -165,9 +165,13 @@
                   })
               }}
               <h1 class="govuk-heading-l">
-          Pending referrals<br>
-                <span class="govuk-caption-l">Referrals to start or cancel</span>
+          New referrals<br>
+                <span class="govuk-caption-l">Referrals to review</span>
               </h1>
+              {{ govukButton({
+                text: "Download all new referrals",
+                href: "referrals-new-download"
+              }) }}
             </div>
 
             <!--------------------------table-------------------------->
@@ -188,7 +192,7 @@
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Referral ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Citizen details</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Opportunity details</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Start date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Start due</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
                 </tr>
               </thead>
@@ -210,8 +214,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -228,8 +232,8 @@
                   <td class="govuk-table__cell">Jane Eyre <span class="govuk-hint">WD458945C</span>
                   </td>
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -247,8 +251,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -266,7 +270,7 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
 <td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -285,8 +289,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -304,8 +308,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -323,7 +327,7 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
 <td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
                 </tr>
                 <tr class="govuk-table__row">
@@ -341,8 +345,8 @@
                   <td class="govuk-table__cell">Mary Shelley <span class="govuk-hint">RN000222W</span>
                   </td>
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -360,8 +364,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -379,8 +383,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -398,8 +402,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -417,8 +421,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -436,8 +440,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -455,8 +459,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -474,8 +478,8 @@
                   </td>
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
-                   <td class="govuk-table__cell" data-sort-value="30">Due in 30 days</td>
-<td class="govuk-table__cell">Pending</td>
+                   <td class="govuk-table__cell" data-sort-value="30">30 days</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -494,7 +498,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
                    <td class="govuk-table__cell" data-sort-value="15">15 days</td>
-<td class="govuk-table__cell">Pending</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -513,7 +517,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
                    <td class="govuk-table__cell" data-sort-value="15">15 days</td>
-<td class="govuk-table__cell">Pending</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -532,7 +536,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
                    <td class="govuk-table__cell" data-sort-value="15">15 days</td>
-<td class="govuk-table__cell">Pending</td>
+<td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -551,7 +555,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
                   <td class="govuk-table__cell" data-sort-value="12">12 days</td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -572,7 +576,7 @@
                   <td class="govuk-table__cell" data-sort-value="8">
                     <strong class="govuk-tag govuk-tag--orange">8 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -593,7 +597,7 @@
                   <td class="govuk-table__cell" data-sort-value="6">
                     <strong class="govuk-tag govuk-tag--orange">6 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -614,7 +618,7 @@
                   <td class="govuk-table__cell" data-sort-value="5">
                     <strong class="govuk-tag govuk-tag--orange">5 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -635,7 +639,7 @@
                   <td class="govuk-table__cell" data-sort-value="4">
                     <strong class="govuk-tag govuk-tag--orange">4 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -656,7 +660,7 @@
                   <td class="govuk-table__cell" data-sort-value="4">
                     <strong class="govuk-tag govuk-tag--orange">4 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -677,7 +681,7 @@
                   <td class="govuk-table__cell" data-sort-value="3">
                     <strong class="govuk-tag govuk-tag--orange">3 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -698,7 +702,7 @@
                   <td class="govuk-table__cell" data-sort-value="3">
                     <strong class="govuk-tag govuk-tag--orange">3 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -719,7 +723,7 @@
                   <td class="govuk-table__cell" data-sort-value="3">
                     <strong class="govuk-tag govuk-tag--orange">3 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -740,7 +744,7 @@
                   <td class="govuk-table__cell" data-sort-value="2">
                     <strong class="govuk-tag govuk-tag--orange">2 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -761,7 +765,7 @@
                   <td class="govuk-table__cell" data-sort-value="2">
                     <strong class="govuk-tag govuk-tag--orange">2 days</strong>
                   </td>
-                  <td class="govuk-table__cell">Pending</td>
+                  <td class="govuk-table__cell">New</td>
                 </tr>
               </tbody>
             </table>

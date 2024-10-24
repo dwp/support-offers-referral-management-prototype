@@ -1,0 +1,199 @@
+{% extends "layouts/so-main-rm.html" %}
+
+{% block pageTitle %} New referrals –
+{{ serviceName }}: Support Offers Provider – Service centre
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+
+        <!--------------------------side filtering-------------------------->
+
+        <div class="govuk-grid-column-one-quarter">
+          <label class="govuk-heading-m" for="search">
+          Find someone
+        </label>
+          <div class="moj-search">
+            <form action="individual-referral" method="post">
+              <div class="govuk-form-group">
+                <div id="search-hint" class="govuk-hint moj-search__hint ">
+                Search by referral ID, NINO or citizen name
+              </div>
+                <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+                aria-describedby="search-hint">
+              </div>
+              <button class="govuk-button moj-search__button " data-module="govuk-button">
+                <svg class="gem-c-search__icon" width="16" height="16" viewBox="0 0 26 26" fill="none"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="white" stroke-width="3"></circle>
+                  <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="white" stroke-width="3"></line>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <br><br>
+
+          <form action="opportunity-status" method="post" novalidate>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Filters</h2>
+
+              <fieldset class="govuk-fieldset">
+                <h3 class="govuk-heading-s">
+                Status
+              </h3>
+              </legend>
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="active-referrals">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                    Current participants
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" checked="true"
+                    value="pending-referrals">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Pending referrals
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox"
+                    value="returned-referrals">
+                  <label class="govuk-label govuk-checkboxes__label" for="status-4">
+                    Flagged referrals
+                  </label>
+                </div>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox"
+                      value="completed-referrals">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-5">
+                      Completed referrals
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+              <div class="govuk-form-group">
+             <!--   <fieldset class="govuk-fieldset">
+                  {# <legend class="govuk-heading-s">
+              Opportunity type
+            </legend> #}
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                      {# <label class="govuk-label govuk-checkboxes__label" for="status">
+                  All
+                </label> #}
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="employment-tribunal">
+                      {# <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Work and Heath Programme
+                </label> #}
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                      {# <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                  Work and Health Proogramme
+                </label> #}
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="DfT">
+                      {# <label class="govuk-label govuk-checkboxes__label" for="status-4">
+                  IPES
+                </label> #}
+                    </div> 
+
+                  </fieldset><br>-->
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Apply filters
+            </button>
+                  <p>
+                    <a href="#">Clear filters</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+
+            <!--------------------------end of side filtering-------------------------->
+
+            <!-------------------------------header-------------------------------->
+            
+            <div class="govuk-grid-column-three-quarters">
+              {% from "horizontal-navigation/macro.njk" import dwpHorizontalNavigation %}
+
+              {{ 
+                dwpHorizontalNavigation({
+                      selectedItem: "referrals-new",
+                      containerClasses: "govuk-!-padding-bottom-5",
+                      items: [
+                          {
+                            text: "All referrals",
+                            href: "referrals-all",
+                            id: "s-item-1"
+                          },
+                          {
+                            text: "New",
+                            href: "referrals-new",
+                            id: "s-item-3"
+                          },
+                          {
+                            text: "Pending",
+                            href: "referrals-pending",
+                            id: "s-item-2"
+                          },
+                          {
+                            text: "Active",
+                            href: "referrals-active",
+                            id: "s-item-3"
+                          },
+                          {
+                            text: "Ended",
+                            href: "referrals-active",
+                            id: "s-item-3"
+                          }
+                          
+                      ]
+                  })
+              }}
+              <h1 class="govuk-heading-l">
+          New referrals<br>
+                <span class="govuk-caption-l">Referrals to review</span>
+              </h1>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Download new referrals
+        </button>
+            </div>
+
+            <!--------------------------table-------------------------->
+            
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-heading-m">Your referrals are downloading</p>
+
+              <div class="aligncenter">
+                <img src="/public/images/rotating-bars-anim.svg" alt="downloading icon">
+              </div>
+
+          </div>
+          
+          <style>
+            .aligncenter {
+              padding: 80px;
+              text-align: center;
+            }
+          </style>
+        
+          <script>
+            setTimeout(function () {
+              window.location.href = 'referrals-new-download-confirmation';
+            }, 3500);
+          </script>
+        {% endblock %}
