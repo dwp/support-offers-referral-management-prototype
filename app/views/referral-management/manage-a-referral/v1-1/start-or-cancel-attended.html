@@ -61,19 +61,19 @@ What general update do you want to make for this participant? – {{ serviceName
   </div>
   
   <script>
-    var today = new Date();
+   /* var today = new Date();
     var options = {
       year: 'numeric',
       day: 'numeric',
       month: 'long'
     };
-    console.log(new Date());
+
     var todayDate = document.getElementById("todays-date");
-    todayDate.parentElement.lastElementChild.innerHTML = "Today, " + today.toLocaleDateString('en-UK', options);
+    todayDate.parentElement.lastElementChild.innerHTML = "Today, " + today.toLocaleDateString('en-UK', options); */
   </script>
 
   <script>
-    var today = new Date();
+   /* var today = new Date();
     var prevWorkDay;
     if (today.getDay() == 0) {
       prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
@@ -100,7 +100,7 @@ What general update do you want to make for this participant? – {{ serviceName
       "December"
     ];
     prevDate = document.getElementById("prev-date");
-    prevDate.parentElement.lastElementChild.innerHTML = "Previous working day,  " + day + " " + monthNames[month] + " " + year;
+    prevDate.parentElement.lastElementChild.innerHTML = "Previous working day,  " + day + " " + monthNames[month] + " " + year; */
   </script>
 
 {% endblock %}
