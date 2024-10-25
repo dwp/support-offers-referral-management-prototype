@@ -17,7 +17,7 @@
           Find someone
         </label>
           <div class="moj-search">
-            <form action="individual-referral" method="post">
+            <form action="individual-referral-active" method="post">
               <div class="govuk-form-group">
                 <div id="search-hint" class="govuk-hint moj-search__hint ">
                 Search by referral ID, NINO or citizen name
@@ -41,10 +41,7 @@
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Filters</h2>
 
-              <div id="filter-hint" class="govuk-hint moj-search__hint ">
-              Select one or more of the filters from the list and apply.
-            </div>
-              <fieldset class="govuk-fieldset">
+              <!-- <fieldset class="govuk-fieldset">
                 <h3 class="govuk-heading-s">
                 Status
               </h3>
@@ -80,51 +77,43 @@
                     </label>
                   </div>
                 </div>
+              </fieldset>-->
+
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-heading-s">
+                  Opportunity
+                </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="status">
+                      Restart CPA1
+                    </label> 
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                      Restart CPA2
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                      Universal Support CPA1
+                    </label>
+                  </div>
+                </div>
               </fieldset>
             </div>
-
-              <div class="govuk-form-group">
-             <!--   <fieldset class="govuk-fieldset">
-                  {# <legend class="govuk-heading-s">
-              Opportunity type
-            </legend> #}
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status">
-                  All
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                  Work and Heath Programme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                  Work and Health Proogramme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="DfT">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                  IPES
-                </label> #}
-                    </div> 
-
-                  </fieldset><br>-->
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Apply filters
             </button>
-                  <p>
-                    <a href="#">Clear filters</a>
-                  </p>
-                </div>
-              </form>
-            </div>
+            <p>
+              <a href="#">Clear filters</a>
+            </p>      
+          </form>
+        </div>
 
             <!--------------------------end of side filtering-------------------------->
 
@@ -140,17 +129,17 @@
                       items: [
                           {
                             text: "All referrals",
-                            href: "referrals-all",
+                            href: "",
                             id: "s-item-1"
                           },
                           {
                             text: "New",
-                            href: "referrals-new",
+                            href: "",
                             id: "s-item-3"
                           },
                           {
                             text: "Pending",
-                            href: "referrals-pending",
+                            href: "",
                             id: "s-item-2"
                           },
                           {
@@ -160,7 +149,7 @@
                           },
                           {
                             text: "Ended",
-                            href: "referrals-ended",
+                            href: "",
                             id: "s-item-3"
                           }
                           
@@ -209,7 +198,7 @@
                     </div>
                   </td>
                   <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="individual-referral-new">700986661</a>
+                    <a href="individual-referral-active">700986661</a>
                   </td>
                   <td class="govuk-table__cell">Alex Horncastle <span class="govuk-hint">HW341895V</span>
                   </td>

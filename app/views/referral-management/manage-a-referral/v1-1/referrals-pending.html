@@ -17,7 +17,7 @@
           Find someone
         </label>
           <div class="moj-search">
-            <form action="individual-referral" method="post">
+            <form action="individual-referral-new" method="post">
               <div class="govuk-form-group">
                 <div id="search-hint" class="govuk-hint moj-search__hint ">
                 Search by referral ID, NINO or citizen name
@@ -38,88 +38,64 @@
           <br><br>
 
           <form action="opportunity-status" method="post" novalidate>
-            <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Filters</h2>
-
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-heading-s">
+                    Status
+                  </legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="status">
+                        Flagged
+                      </label> 
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                      value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                        Pending
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <h3 class="govuk-heading-s">
-                Status
-              </h3>
-              </legend>
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="active-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                    Current participants
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" checked="true"
-                    value="pending-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                    Pending referrals
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox"
-                    value="returned-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                    Flagged referrals
-                  </label>
-                </div>
+                <legend class="govuk-heading-s">
+                  Opportunity
+                </legend>
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox"
-                      value="completed-referrals">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-5">
-                      Completed referrals
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="status">
+                      Restart CPA1
+                    </label> 
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                      Restart CPA2
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                      Universal Support CPA1
                     </label>
                   </div>
                 </div>
               </fieldset>
             </div>
-
-              <div class="govuk-form-group">
-             <!--   <fieldset class="govuk-fieldset">
-                  {# <legend class="govuk-heading-s">
-              Opportunity type
-            </legend> #}
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status">
-                  All
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                  Work and Heath Programme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                  Work and Health Proogramme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="DfT">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                  IPES
-                </label> #}
-                    </div> 
-
-                  </fieldset><br>-->
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Apply filters
             </button>
-                  <p>
-                    <a href="#">Clear filters</a>
-                  </p>
-                </div>
+            <p>
+              <a href="#">Clear filters</a>
+            </p>
+                
               </form>
             </div>
 
