@@ -14,7 +14,7 @@
         rows: [
           [
             {
-              text: "Date of referral",
+              text: "Referral date",
               classes: "govuk-!-width-one-half"
             },
             {
@@ -27,7 +27,7 @@
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "70098681"
+              text: "700986661"
             }
           ],
           [
@@ -46,7 +46,7 @@
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "New"
+              text: "Pending"
             }
           ],
           [
@@ -55,7 +55,7 @@
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "CPA3B"
+              text: "CPA1"
             }
           ],
           [
@@ -71,44 +71,17 @@
       }) }}
 
       {{ govukTable({
-        caption: "Referral actions",
+        caption: "Referral tasks",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
 
         rows: [
           [
             {
-              text: 'Start or cancel referral'
+              html: '<a href="start-or-cancel">Start or cancel referral</a>'
             }
             ,
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Completed</strong>'
-            }
-          ],
-          [
-            {
-              html: '<a href="#">Request to end this provision</a>'
-            }
-            ,
-            {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            }
-          ],
-          [
-            {
-              html: '<a href="#">Register a self-employed outcome</a>'
-            }
-            ,
-            {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            }
-          ],
-          [
-            {
-              html: '<a href="#">Report a problem</a>'
-            }
-            ,
-            {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+              html: '<strong class="govuk-tag govuk-tag--red">Due in 30 days</strong>'
             }
           ]
         ]

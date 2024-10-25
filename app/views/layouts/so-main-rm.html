@@ -39,9 +39,15 @@ container:true
 {% endblock %}
 
 {% block footer %}
+
+  
+
   {% from "internal-service-footer/macro.njk" import dwpFooter %}
 
   {{ dwpFooter({
 
 }) }}
+<div class="govuk-width-container ">
+  <a href="dashboard">Reset prototype</a>
+</div>
 {% endblock %}
