@@ -14,7 +14,7 @@
         rows: [
           [
             {
-              text: "Date of referral",
+              text: "Referral date",
               classes: "govuk-!-width-one-half"
             },
             {
@@ -27,7 +27,7 @@
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "70098681"
+              text: "700986661"
             }
           ],
           [
@@ -73,24 +73,15 @@
       {{ govukTable({
         caption: "Referral tasks",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
-        head: [
-          {
-            text: "Action"
-          }
-          ,
-          {
-            text: "Status"
-          }
-        ],
 
         rows: [
           [
             {
-              html: '<a href="start-or-cancel">Start or cancel referral</a>'
+              html: '<a href="individual-referral-pending">Download referral</a>'
             }
             ,
             {
-              html: '<strong class="govuk-tag govuk-tag--red">Due in 28 days</strong>'
+              html: ''
             }
           ]
         ]

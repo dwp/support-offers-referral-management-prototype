@@ -38,8 +38,30 @@
           <br><br>
 
           <form action="opportunity-status" method="post" novalidate>
+            <h2 class="govuk-heading-m">Filters</h2>
             <div class="govuk-form-group">
-              <h2 class="govuk-heading-m">Filters</h2>
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-heading-s">
+                  Status
+                </legend>
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="status">
+                      Flagged
+                    </label> 
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                      New
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-heading-s">
                   Opportunity
@@ -67,48 +89,14 @@
                 </div>
               </fieldset>
             </div>
-
-              <div class="govuk-form-group">
-             <!--   <fieldset class="govuk-fieldset">
-                  {# <legend class="govuk-heading-s">
-              Opportunity type
-            </legend> #}
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status">
-                  All
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                  Work and Heath Programme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                  Work and Health Proogramme
-                </label> #}
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox" value="DfT">
-                      {# <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                  IPES
-                </label> #}
-                    </div> 
-
-                  </fieldset><br>-->
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
               Apply filters
             </button>
-                  <p>
-                    <a href="#">Clear filters</a>
-                  </p>
-                </div>
-              </form>
+            <p>
+              <a href="#">Clear filters</a>
+            </p>
+                
+          </form>
             </div>
 
             <!--------------------------end of side filtering-------------------------->
@@ -545,216 +533,7 @@
                   <td class="govuk-table__cell" data-sort-value="12">12 days</td>
                   <td class="govuk-table__cell">New</td>
                 </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="terrence-derby">
-                      <label class="govuk-label govuk-checkboxes__label" for="terrence-derby">
-                        <span class="govuk-visually-hidden">Select Terrence Derby</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986661</a>
-                  </td>
-                  <td class="govuk-table__cell">Terrence Derby <span class="govuk-hint">DF876345D</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="8">
-                    <strong class="govuk-tag govuk-tag--orange">8 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="norman-wise">
-                      <label class="govuk-label govuk-checkboxes__label" for="norman-wise">
-                        <span class="govuk-visually-hidden">Select Norman Wise</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986660</a>
-                  </td>
-                  <td class="govuk-table__cell">Norman Wise <span class="govuk-hint">OR711853C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="6">
-                    <strong class="govuk-tag govuk-tag--orange">6 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="bob-collier">
-                      <label class="govuk-label govuk-checkboxes__label" for="bob-collier">
-                        <span class="govuk-visually-hidden">Select Bob Collier</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986659</a>
-                  </td>
-                  <td class="govuk-table__cell">Bob Collier <span class="govuk-hint">ZR089486A</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="5">
-                    <strong class="govuk-tag govuk-tag--orange">5 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="timmey-toyou">
-                      <label class="govuk-label govuk-checkboxes__label" for="timmey-toyou">
-                        <span class="govuk-visually-hidden">Select Timmey Toyou</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986658</a>
-                  </td>
-                  <td class="govuk-table__cell">Timmey Toyou <span class="govuk-hint">JG047583A</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="4">
-                    <strong class="govuk-tag govuk-tag--orange">4 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="al-bethere">
-                      <label class="govuk-label govuk-checkboxes__label" for="al-bethere">
-                        <span class="govuk-visually-hidden">Select Al Bethere</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986657</a>
-                  </td>
-                  <td class="govuk-table__cell">Al Bethere <span class="govuk-hint">TL417363B</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="4">
-                    <strong class="govuk-tag govuk-tag--orange">4 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="jimmy-showboat">
-                      <label class="govuk-label govuk-checkboxes__label" for="jimmy-showboat">
-                        <span class="govuk-visually-hidden">Select Jimmy Showboat</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986656</a>
-                  </td>
-                  <td class="govuk-table__cell">Jimmy Showboat <span class="govuk-hint">PC791234C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="3">
-                    <strong class="govuk-tag govuk-tag--orange">3 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="dave-ramsey">
-                      <label class="govuk-label govuk-checkboxes__label" for="dave-ramsey">
-                        <span class="govuk-visually-hidden">Select Dave Ramsey</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986655</a>
-                  </td>
-                  <td class="govuk-table__cell">Dave Ramsey <span class="govuk-hint">PC791234C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="3">
-                    <strong class="govuk-tag govuk-tag--orange">3 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="gil-scott">
-                      <label class="govuk-label govuk-checkboxes__label" for="gil-scott">
-                        <span class="govuk-visually-hidden">Select Gil Scott</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986655</a>
-                  </td>
-                  <td class="govuk-table__cell">Gil Scott <span class="govuk-hint">PC791234C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="3">
-                    <strong class="govuk-tag govuk-tag--orange">3 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="gilberto-rose">
-                      <label class="govuk-label govuk-checkboxes__label" for="gilberto-rose">
-                        <span class="govuk-visually-hidden">Select Gilberto Rose</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986655</a>
-                  </td>
-                  <td class="govuk-table__cell">Gilberto Rose <span class="govuk-hint">PC791234C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="2">
-                    <strong class="govuk-tag govuk-tag--orange">2 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                      <input type="checkbox" class="govuk-checkboxes__input" id="trevor-norman">
-                      <label class="govuk-label govuk-checkboxes__label" for="trevor-norman">
-                        <span class="govuk-visually-hidden">Select Trevor Norman</span>
-                      </label>
-                    </div>
-                  </td>
-                  <td class="govuk-table__cell" data-sort-value="700986680">
-                    <a href="#">700986655</a>
-                  </td>
-                  <td class="govuk-table__cell">Trevor Norman <span class="govuk-hint">PC791234C</span>
-                  </td>
-                  
-                  <td class="govuk-table__cell">Restart<br>CPA1</td>
-                  <td class="govuk-table__cell" data-sort-value="2">
-                    <strong class="govuk-tag govuk-tag--orange">2 days</strong>
-                  </td>
-                  <td class="govuk-table__cell">New</td>
-                </tr>
+                
               </tbody>
             </table>
 
