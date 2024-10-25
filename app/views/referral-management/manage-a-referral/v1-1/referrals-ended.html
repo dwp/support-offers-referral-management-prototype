@@ -40,40 +40,28 @@
           <form action="opportunity-status" method="post" novalidate>
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Filters</h2>
-
               <fieldset class="govuk-fieldset">
-                <h3 class="govuk-heading-s">
-                Status
-              </h3>
-              </legend>
-              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="active-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                    Current participants
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" checked="true"
-                    value="pending-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                    Pending referrals
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="status-4" name="status" type="checkbox"
-                    value="returned-referrals">
-                  <label class="govuk-label govuk-checkboxes__label" for="status-4">
-                    Flagged referrals
-                  </label>
-                </div>
+                <legend class="govuk-heading-s">
+                  Opportunity
+                </legend>
                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox"
-                      value="completed-referrals">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-5">
-                      Completed referrals
+                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="status">
+                      Restart CPA1
+                    </label> 
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                    value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                      Restart CPA2
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                    <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                      Universal Support CPA1
                     </label>
                   </div>
                 </div>
