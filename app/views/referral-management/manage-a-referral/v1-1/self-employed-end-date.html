@@ -8,25 +8,43 @@ What update do you want to make for this participant? – {{ serviceName }} – 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="general-update-contact-confirmation" method="post" novalidate>
+      <form action="self-employed-check-answers-same" method="post" novalidate>
         
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% set endDateHtml %}
+        {{ govukDateInput({
+              id: "end-date",
+              namePrefix: "end-date",
+              fieldset: {
+
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+        {% endset -%}
+
         {{ govukRadios({
-        name: "what-update",
+        name: "self-employed-end-date",
         fieldset: {
           legend: {
            text: "Do they have an end date for their self-employment?",
+            isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
          }
         },
         items: [
-        {
-            value: "yes~general-update-contact-confirmation",
-             text: "Yes"
+          {
+            value: "Yes",
+          text: "Yes",
+          id: "end-date-yes",
+          conditional: {
+            html: endDateHtml
+          }
           },
           {
-            value: "no~general-self-employed-check-answers",
-          text: "No"
+            value: "No",
+             text: "No",
+             id: "end-date-no"
           }
         ]
         }) }}

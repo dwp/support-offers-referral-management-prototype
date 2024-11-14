@@ -1,0 +1,22 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+Referral started – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">You have created a new self-employed job</h1>
+    </div>
+    <h2 class="govuk-heading-m">What you can do next?</h2>
+
+      <p>You can either <a href="referrals-active-as">submit this claim</a>.</p>
+
+      <p class=""govuk-body">You can also create add another self-employed job<a href="referral-pending"></a> or <a href="dashboard-as">return to the dashboard</a>.</p>
+  </div>
+</div>
+
+{% endblock %}
