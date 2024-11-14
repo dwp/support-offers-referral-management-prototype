@@ -1,0 +1,88 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check start details</h1>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+      {
+        key: {
+          text: "Start date"
+        },
+        value: {
+          text: data['self-employed-start-date']
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "home address"
+            }
+          ]
+        }
+      },
+        {
+          key: {
+            text: "Business Name"
+          },
+          value: {
+            text: data['self-employed-business-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Buiness address"
+          },
+          value: {
+            html: data['addressLine1']+"<br>"+data['addressLine2']+"<br>"+data['addressTown']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <!--<h2 class="govuk-heading-m">Submitting this request will start this person on the provision.</h2>
+
+    <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
+
+    <form action="start-or-cancel-confirm-start" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+        text: "Start referral"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
