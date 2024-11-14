@@ -7,7 +7,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="self-employed-check-answers" method="post" novalidate>
+      <form action="self-employed-check-answers-different" method="post" novalidate>
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading"> What are their personal contact details?</h1>
@@ -18,7 +18,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
               text: "UK phone number"
             },
             id: "phone-number",
-            name: "phoneNumber",
+            name: "personal-phone-number",
             type: "tel",
             autocomplete: "tel",
             classes: "govuk-input--width-20"
@@ -32,7 +32,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
               text: "This is a hint"
             },
             id: "email",
-            name: "email",
+            name: "personal-email",
             type: "email",
             autocomplete: "email",
             spellcheck: false

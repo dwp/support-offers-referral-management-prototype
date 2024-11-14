@@ -111,7 +111,41 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Personal address"
           },
           value: {
-            text: "Same as above"
+            html: data['personalAddressLine1']+"<br>"+data['personalAddressLine2']+"<br>"+data['personalAddressTown']+"<br>"+data['personalAddressCounty']+"<br>"+data['personalAddressPostcode']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Personal phone number"
+          },
+          value: {
+            text: data['personal-phone-number']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Personal email"
+          },
+          value: {
+            text: data['personal-email']
           },
           actions: {
             items: [
@@ -152,7 +186,7 @@ What general update do you want to make for this participant? – {{ serviceName
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Submit claim"
+        text: "Create self-employed job"
       }) }}
 
     </form>
