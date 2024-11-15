@@ -8,7 +8,7 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check self employment claim</h1>
+    <h1 class="govuk-heading-l">Check self employment claim submission details</h1>
     {% set endDate %}
       {% if (data['self-employed-end-date'] == "No") %}
           No
@@ -41,7 +41,7 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "Business name"
+            text: "Business Name"
           },
           value: {
             text: data['self-employed-business-name']
@@ -125,42 +125,20 @@ What general update do you want to make for this participant? – {{ serviceName
           }
         }
       ]
-    }) }} 
-    <h2 class="govuk-heading-m">Personal details</h2>
-
-    {{ govukSummaryList({
-      classes: "govuk-!-margin-bottom-9",
-      rows: [
-        {
-          key: {
-            text: "Home address"
-          },
-          value: {
-            text: "Same as above"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "home address"
-              }
-            ]
-          }
-        }
-      ]
     }) }}
+    
+    <p class="govuk-body"><a href="#">Add another self-employed business</a></p>
 
     <!--<h2 class="govuk-heading-m">Submitting this request will start this person on the provision.</h2>
 
     <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
 
-    <form action="self-employed-confirm-submit" method="post" novalidate>
+    <form action="self-employed-confirm-personal-address" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Submit self-employment outcome claim"
+        text: "Continue"
       }) }}
 
     </form>
