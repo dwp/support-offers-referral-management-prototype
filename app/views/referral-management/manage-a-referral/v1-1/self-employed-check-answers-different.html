@@ -8,7 +8,7 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check start details</h1>
+    <h1 class="govuk-heading-l">Check self-employment claim</h1>
     {% set endDate %}
       {% if (data['self-employed-end-date'] == "No") %}
           No
@@ -40,7 +40,7 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "Business Name"
+            text: "Business name"
           },
           value: {
             text: data['self-employed-business-name']
@@ -105,6 +105,22 @@ What general update do you want to make for this participant? – {{ serviceName
               }
             ]
           }
+        },{
+          key: {
+            text: "End date"
+          },
+          value: {
+            html: endDate
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
         }
       ]
     }) }} 
@@ -115,7 +131,7 @@ What general update do you want to make for this participant? – {{ serviceName
       rows: [
         {
           key: {
-            text: "Personal address"
+            text: "Home address"
           },
           value: {
             html: data['personalAddressLine1']+"<br>"+data['personalAddressLine2']+"<br>"+data['personalAddressTown']+"<br>"+data['personalAddressCounty']+"<br>"+data['personalAddressPostcode']
@@ -163,24 +179,8 @@ What general update do you want to make for this participant? – {{ serviceName
               }
             ]
           }
-        },
-        {
-          key: {
-            text: "End date"
-          },
-          value: {
-            html: endDate
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "home address"
-              }
-            ]
-          }
         }
+        
       ]
     }) }}
 
@@ -193,7 +193,7 @@ What general update do you want to make for this participant? – {{ serviceName
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Create self-employed job"
+        text: "Submit self-employment outcome claim"
       }) }}
 
     </form>
