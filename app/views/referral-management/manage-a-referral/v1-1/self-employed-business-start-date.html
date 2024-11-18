@@ -8,9 +8,9 @@ What update do you want to make for this participant? – {{ serviceName }} – 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Submit a self-employmed outcome</h1>
-       <p>Submit all details to help DWP in determining where the partcipant is self-employed.</p>
+       <p>You will need to provide details about the participant's self-employment.</p>
 
-       <p>You will have the option to add more than one job if applicable. You must input these dates in order starting with the first time during the provision that the participant started self employment</p>
+       <p>You can add more than one self-employed job if applicable.</p>
 
       <form action="self-employed-business-name" method="post" novalidate>
         {{ govukDateInput({
@@ -18,7 +18,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
           namePrefix: "self-employed-start-date",
           fieldset: {
             legend: {
-              text: "What date did they start elf-employment?",
+              text: "When did they start self-employment?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
