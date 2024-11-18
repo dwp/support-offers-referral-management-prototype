@@ -39,15 +39,27 @@ container:true
 {% endblock %}
 
 {% block footer %}
-
-  
-
-  {% from "internal-service-footer/macro.njk" import dwpFooter %}
-
-  {{ dwpFooter({
-
-}) }}
-<div class="govuk-width-container ">
-  <a href="dashboard">Reset prototype</a>
-</div>
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/privacy",
+         text: "Privacy policy"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       },
+       {
+        href: "dashboard",
+        text: "Reset prototype"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
 {% endblock %}
