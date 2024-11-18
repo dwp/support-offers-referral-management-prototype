@@ -193,7 +193,9 @@ What general update do you want to make for this participant? – {{ serviceName
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Submit self-employment outcome claim"
+        text: "Submit self-employment outcome claim",
+        name: "claim-submit",
+        value: "submitted"
       }) }}
 
     </form>
