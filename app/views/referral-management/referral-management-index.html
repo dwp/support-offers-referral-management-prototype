@@ -147,6 +147,7 @@
 
             {% set dwpScreens %}
               <h2 class="govuk-heading-l">Provider – employment adviser screens</h2>
+              
               <p>
                 <strong class="govuk-tag govuk-tag--green">
                 Latest version
@@ -156,13 +157,104 @@
               {% from "govuk/components/button/macro.njk" import govukButton %}
 
               {{ govukButton({
-              text: "Start version 1.0",
-              href: "/referral-management/ea/referrals-ea-my-open-cases",
+              text: "Start version 3.0",
+              href: "/referral-management/provider-rm/v3/dashboard",
               isStartButton: true
-            }) }}
+              }) }}
 
               <h3 class="govuk-heading-m">Supporting information</h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Sprint version</dt>
+                  <dd class="govuk-summary-list__value">Sprint 24</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                  This is the initial prototype for work coaches working in Jobcentres to see updates from the provider.
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Mural</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1718098116776">Screenshots
+                        on Mural</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Design documentation</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="#">Documented
+                    design decisions</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Feature team</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Nidderdale</a>
+                  </dd>
+                </div>
+                
+              </dl>
+              <h3 class="govuk-heading-m">Previous versions</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Version 1</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="/referral-management/provider-rm/v1/dashboard">Appointment and Change of circumstances</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                    Testing with senior employment advisors we looked at how they would mark attended and what information they would give DWP, 
+                    failed to attend and how they indicate this to DWP, and how they communicate change of contact information.
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row"></div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key"></dt>
+                  <dd class="govuk-summary-list__value">
+                  
+                  </dd>
+                </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Version 2</dt>
+                <dd class="govuk-summary-list__value">
+                  <a class="govuk-link"
+                  href="/referral-management/provider-rm/v2/dashboard">Start a referral, end a provision and pause a provision</a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Summary</dt>
+                <dd class="govuk-summary-list__value">
+                  Testing with employment advisors we looked at their responsibilties around starting a provision. In what circumstances would they end a provision and is there a need to pause a provision.
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Design documentation</dt>
+                <dd class="govuk-summary-list__value">
+                  <a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1723048542059">Documented design decisions</a>
+                </dd>
+              </div>
+            </dl>
+
+            <hr class="govuk-!-margin-bottom-8">
+
+              <h2 class="govuk-heading-l">Previous prototype </h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Version 1.0</dt>
+                  <dd class="govuk-summary-list__value"><a href="/referral-management/ea/referrals-ea-my-open-cases">Referrals - My open cases</a></dd>
+                </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Sprint version</dt>
                   <dd class="govuk-summary-list__value">Sprint 17</dd>
@@ -303,8 +395,8 @@
             </dl>
             {% endset -%}
 
-            {% set advisorScreens %}
-              <h2 class="govuk-heading-l">Provider - employment advsior screens</h2>
+            {% set allProviderScreens %}
+              <h2 class="govuk-heading-l">Provider – all roles</h2>
               <p>
                 <strong class="govuk-tag govuk-tag--green">
                 Latest version
@@ -314,8 +406,8 @@
               {% from "govuk/components/button/macro.njk" import govukButton %}
 
               {{ govukButton({
-              text: "Start version 3.0",
-              href: "/referral-management/provider-rm/v3/dashboard",
+              text: "Start version 1.1",
+              href: "/referral-management/manage-a-referral/v1-1/dashboard",
               isStartButton: true
               }) }}
 
@@ -323,12 +415,12 @@
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Sprint version</dt>
-                  <dd class="govuk-summary-list__value">Sprint 24</dd>
+                  <dd class="govuk-summary-list__value">Sprint 33</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Summary</dt>
                   <dd class="govuk-summary-list__value">
-                  This is the initial prototype for work coaches working in Jobcentres to see updates from the provider.
+                  This is the initial prototype for provider to download and start a referral and submit a self-employed outcome.
                 </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -337,7 +429,7 @@
                     <ul class="govuk-list">
                       <li>
                         <a class="govuk-link"
-                        href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1718098116776">Screenshots
+                        href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1727428334140/563ce586520937bf54d165e56832cdfb4e38b7d1">Screenshots
                         on Mural</a>
                       </li>
                     </ul>
@@ -347,7 +439,7 @@
                   <dt class="govuk-summary-list__key">Design documentation</dt>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link"
-                    href="#">Documented
+                    href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1727428334140/563ce586520937bf54d165e56832cdfb4e38b7d1?wid=0-1728641901201">Documented
                     design decisions</a>
                   </dd>
                 </div>
@@ -358,53 +450,29 @@
                     href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Nidderdale</a>
                   </dd>
                 </div>
-                
               </dl>
+
               <h3 class="govuk-heading-m">Previous versions</h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Version 1</dt>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link"
-                    href="/referral-management/provider-rm/v1/dashboard">Appointment and Change of circumstances</a>
+                    href="//referral-management/manage-a-referral/v1/dashboard">Download and start a referral</a>
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Summary</dt>
                   <dd class="govuk-summary-list__value">
-                    Testing with senior employment advisors we looked at how they would mark attended and what information they would give DWP, 
-                    failed to attend and how they indicate this to DWP, and how they communicate change of contact information.
+                    Testing history and notes page as a way to receive information from the provider alongside notes regarding appointments at the job centre/job searches and notifications of illness.
                   </dd>
                 </div>
-                <div class="govuk-summary-list__row"></div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key"></dt>
-                  <dd class="govuk-summary-list__value">
-                  
-                  </dd>
-                </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Version 2</dt>
-                <dd class="govuk-summary-list__value">
-                  <a class="govuk-link"
-                  href="/referral-management/provider-rm/v2/dashboard">Start a referral, end a provision and pause a provision</a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Summary</dt>
-                <dd class="govuk-summary-list__value">
-                  Testing with employment advisors we looked at their responsibilties around starting a provision. In what circumstances would they end a provision and is there a need to pause a provision.
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Design documentation</dt>
-                <dd class="govuk-summary-list__value">
-                  <a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/dwpdigital7412/1713878967942/82be1c019ddc27309dc04b7d3577303e78f73582?wid=0-1723048542059">Documented design decisions</a>
-                </dd>
-              </div>
+      
+              
             </dl>
-            </div>
             {% endset -%}
+          </div>
+
 
             {{ govukTabs({
               items: [
@@ -416,7 +484,7 @@
                   }
                 },
                 {
-                  label: "Provider employment advisers",
+                  label: "Provider Employment advisers",
                   id: "dwp-screens",
                   panel: {
                     html: dwpScreens
@@ -430,10 +498,10 @@
                   }
                 },
                 {
-                  label: "Provider - Employment Advisors",
-                  id: "advisor-screens",
+                  label: "Provider - all roles",
+                  id: "all-provider-screens",
                   panel: {
-                    html: advisorScreens
+                    html: allProviderScreens
                   }
                 }
               ]
