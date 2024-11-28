@@ -1,0 +1,62 @@
+{% extends "imr-layouts/us-new-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+There are 4 opportunities available – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="opportunity" method="post" novalidate>
+        {{ govukRadios({
+  name: "select-programme",
+  fieldset: {
+    legend: {
+      text: "There are 4 opportunities available",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select an opportunity for an overview and full eligibility criteria."
+  },
+  items: [
+    {
+      value: "us-1~us-option-1",
+      text: "Connect to Work - in work - Individual Placement and Support (IPS)",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "us-3~us-option-3",
+      text: "Connect to Work - out of work - Individual Placement and Support (IPS)",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "us-2~us-option-2",
+      text: "Connect to Work - in work - Supported Employment Quality Framework (SEQF)",
+      hint: {
+        html: ""
+      }
+    },
+    {
+      value: "us-4~us-option-4",
+      text: "Connect to Work - out of work - Supported Employment Quality Framework (SEQF)",
+      hint: {
+        html: ""
+      }
+    }
+  ]
+}) }}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "imr-layouts/us-new-1.html" %}
+
+{% block pageTitle %}
+Connect to Work - option 1 – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Connect to Work - in work - <br>Individual Placement and Support (IPS)</h1>
+      <h2 class="govuk-heading-m">Overview</h2>
+      <p class="govuk-body">Connect to Work helps people who face complex barriers to work.</p>
+      <p class="govuk-body">Individual Placement and Support (IPS) integrates with health and support services to deliver support as part of their normal health treatment.</p>
+
+      <p class="govuk-body">Support is provided for 4 months. This can be extended by 2 months.</p>
+      <h2 class="govuk-heading-m">Eligibility</h2>
+      <p class="govuk-body">To be eligible they must be in one of the participant groups:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>
+            have a disability or a long-term health condition
+          </li>
+        <li>
+            be a veteran
+          </li>
+        <li>
+            be in a specified disadvantaged group        
+          </li>
+      </ul>
+
+      <p class="govuk-body">They must also:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list govuk-!-margin-bottom-5">
+        <li>
+            be at risk of dropping out of work 
+          </li>
+        <li>            
+have been employed continually for at least 3 months before starting the programme                      
+          </li>
+        <li>
+            be aged 18 or over in England or aged 16 or over in Wales          
+          </li>
+        <li>
+            have the right to work in the UK          
+          </li>
+        <li>
+            have the right to live in the UK and be a resident of England or Wales          
+          </li>
+        <li>
+            have entitlement to public funds          
+          </li>
+        <li>
+        not currently be on another national contracted opportunity
+          </li>
+        <li>be available to participate</li>
+      </ul>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+  text: "Continue",
+  href: "address-details"
+  }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

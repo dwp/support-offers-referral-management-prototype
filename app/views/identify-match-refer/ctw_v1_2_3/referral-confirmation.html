@@ -1,0 +1,29 @@
+{% extends "imr-layouts/us-new-2.html" %}
+{% block pageTitle %}
+Pioneer - WHP Disability Condition referral sent – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">	
+Connect to Work - in work - IPS referral sent</h1>
+        <div class="govuk-panel__body">Referral ID:<br>
+          <strong>321743288</strong>
+        </div>
+      </div>
+      <h2 class="govuk-heading-m">Referral history</h2>
+      <p class="govuk-body">Details of this referral are now in the <a href="referral-pending" class="govuk-link">referral history</a>.</p>
+      <p class="govuk-body">This includes the:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list">
+        <li>referral ID</li>
+        <li>opportunity name</li>
+        <li>referral date</li>
+        <li>status</li>
+      </ul>
+      <h3 class="govuk-heading-s">If you made this referral by mistake</h3>
+      <p class="govuk-body">You will need to contact the accountable body so they can reject the referral. They may ask for the referral ID.</p>
+    </div>
+  </div>
+{% endblock %}
