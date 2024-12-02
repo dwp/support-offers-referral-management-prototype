@@ -17,6 +17,10 @@ What are their contact details? – {{ serviceName }} – Support Offers prototy
   }
 }) %}
 
+      {{ govukHint({
+    text: "Enter all the contact details you have available. You must provide either a phone number or email address."
+  }) }}
+
       {{ govukInput({
   classes: "govuk-input--width-20",
   id: "phone-number",
@@ -31,7 +35,7 @@ What are their contact details? – {{ serviceName }} – Support Offers prototy
   id: "email-address",
   name: "email",
           label: {
-            text: "Email address (optional)"
+            text: "Email address"
           }
 }) }}
       {% endcall %}
