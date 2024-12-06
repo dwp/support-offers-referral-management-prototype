@@ -1,0 +1,59 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="self-employed-check-answers-business" method="post" novalidate>
+        
+        {% set endDateHtml %}
+        {{ govukDateInput({
+              id: "end-date",
+              namePrefix: "end-date",
+              fieldset: {
+
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+        name: "self-employed-end-date",
+        fieldset: {
+          legend: {
+           text: "Is there an end date for their self-employment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+          {
+            value: "Yes",
+          text: "Yes",
+          id: "end-date-yes",
+          conditional: {
+            html: endDateHtml
+          }
+          },
+          {
+            value: "No",
+             text: "No",
+             id: "end-date-no"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+      </fieldset>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Submit a self-employmed outcome</h1>
+       <p>You will need to provide details about the participant's self-employment.</p>
+
+       <p>You can add more than one self-employed job if applicable.</p>
+
+      <form action="self-employed-business-name" method="post" novalidate>
+        {{ govukDateInput({
+          id: "self-employed-start-date",
+          namePrefix: "self-employed-start-date",
+          fieldset: {
+            legend: {
+              text: "When did they start self-employment?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

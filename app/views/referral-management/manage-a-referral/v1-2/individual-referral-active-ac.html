@@ -1,0 +1,121 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+  Citizen details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      {{ govukTable({
+        caption: "Referral details",
+        captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
+        rows: [
+          [
+            {
+              text: "Date of referral",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "20 September 2022 11:15:06"
+            }
+          ],
+          [
+            {
+              text: "Referral ID",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "70098681"
+            }
+          ],
+          [
+            {
+              text: "Opportunity",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Restart"
+            }
+          ],
+
+          [
+            {
+              text: "Referral status",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "New"
+            }
+          ],
+          [
+            {
+              text: "CPA",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "CPA3B"
+            }
+          ],
+          [
+            {
+              text: "Opportunity type",
+              classes: "govuk-!-width-one-half"
+            },
+            {
+              text: "Mandatory"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukTable({
+        caption: "Referral actions",
+        captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
+
+        rows: [
+          [
+            {
+              text: 'Start or cancel referral'
+            }
+            ,
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Completed</strong>'
+            }
+          ],
+          [
+            {
+              html: '<a href="#">Request to end this provision</a>'
+            }
+            ,
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            }
+          ],
+          [
+            {
+              html: '<a href="self-employed-outcome-claim">Self-employed outcome</a>'
+            }
+            ,
+            {
+              html: '<strong class="govuk-tag govuk-tag--red">Rejected</strong>'
+            }
+          ],
+          [
+            {
+              html: '<a href="#">Report a problem</a>'
+            }
+            ,
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            }
+          ]
+        ]
+      }) }}
+
+      <div class="govuk-width-container"><a href="individual-referral-active.html">Reset page</a></div>
+    </div>
+    
+  </div>
+{% endblock %}
