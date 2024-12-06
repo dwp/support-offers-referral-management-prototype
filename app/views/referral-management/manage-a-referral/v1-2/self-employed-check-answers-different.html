@@ -1,0 +1,207 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check self-employment claim</h1>
+    {% set endDate %}
+      {% if (data['self-employed-end-date'] == "No") %}
+          No
+      {% else %}
+        {{ data['end-date-day'] + "/" + data['end-date-month'] + "/" + data['end-date-year'] }}
+      {% endif %}
+    {% endset -%}
+  
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+      {
+        key: {
+          text: "Start date"
+        },
+        value: {
+          text: data['self-employed-start-date-day'] + "/" + data['self-employed-start-date-month'] + "/" + data['self-employed-start-date-year']
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "home address"
+            }
+          ]
+        }
+      },
+        {
+          key: {
+            text: "Business name"
+          },
+          value: {
+            text: data['self-employed-business-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Buiness address"
+          },
+          value: {
+            html: data['businessAddressLine1']+"<br>"+data['businessAddressLine2']+"<br>"+data['businessAddressTown']+"<br>"+data['businessAddressCounty']+"<br>"+data['businessAddressPostcode']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Business phone number"
+          },
+          value: {
+            text: data['phone-number']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Business email"
+          },
+          value: {
+            text: data['email']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },{
+          key: {
+            text: "End date"
+          },
+          value: {
+            html: endDate
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        }
+      ]
+    }) }} 
+  <h2 class="govuk-heading-m">Personal details</h2>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: "Home address"
+          },
+          value: {
+            html: data['personalAddressLine1']+"<br>"+data['personalAddressLine2']+"<br>"+data['personalAddressTown']+"<br>"+data['personalAddressCounty']+"<br>"+data['personalAddressPostcode']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Personal phone number"
+          },
+          value: {
+            text: data['personal-phone-number']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Personal email"
+          },
+          value: {
+            text: data['personal-email']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "home address"
+              }
+            ]
+          }
+        }
+        
+      ]
+    }) }}
+
+    <!--<h2 class="govuk-heading-m">Submitting this request will start this person on the provision.</h2>
+
+    <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
+
+    <form action="self-employed-confirm-submit" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+        text: "Submit self-employment outcome claim",
+        name: "claim-submit",
+        value: "submitted"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
