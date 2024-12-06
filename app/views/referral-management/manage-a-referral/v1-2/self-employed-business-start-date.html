@@ -12,6 +12,8 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 
        <p>You can add more than one self-employed job if applicable.</p>
 
+       <p>If there is more than one self-employed job please enter the earliest first</p>
+
       <form action="self-employed-business-name" method="post" novalidate>
         {{ govukDateInput({
           id: "self-employed-start-date",
@@ -27,6 +29,98 @@ What update do you want to make for this participant? – {{ serviceName }} – 
             text: "For example, 27 3 2007"
           }
         }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is their business name?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "self-employed-business-name",
+          name: "self-employed-business-name"
+        }) }}
+
+        {% call govukFieldset({
+          legend: {
+            text: "What is their business address?",
+            classes: "govuk-fieldset__legend--m",
+            isPageHeading: true
+          }
+        }) %}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            id: "address-line-1",
+            name: "businessAddressLine1",
+            autocomplete: "address-line1"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)"
+            },
+            id: "address-line-2",
+            name: "businessAddressLine2",
+            autocomplete: "address-line2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "businessAddressTown",
+            autocomplete: "address-level2"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "County (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "businessAddressCounty"
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "businessAddressPostcode",
+            autocomplete: "postal-code"
+          }) }}
+        
+        {% endcall %}
+
+        <h2 class="govuk-fieldset__legend--m">Business phone number and email address</h2>
+
+        {{ govukInput({
+          label: {
+            text: "Phone number"
+          },
+          id: "phone-number",
+          name: "business-phone-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Email address (optional)"
+          },
+          id: "email",
+          name: "business-email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+
 
         {{ govukButton({
         text: "Continue"

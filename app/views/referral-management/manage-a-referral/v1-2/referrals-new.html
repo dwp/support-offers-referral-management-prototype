@@ -39,28 +39,7 @@
 
           <form action="opportunity-status" method="post" novalidate>
             <h2 class="govuk-heading-m">Filters</h2>
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-heading-s">
-                  Status
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="status">
-                      Flagged
-                    </label> 
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                      New
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-heading-s">
@@ -122,8 +101,8 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Pending",
-                            href: "referrals-pending",
+                            text: "Acknowledged",
+                            href: "referrals-acknowledged",
                             id: "s-item-2"
                           },
                           {
@@ -142,13 +121,15 @@
               }}
               <h1 class="govuk-heading-l">
           New referrals<br>
-                <span class="govuk-caption-l">Referrals to review</span>
+                <span class="govuk-caption-l">Referrals to acknowledge</span>
               </h1>
               {{ govukButton({
-                text: "Download all new referrals",
-                href: "referrals-new-download"
+                text: "Acknowledge selected new referrals",
+                href: "referrals-acknowledged"
               }) }}
             </div>
+
+
 
             <!--------------------------table-------------------------->
             
@@ -247,7 +228,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA2</td>
                    <td class="govuk-table__cell" data-sort-value="30">30 days</td>
-<td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
+<td class="govuk-table__cell"> New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
@@ -304,7 +285,7 @@
                   
                   <td class="govuk-table__cell">Restart<br>CPA1</td>
                    <td class="govuk-table__cell" data-sort-value="30">30 days</td>
-<td class="govuk-table__cell">{{govukTag({text: "Flagged",classes: "govuk-tag--red"})}}</td>
+<td class="govuk-table__cell"> New</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">
