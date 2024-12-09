@@ -122,8 +122,13 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Pending",
-                            href: "referrals-pending",
+                            text: "Downloaded",
+                            href: "referrals-downloaded",
+                            id: "s-item-2"
+                          },
+                          {
+                            text: "Accepted",
+                            href: "referrals-accepted",
                             id: "s-item-2"
                           },
                           {
@@ -132,8 +137,8 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Ended",
-                            href: "referrals-active",
+                            text: "Closed",
+                            href: "referrals-closed",
                             id: "s-item-3"
                           }
                           
@@ -151,7 +156,7 @@
             <div class="govuk-grid-column-three-quarters">
               <p>You have successfully downloaded 25 new referrals</p>
 
-              <p>They are now in your <a href="referrals-pending">pending referrals</a>.</p>
+              <p>They are now in your <a href="referrals-downloaded">downloaded referrals</a>.</p>
             </div>
           
         {% endblock %}

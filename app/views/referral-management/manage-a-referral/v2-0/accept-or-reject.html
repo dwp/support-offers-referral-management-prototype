@@ -1,0 +1,39 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="#" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+        name: "end-reason",
+        fieldset: {
+          legend: {
+           text: "Do you want to accept or reject this referral?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+        {
+            value: "Start the referral~accept-or-reject-check-answers-accept",
+             text: "Accept the referral"
+          },
+          {
+            value: "Participant is outside of eligible area~accept-or-reject-reason",
+             text: "Reject the referral"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
