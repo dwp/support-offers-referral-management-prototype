@@ -1,0 +1,61 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-l">Check start details</h1>
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+      {
+        key: {
+          text: "Opportunity"
+        },
+        value: {
+          text: "Restart"
+        }
+      },
+        {
+          key: {
+            text: "Area"
+          },
+          value: {
+            text: "North East"
+          }
+        },
+        {
+          key: {
+            text: "Accepted on"
+          },
+          value: {
+            text: data['accept-date']
+          }
+        }
+      ]
+    }) }}
+
+    <!--<h2 class="govuk-heading-m">Submitting this request will start this person on the provision.</h2>
+
+    <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
+
+    <form action="start-or-cancel-confirm-start" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+        text: "Start referral"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
