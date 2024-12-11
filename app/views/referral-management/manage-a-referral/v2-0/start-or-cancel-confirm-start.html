@@ -12,14 +12,14 @@ Referral started – {{ serviceName }} – Support Offers prototype
       <h1 class="govuk-panel__title">Referral started</h1>
       <div class="govuk-panel__body govuk-!-font-size-27">
         You have successfully entered
-        <b id="date-initial-meeting">{{ data['when-initial-meeting'] }}</b>
+        <b id="date-initial-meeting">Today</b>
         as the start date for this person.
       </div>
     </div>
 
       <p>This referral is now in your <a href="referrals-active-as">active referrals</a>.</p>
 
-      <p class=""govuk-body">To start or cancel another referral, go to <a href="referral-pending">pending referrals</a> or <a href="dashboard-as">return to the dashboard</a>.</p>
+      <p class=""govuk-body">To start or cancel another referral, go to <a href="dashboard-as">return to the dashboard</a>.</p>
   </div>
 </div>
 
@@ -32,37 +32,8 @@ Referral started – {{ serviceName }} – Support Offers prototype
       month: 'long'
     };
 
-  var prevWorkDay;
-  if (today.getDay() == 0) {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
-  } else if (today.getDay() == 1) {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
-  } else {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
-  }
-  var day = prevWorkDay.getDate();
-  var month = prevWorkDay.getMonth();
-  var year = prevWorkDay.getFullYear();
-  var monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
   apptDate = document.getElementById("date-initial-meeting");
-  if (apptDate.innerHTML == "Previous working day") {
-    apptDate.innerHTML =  day + " " + monthNames[month] + " " + year;
-  } else if (apptDate.innerHTML == "Today") {
-    apptDate.innerHTML = today.toLocaleDateString('en-UK', options);
-  }
+  apptDate.innerText = today.toLocaleDateString('en-UK', options);
 </script>
 
 {% endblock %}

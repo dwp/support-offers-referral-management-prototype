@@ -23,20 +23,31 @@ What general update do you want to make for this participant? – {{ serviceName
         items: [
           {
             value: "Not engaging",
-          text: "They are not engaging"
+            text: "The citizen is not engaging",
+            hint: {
+              text: "You have made repeated attempts to engage with them, but they have not attended an initial meeting after 30 days"
+            }
           },
           {
-            value: "Employed",
-             text: "They are employed",
-             id: "prev-date"
+            value: "Duplicate referral",
+            text: "They are employed",
+            hint: {
+              text: "You have already received a referral for this citizen or they are already a participant on this opportunity"
+            }
           },
           {
             value: "Self-employed",
-            text: "They are self-employed"
+            text: "The citizen is not eligible",
+            hint: {
+              text: "They are employed, self-employed or on a different DWP national contracted opportunity"
+            }
           },
           {
-            value: "Problem with the referral",
-            text: "There is a problem with this referral"
+            value: "Referral sent in error",
+            text: "The referral has been sent in error",
+            hint: {
+              text: "DWP have asked you to reject this referral"
+            }
           }
         ]
         }) }}

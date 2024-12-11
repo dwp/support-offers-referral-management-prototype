@@ -108,7 +108,7 @@
 
               {{ 
                 dwpHorizontalNavigation({
-                      selectedItem: "referrals-pending",
+                      selectedItem: "referrals-downloaded",
                       containerClasses: "govuk-!-padding-bottom-5",
                       items: [
                           {
@@ -122,8 +122,13 @@
                             id: "s-item-3"
                           },
                           {
+                            text: "Downloaded",
+                            href: "referrals-downloaded",
+                            id: "s-item-3"
+                          },
+                          {
                             text: "Accepted",
-                            href: "referrals-acknowledged",
+                            href: "referrals-accepted",
                             id: "s-item-2"
                           },
                           {
@@ -133,7 +138,7 @@
                           },
                           {
                             text: "Ended",
-                            href: "referrals-ended",
+                            href: "referrals-closed",
                             id: "s-item-3"
                           }
                           

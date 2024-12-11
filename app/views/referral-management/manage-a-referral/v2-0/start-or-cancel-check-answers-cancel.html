@@ -13,20 +13,20 @@ What general update do you want to make for this participant? – {{ serviceName
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
       rows: [
-      {
+        {
         key: {
           text: "Opportunity"
         },
         value: {
           text: "Restart"
         }
-      },
+        },
         {
           key: {
-            text: "CPA"
+            text: "Area"
           },
           value: {
-            text: "CPA1"
+            text: "North East"
           }
         },
         {
@@ -45,7 +45,16 @@ What general update do you want to make for this participant? – {{ serviceName
               }
             ]
           }
-        }
+        },
+        {
+          key: {
+            text: "Cancelled on"
+          },
+          value: {
+            text: "Today",
+            classes: "cancel-date"
+          }
+          }
       ]
     }) }}
 
@@ -65,4 +74,17 @@ What general update do you want to make for this participant? – {{ serviceName
 
   </div>
 </div>
+
+<script>
+  var today = new Date();
+
+    var options = {
+      year: 'numeric',
+      day: 'numeric',
+      month: 'long'
+    };
+
+  apptDate = document.getElementsByClassName("cancel-date");
+  apptDate[0].innerText = "Today, " + today.toLocaleDateString('en-UK', options);
+</script>
 {% endblock %}
