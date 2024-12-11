@@ -34,7 +34,8 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Accepted on"
           },
           value: {
-            text: data['accept-date']
+            text: "Today",
+            classes: "accepted-date"
           }
         }
       ]
@@ -44,18 +45,48 @@ What general update do you want to make for this participant? – {{ serviceName
 
     <p class="govuk-body">Please make sure the details you are providing are correct.</p>-->
 
-    <form action="start-or-cancel-confirm-start" method="post" novalidate>
+    <form action="accept-or-reject-confirm-accept" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Start referral"
+        text: "Accept referral"
       }) }}
 
     </form>
 
   </div>
 </div>
+
+<script>
+  var today = new Date();
+
+    var options = {
+      year: 'numeric',
+      day: 'numeric',
+      month: 'long'
+    };
+
+  var monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  apptDate = document.getElementsByClassName("accepted-date");
+  console.log(apptDate[0].innerText);
+  if (apptDate[0].innerText == "Today") {
+    apptDate[0].innerText = today.toLocaleDateString('en-UK', options);
+  }
+</script>
 
 
 {% endblock %}

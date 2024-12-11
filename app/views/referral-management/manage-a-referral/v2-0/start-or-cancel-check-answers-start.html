@@ -23,10 +23,10 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "CPA"
+            text: "Area"
           },
           value: {
-            text: "CPA1"
+            text: "North East"
           }
         },
         {
@@ -34,16 +34,8 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Start date"
           },
           value: {
-            text: data['when-initial-meeting']
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "home address"
-              }
-            ]
+            text: "Today",
+            classes: "start-date"
           }
         }
       ]
@@ -65,6 +57,19 @@ What general update do you want to make for this participant? – {{ serviceName
 
   </div>
 </div>
+
+<script>
+  var today = new Date();
+
+    var options = {
+      year: 'numeric',
+      day: 'numeric',
+      month: 'long'
+    };
+
+  apptDate = document.getElementsByClassName("start-date");
+  apptDate[0].innerText = today.toLocaleDateString('en-UK', options);
+</script>
 
 
 {% endblock %}
