@@ -1,0 +1,53 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="end-check-answers" method="post" novalidate>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+        {{ govukRadios({
+        name: "ending-reason",
+        fieldset: {
+          legend: {
+           text: "Why are they exiting this programme early?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+         }
+        },
+        items: [
+          {
+            value: "Moved out of eligible area",
+            text: "The citizen has moved out of England or Wales for the remaining alloted time"
+          },
+          {
+            value: "Is in prison",
+            text: "The citizen is in prison for the remaining allotted time"
+          },
+          {
+            value: "Chosen to leave due to terminal illness",
+            text: "The citizen has a terminal illness and has chosen to leave the programme"
+          },
+          {
+            value: "Chosen to leave due to moving into NWRR regime",
+            text: "Citizen has moved into the NWRR regime and has chosen to leave the programme"
+          },
+          {
+            value: "Has died",
+            text: "Citizen has died"
+          }
+        ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

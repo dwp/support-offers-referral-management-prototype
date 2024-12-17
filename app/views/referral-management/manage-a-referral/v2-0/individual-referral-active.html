@@ -77,11 +77,11 @@
         rows: [
           [
               {
-                text: 'Acknowledge or reject referral'
+                text: 'Accepted or reject referral'
               }
               ,
               {
-                html: '<strong class="govuk-tag govuk-tag--green">Completed</strong>'
+                html: '<strong class="govuk-tag govuk-tag--green">Accepted</strong>'
               }
             ],
           [
@@ -90,12 +90,21 @@
             }
             ,
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Completed</strong>'
+              html: '<strong class="govuk-tag govuk-tag--green">Started</strong>'
             }
           ],
           [
             {
-              html: '<a href="#">Request to end this provision</a>'
+              html: '<a href="extend-summary">Request to extend this provision</a>'
+            }
+            ,
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            }
+          ],
+          [
+            {
+              html: '<a href="end-reason">Request to end this provision</a>'
             }
             ,
             {
@@ -105,15 +114,6 @@
           [
             {
               html: '<a href="self-employed-business-start-date">Submit a self-employed outcome</a>'
-            }
-            ,
-            {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            }
-          ],
-          [
-            {
-              html: '<a href="#">Report a problem</a>'
             }
             ,
             {
