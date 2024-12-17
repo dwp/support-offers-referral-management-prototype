@@ -14,7 +14,20 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 
        <p>If there is more than one self-employed job please enter the earliest first</p>
 
-      <form action="self-employed-business-name" method="post" novalidate>
+      <form action="self-employed-check-answers-business" method="post" novalidate>
+        {% set endDateHtml %}
+        {{ govukDateInput({
+              id: "end-date",
+              namePrefix: "end-date",
+              fieldset: {
+
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+        {% endset -%}
+        
         {{ govukDateInput({
           id: "self-employed-start-date",
           namePrefix: "self-employed-start-date",
@@ -97,11 +110,10 @@ What update do you want to make for this participant? – {{ serviceName }} – 
         
         {% endcall %}
 
-        <h2 class="govuk-fieldset__legend--m">Business phone number and email address</h2>
-
         {{ govukInput({
           label: {
-            text: "Phone number"
+            text: "Phone number",
+            classes: "govuk-fieldset__legend--m"
           },
           id: "phone-number",
           name: "business-phone-number",
@@ -112,7 +124,8 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 
         {{ govukInput({
           label: {
-            text: "Email address (optional)"
+            text: "Email address (optional)",
+            classes: "govuk-fieldset__legend--m"
           },
           id: "email",
           name: "business-email",
@@ -120,6 +133,32 @@ What update do you want to make for this participant? – {{ serviceName }} – 
           autocomplete: "email",
           spellcheck: false
         }) }}
+
+        {{ govukRadios({
+          name: "self-employed-end-date",
+          fieldset: {
+            legend: {
+             text: "Is there an end date for this self-employment?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+           }
+          },
+          items: [
+            {
+              value: "Yes",
+            text: "Yes",
+            id: "end-date-yes",
+            conditional: {
+              html: endDateHtml
+            }
+            },
+            {
+              value: "No",
+               text: "No",
+               id: "end-date-no"
+            }
+          ]
+          }) }}
 
 
         {{ govukButton({

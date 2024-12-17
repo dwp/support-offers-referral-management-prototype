@@ -86,7 +86,7 @@
 
               {{ 
                 dwpHorizontalNavigation({
-                      selectedItem: "referrals-ended",
+                      selectedItem: "referrals-closed",
                       containerClasses: "govuk-!-padding-bottom-5",
                       items: [
                           {
@@ -100,9 +100,14 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Pending",
-                            href: "referrals-pending",
+                            text: "Received",
+                            href: "referrals-received",
                             id: "s-item-2"
+                          },
+                          {
+                            text: "Accepted",
+                            href: "referrals-accepted",
+                            id: "s-item-3"
                           },
                           {
                             text: "Active",
@@ -110,8 +115,8 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Ended",
-                            href: "referrals-ended",
+                            text: "Closed",
+                            href: "referrals-closed",
                             id: "s-item-3"
                           }
                           
@@ -119,7 +124,7 @@
                   })
               }}
               <h1 class="govuk-heading-l">
-                Ended referrals<br>
+                Closed referrals<br>
                 <span class="govuk-caption-l">Referrals that have ended</span>
               </h1>
             </div>
