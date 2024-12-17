@@ -9,6 +9,15 @@ There are 4 opportunities available – {{ serviceName }} – Support Offers pro
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select an opportunity",
+      href: "#SelectProgramme"
+    }
+  ]
+}) }}
       <form action="opportunity" method="post" novalidate>
         {{ govukRadios({
   name: "select-programme",
@@ -22,31 +31,34 @@ There are 4 opportunities available – {{ serviceName }} – Support Offers pro
   hint: {
     text: "Select an opportunity for an overview and full eligibility criteria."
   },
+errorMessage: {
+    text: "Select an opportunity"
+  },
   items: [
     {
       value: "us-1~us-option-1",
-      text: "Connect to Work - In Work Retention Support - Individual Placement and Support (IPS)",
+      text: "Connect to Work - in work retention support - Individual Placement and Support (IPS)",
       hint: {
         html: ""
       }
     },
     {
       value: "us-3~us-option-3",
-      text: "Connect to Work - Out of Work - Individual Placement and Support (IPS)",
+      text: "Connect to Work - out of work - Individual Placement and Support (IPS)",
       hint: {
         html: ""
       }
     },
     {
       value: "us-2~us-option-2",
-      text: "Connect to Work - In Work Retention Support - Supported Employment Quality Framework (SEQF)",
+      text: "Connect to Work - in work retention support - Supported Employment Quality Framework (SEQF)",
       hint: {
         html: ""
       }
     },
     {
       value: "us-4~us-option-4",
-      text: "Connect to Work - Out of Work - Supported Employment Quality Framework (SEQF)",
+      text: "Connect to Work - out of work - Supported Employment Quality Framework (SEQF)",
       hint: {
         html: ""
       }

@@ -1,0 +1,66 @@
+{% extends "imr-layouts/us-new-1.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+What are their contact details? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Enter a phone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192",
+      href: "#PreferredNumber"
+    }
+  ]
+}) }}
+      <div class="govuk-form-group govuk-form-group--error">
+
+        {% call govukFieldset({
+  legend: {
+    text: "What are their contact details?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+        {{ govukHint({
+    text: "Enter all the contact details you have available. You must provide either a phone number or email address."
+  }) }}
+
+        {{ govukInput({
+  classes: "govuk-input--width-20",
+  id: "phone-number",
+  value: "1937 448575",
+  name: "telephone",
+          label: {
+            text: "Phone number"
+          },
+        errorMessage: {
+          text: "Enter a phone number, like 01632 960 001, 07700 900 982 or +44 808 157 0192"
+        }
+}) }}
+
+        {{ govukInput({
+  classes: "govuk-input--width-20",
+  id: "email-address",
+  name: "email",
+          label: {
+            text: "Email address"
+          }
+}) }}
+        {% endcall %}
+      </div>
+
+      {{ govukButton({
+      text: "Continue",
+      preventDoubleClick: true,
+      href: "check-answers"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
