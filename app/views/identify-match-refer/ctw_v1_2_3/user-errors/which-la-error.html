@@ -9,17 +9,33 @@ Which is their US delivery area? – {{ serviceName }} – Support Offers protot
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Delivery area cannot be blank",
+      href: "#SelectJobcentre"
+    }
+  ]
+}) }}
+
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="event-name">
+        <div class="govuk-form-group govuk-form-group--error">
+          <h1 class="govuk-label-wrapper">
+
+            <label class="govuk-label govuk-label--l" for="event-name">
       Which is their delivery area?
     </label>
-        </h1>
-        <div id="event-name-hint" class="govuk-hint">
+          </h1>
+          <div id="event-name-hint" class="govuk-hint">
     Enter delivery area
   </div>
-        <label class="govuk-label" id="event-name" name="office-autocomplete" type="text" aria-describedby="event-name-hint"></label>
-        <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+          <p id="contact-by-email-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Delivery area cannot be blank
+          </p>
+          <label class="govuk-label" id="event-name" name="office-autocomplete" type="text" aria-describedby="event-name-hint"></label>
+          <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
+        </div>
 
         <!-- Includes -->
 
@@ -261,6 +277,7 @@ Which is their US delivery area? – {{ serviceName }} – Support Offers protot
         'Worcestershire County Council',
         'Wrexham County Borough Council',
         'York & North Yorkshire Combined Authority'
+
       ]
 
       var element = document.querySelector('#office-autocomplete-container')
