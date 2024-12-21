@@ -8,7 +8,7 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check ending of provision details</h1>
+    <h1 class="govuk-heading-l">Check early exit details</h1>
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -18,20 +18,12 @@ What general update do you want to make for this participant? – {{ serviceName
           text: "Opportunity"
         },
         value: {
-          text: "Restart"
+          text: "Restart North East"
         }
         },
         {
           key: {
-            text: "Area"
-          },
-          value: {
-            text: "North East"
-          }
-        },
-        {
-          key: {
-            text: "Ending reason"
+            text: "Reason"
           },
           value: {
             text: data['ending-reason']
@@ -48,7 +40,7 @@ What general update do you want to make for this participant? – {{ serviceName
         },
         {
           key: {
-            text: "Request to end on"
+            text: "Early exit date"
           },
           value: {
             text: "Today",
@@ -67,7 +59,7 @@ What general update do you want to make for this participant? – {{ serviceName
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Request to end this provision"
+        text: "Request early exit"
       }) }}
 
     </form>
