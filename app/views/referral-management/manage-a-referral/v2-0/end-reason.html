@@ -10,36 +10,34 @@ What general update do you want to make for this participant? – {{ serviceName
       <form action="end-check-answers" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-
+        <h1 class="govuk-heading-l">Why are they exiting this programme early</h1>
         {{ govukRadios({
         name: "ending-reason",
         fieldset: {
           legend: {
-           text: "Why are they exiting this programme early?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+           text: "The citizen"
          }
         },
         items: [
           {
-            value: "Moved out of eligible area",
-            text: "The citizen has moved out of England or Wales for the remaining alloted time"
+            value: "The citizen has died",
+            text: "has died"
           },
           {
-            value: "Is in prison",
-            text: "The citizen is in prison for the remaining allotted time"
+            value: "They have moved out of eligible area",
+            text: "has moved out of England or Wales for the remaining alloted time"
           },
           {
-            value: "Chosen to leave due to terminal illness",
-            text: "The citizen has a terminal illness and has chosen to leave the programme"
+            value: "They are in prison",
+            text: "is in prison for the remaining allotted time"
           },
           {
-            value: "Chosen to leave due to moving into NWRR regime",
-            text: "Citizen has moved into the NWRR regime and has chosen to leave the programme"
+            value: "They have a terminal illness",
+            text: "has a terminal illness and has chosen to leave the programme"
           },
           {
-            value: "Has died",
-            text: "Citizen has died"
+            value: "They have moved into the NWRR regime",
+            text: "has moved into the NWRR regime and has chosen to leave the programme"
           }
         ]
         }) }}

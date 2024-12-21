@@ -82,6 +82,10 @@
               ,
               {
                 html: '<strong class="govuk-tag govuk-tag--green">Accepted</strong>'
+              },
+              {
+                html: '7/1/2024',
+                classes: "todays-date"
               }
             ],
           [
@@ -91,24 +95,36 @@
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--green">Started</strong>'
+            },
+            {
+              html: '7/1/2024',
+              classes: "todays-date"
             }
           ],
           [
             {
-              html: '<a href="extend-summary">Request to extend this provision</a>'
+              html: '<a href="extend-summary">Request an extension</a>'
             }
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            },
+            {
+              html: ''
+
             }
           ],
           [
             {
-              html: '<a href="end-reason">Request to end this provision</a>'
+              html: '<a href="end-reason">Record an early exit</a>'
             }
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            },
+            {
+              html: ''
+
             }
           ],
           [
@@ -118,6 +134,10 @@
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
+            },
+            {
+              html: ''
+
             }
           ]
         ]
@@ -126,4 +146,16 @@
     </div>
     
   </div>
+
+  <script>
+    var today = new Date();
+    var options = {
+      year: 'numeric',
+      day: 'numeric',
+      month: 'numeric'
+    };
+    console.log(new Date());
+    var todayDate = document.getElementsByClassName("todays-date");
+    todayDate[0].innerHTML = today.toLocaleDateString('en-UK', options);
+  </script>
 {% endblock %}
