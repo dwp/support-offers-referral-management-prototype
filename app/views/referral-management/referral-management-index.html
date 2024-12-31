@@ -406,10 +406,44 @@
               {% from "govuk/components/button/macro.njk" import govukButton %}
 
               {{ govukButton({
-              text: "Start version 1.1",
-              href: "/referral-management/manage-a-referral/v1-1/dashboard",
+              text: "Start version 2.0",
+              href: "/referral-management/manage-a-referral/v2-0/dashboard",
               isStartButton: true
               }) }}
+              
+              <h3 class="govuk-heading-m">User journeys</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Download</dt>
+                  <dd class="govuk-summary-list__value"><a class="govuk-link"
+                    href="/referral-management/manage-a-referral/v2-0/referrals-new">Link</a></dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Accept or reject</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                        href="/referral-management/manage-a-referral/v2-0/individual-referral-received">Link</a>
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Start or cancel</dt>
+                  <dd class="govuk-summary-list__value">
+                    <ul class="govuk-list">
+                      <li>
+                        <a class="govuk-link"
+                        href="referral-management/manage-a-referral/v2-0/individual-referral-accepted">Link</a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Early exit/Extension/Self-employed outcome</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="/referral-management/manage-a-referral/v2-0/individual-referral-active">Link</a>
+                  </dd>
+                </div>
+              </dl>
 
               <h3 class="govuk-heading-m">Supporting information</h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
@@ -420,7 +454,7 @@
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Summary</dt>
                   <dd class="govuk-summary-list__value">
-                  This is the initial prototype for provider to download and start a referral and submit a self-employed outcome.
+                  Covers all core functionality from iSupplier except for generating reports and making payments.
                 </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -455,6 +489,19 @@
               <h3 class="govuk-heading-m">Previous versions</h3>
               <dl class="govuk-summary-list govuk-!-margin-bottom-8">
                 <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Version 1.1</dt>
+                  <dd class="govuk-summary-list__value">
+                    <a class="govuk-link"
+                    href="//referral-management/manage-a-referral/v1-1/dashboard">Self-employed outcome application</a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Summary</dt>
+                  <dd class="govuk-summary-list__value">
+                    Understanding the self-employed outcome journey, including submitting the relevant information for DWP to assess a self-employed outcome claim.
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Version 1</dt>
                   <dd class="govuk-summary-list__value">
                     <a class="govuk-link"
@@ -464,7 +511,7 @@
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">Summary</dt>
                   <dd class="govuk-summary-list__value">
-                    Testing history and notes page as a way to receive information from the provider alongside notes regarding appointments at the job centre/job searches and notifications of illness.
+                    Process for downloading/approving a new referral and starting or cancelling after the download.
                   </dd>
                 </div>
       
