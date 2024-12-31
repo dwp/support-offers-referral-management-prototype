@@ -38,33 +38,67 @@
           <br><br>
 
           <form action="opportunity-status" method="post" novalidate>
-            <div class="govuk-form-group">
-              <h2 class="govuk-heading-m">Filters</h2>
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-heading-s">
-                  Opportunity
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="status">
-                      Restart North East
-                    </label> 
+            <h2 class="govuk-heading-m">Filters</h2>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-heading-s">
+                    Status
+                  </legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="status">
+                        Cancelled
+                      </label> 
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                      value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                        Early exit
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        Ended
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        Rejected
+                      </label>
+                    </div>
                   </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                      Restart North West
-                    </label>
+                </fieldset>
+              </div>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-heading-s">
+                    Opportunity
+                  </legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
+                      <label class="govuk-label govuk-checkboxes__label" for="status">
+                        Restart North East
+                      </label> 
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
+                      value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                        Restart North West
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                        Connect to Work North East
+                      </label>
+                    </div>
                   </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                      Connect to Work North East
-                    </label>
-                  </div>
-                </div>
               </fieldset>
             </div>
           
