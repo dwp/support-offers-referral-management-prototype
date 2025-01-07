@@ -8,6 +8,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
+      {% set todaysDate %}
+        {{ "now" | govukDateTime }} 11:15:06
+      {% endset -%}
+
       {{ govukTable({
         caption: "Referral details",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
@@ -18,7 +22,7 @@
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "20 September 2022 11:15:06"
+              html: todaysDate
             }
           ],
           [
@@ -51,11 +55,11 @@
           ],
           [
             {
-              text: "CPA",
+              text: "Area",
               classes: "govuk-!-width-one-half"
             },
             {
-              text: "CPA1"
+              text: "North East"
             }
           ],
           [
