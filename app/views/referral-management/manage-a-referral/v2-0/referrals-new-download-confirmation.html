@@ -39,28 +39,7 @@
 
           <form action="opportunity-status" method="post" novalidate>
             <h2 class="govuk-heading-m">Filters</h2>
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-heading-s">
-                  Status
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label" for="status">
-                      Flagged
-                    </label> 
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox"
-                    value="employment-tribunal">
-                    <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                      New
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-heading-s">
@@ -83,7 +62,7 @@
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="MOD">
                     <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                      Universal Support CPA1
+                      Connect to Work CPA1
                     </label>
                   </div>
                 </div>
@@ -122,14 +101,14 @@
                             id: "s-item-3"
                           },
                           {
-                            text: "Downloaded",
-                            href: "referrals-downloaded",
+                            text: "Received",
+                            href: "referrals-received",
                             id: "s-item-2"
                           },
                           {
                             text: "Accepted",
                             href: "referrals-accepted",
-                            id: "s-item-2"
+                            id: "s-item-3"
                           },
                           {
                             text: "Active",
@@ -156,7 +135,7 @@
             <div class="govuk-grid-column-three-quarters">
               <p>You have successfully downloaded 25 new referrals</p>
 
-              <p>They are now in your <a href="referrals-downloaded">downloaded referrals</a>.</p>
+              <p>They are now in your <a href="referrals-received">Received referrals</a></p>
             </div>
           
         {% endblock %}

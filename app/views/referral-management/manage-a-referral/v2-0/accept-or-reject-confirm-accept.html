@@ -14,50 +14,8 @@ Referral started – {{ serviceName }} – Support Offers prototype
 
       <p>This referral is now in your <a href="referrals-accepted-aa">accepted referrals</a>.</p>
 
-      <p class=""govuk-body">To start or cancel another referral, go to <a href="dashboard-aa">return to the dashboard</a>.</p>
+      <p class=""govuk-body">To start or cancel another referral, go to <a href="dashboard">return to the dashboard</a>.</p>
   </div>
 </div>
-
-<script>
-  var today = new Date();
-
-    var options = {
-      year: 'numeric',
-      day: 'numeric',
-      month: 'long'
-    };
-
-  var prevWorkDay;
-  if (today.getDay() == 0) {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 2);
-  } else if (today.getDay() == 1) {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
-  } else {
-    prevWorkDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
-  }
-  var day = prevWorkDay.getDate();
-  var month = prevWorkDay.getMonth();
-  var year = prevWorkDay.getFullYear();
-  var monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-  apptDate = document.getElementById("date-initial-meeting");
-  if (apptDate.innerHTML == "Previous working day") {
-    apptDate.innerHTML =  day + " " + monthNames[month] + " " + year;
-  } else if (apptDate.innerHTML == "Today") {
-    apptDate.innerHTML = today.toLocaleDateString('en-UK', options);
-  }
-</script>
 
 {% endblock %}

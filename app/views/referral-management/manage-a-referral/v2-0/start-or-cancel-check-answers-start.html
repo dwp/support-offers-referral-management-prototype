@@ -10,6 +10,10 @@ What general update do you want to make for this participant? – {{ serviceName
 
     <h1 class="govuk-heading-l">Check start details</h1>
 
+    {% set todaysDate %}
+        Today, {{ "now" | govukDateTime }}
+    {% endset -%}
+
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
       rows: [
@@ -34,8 +38,7 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Start date"
           },
           value: {
-            text: "Today",
-            classes: "start-date"
+            text: todaysDate
           }
         }
       ]

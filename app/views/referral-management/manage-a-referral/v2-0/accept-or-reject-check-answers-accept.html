@@ -8,7 +8,11 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check start details</h1>
+    <h1 class="govuk-heading-l">Check acceptance details</h1>
+
+      {% set todaysDate %}
+        Today, {{ "now" | govukDateTime }}
+      {% endset -%}
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -34,8 +38,7 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Accepted on"
           },
           value: {
-            text: "Today",
-            classes: "accepted-date"
+            text: todaysDate
           }
         }
       ]
@@ -84,7 +87,7 @@ What general update do you want to make for this participant? – {{ serviceName
   apptDate = document.getElementsByClassName("accepted-date");
   console.log(apptDate[0].innerText);
   if (apptDate[0].innerText == "Today") {
-    apptDate[0].innerText = today.toLocaleDateString('en-UK', options);
+    apptDate[0].innerText = "Today, " + today.toLocaleDateString('en-UK', options);
   }
 </script>
 

@@ -127,30 +127,10 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <form action="self-employed-confirm-submit" method="post" novalidate>
+    <form action="self-employed-jobs-list" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
     
-    {{ govukRadios({
-      name: "cancellation-reason",
-      fieldset: {
-        legend: {
-         text: "Would you like to add another self-employed job?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-       }
-      },
-      items: [
-        {
-          value: "Yes~self-employed-jobs-list",
-          text: "Yes"
-        },
-        {
-          value: "No~self-employed-confirm-submit",
-          text: "No"
-        }
-      ]
-      }) }}
 
     <!--<h2 class="govuk-heading-m">Submitting this request will start this person on the provision.</h2>
 

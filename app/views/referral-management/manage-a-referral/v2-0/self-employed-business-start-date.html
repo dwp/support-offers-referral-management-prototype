@@ -7,12 +7,8 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Submit a self-employmed outcome</h1>
-       <p>You will need to provide details about the participant's self-employment.</p>
-
-       <p>You can add more than one self-employed job if applicable.</p>
-
-       <p>If there is more than one self-employed job please enter the earliest first</p>
+      <h1 class="govuk-heading-l">Submit a self-employed outcome</h1>
+       <p>You will be able to add more than one self-employed job if applicable.</p>
 
       <form action="self-employed-check-answers-business" method="post" novalidate>
         {% set endDateHtml %}
@@ -33,13 +29,13 @@ What update do you want to make for this participant? – {{ serviceName }} – 
           namePrefix: "self-employed-start-date",
           fieldset: {
             legend: {
-              text: "When did they start self-employment?",
+              text: "When did they start this self-employed job?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
-            text: "For example, 27 3 2007"
+            text: "This is the date that they started trading"
           }
         }) }}
 
@@ -112,7 +108,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 
         {{ govukInput({
           label: {
-            text: "Phone number",
+            text: "What is their business phone number?",
             classes: "govuk-fieldset__legend--m"
           },
           id: "phone-number",
@@ -124,7 +120,7 @@ What update do you want to make for this participant? – {{ serviceName }} – 
 
         {{ govukInput({
           label: {
-            text: "Email address (optional)",
+            text: "What is their business email address (optional)",
             classes: "govuk-fieldset__legend--m"
           },
           id: "email",
