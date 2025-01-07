@@ -74,31 +74,32 @@
         caption: "Referral actions",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
 
-        rows: [
-          [
+                rows: [
+                [
+                {
+                  text: 'Download referral'
+                }
+                ,
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Completed</strong>'
+                }
+            ],
+            [
               {
                 text: 'Accepted or reject referral'
               }
               ,
               {
-                html: '<strong class="govuk-tag govuk-tag--green">Accepted</strong>'
-              },
-              {
-                html: '7/1/2024',
-                classes: "todays-date"
+                html: '<strong class="govuk-tag govuk-tag--blue">Accepted</strong>'
               }
-            ],
+          ],
           [
             {
               text: 'Start or cancel referral'
             }
             ,
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Started</strong>'
-            },
-            {
-              html: '7/1/2024',
-              classes: "todays-date"
+              html: '<strong class="govuk-tag govuk-tag--blue">Started</strong>'
             }
           ],
           [
@@ -108,10 +109,6 @@
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            },
-            {
-              html: ''
-
             }
           ],
           [
@@ -121,10 +118,6 @@
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            },
-            {
-              html: ''
-
             }
           ],
           [
@@ -134,10 +127,6 @@
             ,
             {
               html: '<strong class="govuk-tag govuk-tag--grey">Not submitted</strong>'
-            },
-            {
-              html: ''
-
             }
           ]
         ]
