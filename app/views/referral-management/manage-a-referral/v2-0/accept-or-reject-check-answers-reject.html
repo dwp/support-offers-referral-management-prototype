@@ -8,7 +8,11 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check cancellation details</h1>
+    <h1 class="govuk-heading-l">Check rejection details</h1>
+
+    {% set todaysDate %}
+        Today, {{ "now" | govukDateTime }}
+      {% endset -%}
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -23,7 +27,7 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "CPA"
+            text: "Area"
           },
           value: {
             text: "North East"
@@ -35,6 +39,14 @@ What general update do you want to make for this participant? – {{ serviceName
           },
           value: {
             text: data['rejection-reason']
+          }
+        },
+        {
+          key: {
+            text: "Rejected on"
+          },
+          value: {
+            text: todaysDate
           }
         }
       ]
