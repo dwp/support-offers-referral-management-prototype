@@ -10,12 +10,11 @@ What general update do you want to make for this participant? – {{ serviceName
       <form action="accept-or-reject-check-answers-reject" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-
         {{ govukRadios({
         name: "rejection-reason",
         fieldset: {
           legend: {
-           text: "Why are you cancelling this referral?",
+           text: "Why are you rejecting this referral?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
          }
