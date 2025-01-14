@@ -10,12 +10,12 @@ What general update do you want to make for this participant? – {{ serviceName
       <form action="end-check-answers" method="post" novalidate>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        <h1 class="govuk-heading-l">Why are they exiting this programme early</h1>
+        <h1 class="govuk-heading-l">Why are they exiting this programme early?</h1>
         {{ govukRadios({
         name: "ending-reason",
         fieldset: {
           legend: {
-           text: "The citizen"
+           text: "The citizen:"
          }
         },
         items: [

@@ -9,7 +9,9 @@ What general update do you want to make for this participant? – {{ serviceName
     <div class="govuk-grid-column-two-thirds">
       <form action="extend-confirm" method="post" novalidate>
         <h1 class="govuk-heading-xl">Check the extension details</h1>
-
+        {% set todaysDate %}
+          Today, {{ "now" | govukDateTime }}
+        {% endset -%}
 
         {{ govukSummaryList({
           classes: "govuk-!-margin-bottom-9",
@@ -19,15 +21,15 @@ What general update do you want to make for this participant? – {{ serviceName
               text: "Opportunity"
             },
             value: {
-              text: "Restart North East"
+              text: "Restart"
             }
           },
             {
               key: {
-                text: "Referral ID"
+                text: "Area"
               },
               value: {
-                text: "70098681"
+                text: " North East"
               }
             },
             {
@@ -37,6 +39,14 @@ What general update do you want to make for this participant? – {{ serviceName
               value: {
                 text: "90 days",
                 classes: "accepted-date"
+              }
+            },
+            {
+              key: {
+                text: "Extension on"
+              },
+              value: {
+                text: todaysDate
               }
             }
           ]

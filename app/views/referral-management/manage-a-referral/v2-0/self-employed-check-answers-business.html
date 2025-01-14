@@ -8,7 +8,7 @@ What general update do you want to make for this participant? – {{ serviceName
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-l">Check self employment claim</h1>
+    <h1 class="govuk-heading-l">Check self employed job details</h1>
     {% set endDate %}
       {% if (data['self-employed-end-date'] == "No") %}
           No
@@ -17,7 +17,7 @@ What general update do you want to make for this participant? – {{ serviceName
       {% endif %}
     {% endset -%}
   
-    <h2 class="govuk-heading-m">Business details</h2>
+    <!--<h2 class="govuk-heading-m">Business details</h2>-->
 
     {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-9",
@@ -41,7 +41,7 @@ What general update do you want to make for this participant? – {{ serviceName
       },
         {
           key: {
-            text: "Business Name"
+            text: "Business name"
           },
           value: {
             text: data['self-employed-business-name']
