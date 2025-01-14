@@ -130,6 +130,15 @@ What update do you want to make for this participant? – {{ serviceName }} – 
           spellcheck: false
         }) }}
 
+        {{ govukTextarea({
+          name: "moreDetail",
+          id: "more-detail",
+          label: {
+            text: "Can you provide any additional information?",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
         {{ govukRadios({
           name: "self-employed-end-date",
           fieldset: {
