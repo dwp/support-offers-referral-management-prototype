@@ -1,0 +1,103 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %}
+Contract variation information – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "contract-variation-1",
+        items: [
+            {
+              text: "Contract",
+              href: "contract-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Variations",
+              href: "contract-variation-1",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Var one",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new contract</span>
+      <h1 class="govuk-heading-l">CPA 1 – Central England</h1>
+
+      <form action="contract-variation-2" method="post" novalidate>
+        {{ govukInput({
+  label: {
+    text: "What is the variation name?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-20",
+  id: "variation-name",
+  name: "variationName"
+}) }}
+
+        {{ govukRadios({
+  name: "matchFunding",
+  fieldset: {
+    legend: {
+      text: "Is match funding available?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }   
+  ]
+}) }}
+
+        {{ govukInput({
+  id: "earnings-threshold",
+  name: "earningsThreshold",
+  label: {
+    text: "What is the earnings threshold for this variation?",
+    classes: "govuk-fieldset__legend--s",
+    isPageHeading: false
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-10",
+  spellcheck: false
+}) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

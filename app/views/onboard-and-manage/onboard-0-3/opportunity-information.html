@@ -1,0 +1,128 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %}
+Opportunity details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Opportunity name</h1>
+
+      <form action="opportunity-information-3" method="post" novalidate>
+
+        {{ govukInput({
+  label: {
+    text: "What is the opportunity name?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-20",
+  id: "opportunityName",
+  name: "opportunityName"
+}) }}
+
+        {{ govukDateInput({
+  id: "referralStart",
+  namePrefix: "referralStart",
+  fieldset: {
+    legend: {
+      text: "From what date can referrals to this opportunity be accepted?",
+      isPageHeading: true,
+    classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4"
+    }
+  ]
+}) }}
+
+        {{ govukDateInput({
+  id: "referralEnd",
+  namePrefix: "referralEnd",
+  fieldset: {
+    legend: {
+      text: "What is the last date that a referral to this opportunity can be accepted?",
+    classes: "govuk-fieldset__legend--s"
+    }
+  }
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "How many working days can a participant spend on this opportunity?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-2",
+  id: "workingDays",
+  name: "workingDays"
+}) }}
+
+        {% set claimHtml %}
+        {{ govukInput({
+  id: "claim-after-time",
+  name: "claimAfterTimes",
+  type: "claim",
+  autocomplete: "claim",
+  spellcheck: false,
+  classes: "govuk-input--width-2",
+  id: "addWorkingDays",
+  name: "addWorkingDays",
+  label: {
+    text: "How many working days can it be extended for?",
+    classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "extension",
+  fieldset: {
+    legend: {
+      text: "Can an participant's allotted time on this opportunity be extended?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: claimHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+  text: "Save and continue"
+  }) }}
+          {{ govukButton({
+    text: "Save progress",
+    classes: "govuk-button--secondary"
+  }) }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

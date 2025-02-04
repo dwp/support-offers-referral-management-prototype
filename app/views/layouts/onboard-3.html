@@ -1,0 +1,45 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
+
+{% block pageTitle %}
+Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ dwpHeader({
+  serviceName: "Manage Support Offers provisions",
+  serviceHref: '/index.html',
+  action: "Sign out",
+  actionHref: "/",
+container:true 
+    })
+}}
+{% endblock %}
+
+{% block bodyEnd %}
+  {{ super()}}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+
+{% block footer %}
+  {{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Support links",
+items: [
+{
+  href: "https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice-–-summary",
+  text: "Privacy (opens in new window)",
+  attributes: {
+  target: "_blank"
+      }
+},
+{
+  href: "/manage-prototype/clear-data",
+  text: "Clear data"
+}
+]
+}
+}) }}
+{% endblock %}

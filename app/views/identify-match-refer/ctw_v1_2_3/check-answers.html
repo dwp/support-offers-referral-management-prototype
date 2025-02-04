@@ -86,11 +86,11 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Delivery area
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>West Yorkshire Combined Authority</p>
+            <p>Kirklees Borough Council</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              <span class="govuk-visually-hidden">Delivery area</span>
+              Change<span class="govuk-visually-hidden">Delivery area</span>
             </a>
           </dd>
         </div>
@@ -99,7 +99,8 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Opportunity name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>{{ data['selectProgramme'] }}</p>
+            <p>{{ data['selectProgramme'] or "Connect to Work - Out of Work -
+          Individual Placement and Support (IPS)"  }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">

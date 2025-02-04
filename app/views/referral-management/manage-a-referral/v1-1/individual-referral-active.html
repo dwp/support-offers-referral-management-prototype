@@ -7,7 +7,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+
       {{ govukTable({
         caption: "Referral details",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
@@ -70,7 +70,7 @@
         ]
       }) }}
 
-      {{ govukTable({
+      {# {{ govukTable({
         caption: "Referral actions",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
 
@@ -112,9 +112,76 @@
             }
           ]
         ]
-      }) }}
+      }) }} #}
 
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+      {{ govukTaskList({
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Company Directors"
+      },
+      href: "#",
+      status: {
+        text: "Completed"
+      }
+    },
+    {
+      title: {
+        text: "Registered company details"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Financial history"
+      },
+      hint: {
+        text: "Include 5 years of the company’s relevant financial information"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Business plan"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "References"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
     </div>
-    
+
   </div>
 {% endblock %}

@@ -1,4 +1,5 @@
 {% extends "layouts/so-citizen-active-rm.html" %}
+{% from "govuk/components/task-list/macro.njk" import govukTaskList %}
 
 {% block pageTitle %}
   Citizen details – {{ serviceName }} – Support Offers prototype
@@ -7,7 +8,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+
       {{ govukTable({
         caption: "Referral details",
         captionClasses: "govuk-table__caption--m govuk-!-width-one-half",
@@ -114,8 +115,78 @@
         ]
       }) }}
 
-      <div class="govuk-width-container"><a href="individual-referral-active.html">Reset page</a></div>
+      {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+      {{ govukTaskList({
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Company Directors"
+      },
+      href: "#",
+      status: {
+        text: "Completed"
+      }
+    },
+    {
+      title: {
+        text: "Registered company details"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Financial history"
+      },
+      hint: {
+        text: "Include 5 years of the company’s relevant financial information"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Business plan"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    },
+    {
+      title: {
+        text: "References"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      }
+    }
+  ]
+}) }}
+
+      <div class="govuk-width-container">
+        <a href="individual-referral-active.html">Reset page</a>
+      </div>
     </div>
-    
+
   </div>
 {% endblock %}
