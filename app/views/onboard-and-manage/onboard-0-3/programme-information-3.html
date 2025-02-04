@@ -1,0 +1,179 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %}
+Provision details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Provision details</h1>
+
+      <form action="programme-information-4" method="post" novalidate>
+
+        {{ govukCheckboxes({
+  name: "provisionType",
+  fieldset: {
+    legend: {
+      text: "What type of provision is this?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      id: "mandatory",
+      value: "Mandatory",
+      text: "Mandatory"
+    },
+    {
+      id: "voluntary",
+      value: "Voluntary",
+      text: "Voluntary"
+    }
+  ]
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "After being referred, how many days does a citizen have to start an opportunity?",
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-2",
+  id: "days-1",
+  name: "days1"
+}) }}
+
+        {% set daysHtml %}
+        {{ govukInput({
+  id: "number-of-days",
+  name: "numberOfDays",
+  type: "days",
+  autocomplete: "days",
+  spellcheck: false,
+  classes: "govuk-input--width-2",
+  id: "numberOfDays",
+  name: "numberOfDays",
+  label: {
+    text: "How many days will this check run for?",
+    classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "checkEarnings",
+  fieldset: {
+    legend: {
+      text: "Do participants' earnings or employment need to be checked?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: daysHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukRadios({
+  name: "leavesEarly",
+  fieldset: {
+    legend: {
+      text: "Should this check be cancelled if the participant does not complete the opportunity?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukRadios({
+  name: "outcomeFees",
+  fieldset: {
+    legend: {
+      text: "Are outcome fees and service fees to be paid by SOP?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {% set timesHtml %}
+        {{ govukInput({
+  id: "number-of-times",
+  name: "numberOfTimes",
+  type: "times",
+  autocomplete: "times",
+  spellcheck: false,
+  classes: "govuk-input--width-2",
+  id: "numberOfTimes",
+  name: "numberOfTimes",
+  label: {
+    text: "What is the maximum number of attempts a provider can make?",
+    classes: "govuk-fieldset__legend--s"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "times",
+  fieldset: {
+    legend: {
+      text: "Is there a limit on how many times a provider can try to manually claim an outcome?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: timesHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+        {{ govukButton({
+  text: "Save and continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

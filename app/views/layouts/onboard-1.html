@@ -2,73 +2,129 @@
 {% from "internal-service-header/macro.njk" import dwpHeader %}
 {% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
 {% from "internal-service-footer/macro.njk" import dwpFooter %}
+{% from "quick-reference/macro.njk" import dwpQuickReference %}
 
 {% block pageTitle %}
 Support offers referral management – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block head %}
-  {% include "includes/head.html" %}
-{% endblock %}
-
 {% block header %}
+
   {{ dwpHeader({
-  name: "Manage Support Offers provisions",
+  serviceName: "Manage Support Offers provisions",
   serviceHref: '/index.html',
   action: "Sign out",
   actionHref: "/",
-container:true
-}) }}
-  <nav class="dwp-header-navigation" aria-label="Service name">
-    <ul>
-      <li>
-        <a href="task-selector" class="current" aria-current="page">Provisions</a>
-      </li>
-      <li>
-        <a href="contract-build-tasks">Contracts</a>
-      </li>
-      <li>
-        <a href="#">Providers</a>
-      </li>
-    </ul>
-  </nav>
-  <section class="dwp-key-details-bar" aria-label="Key details">
-    <div class="govuk-width-container ">
-
-      {{
-    dwpKeyDetailsBar({
-        primaryIdentifier: {
-            text: 'Name:',
-            value: data['provisionName'] or "Default provision name"
-        },
-        secondaryIdentifier: {
-            text: 'Short name:',
-            value: data['shortName'] or "Default short name"
-        },
-        additionalData: [
-        {
-            text: "Formal start date:",
-            value: data['startDate-day'] + " " + data['startDate-month'] + " " +  data ['startDate-year'] or "1 November 2024"  
-        }
-        ]
+container:true,
+        navigation: {
+          items: [
+              {
+                  href: "task-selector",
+                  text: "Global navigation 1"
+              },
+              {
+                  href: "contract-build-tasks",
+                  text: "Global navigation 2"
+              },
+              {
+                  href: "#",
+                  text: "Global navigation 3"
+              }
+          ]
+      }  
     })
 }}
+  {# 
+    {{ super() }}
+    <section class="dwp-quick-reference dwp-quick-reference" aria-label="Case information"  style="position: sticky; top: 0; z-index: 999;">
+
+      {{
+    dwpQuickReference({
+        ariaLabel: "Case information",
+        classes: "dwp-quick-reference--alternative",
+        primaryReference: {
+            text: 'Name:',
+            value: data['provisionName'] or "Connect to Work"
+        },
+        secondaryReference: {
+            text: 'Formal start date:',
+            textDisplay: true,
+            value: data['startDate-day'] + " " + data['startDate-month'] + " " +  data ['startDate-year'] or "1 November 2024"
+        },
+        status: {
+            text: 'Provision status:',
+            value: 'In build',
+            textDisplay: true,
+            classes: 'govuk-tag--orange'
+        }
+    })
+}} #}
+  <section class="dwp-key-details-bar" aria-label="Key details" style="position: sticky; top: 0; z-index: 999;">
+    <div class="govuk-width-container">
+      <div class="dwp-key-details-bar__key-details">
+        <dl class="dwp-key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-key-details-bar__primary govuk-!-font-size-36">Connect to Work</dd>
+          <dt class="govuk-visually-hidden"></dt>
+          <dd class="dwp-key-details-bar__secondary">CtW</dd>
+          <dt class="govuk-visually-hidden">Claim status:</dt>
+          <dd class="govuk-table__cell dwp-key-details-bar__status"></dd>
+        </dl>
+        <dl class="dwp-key-details-bar__bottom-block">
+          <dt></dt>
+          <dd>
+            <strong>Start date</strong>
+          </dd>
+          <dt></dt>
+          <dd>12 June 1978</dd>
+          <dt></dt>
+          {# <dd>Age 45</dd> #}
+        </dl>
+      </div>
     </div>
   </section>
-  <div class="govuk-width-container ">
+
+  <div class="searchlight-nav-wrapper" style="position: sticky; top: 101px; z-index: 999;">
+    <div class="govuk-width-container">
+      <nav class="dwp-horizontal-navigation" aria-label="Horizontal">
+        <ul class="dwp-horizontal-navigation__list">
+          <li class="dwp-horizontal-navigation__item">
+            <a id="l-item-1" href="#l-item-1" class="dwp-horizontal-navigation__link">Provision details</a>
+          </li>
+          <li class="dwp-horizontal-navigation__item">
+            <a id="l-item-2" href="#l-item-2" class="dwp-horizontal-navigation__link">Opportunities and outcomes</a>
+          </li>
+          <li class="dwp-horizontal-navigation__item">
+            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Contract areas</a>
+          </li>
+          <li class="dwp-horizontal-navigation__item">
+            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Providers</a>
+          </li>
+          <li class="dwp-horizontal-navigation__item">
+            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Link them ???</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="govuk-width-container">
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
   </div>
+</div>
+</div>
+</section>
+
 {% endblock %}
 
 {% block bodyEnd %}
-  {{ super()}}
-  {% include "includes/scripts.html" %}
+{{ super()}}
+{% include "includes/scripts.html" %}
 {% endblock %}
 <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 
 {% block footer %}
-  {{ dwpFooter({
+{{ dwpFooter({
 meta: {
 visuallyHiddenTitle: "Support links",
 items: [
@@ -87,3 +143,10 @@ items: [
 }
 }) }}
 {% endblock %}
+
+var startDate-month = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+];

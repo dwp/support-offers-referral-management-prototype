@@ -7,13 +7,17 @@
   },
   "dependencies": {
     "20": "^3.1.9",
-    "@dwp/dwp-frontend": "3.1.0",
+    "@dwp/dwp-frontend": "3.2.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
+<<<<<<< Updated upstream
     "@ministryofjustice/frontend": "2.2.0",
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
+=======
+    "@ministryofjustice/frontend": "3.2.1",
+>>>>>>> Stashed changes
     "accessible-autocomplete": "^2.0.4",
-    "govuk-frontend": "5.4.1",
+    "govuk-frontend": "5.7.1",
     "govuk-prototype-kit": "13.16.2",
     "jquery": "^3.6.4",
     "nunjucks": "^3.2.3",

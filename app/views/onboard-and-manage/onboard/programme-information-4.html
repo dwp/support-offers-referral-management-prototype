@@ -1,6 +1,7 @@
-{% extends "layouts/onboard-1.html" %}
+{% extends "layouts/onboard-5.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
@@ -11,7 +12,6 @@ Provision details – {{ serviceName }} – Support Offers prototype
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
-      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
       {{ 
     dwpSideNavigation({

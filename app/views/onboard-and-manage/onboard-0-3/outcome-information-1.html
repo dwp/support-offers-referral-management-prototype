@@ -1,0 +1,73 @@
+{% extends "layouts/onboard-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% block pageTitle %} 
+Outcome details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+      {{ 
+    dwpSideNavigation({
+        pageId: "side-navigation-1",
+        selectedItem: "outcome-information",
+        items: [
+            {
+              text: "Provision",
+              href: "programme-information-1",
+              id: "d-item-1"
+            },
+            {
+              text: "Outcomes",
+              href: "outcome-information",
+              id: "d-item-2",
+              subItems: [
+                {
+                    text: data['outcomeName'] or "Not given",
+                    href: "#s-sn-item-1",
+                    id: "s-sn-item-1"
+                }
+            ]              
+            }
+        ]
+    })
+}}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-xl">Create a new provision</span>
+      <h1 class="govuk-heading-l">Outcome details for {{ data['outcomeName'] }}</h1>
+
+      <form action="outcome-information-1a" method="post" novalidate>
+
+        {{ govukRadios({
+  name: "offBenefitCheck",
+  fieldset: {
+    legend: {
+      text: "Will there be a payment for this outcome?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Save and continue"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
