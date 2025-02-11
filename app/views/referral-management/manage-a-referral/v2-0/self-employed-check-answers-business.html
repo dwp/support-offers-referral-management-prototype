@@ -1,5 +1,15 @@
 {% extends "layouts/so-citizen-active-rm.html" %}
 
+{% set multipleJobs %}
+  {% if (data['multiple']) %}
+    self-employed-business-name2
+  {% else %}
+    self-employed-business-name
+  {% endif %}
+{% endset -%}
+
+{% set multipleJobs %}{{ multipleJobs | trim }}{% endset -%}
+
 {% block pageTitle %}
 What general update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -24,7 +34,7 @@ What general update do you want to make for this participant? – {{ serviceName
       rows: [
       {
         key: {
-          text: "Start date"
+          text: "Start date " + data['another-job']
         },
         value: {
           text: data['self-employed-start-date-day'] + "/" + data['self-employed-start-date-month'] + "/" + data['self-employed-start-date-year']
@@ -44,7 +54,7 @@ What general update do you want to make for this participant? – {{ serviceName
             text: "Business name"
           },
           value: {
-            text: data['self-employed-business-name']
+            text:  data[multipleJobs]
           },
           actions: {
             items: [
@@ -127,7 +137,7 @@ What general update do you want to make for this participant? – {{ serviceName
       ]
     }) }}
 
-    <form action="self-employed-jobs-list" method="post" novalidate>
+    <form action="self-employed-jobs-list{% if (data['multiple'] == 'true') %}-multiple{% endif %}" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
     
