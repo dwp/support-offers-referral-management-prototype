@@ -1,0 +1,50 @@
+{% extends "layouts/third-party-3.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% block pageTitle %}
+What is their National Insurance number? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/enter-details-branch-alt" method="post" novalidate>
+
+        {% call govukFieldset({
+  legend: {
+    text: "What is their National Insurance number?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+        {{ govukInput({
+    hint: {
+      text: "For example, ‘QQ 12 34 56 C’"
+    },
+    classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",      
+    name: "nino"
+  }) }}
+        {% endcall %}
+        {{ govukButton({
+  text: "Continue"
+  }) }}
+
+      </form>
+      <br>
+      <br>
+      <br>
+      <br>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h3 class="govuk-heading-s">Scenarios</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>To go to the 'on provision' page enter <strong>WM123456C</strong>
+        </li>
+        <li>To continue and complete the journey successfully <strong>enter any other NINO</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

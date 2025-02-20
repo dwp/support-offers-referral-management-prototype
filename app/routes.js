@@ -11,6 +11,37 @@ router.use(radioButtonRedirect)
 // Add your routes here
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// 3RD PARTY Identify, match and refer V1_2 ////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/enter-details-branch-alt', function (req, res) {
+  var answer = req.session.data['nino']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'WM123456C') {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-on-provision-alt')
+  } else {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-eligible-alt')
+  }
+});
+
+router.post('/enter-details-branch-v1_2', function (req, res) {
+  var answer = req.session.data['nino']
+  console.log(answer, 'submitted-answer')
+
+  if (answer === 'WM123456C') {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-on-provision')
+  } else if (answer === 'QQ123456C') {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-mismatch')
+  } else if (answer === 'KK123456Q') {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-multiple-people')
+  } else if (answer === 'AA123456Q') {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/details-deceased')
+  } else {
+    res.redirect('identify-match-refer/third-party-referrals/v1_2/enter-address-manually')
+  }
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// 3RD PARTY Identify, match and refer V1_1 ////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 

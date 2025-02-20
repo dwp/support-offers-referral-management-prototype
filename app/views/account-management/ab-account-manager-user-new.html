@@ -1,0 +1,96 @@
+{% extends "layouts/layout-acct-management-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+Accountable body
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l" id="address">Manage user</h2>
+
+      <table class="govuk-table govuk-table--small-text-until-tablet govuk-!-margin-bottom-8">
+        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Organisation</th>
+            <th scope="col" class="govuk-table__header">Email address</th>
+            <th scope="col" class="govuk-table__header">Permissions</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"></td>
+            <td scope="row" class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              james.smith@camden.gov.uk
+            </td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <strong class="govuk-tag govuk-tag--grey">Invite sent</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form action="options" method="post" novalidate>
+
+        {% set emailHtml %}
+        {{ govukInput({
+  id: "contact-by-email",
+  name: "contactByEmail",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter email address"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukRadios({
+  name: "addAnotherOutcome",
+  fieldset: {
+    legend: {
+      text: "What would you like to do?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes~ab-account-manager-user-deactivate",
+      text: "Deactivate this user"
+    },
+    {
+      value: "email~ab-account-dashboard-invited",
+      text: "Resend invite",
+      conditional: {
+        html: emailHtml
+      } 
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Continue"  
+  }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
