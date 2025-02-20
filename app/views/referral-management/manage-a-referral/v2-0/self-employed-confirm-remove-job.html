@@ -1,0 +1,47 @@
+{% extends "layouts/so-citizen-active-rm.html" %}
+
+{% block pageTitle %}
+What update do you want to make for this participant? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% set multipleJobs %}
+  {% if (data['job'] == 2) %}
+    {{ data['self-employed-business-name2'] }}
+  {% else %}
+    {{ data['self-employed-business-name'] }}
+  {% endif %}
+{% endset -%}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="self-employed-jobs-list" method="post" novalidate>
+        {{ govukRadios({
+          name: "removeJob",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to remove this job?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes~self-employed-jobs-list",
+              text: "Yes, remove " + multipleJobs
+            },
+            {
+              value: "No~self-employed-jobs-list",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

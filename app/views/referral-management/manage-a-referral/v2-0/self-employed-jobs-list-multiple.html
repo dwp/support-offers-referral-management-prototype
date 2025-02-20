@@ -24,9 +24,38 @@ What general update do you want to make for this participant? – {{ serviceName
           classes: "govuk-!-width-one-third",
           items: [
             {
+              href: "self-employed-confirm-remove-job?job=1",
+              text: "Remove",
+              visuallyHiddenText: data['self-employed-business-name']
+            },
+            {
               href: "#",
               text: "Change",
               visuallyHiddenText: data['self-employed-business-name']
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Job 2 details"
+        },
+        value: {
+          text: data['self-employed-business-name2']
+        },
+        actions: {
+          classes: "govuk-!-width-one-third",
+          items: [
+            {
+              href: "self-employed-confirm-remove-job?job=2"
+              ,
+              text: "Remove",
+              visuallyHiddenText: data['self-employed-business-name2']
+            },
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: data['self-employed-business-name2']
             }
           ]
         }
@@ -43,11 +72,12 @@ What general update do you want to make for this participant? – {{ serviceName
     <form action="self-employed-confirm-submit" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
+      
 
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Add another job",
-          href: "self-employed-business-start-date?multiple=true",
+          href: "self-employed-business-start-date",
           classes: "govuk-button--secondary"
         }) }}
         
