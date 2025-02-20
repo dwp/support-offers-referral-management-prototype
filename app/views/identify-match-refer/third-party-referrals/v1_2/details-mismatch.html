@@ -1,0 +1,18 @@
+{% extends "layouts/third-party-3.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+The details you entered do not match – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">No match found</h1>
+      <p class="govuk-body">Check you have entered the correct details and try again.</p>
+      <p class="govuk-body">You will need the correct information to make this referral.</p>
+    </div>
+  </div>
+{% endblock %}

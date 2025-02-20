@@ -1,0 +1,44 @@
+{% extends "layouts/layout-acct-management-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+Accountable body
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Are you sure you want to deactivate James Smith?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "They will no longer be able to access Support Offers to make referrals. You can reactivate them at any time."
+  },
+  items: [
+    {
+      value: "deactivate",
+      text: "Yes, deactivate this user"
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+  text: "Continue",
+  href: "ab-account-dashboard-members-3-b"
+  }) }}
+    </div>
+  </div>
+
+{% endblock %}

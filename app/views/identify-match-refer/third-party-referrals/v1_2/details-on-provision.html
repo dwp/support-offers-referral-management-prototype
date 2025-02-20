@@ -1,0 +1,46 @@
+{% extends "layouts/third-party-3.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+This person is already on provision – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">This person is not eligible</h1>
+      <p class="govuk-body">They are on another national provision until 3 March 2026. You can refer them after this date.</p>
+      <h2 class="govuk-heading-m">
+          Provision details
+        </h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Opportunity</th>
+            <th scope="col" class="govuk-table__header">Referral ID</th>
+            <th scope="col" class="govuk-table__header">Referred</th>
+            <th scope="col" class="govuk-table__header">Started</th>
+            <th scope="col" class="govuk-table__header">Completed</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Pioneer - WHP<br>
+            Disability Condition</span></td>
+          <td class="govuk-table__cell">321743277</td>
+          <td class="govuk-table__cell">5 Aug 2024</td>
+          <td class="govuk-table__cell">9 Aug 2024</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--light-blue">Started</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends "layouts/layout-acct-management-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+Accountable body
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="editDetails" method="post" novalidate>
+
+        <h2 class="govuk-heading-l" id="address">Edit the details for City of London Corporation</h2>
+        <div class="govuk-heading-m" id="address">Administrator details</h3>
+        <div id="sort-code-hint" class="govuk-hint">
+    You cannot edit your name or your email address
+  </div>
+      </div>
+
+      {{ govukInput({
+  classes: "govuk-input--width-20",
+    label: {
+    text: "Telephone number"
+  },
+  id: "telephone-number",
+  name: "telephoneNumber",
+  value: "07788 123456"
+}) }}
+
+      {{ govukInput({
+  
+  label: {
+    text: "Job title"
+  },
+  classes: "govuk-input--width-20",
+  id: "job-title",
+  name: "jobTitle",
+  value: "Social care manager"
+}) }}
+
+      {{ govukInput({
+  label: {
+    text: "Department"
+  },
+  classes: "govuk-input--width-20  govuk-!-margin-bottom-4",
+  id: "admin-department-name",
+  name: "adminDepartment",
+  value: "Adult Social Care"
+}) }}
+
+      <h3 class="govuk-heading-m">Administrative body</h3>
+
+      {{ govukInput({
+  classes: "govuk-input--width-20",
+    label: {
+    text: "Organisation name"
+  },
+  id: "organisation-name",
+  name: "orgName",
+  value: "Central London Forward"
+}) }}
+
+      {{ govukInput({
+  classes: "govuk-input--width-20",
+    label: {
+    text: "Address line 1"
+  },
+  id: "address-line-1",
+  name: "addressLine1",
+  value: "City of London"
+}) }}
+
+      {{ govukInput({
+  classes: "govuk-input--width-20",
+    label: {
+    text: "Address line 2"
+  },
+  id: "address-line-2",
+  name: "addressLine2",
+  value: "Guildhall"
+}) }}
+
+      {{ govukInput({
+  classes: "govuk-input--width-20",
+    label: {
+    text: "Town or city"
+  },
+  id: "address-town",
+  name: "addressTown",
+  value: "London"
+}) }}
+
+      {{ govukInput({
+  
+  label: {
+    text: "Postcode"
+  },
+  classes: "govuk-input--width-10",
+  id: "address-postcode",
+  name: "addressPostcode",
+  value: "EC2V 7HH"
+}) }}
+
+      {{ govukInput({
+  label: {
+    text: "Department"
+  },
+  classes: "govuk-input--width-20",
+  id: "org-department-name",
+  name: "orgDepartment",
+  value: "Department of Community Services"
+}) }}
+
+      {{ govukButton({
+  text: "Continue",
+  href: "javascript:history.back()" 
+  }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

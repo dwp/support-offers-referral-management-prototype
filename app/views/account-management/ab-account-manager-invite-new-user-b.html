@@ -1,0 +1,105 @@
+{% extends "layouts/layout-acct-management-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+Accountable body
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l" id="address">Add user details</h2>
+
+      <form action="userDeets" method="post" novalidate>
+
+        {% set emailHtml %}
+        {{ govukInput({
+  id: "contact-by-email",
+  name: "contactByEmail",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter email address"
+  }
+}) }}
+        {% endset -%}
+
+        {{ govukInput({
+  label: {
+    text: "First name"
+  },
+  classes: "govuk-input--width-20",
+  id: "first-name",
+  name: "firstName"
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Last name"
+  },
+  classes: "govuk-input--width-20",
+  id: "last-name",
+  name: "lastName"
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Work email"
+  },
+  classes: "govuk-input--width-30",
+  id: "work-email",
+  name: "workEmail"
+}) }}
+        {{ govukInput({
+  label: {
+    text: "Organisation"
+  },
+  classes: "govuk-input--width-30",
+  id: "organisation",
+  name: "organisation"
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "Role",
+      isPageHeading: true    }
+  },
+  items: [
+    {
+      value: "referrer",
+      text: "Referrer",
+      hint: {
+        text: "This role allows users to make referrals to local authorities within your accountable body area"
+      }
+          },
+    {
+      value: "admin",
+      text: "Administrator",
+      hint: {
+        text: "This  role allows users to invite and manage users as well as make referrals to local authorities within your accountable body area"
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Continue",
+  href: "ab-account-manager-invite-success-b"  
+  }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

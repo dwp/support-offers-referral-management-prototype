@@ -1,0 +1,84 @@
+{% extends "layouts/third-party-4.html" %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% block pageTitle %}
+What is their full name? – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="enter-details-c" method="post" novalidate>
+
+        {{ govukRadios({
+  name: "whereDoYouLive",
+  fieldset: {
+    legend: {
+      text: "What is their delivery area?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "camden",
+      text: "Camden"
+    },
+    {
+      value: "cityOfLondon",
+      text: "City of London"
+    },
+    {
+      value: "hackney",
+      text: "Hackney"
+    },
+    {
+      value: "haringey",
+      text: "Haringey"
+    },
+    {
+      value: "islington",
+      text: "Islington"
+    },
+    {
+      value: "lambeth",
+      text: "Lambeth"
+    },
+    {
+      value: "lewisham",
+      text: "Lewisham"
+    },
+    {
+      value: "rbkc",
+      text: "Royal Borough of Kensington and Chelsea"
+    },
+    {
+      value: "southwark",
+      text: "Southwark"
+    },
+    {
+      value: "towerHamlets",
+      text: "Tower Hamlets"
+    },
+    {
+      value: "wandsworth",
+      text: "Wandsworth"
+    },
+    {
+      value: "westminster",
+      text: "Westminster"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Continue",
+  href: "available-opportunities"
+  }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

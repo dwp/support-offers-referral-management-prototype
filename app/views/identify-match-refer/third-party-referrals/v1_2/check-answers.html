@@ -1,0 +1,124 @@
+{% extends "layouts/third-party-3.html" %}
+
+{% block pageTitle %}
+Check the referral details – {{ serviceName }} – Support Offers prototype
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Check the referral details</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['firstName'] or "Danny" }}
+            {{ data['lastName'] or "Blanchford" }}
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['nino'] or "QQ123456X" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['dob-day'] + " " + data['dob-month'] + " " +  data ['dob-year']  or "12 June 1997" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              <span class="govuk-visually-hidden">address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['addressLine1'] or "Flat C, 23 Telford Avenue" }}<br>{{ data['addressTown'] or "London" }}<br>{{ data['addressPostcode'] or "SW2 4XL" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-address-manually">
+              Change<span class="govuk-visually-hidden">address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['phoneNumber'] or "07854 123456" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-contacts-manually">
+              Change<span class="govuk-visually-hidden">phone number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['emailAddress'] or "d.blanchford@examplemail.com" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-contacts-manually">
+              Change<span class="govuk-visually-hidden">email address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Opportunity details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Delivery area
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Lambeth</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              <span class="govuk-visually-hidden">Delivery area</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opportunity name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['selectProgramme'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="available-opportunities">
+              Change<span class="govuk-visually-hidden"> Opportunity name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      {{ govukButton({
+      text: "Confirm and make referral",
+      preventDoubleClick: true,
+      href: "referral-confirmation"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

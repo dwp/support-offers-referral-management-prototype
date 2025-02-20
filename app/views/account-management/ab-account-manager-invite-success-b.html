@@ -1,0 +1,55 @@
+{% extends "layouts/layout-acct-management-1.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %}
+Accountable body
+{% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+      {{ govukPanel({
+  titleText: "Invite sent",
+  classes: "govuk-!-margin-bottom-6"
+  }) }}
+
+      <form action="choose" method="post" novalidate>
+
+        {{ govukRadios({
+  classes: "govuk-radios",
+  name: "changedName",
+  fieldset: {
+    legend: {
+      text: "What would you like to do?",
+      classes: "govuk-fieldset__legend--m",
+      isPageHeading: true    }
+  },
+  items: [
+    {
+      value: "addUser~ab-account-manager-invite-new-user-b",
+      text: "Add another user"
+    },
+    {
+      value: "dash~ab-account-dashboard-members-2-b",
+      text: "Return to dashboard"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+  text: "Continue"  
+  }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
