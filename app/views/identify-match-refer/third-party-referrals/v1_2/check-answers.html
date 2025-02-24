@@ -91,10 +91,10 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Delivery area
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Lambeth</p>
+            <p>{{ data['whichLa'] or "Lambeth" }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="select-la">Change
               <span class="govuk-visually-hidden">Delivery area</span>
             </a>
           </dd>
@@ -104,7 +104,7 @@ Check the referral details – {{ serviceName }} – Support Offers prototype
             Opportunity name
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>{{ data['selectProgramme'] }}</p>
+            <p>{{ data['select-programme'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="available-opportunities">
