@@ -1,6 +1,7 @@
 {% extends "layouts/third-party-4.html" %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% block pageTitle %}
 What are their contact details? – {{ serviceName }} – Support Offers prototype
@@ -10,12 +11,6 @@ What are their contact details? – {{ serviceName }} – Support Offers prototy
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="select-la" method="post" novalidate>
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
         {% call govukFieldset({
   legend: {
