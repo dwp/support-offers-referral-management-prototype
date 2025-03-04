@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% block pageTitle %} Authentication and account management –
+{{serviceName}} – GOV.UK Prototype Kit {% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Do we need a breadcrumb? -->
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/index">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Authentication and account management prototypes</a>
+      </li>
+    </ol>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+  <!-- Header and Intro -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Prototype</span>
+      <h1 class="govuk-heading-xl">Authentication and account management</h1>
+      <p class="govuk-body">
+      26 February 2025
+    </p>
+      <p class="govuk-!-margin-bottom-8">
+      The focus of this work stream is about the authentication process for 3rd party users and the associated account management of those users.
+    </p>
+    </div>
+  </div>
+
+  {% set accManHtml %}
+  <h2 class="govuk-heading-l">Account management</h2>
+  <p>
+    <strong class="govuk-tag govuk-tag--green">
+                Initial version
+              </strong>
+  </p>
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+                text: "AB account mananagement prototype",
+                href: "ab-account-dashboard-b"
+              }) }}
+    {{ govukButton({
+                text: "DWP account management prototype",
+                href: "dwp-master-dashboard"
+              }) }}
+  </div>
+  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+  {{ govukSummaryList({
+  caption: "Supporting information",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+rows: [
+    {
+      key: {
+        text: "Sprint version"
+      },
+      value: {
+        text: "Sprint ACEMR 12"
+      }
+    },
+    {
+      key: {
+        text: "Date"
+      },
+      value: {
+        text: "26 February 2025"
+      }
+    },
+    {
+      key: {
+        text: "Summary"
+      },
+      value: {
+        html: '<p class="govuk-body">This prototype is an initial iteration of what we think an account management system could look like for 3rd party admin users and for DWP users. Due to time constraints on the potential requirement for this, we opted to build out some prototypes in order to test early and learn whether it is something we will need or, whether most of the process could be automated.</p><p class="govuk-body">Read the design documentation for a more in depth understanding.</p>'
+      }
+    },
+    {
+      key: {
+        text: "Mural"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1740993127861">Screenshots on Mural</a>'
+      }
+    },
+    {
+      key: {
+        text: "Design documentation"
+      },
+      value: {
+        html: '<a class="govuk-link" href="#">In progress</a>'
+      }
+    },
+    {
+      key: {
+        text: "Feature team"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview?homepageId=132820206087">Airedale</a>, <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Support Offers main</a>'
+      }
+    }
+  ]
+}) }}
+  {% endset -%}
+
+  {{ govukTabs({
+  items: [
+    {
+      label: "Account management",
+      id: "account-management",
+      panel: {
+        html: accManHtml
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}
