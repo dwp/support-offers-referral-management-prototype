@@ -27,10 +27,10 @@
         <span class="govuk-caption-xl">Prototype</span>
         <h1 class="govuk-heading-xl">Identify, match and refer</h1>
         <p class="govuk-body govuk-!-font-size-16">
-          <strong>Last updated:</strong> 25 February 2025
+          <strong>Last updated:</strong> 5 March 2025
       </p>
         <p class="govuk-body">
-        This part of the overall project is our initial MVP.
+        This part of the overall project was our initial MVP where we tested the Work and Health programmne referral journey with real users and with real data. Currently we are focussed on 3rd party referrals phase 1 and working towards 3rd party referrals phase 2.
       </p>
       </div>
     </div>
@@ -952,7 +952,7 @@
 
           <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="third-party-phase-1">
 
-            <h2 class="govuk-heading-l">Third party referrals phase 1</h2>
+            <h2 class="govuk-heading-l">3rd party referrals phase 1</h2>
             <p>
               <strong class="govuk-tag govuk-tag--green">Latest version</strong>
             </p>
@@ -1212,82 +1212,132 @@
 
           </div>
 
+          <!-- 3rd party referrals Phase 2 content starts here -->
+
           <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="third-party-phase-2">
-            <h2 class="govuk-heading-l">Third party referrals phase 2</h2>
+            <h2 class="govuk-heading-l">3rd party referrals phase 2</h2>
             <p>
-              <strong class="govuk-tag govuk-tag--green">Latest versions</strong>
+              <strong class="govuk-tag govuk-tag--green">Latest version</strong>
             </p>
-            <div class="govuk-button-group">
-              {{ govukButton({
-            text: "Start version 1.1",
-            href: "/identify-match-refer/third-party-referrals/v1_1/enter-details",
+            {{ govukButton({
+            text: "Start version 1.2",
+            href: "/identify-match-refer/third-party-referrals/v1_2/select-an-option",
             isStartButton: true
             }) }}
-              {{ govukButton({
-            text: "Start version 1.0",
-            href: "/identify-match-refer/third-party-referrals/v1_0/enter-details",
-            isStartButton: true
-            }) }}
-            </div>
 
             <h3 class="govuk-heading-m">Supporting information</h3>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Sprint version</dt>
-                <dd class="govuk-summary-list__value">Beta Sprint 24</dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Summary of design</dt>
-                <dd class="govuk-summary-list__value">
-                  <p class="govuk-body">We have created two versions of a 3rd party referral journey.</p>
-                  <p>V1.0 submits
-                  name and NINO to CIS and, assuming
-                  we
-                  can verify them with this, returns the address and contact details for the submitted profile. This
-                  forms part of the SO SRA component available functionality. However, we believe this is open to
-                  potential
-                  exploitation as it allows users to look for anyone's details for whom they have name and NINO, thereby
-                  giving users potential to look up anyone.
-                </p>
-                  <p>V1.1 asks for all of a citizen's personal information up front. At the point of submitting the DoB we
-                  check
-                  the details match and only 'intervene' if the details
-                  don't match or if the citizen is already on provision. We then ask for address and contact details.
-                  Assuming the majority of details submitted are correct and they aren't on provision, the user will
-                  assume they are just submitting referral details and we don't have to expose any unnecessary citizen
-                  data.
-                </p>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Mural</dt>
-                <dd class="govuk-summary-list__value">
-                  <ul class="govuk-list">
-                    <li>
-                      <a class="govuk-link"
-                      href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1722417454418">Screenshots
-                      on Mural for V1.1</a>, <a class="govuk-link"
-                      href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1722417363633">Screenshots
-                      on Mural for V1.0</a>
-                    </li>
-                  </ul>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Design documentation</dt>
-                <dd class="govuk-summary-list__value">
-                  <a class="govuk-link"
-                  href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/133744721921/Sprint+24+version+1.0+version+1.1+third+party+referral+UI+phase+2">Sprint
-                  24</a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">Feature team</dt>
-                <dd class="govuk-summary-list__value">
-                  <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview">Airedale</a>
-                </dd>
-              </div>
-            </dl>
+
+            {{ govukSummaryList({
+  firstCellIsHeader: true,
+rows: [
+    {
+      key: {
+        text: "Sprint version"
+      },
+      value: {
+        text: "ACEMR Sprint 12"
+      }
+    },    
+    {
+      key: {
+        text: "Summary"
+      },
+      value: {
+        text: "This is in progress"
+      }
+    },
+    {
+      key: {
+        text: "Mural"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1738056461435">Sprint 10 work on Mural for V1.2</a>, <a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1739378765229">Sprint 11 work on Mural for V1.2</a>, <a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1740993127861">Sprint 12 work on Mural for V1.2</a>'
+      }
+    },
+    {
+      key: {
+        text: "Design documentation"
+      },
+      value: {
+        text: "This is in progress"
+      }
+    },
+    {
+      key: {
+        text: "Feature team"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview?homepageId=132820206087">Airedale</a>, <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Support Offers main</a>'
+      }
+    },
+    {
+      key: {
+        text: "User research"
+      },
+      value: {
+        text: "This is in progress"
+      }
+    }
+  ]
+}) }}
+            <!-- 3rd party referrals Phase 2 previous versions start here -->
+
+            <h2 class="govuk-heading-l govuk-!-margin-top-7">Previous versions</h2>
+            <h3 class="govuk-heading-m">Supporting information</h3>
+
+            {{ govukSummaryList({
+  firstCellIsHeader: true,
+rows: [
+    {
+      key: {
+        text: "Link to prototypes"
+      },
+      value: {
+        html: '<a class="govuk-link" href="/identify-match-refer/third-party-referrals/v1_1/enter-details">Version V1.1</a>, <a class="govuk-link" href="/identify-match-refer/third-party-referrals/v1_0/enter-details">Version V1.0</a>'
+      }
+    },
+    {
+      key: {
+        text: "Sprint version"
+      },
+      value: {
+        text: "Beta Sprint 24"
+      }
+    },    
+    {
+      key: {
+        text: "Summary"
+      },
+      value: {
+        html: "<p class='govuk-body'>We have created two versions of a 3rd party referral journey.</p><p class='govuk-body'>V1.0 submits name and NINO to CIS and DWP systems and, assuming we can verify them with this, returnd the address and contact details for the submitted profile. This forms part of the SO SRA component available functionality. However, we believe this is open to potential exploitation as it allows users to look for anyone's details for whom they have name and NINO, thereby giving users potential to look up anyone.</p><p class='govuk-body'>V1.1 asks for all of a citizens personal information up front. At the point of submitting the DoB we check that all the details match and only 'intervene', if the details don't match of if the citizen is already on provision. We then ask for address and contact details. Assuming they aren't on provision, the user will assume they are just sending in the referral details to DWP. All of this is done without exposing any sensitive citizen data.</p>"
+      }
+    },
+    {
+      key: {
+        text: "Mural"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1722417454418">Screenshots on Mural for V1.1</a>, <a class="govuk-link" href="https://app.mural.co/t/universalcredit7056/m/universalcredit7056/1717589126767/91677557a3446a1857da87a9f4b9dc3430bf02fa?wid=0-1722417363633">Screenshots on Mural for V1.0</a>'
+      }
+    },
+    {
+      key: {
+        text: "Design documentation"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SO/pages/133744721921/Sprint+24+version+1.0+version+1.1+third+party+referral+UI+phase+2">Sprint 24</a>'
+      }
+    },
+    {
+      key: {
+        text: "Feature team"
+      },
+      value: {
+        html: '<a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SOOM/overview?homepageId=132820206087">Airedale</a>, <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/SO/overview?homepageId=132572119340">Support Offers main</a>'
+      }
+    }
+  ]
+}) }}
           </div>
 
           <!-- Error scenarios -->
