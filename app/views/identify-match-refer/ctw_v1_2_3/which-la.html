@@ -3,7 +3,7 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block pageTitle %}
-Which is their US delivery area? – {{ serviceName }} – Support Offers prototype
+Which is the delivery area member? – {{ serviceName }} – Support Offers prototype
 {% endblock %}
 
 {% block content %}
@@ -12,11 +12,11 @@ Which is their US delivery area? – {{ serviceName }} – Support Offers protot
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="event-name">
-      Which is their delivery area?
+      Which is the delivery area member?
     </label>
         </h1>
         <div id="event-name-hint" class="govuk-hint">
-    Enter delivery area
+    Enter delivery area member
   </div>
         <label class="govuk-label" id="event-name" name="office-autocomplete" type="text" aria-describedby="event-name-hint"></label>
         <div class="autocomplete-wrapper govuk-body" id="office-autocomplete-container"></div>
