@@ -58,6 +58,36 @@ Opportunity details – {{ serviceName }} – Support Offers prototype
 
       <form action="opportunity-information-3" method="post" novalidate>
 
+        {{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Add an outcome"
+  },
+  items: [
+    {
+      value: "start",
+      text: "Start on opportunity",
+      selected: true
+    },
+    {
+      value: "et1",
+      text: "Earnings Threshold 1"
+    },
+    {
+      value: "et2",
+      text: "Earnings Threshold 2"
+    },
+    {
+      value: "et3",
+      text: "Earnings Threshold 3"
+    },
+    {
+      value: "end",
+      text: "End on opportunity"
+    }
+  ]
+}) }}
         {{ govukCheckboxes({
   name: "waste",
   items: [

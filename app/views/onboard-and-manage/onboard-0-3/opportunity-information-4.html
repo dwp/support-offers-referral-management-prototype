@@ -12,7 +12,7 @@ Opportunity details – {{ serviceName }} – Support Offers prototype
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
       <span class="govuk-caption-xl">Create a new provision</span>
-      <h1 class="govuk-heading-l">Check the details for {{ data['opportunityName'] }}</h1>
+      <h1 class="govuk-heading-l">Check the details for {{ data['opportunityName'] or 'Individual Placement and Support - In Work Retention Support'}}</h1>
       <form action="provision-build-tasks-4" method="post" novalidate>
 
         <h2 class="govuk-heading-m">Opportunity details</h2>
@@ -101,82 +101,6 @@ Opportunity details – {{ serviceName }} – Support Offers prototype
             href: "#",
             text: "Change",
             visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
-
-        <h2 class="govuk-heading-m">Outcomes</h2>
-
-        {{ govukSummaryList({
-      classes: "govuk-!-margin-bottom-9",
-  rows: [
-    {
-      key: {
-        text: "Start"
-      },
-      value: {
-        text: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Earnings Threshold 1"
-      },
-      value: {
-        text: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Earnings Threshold 2"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "End"
-      },
-      value: {
-        html: ""
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
           }
         ]
       }
@@ -273,6 +197,82 @@ providing ongoing in-work support</li></p>
         ]
       }
     }    
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Outcomes</h2>
+
+        {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+  rows: [
+    {
+      key: {
+        text: "Start on Opportunity"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 1"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Earnings Threshold 3"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "End on Opportunity"
+      },
+      value: {
+        html: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
   ]
 }) }}
 

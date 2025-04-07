@@ -64,19 +64,17 @@ container:true,
       <div class="dwp-key-details-bar__key-details">
         <dl class="dwp-key-details-bar__top-block">
           <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="dwp-key-details-bar__primary govuk-!-font-size-36">Connect to Work</dd>
+          <dd class="dwp-key-details-bar__primary govuk-!-font-size-36">{{ data['provisionName03'] or 'Connect to Work'}}</dd>
           <dt class="govuk-visually-hidden"></dt>
-          <dd class="dwp-key-details-bar__secondary">CtW</dd>
+          <dd class="dwp-key-details-bar__secondary">{{ data['shortName'] or 'CtW'}}</dd>
           <dt class="govuk-visually-hidden">Claim status:</dt>
           <dd class="govuk-table__cell dwp-key-details-bar__status"></dd>
         </dl>
         <dl class="dwp-key-details-bar__bottom-block">
-          <dt></dt>
           <dd>
-            <strong>Start date</strong>
+            <strong>Start date:</strong>
           </dd>
-          <dt></dt>
-          <dd>12 June 1978</dd>
+          <dd>1 June 2027</dd>
           <dt></dt>
           {# <dd>Age 45</dd> #}
         </dl>
@@ -95,13 +93,10 @@ container:true,
             <a id="l-item-2" href="#l-item-2" class="dwp-horizontal-navigation__link">Opportunities and outcomes</a>
           </li>
           <li class="dwp-horizontal-navigation__item">
-            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Contract areas</a>
+            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Contract and delivery areas</a>
           </li>
           <li class="dwp-horizontal-navigation__item">
             <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Providers</a>
-          </li>
-          <li class="dwp-horizontal-navigation__item">
-            <a id="l-item-3" href="#l-item-3" class="dwp-horizontal-navigation__link">Link them ???</a>
           </li>
         </ul>
       </nav>
