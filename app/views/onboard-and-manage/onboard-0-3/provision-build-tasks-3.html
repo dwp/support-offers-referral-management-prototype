@@ -21,42 +21,31 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
   items: [
     {
       title: {
-        text: "Provision name and start date"
+        text: "Provision details"
       },
+      href: "programme-information-4",
       status: {
         tag: {
           text: "Complete",
           classes: "govuk-tag--green"
         }      
       }
-    },
-    {
-      title: {
-        text: "Provision details"
-      },
-      href: "programme-information-3",
-      status: {
-        tag: {
-          text: "Complete",
-          classes: "govuk-tag--green"
-        }          }
     }
   ]
 }) }}
-
         <h2 class="govuk-heading-m">2. Outcomes</h2>
         <h3 class="govuk-heading-s">Outcome 1</h3>
         {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
 
         {{ govukTaskList({
-  classes: "govuk-!-margin-bottom-4",
+  classes: "govuk-!-margin-bottom-6",
   idPrefix: "company-details",
   items: [
     {
       title: {
-        text: data['outcomeName'] or "Not given"
+        text: data['outcomeName'] or "Start on Opportunity"
       },
-      href: "outcome-information",
+      href: "#",
       status: {
         tag: {
           text: "Complete",
@@ -67,7 +56,7 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
       title: {
         text: "Outcome details" 
       },
-      href: "outcome-information-1",
+      href: "#",
       status: {
         tag: {
           text: "Complete",
@@ -78,12 +67,141 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
+        <h3 class="govuk-heading-s">Outcome 2</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 1"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h3 class="govuk-heading-s">Outcome 3</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 2"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h3 class="govuk-heading-s">Outcome 4</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 3"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+        <h3 class="govuk-heading-s">Outcome 5</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-4",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "End on Opportunity"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
         {{ govukButton({
   text: "Add another outcome",
   classes: "govuk-button--secondary",
   href: "#"
   }) }}
-
         <h2 class="govuk-heading-m govuk-!-margin-top-6">3. Opportunities</h2>
         <h3 class="govuk-heading-s">Opportunity 1</h3>
         {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
@@ -94,22 +212,11 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
   items: [
     {
       title: {
-        text: "Opportunity name"
+        text: "Opportunity details"
       },
       href: "opportunity-information",
       status: {
         text: "Not started"
-      }
-    },
-    {
-      title: {
-        text: "Opportunity details"
-      },
-      status: {
-        tag: {
-          text: "Cannot start yet",
-          classes: "govuk-tag--blue"
-        }
       }
     },
     {

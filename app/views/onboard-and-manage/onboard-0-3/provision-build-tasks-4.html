@@ -49,14 +49,14 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
         {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
 
         {{ govukTaskList({
-  classes: "govuk-!-margin-bottom-4",
+  classes: "govuk-!-margin-bottom-6",
   idPrefix: "company-details",
   items: [
     {
       title: {
-        text: data['outcomeName'] or "Not given"
+        text: data['outcomeName'] or "Start on Opportunity"
       },
-      href: "outcome-information",
+      href: "#",
       status: {
         tag: {
           text: "Complete",
@@ -67,7 +67,7 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
       title: {
         text: "Outcome details" 
       },
-      href: "outcome-information-1",
+      href: "#",
       status: {
         tag: {
           text: "Complete",
@@ -78,6 +78,136 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
   ]
 }) }}
 
+        <h3 class="govuk-heading-s">Outcome 2</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 1"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h3 class="govuk-heading-s">Outcome 3</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 2"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+
+        <h3 class="govuk-heading-s">Outcome 4</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "Earnings Threshold 3"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+        <h3 class="govuk-heading-s">Outcome 5</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-4",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: data['outcomeName'] or "End on Opportunity"
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }          }
+    },
+    {
+      title: {
+        text: "Outcome details" 
+      },
+      href: "#",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
         {{ govukButton({
   text: "Add another outcome",
   classes: "govuk-button--secondary",
@@ -89,23 +219,12 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
         {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
 
         {{ govukTaskList({
-  classes: "govuk-!-margin-bottom-4",
+  classes: "govuk-!-margin-bottom-6",
   idPrefix: "company-details",
   items: [
     {
       title: {
-        text: "Opportunity name"
-      },
-      href: "opportunity-information",
-      status: {
-        tag: {
-          text: "Complete",
-          classes: "govuk-tag--green"
-        }      }
-    },
-    {
-      title: {
-        text: "Opportunity details"
+        text: "Individual Placement and Support - In Work Retention Support"
       },
       href: "opportunity-information-1",
       status: {
@@ -129,7 +248,105 @@ Create a new provision – {{ serviceName }} – Support Offers prototype
     }
   ]
 }) }}
+        <h3 class="govuk-heading-s">Opportunity 2</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
 
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Individual Placement and Support - Out of Work"
+      },
+      href: "opportunity-information-1",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Opportunity description"
+      },
+      href: "opportunity-information-3",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+        <h3 class="govuk-heading-s">Opportunity 3</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-6",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Supported Employment Quality Framework (SEQF) - In Work Retention Support"
+      },
+      href: "opportunity-information-1",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Opportunity description"
+      },
+      href: "opportunity-information-3",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
+        <h3 class="govuk-heading-s">Opportunity 4</h3>
+        {% from "govuk/components/task-list/macro.njk" import govukTaskList %}
+
+        {{ govukTaskList({
+  classes: "govuk-!-margin-bottom-4",
+  idPrefix: "company-details",
+  items: [
+    {
+      title: {
+        text: "Supported Employment Quality Framework (SEQF) - Out of Work"
+      },
+      href: "opportunity-information-1",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    },
+    {
+      title: {
+        text: "Opportunity description"
+      },
+      href: "opportunity-information-3",
+      status: {
+        tag: {
+          text: "Complete",
+          classes: "govuk-tag--green"
+        }
+      }
+    }
+  ]
+}) }}
         {{ govukButton({
   text: "Add another opportunity",
   classes: "govuk-button--secondary",
