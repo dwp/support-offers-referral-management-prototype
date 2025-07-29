@@ -10,7 +10,7 @@
     "@dwp/dwp-frontend": "3.3.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@ministryofjustice/frontend": "4.0.1",
+    "@ministryofjustice/frontend": "4.0.2",
     "@x-govuk/govuk-prototype-filters": "1.5.0",
     "accessible-autocomplete": "3.0.1",
     "govuk-frontend": "5.9.0",
